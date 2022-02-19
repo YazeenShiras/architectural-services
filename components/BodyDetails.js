@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "../styles/BodyDetails.module.css";
 import Footer from "./Footer";
@@ -59,7 +60,9 @@ const BodyDetails = () => {
                   <input type="email" />
                 </div>
               </fieldset>
-              <div className={styles.submit__button__form}>SUBMIT</div>
+              <Link href="/success" passHref>
+                <div className={styles.submit__button__form}>SUBMIT</div>
+              </Link>
             </form>
           </div>
         </div>
