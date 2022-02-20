@@ -7,13 +7,15 @@ const Header = () => {
     <div>
       <div className={styles.header}>
         <div className={styles.header__left}>
-          <Image
-            className={styles.header__logo}
-            src="/arclifLogo.svg"
-            alt="Arclif Logo"
-            width={100}
-            height={35}
-          />
+          <Link href="/" passHref>
+            <Image
+              className={styles.header__logo}
+              src="/arclifLogo.svg"
+              alt="Arclif Logo"
+              width={100}
+              height={35}
+            />
+          </Link>
         </div>
         <div className={styles.header__right}>
           <nav className={styles.header__nav}>

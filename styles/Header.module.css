@@ -19,8 +19,7 @@
 }
 
 .header__logo {
-  height: 35px;
-  object-fit: contain;
+  cursor: pointer;
 }
 
 .header__right {

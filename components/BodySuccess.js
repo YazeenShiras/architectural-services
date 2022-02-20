@@ -17,7 +17,7 @@ const BodySuccess = () => {
         <div className={styles.bodyDetails__content}>
           <div className={styles.success__container}>
             <p>
-              Succefully submitttted your <br /> data, our executives will reach{" "}
+              Succefully submitted your <br /> data, our executives will reach{" "}
               <br />
               you shortly
             </p>

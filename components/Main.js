@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <div className={styles.main__left}>
-        <div className={styles.header__main__left}>
+        {/* <div className={styles.header__main__left}>
           <div className={styles.header__logo}>
             <Image
               className={styles.header__logo__img}
@@ -18,7 +18,7 @@ const Main = () => {
             ></Image>
           </div>
           <h5>Home</h5>
-        </div>
+        </div> */}
         <div className={styles.content__main__left}>
           <div className={styles.top__content__main__left}>
             <Image
@@ -30,7 +30,7 @@ const Main = () => {
             ></Image>
           </div>
           <h1>
-            Build your dream <br /> home with a few <br /> clicks !
+            Build your dream <br /> home with a few <br /> clicks!
           </h1>
           <p>
             We offer innovative design consultancy and architectural services
@@ -66,7 +66,7 @@ const Main = () => {
         </div>
       </div>
       <div className={styles.main__right}>
-        <div className={styles.header__main__right}>
+        {/* <div className={styles.header__main__right}>
           <div className={styles.header__nav}>
             <ul>
               <li className={styles.homeSeeker}>Home Seeker</li>
@@ -75,7 +75,7 @@ const Main = () => {
             </ul>
           </div>
           <div className={styles.login__button__header}>Login</div>
-        </div>
+        </div> */}
         <div className={styles.content__main__right}>
           <div className={styles.top__content__main__right}>
             <Image

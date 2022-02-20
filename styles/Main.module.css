@@ -3,6 +3,7 @@
   height: 100%;
   background-color: #ffffff;
   display: flex;
+  margin-top: 60px;
 }
 
 .main__left {
