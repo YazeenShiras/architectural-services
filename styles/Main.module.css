@@ -95,12 +95,16 @@
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  padding-right: calc(100% - 280px);
+  padding-right: calc(100% - 350px);
   margin-bottom: 20px;
 }
 
+.content__main__left > h1 {
+  font-size: 40px;
+}
+
 .content__main__left > p {
-  font-size: 12px;
+  font-size: 13px;
   color: #5b5b5b;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -135,8 +139,12 @@
   margin-top: 50px;
 }
 
+.about__section__main__left > h3 {
+  font-size: 20px;
+}
+
 .about__section__main__left > p {
-  font-size: 12px;
+  font-size: 13px;
   color: #5b5b5b;
   margin-top: 10px;
   margin-right: -50px;

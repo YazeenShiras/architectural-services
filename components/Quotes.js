@@ -1,14 +1,21 @@
 import React from "react";
 import styles from "../styles/Quotes.module.css";
 import Image from "next/image";
-import Link from "next/link";
 
 const Quotes = () => {
+  /* const leftScroll = () => {
+    var container = document.getElementById("quoteContainer");
+    var leftButton = document.getElementById("leftButtonScroll");
+    var rightButton = document.getElementById("rightButtonScroll");
+    var scrollWidth = container.scrollWidth;
+    container.scrollWidth += 100;
+  }; */
+
   return (
     <div className={styles.quotes}>
       <div className={styles.quotes__contanier}>
         <div className={styles.buttonContainer}>
-          <div className={styles.arrowContainer}>
+          <div id="leftButtonScroll" className={styles.arrowContainer}>
             <Image
               className={styles.arrowLeft}
               src="/leftArrow.svg"
@@ -18,7 +25,7 @@ const Quotes = () => {
             ></Image>
           </div>
         </div>
-        <div className={styles.contents__quote__container}>
+        <div className={styles.contents__quote__container} id="quoteContainer">
           <div className={styles.card__quote__container}>
             <Image
               className={styles.quoteStart}
@@ -176,7 +183,7 @@ const Quotes = () => {
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <div className={styles.arrowContainer}>
+          <div id="rightButtonScroll" className={styles.arrowContainer}>
             <Image
               className={styles.arrowRight}
               src="/rightArrow.svg"

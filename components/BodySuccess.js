@@ -9,7 +9,7 @@ const BodySuccess = () => {
     <div className={styles.bodySuccess}>
       <Header />
       <div
-        className={styles.bodyDetails__container}
+        className={styles.bodySuccess__container}
         style={{
           backgroundImage: `url('/hero3.png')`,
         }}

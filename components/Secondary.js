@@ -73,7 +73,7 @@ const Secondary = () => {
               className={styles.img__top__content__main__left}
               src="/two.svg"
               alt=""
-              width={30}
+              width={31}
               height={50}
             ></Image>
             <p className={styles.bottom__content__hiw}>
@@ -86,7 +86,7 @@ const Secondary = () => {
               className={styles.img__top__content__main__left}
               src="/four.svg"
               alt=""
-              width={32}
+              width={34}
               height={50}
             ></Image>
             <p className={styles.bottom__content__hiw}>
