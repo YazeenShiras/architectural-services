@@ -57,3 +57,23 @@
   background-color: #fff;
   margin: 20px 0px;
 }
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container__mobile {
+    display: flex;
+  }
+  .footer__container {
+    display: none;
+  }
+  .bodyDetails__content {
+    margin-top: 70px;
+  }
+  .success__container {
+    width: 90vw;
+  }
+}

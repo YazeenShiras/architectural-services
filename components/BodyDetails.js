@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/BodyDetails.module.css";
 import Footer from "./Footer";
+import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 
 const BodyDetails = () => {
@@ -67,7 +68,12 @@ const BodyDetails = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className={styles.footer__container}>
+        <Footer />
+      </div>
+      <div className={styles.footer__container__mobile}>
+        <FooterMobile />
+      </div>
     </div>
   );
 };

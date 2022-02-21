@@ -85,3 +85,26 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container {
+    display: none;
+  }
+
+  .footer__container__mobile {
+    display: flex;
+  }
+
+  .bodyDetails__content {
+    margin-top: 70px;
+  }
+
+  .form__container {
+    width: 90vw;
+  }
+}
