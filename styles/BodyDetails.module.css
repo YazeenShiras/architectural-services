@@ -4,7 +4,8 @@
 }
 
 .bodyDetails__container {
-  height: calc(100% - 90px);
+  min-height: calc(100% - 90px);
+  padding: 50px 0px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +23,7 @@
 .form__container {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.85);
-  width: 350px;
+  width: 400px;
   padding: 30px 0px;
   border-radius: 10px;
   display: flex;
@@ -41,7 +42,7 @@
 .input__container {
   border: 1px solid #7b96a1;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .input__container > legend {
@@ -114,6 +115,7 @@
   }
 
   .bodyDetails__container {
-    height: calc(100% - 70px);
+    min-height: calc(100% - 70px);
+    padding: 50px 0px;
   }
 }

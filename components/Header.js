@@ -24,21 +24,24 @@ const Header = () => {
                 <a href="#aboutUs">About Us</a>
               </li>
               <li>
-                <a href="#whatWeDo">What we do</a>
+                <a href="#whatWeDo">Services</a>
               </li>
               <li>
-                <a href="#howItWorks">How it works</a>
-              </li>
-              <li>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#marketplace">Marketplace</a>
               </li>
             </ul>
           </nav>
           <a
             href="https://arclif.com/account/login"
+            className={styles.registerButton__header}
+          >
+            Register Now
+          </a>
+          <a
+            href="https://arclif.com/account/login"
             className={styles.loginButton__header}
           >
-            REGISTER
+            LOGIN
           </a>
           <div className={styles.header__menu__container}>
             <Image

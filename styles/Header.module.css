@@ -37,7 +37,7 @@
 .header__nav > ul > li {
   list-style: none;
   margin-right: 30px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: #000000;
 }
@@ -45,6 +45,13 @@
 .header__nav > ul > li > a {
   text-decoration: none;
   color: #000000;
+}
+
+.registerButton__header {
+  font-size: 13px;
+  font-weight: bold;
+  color: #027888;
+  margin-right: 20px;
 }
 
 .loginButton__header {

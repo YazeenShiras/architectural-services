@@ -26,9 +26,27 @@ const BodyDetails = () => {
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
-                <legend>Email</legend>
+                <legend>Area Details</legend>
                 <div className={styles.input__box}>
-                  <input type="email" />
+                  <input type="text" />
+                </div>
+              </fieldset>
+              <fieldset className={styles.input__container}>
+                <legend>Budgets</legend>
+                <div className={styles.input__box}>
+                  <input type="text" />
+                </div>
+              </fieldset>
+              <fieldset className={styles.input__container}>
+                <legend>Location</legend>
+                <div className={styles.input__box}>
+                  <input type="text" />
+                </div>
+              </fieldset>
+              <fieldset className={styles.input__container}>
+                <legend>Style Required</legend>
+                <div className={styles.input__box}>
+                  <input type="text" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
@@ -38,9 +56,9 @@ const BodyDetails = () => {
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
-                <legend>Location</legend>
+                <legend>Email</legend>
                 <div className={styles.input__box}>
-                  <input type="text" />
+                  <input type="email" />
                 </div>
               </fieldset>
               <Link href="/success" passHref>
