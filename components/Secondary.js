@@ -25,7 +25,7 @@ const Secondary = () => {
             ></Image>
           </div>
         </div>
-        <div className={styles.whatWeDo__section}>
+        <div id="whatWeDo" className={styles.whatWeDo__section}>
           <h3>What We Do</h3>
           <ul>
             <li>Architectural services</li>
@@ -37,7 +37,7 @@ const Secondary = () => {
           </ul>
         </div>
       </div>
-      <div className={styles.howItWorks__container}>
+      <div id="howItWorks" className={styles.howItWorks__container}>
         <h3>How it works</h3>
         <div className={styles.tophiw__container}>
           <div className={styles.column__tophiw__container}>

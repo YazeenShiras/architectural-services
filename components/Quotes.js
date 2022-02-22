@@ -12,7 +12,7 @@ const Quotes = () => {
   }; */
 
   return (
-    <div className={styles.quotes}>
+    <div id="testimonials" className={styles.quotes}>
       <div className={styles.quotes__contanier}>
         <div className={styles.buttonContainer}>
           <div id="leftButtonScroll" className={styles.arrowContainer}>

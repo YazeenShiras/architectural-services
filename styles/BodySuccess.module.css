@@ -4,7 +4,7 @@
 }
 
 .bodySuccess__container {
-  height: 100%;
+  height: calc(100% - 90px);
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,6 +49,11 @@
   justify-content: center;
   margin-top: 20px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continue__button__success:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
 }
 
 .animation__container {
@@ -75,5 +80,9 @@
   }
   .success__container {
     width: 90vw;
+  }
+
+  .bodySuccess__container {
+    height: calc(100% - 70px);
   }
 }

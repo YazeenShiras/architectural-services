@@ -14,7 +14,7 @@ const MainMobile = () => {
               Build your dream <br /> home with a few <br /> clicks !
             </h1>
             <p>
-              get your home design in just <br /> 7 days.
+              get your home design in <br /> just 7 days.
             </p>
           </div>
           <div className={styles.image__title__mobile}>
@@ -28,11 +28,10 @@ const MainMobile = () => {
             </div>
           </div>
         </div>
-
         <div className={styles.greenBg}>
           <div className={styles.imageContainer__mobile}>
             <div className={styles.imgMain}>
-              <Image src="/img1.png" alt="" width={550} height={380}></Image>
+              <Image src="/main2.png" alt="" width={550} height={380}></Image>
             </div>
             <div className={styles.bubbleMobileTwo}>
               <Image
@@ -45,7 +44,9 @@ const MainMobile = () => {
           </div>
           <div className={styles.tryItNow__button__container__mobile}>
             <Link href="/detailsform" passHref>
-              <div className={styles.tryITNow__button__mobile}>TRY IT NOW</div>
+              <div className={styles.tryITNow__button__mobile}>
+                DESIGN MY HOME
+              </div>
             </Link>
           </div>
         </div>

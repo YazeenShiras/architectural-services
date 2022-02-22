@@ -7,18 +7,6 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <div className={styles.main__left}>
-        {/* <div className={styles.header__main__left}>
-          <div className={styles.header__logo}>
-            <Image
-              className={styles.header__logo__img}
-              src="/arclifLogo.svg"
-              alt="Arclif Logo"
-              width={100}
-              height={40}
-            ></Image>
-          </div>
-          <h5>Home</h5>
-        </div> */}
         <div className={styles.content__main__left}>
           <div className={styles.top__content__main__left}>
             <Image
@@ -37,6 +25,18 @@ const Main = () => {
             including urban strategies to our clients in order to experience
             most compelling designs possible.
           </p>
+          <div className={styles.actionContainer__main__left}>
+            <div className={styles.subHeading__main__right}>
+              {/* <h3>
+                Find a best home plan by <br /> posting your requirements
+              </h3> */}
+            </div>
+            <Link href="/detailsform" passHref>
+              <div className={styles.tryNow__button__main__right}>
+                DESIGN MY HOME
+              </div>
+            </Link>
+          </div>
           <div className={styles.bottom__content__main__left}>
             <Image
               className={styles.img__bottom__content__main__left}
@@ -53,7 +53,7 @@ const Main = () => {
               height={13}
             ></Image>
           </div>
-          <div className={styles.about__section__main__left}>
+          <div id="aboutUs" className={styles.about__section__main__left}>
             <h3>About Us</h3>
             <p>
               We design your dream through inspiring and sustainable spaces
@@ -66,21 +66,11 @@ const Main = () => {
         </div>
       </div>
       <div className={styles.main__right}>
-        {/* <div className={styles.header__main__right}>
-          <div className={styles.header__nav}>
-            <ul>
-              <li className={styles.homeSeeker}>Home Seeker</li>
-              <li>Architect</li>
-              <li>Marketplace</li>
-            </ul>
-          </div>
-          <div className={styles.login__button__header}>Login</div>
-        </div> */}
         <div className={styles.content__main__right}>
           <div className={styles.top__content__main__right}>
             <Image
               className={styles.img__top__content__main__left}
-              src="/img1.png"
+              src="/main2.png"
               alt=""
               width={550}
               height={380}
@@ -97,9 +87,6 @@ const Main = () => {
           </div>
           <div className={styles.actionContainer__main__right}>
             <div className={styles.subHeading__main__right}>
-              <h3>
-                Find a best home plan by <br /> posting your requirements
-              </h3>
               <Image
                 className={styles.bubble2__top__content__main__right}
                 src="/bubble2.png"
@@ -108,11 +95,6 @@ const Main = () => {
                 height={50}
               ></Image>
             </div>
-            <Link href="/detailsform" passHref>
-              <div className={styles.tryNow__button__main__right}>
-                TRY IT NOW
-              </div>
-            </Link>
           </div>
         </div>
       </div>

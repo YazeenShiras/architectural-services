@@ -48,8 +48,8 @@
 }
 
 .loginButton__header {
-  height: 35px;
-  width: 80px;
+  height: 30px;
+  width: 90px;
   border-radius: 50px;
   color: #ffffff;
   background-image: linear-gradient(to right, #000000, #414141);
@@ -73,6 +73,7 @@
   margin-left: 20px;
   margin-top: 5px;
   display: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {

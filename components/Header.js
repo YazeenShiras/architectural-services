@@ -21,18 +21,16 @@ const Header = () => {
           <nav className={styles.header__nav}>
             <ul>
               <li>
-                <Link href="/" passHref>
-                  Home
-                </Link>
+                <a href="#aboutUs">About Us</a>
               </li>
               <li>
-                <a href="#requirementsPosting">Home Seeker</a>
+                <a href="#whatWeDo">What we do</a>
               </li>
               <li>
-                <a href="#worksPosting">Architect</a>
+                <a href="#howItWorks">How it works</a>
               </li>
               <li>
-                <a href="#marketPlace">Marketplace</a>
+                <a href="#testimonials">Testimonials</a>
               </li>
             </ul>
           </nav>
@@ -40,7 +38,7 @@ const Header = () => {
             href="https://arclif.com/account/login"
             className={styles.loginButton__header}
           >
-            LOGIN
+            REGISTER
           </a>
           <div className={styles.header__menu__container}>
             <Image
