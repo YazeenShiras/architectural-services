@@ -31,12 +31,12 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <a
+          {/* <a
             href="https://arclif.com/account/login"
             className={styles.registerButton__header}
           >
             Register Now
-          </a>
+          </a> */}
           <a
             href="https://arclif.com/account/login"
             className={styles.loginButton__header}
