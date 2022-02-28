@@ -1,0 +1,80 @@
+.bodyRequirements__container {
+  margin-top: 90px;
+  height: 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.bodyRequirements__container > h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bodyRequirements__container > p {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.options__container {
+  margin: 20px 0px;
+  padding: 0px 8vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option__requirements {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option__requirements > p {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.next__button {
+  height: 35px;
+  width: 100%;
+  max-width: 350px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next__button:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container {
+    display: none;
+  }
+
+  .footer__container__mobile {
+    display: flex;
+  }
+}

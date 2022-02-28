@@ -1,0 +1,117 @@
+.bodyPlans__container {
+  margin-top: 90px;
+  height: 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.bodyPlans__container > h3 {
+  text-align: center;
+}
+
+.bodyPlans__container > p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.cardsContainer__plans {
+  margin-top: 40px;
+  display: flex;
+}
+
+.card__plans {
+  padding: 20px;
+  border: 1px solid #027888;
+  border-radius: 5px;
+  margin: 0px 10px;
+  background-color: #fff;
+}
+
+.card__plans > h5 {
+  color: #5b5b5b;
+}
+
+.card__plans > h4 {
+  color: #1c9c76;
+  margin-top: 5px;
+}
+
+.card__plans > p {
+  color: #5b5b5b;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.feature__container__plans {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.feature__container__plans > p {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #5b5b5b;
+}
+
+.button__container__plans {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.choosePlan__button {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #027888;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.next__button {
+  height: 35px;
+  width: 300px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next__button:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container {
+    display: none;
+  }
+
+  .footer__container__mobile {
+    display: flex;
+  }
+}

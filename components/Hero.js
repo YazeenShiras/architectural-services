@@ -6,6 +6,7 @@ import MainMobile from "./MainMobile";
 import Secondary from "./Secondary";
 import Quotes from "./Quotes";
 import Footer from "./Footer";
+import RecentWork from "./RecentWork";
 
 const Hero = () => {
   return (
@@ -14,6 +15,7 @@ const Hero = () => {
       <div className={styles.webView}>
         <Main />
         <Secondary />
+        <RecentWork />
         <Quotes />
         <Footer />
       </div>

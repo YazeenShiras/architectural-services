@@ -1,0 +1,90 @@
+.bodyDesignType__container {
+  margin-top: 90px;
+  height: 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0px 50px 0px;
+}
+
+.bodyDesignType__container > h3 {
+  text-align: center;
+}
+
+.bodyDesignType__container > p {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.cards__container__designType {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.card__designType {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card__designType > p {
+  font-size: 13px;
+  color: #606060;
+  text-align: center;
+}
+
+.next__button {
+  height: 35px;
+  width: 100%;
+  max-width: 350px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next__button:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.skipForNow {
+  color: #027888;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container {
+    display: none;
+  }
+
+  .footer__container__mobile {
+    display: flex;
+  }
+}

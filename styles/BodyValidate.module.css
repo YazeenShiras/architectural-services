@@ -1,0 +1,134 @@
+.bodyValidate__container {
+  margin-top: 90px;
+  height: 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px 50px 0px;
+}
+
+.cardsContainer__validate {
+  width: 100%;
+  padding: 0px 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card__validate {
+  background-color: #fff;
+  border: 1px solid #027888;
+  border-radius: 5px;
+  padding: 20px;
+  width: 280px;
+  height: 400px;
+  margin: 0px 10px;
+}
+
+.titleContainer__card__validate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleContainer__card__validate > h5 {
+  color: #027888;
+  font-size: 15px;
+}
+
+.editButton__container__card__validte {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.editButton__container__card__validte > p {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.rowsContainer__card__validate {
+  padding-right: 30px;
+  margin-top: 10px;
+}
+
+.rowsContainer__card__validate__last {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rowsContainer__card__validate__last > div > ul > li {
+  list-style: none;
+  font-size: 12px;
+  color: #5b5b5b;
+  margin-top: 4px;
+}
+
+.row__card__validate {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eeeeee;
+  margin: 5px 0px;
+  padding-bottom: 5px;
+}
+
+.row__card__validate__last {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px;
+}
+
+.row__card__validate > h6,
+.row__card__validate__last > h6 {
+  font-size: 13px;
+  color: #5b5b5b;
+}
+
+.row__card__validate > p,
+.row__card__validate__last > p {
+  font-size: 12px;
+  color: #5b5b5b;
+}
+
+.next__button {
+  height: 35px;
+  width: 300px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next__button:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.footer__container__mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer__container {
+    display: none;
+  }
+
+  .footer__container__mobile {
+    display: flex;
+  }
+}
