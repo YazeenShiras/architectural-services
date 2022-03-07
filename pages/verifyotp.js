@@ -1,18 +1,18 @@
 import React from "react";
 import Head from "next/head";
-import BodyPlanYourSelfTwo from "../components/BodyPlanYourSelfTwo";
+import BodyVerifyOtp from "../components/BodyVerifyOtp";
 
-const planyourselftwo = () => {
+const verifyotp = () => {
   return (
     <div>
       <Head>
-        <title>Plan Yourself - Arclif Architectural Services</title>
+        <title>Verify OTP - Arclif Architectural Services</title>
         <meta name="description" content="Arclif's Architectural Services" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <BodyPlanYourSelfTwo />
+      <BodyVerifyOtp />
     </div>
   );
 };
 
-export default planyourselftwo;
+export default verifyotp;

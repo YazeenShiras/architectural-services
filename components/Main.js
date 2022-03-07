@@ -31,7 +31,7 @@ const Main = () => {
                 Find a best home plan by <br /> posting your requirements
               </h3> */}
             </div>
-            <Link href="/detailsform" passHref>
+            <Link href="/register" passHref>
               <div className={styles.tryNow__button__main__right}>
                 DESIGN MY HOME
               </div>

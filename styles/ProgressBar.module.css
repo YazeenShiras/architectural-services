@@ -1,9 +1,15 @@
 .progressBar {
   width: 100%;
   height: 2px;
-  background-color: #dedede;
+  /*   background-color: #dedede;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; */
+
+  position: relative;
+  height: 10px;
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid #333;
 }
 
 .circleEnd__progressBar {
@@ -12,4 +18,12 @@
   background-color: #dedede;
   border-radius: 50%;
   margin-top: -1px;
+}
+
+.filler {
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  height: 100%;
+  width: 10%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
 }

@@ -29,7 +29,33 @@
 
 .scroller__contanier > p {
   font-size: 13px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.scroller__limits__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.scroller__limits__container > p {
+  font-size: 12px;
+  color: #1c9c76;
+  cursor: pointer;
+}
+
+.scroller__range__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.scroller__range__container > p {
+  font-size: 13px;
 }
 
 .next__button {

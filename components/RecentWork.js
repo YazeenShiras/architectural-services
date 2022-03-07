@@ -7,12 +7,12 @@ const RecentWork = () => {
   return (
     <div className={styles.recentWork}>
       <div className={styles.titleContainer__recentWork}>
-        <h3>Our Recent Works</h3>
+        <h3>Our Recent Work</h3>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard
         </p>
-        <div className={styles.buttonContainer__recentWorks}>
+        {/* <div className={styles.buttonContainer__recentWorks}>
           <div className={styles.leftArrowRecent}>
             <Image
               src="/leftArrowRecent.svg"
@@ -29,7 +29,7 @@ const RecentWork = () => {
               height={15}
             ></Image>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles.content__recentWorks__container}>
         <div

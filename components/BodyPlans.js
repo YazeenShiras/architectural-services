@@ -84,11 +84,13 @@ const BodyPlans = () => {
               <p>Lorem Ipsum is simply dummy</p>
             </div>
             <div className={styles.button__container__plans}>
-              <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
+              <Link href="/confirmplan" passHref>
+                <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
+              </Link>
             </div>
           </div>
 
-          <div className={styles.card__plans}>
+          <div className={styles.card__plans__middle}>
             <h5>Plan Name</h5>
             <h4>₹10 Lakh</h4>
             <p>
@@ -155,7 +157,11 @@ const BodyPlans = () => {
               <p>Lorem Ipsum is simply dummy</p>
             </div>
             <div className={styles.button__container__plans}>
-              <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
+              <Link href="/confirmplan" passHref>
+                <div className={styles.choosePlan__button__middle}>
+                  CHOOSE PLAN
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -226,13 +232,12 @@ const BodyPlans = () => {
               <p>Lorem Ipsum is simply dummy</p>
             </div>
             <div className={styles.button__container__plans}>
-              <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
+              <Link href="/confirmplan" passHref>
+                <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
+              </Link>
             </div>
           </div>
         </div>
-        <Link href="/success" passHref>
-          <div className={styles.next__button}>NEXT</div>
-        </Link>
       </div>
       <div className={styles.footer__container}>
         <Footer />
