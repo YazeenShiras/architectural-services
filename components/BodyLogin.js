@@ -1,42 +1,119 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 const BodyLogin = () => {
-  const [mobile, setMobile] = useState("");
-  const [ismobile, setIsmobile] = useState(false);
-
-  useEffect(() => {
-    if (mobile !== "") {
-      let isnum = /^\d+$/.test(mobile);
-      if (mobile.length == 10) {
-        if (isnum) {
-          setIsmobile(true);
-        } else {
-          setIsmobile(false);
-        }
-      } else {
-        setIsmobile(false);
-      }
-    }
-  }, [mobile]);
+  const [number, setNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [isdetails, setIsdetails] = useState(false);
+  const [userId, setUserId] = useContext(UserContext);
 
   const storeMobile = () => {
-    setMobile(document.getElementById("mobile").value);
+    setNumber(document.getElementById("number").value);
+    setPassword(document.getElementById("password").value);
   };
 
-  const checkMobile = () => {
-    let isnum = /^\d+$/.test(mobile);
-    if (mobile === "") {
-      document.getElementById("errorNumber").innerHTML =
-        "Please enter Mobile Number";
-      document.getElementById("errorNumber").style.display = "block";
-    } else if (!isnum) {
-      document.getElementById("errorNumber").style.display = "block";
-    } else if (mobile.length !== 10) {
-      document.getElementById("errorNumber").style.display = "block";
+  async function handleSubmit() {
+    const res = await fetch("https://arclifs.herokuapp.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mobile_number: number,
+        password: password,
+      }),
+    });
+    const json = await res.json();
+    console.log(json);
+    if (json.status === "true") {
+      localStorage.setItem("token", json.token);
+      let token = localStorage.getItem("token");
+      console.log(token);
+      setIsdetails(true);
+    } else {
+      setIsdetails(false);
+    }
+  }
+
+  async function setCookie() {
+    let url = new URL("https://arclifs.herokuapp.com/cookie/");
+    url.search = new URLSearchParams({
+      mobile_number: number,
+      password: password,
+    });
+
+    fetch(url).then((res) => {
+      console.log(res);
+    });
+  }
+
+  useEffect(() => {
+    if (number !== "" && password !== "") {
+      if (number !== "") {
+        let isnum = /^\d+$/.test(number);
+        if (number.length == 10) {
+          if (isnum) {
+            setIsdetails(true);
+          } else {
+            setIsdetails(false);
+          }
+        } else {
+          setIsdetails(false);
+        }
+      }
+      if (password !== "") {
+        if (password.length == 8) {
+          setIsdetails(true);
+        } else {
+          setIsdetails(false);
+        }
+      }
+    }
+    /* cleanup */
+    return () => {
+      setIsdetails(false);
+    };
+  }, [number, password]);
+
+  const loginClick = () => {
+    if (number === "" || password === "") {
+      setIsdetails(false);
+      document.getElementById("errorPass").style.display = "block";
+      document.getElementById("errorPass").innerHTML = "Must fill all fields";
+    } else {
+      let isnum = /^\d+$/.test(number);
+      if (number.length == 10) {
+        if (isnum) {
+          document.getElementById("errorMobile").style.display = "none";
+        } else {
+          document.getElementById("errorMobile").style.display = "block";
+          document.getElementById("errorMobile").innerHTML =
+            "Enter a valid Mobile Number";
+        }
+      } else {
+        document.getElementById("errorMobile").style.display = "block";
+        document.getElementById("errorMobile").innerHTML =
+          "Enter a valid Mobile Number";
+      }
+      if (number === "") {
+        document.getElementById("errorMobile").style.display = "block";
+        document.getElementById("errorMobile").innerHTML =
+          "Mobile Number required";
+      }
+      if (password.length == 8) {
+        document.getElementById("errorPass").style.display = "none";
+      } else {
+        document.getElementById("errorPass").style.display = "block";
+        document.getElementById("errorPass").innerHTML = "Incorrect Password";
+      }
+      if (isdetails) {
+        handleSubmit();
+        setCookie();
+      }
     }
   };
 
@@ -87,18 +164,30 @@ const BodyLogin = () => {
             <fieldset className={registerstyles.input__container}>
               <legend>Mobile Number</legend>
               <div className={registerstyles.input__box}>
-                <input onChange={storeMobile} id="mobile" type="text" />
+                <input onChange={storeMobile} id="number" type="text" />
               </div>
             </fieldset>
-            <p id="errorNumber" className={registerstyles.error__varifyOtp}>
+            <fieldset className={registerstyles.input__container}>
+              <legend>Password</legend>
+              <div className={registerstyles.input__box}>
+                <input onChange={storeMobile} id="password" type="password" />
+              </div>
+            </fieldset>
+            <p id="errorMobile" className={registerstyles.error__varifyOtp}>
               Enter a valid Mobile Number
             </p>
-            <Link href={ismobile === true ? "/verifyotp" : "/login"} passHref>
+            <p id="errorPass" className={registerstyles.error__password}>
+              Incorrect Password
+            </p>
+            <Link
+              href={isdetails === true ? "/detailsform" : "/login"}
+              passHref
+            >
               <div
-                onClick={checkMobile}
+                onClick={loginClick}
                 className={registerstyles.register__button__form}
               >
-                SENT OTP
+                LOGIN
               </div>
             </Link>
           </form>

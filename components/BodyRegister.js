@@ -8,71 +8,141 @@ const BodyRegister = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passConfirm, setPassConfirm] = useState("");
+  const [finalpass, setFinalPass] = useState("");
+  const [isPass, setIsPass] = useState(false);
   const [isdetails, setIsdetails] = useState(false);
+
+  async function handleSubmit() {
+    const res = await fetch("https://arclifs.herokuapp.com/create_user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        mobile_number: number,
+        email: email,
+        password: finalpass,
+      }),
+    });
+    const json = await res.json();
+    console.log(json);
+  }
 
   useEffect(() => {
     if (name !== "") {
-      if (email !== "") {
-        let isatemail = email.includes("@");
-        let iscomemail = email.includes(".com");
-        if (isatemail && iscomemail) {
-          if (number !== "") {
-            let isnum = /^\d+$/.test(number);
-            if (number.length == 10) {
-              if (isnum) {
-                setIsdetails(true);
-              } else {
-                setIsdetails(false);
-              }
-            } else {
-              setIsdetails(false);
-            }
+      if (number !== "") {
+        let isnum = /^\d+$/.test(number);
+        if (number.length == 10) {
+          if (isnum) {
+            setIsdetails(true);
           } else {
             setIsdetails(false);
           }
         } else {
           setIsdetails(false);
         }
+      } else {
+        setIsdetails(false);
+      }
+      if (email !== "") {
+        let isatemail = email.includes("@");
+        let iscomemail = email.includes(".com");
+        if (isatemail && iscomemail) {
+        } else {
+          setIsdetails(false);
+        }
+      }
+      if (password !== "") {
+        if (password.length === 8) {
+          setIsdetails(true);
+        } else {
+          setIsdetails(false);
+        }
+      } else {
+        setIsdetails(false);
+      }
+      if (passConfirm !== "") {
+        if (passConfirm.length >= 8) {
+          setIsdetails(true);
+        } else {
+          setIsdetails(false);
+        }
+      } else {
+        setIsdetails(false);
+      }
+      if (password === passConfirm) {
+        setIsPass(true);
+      } else {
+        setIsPass(false);
       }
     }
-  }, [number, email, name]);
+  }, [number, email, name, password, passConfirm]);
 
   const storeValues = () => {
     setName(document.getElementById("name").value);
     setNumber(document.getElementById("number").value);
     setEmail(document.getElementById("email").value);
+    setPassword(document.getElementById("password").value);
+    setPassConfirm(document.getElementById("password__confirm").value);
   };
 
   const registerClick = () => {
-    let isatemail = email.includes("@");
-    let iscomemail = email.includes(".com");
-    if (isatemail && iscomemail) {
-      document.getElementById("errorEmail").style.display = "none";
+    if (
+      name === "" ||
+      number === "" ||
+      email === "" ||
+      password === "" ||
+      passConfirm === ""
+    ) {
+      setIsdetails(false);
+      document.getElementById("errorPass").style.display = "block";
+      document.getElementById("errorPass").innerHTML = "Must fill all fields";
     } else {
-      document.getElementById("errorEmail").style.display = "block";
-    }
-    let isnum = /^\d+$/.test(number);
-    if (number.length == 10) {
-      if (isnum) {
-        document.getElementById("errorMobile").style.display = "none";
+      let isatemail = email.includes("@");
+      let iscomemail = email.includes(".com");
+      if (isatemail && iscomemail) {
+        document.getElementById("errorEmail").style.display = "none";
+      } else {
+        document.getElementById("errorEmail").style.display = "block";
+      }
+      let isnum = /^\d+$/.test(number);
+      if (number.length == 10) {
+        if (isnum) {
+          document.getElementById("errorMobile").style.display = "none";
+        } else {
+          document.getElementById("errorMobile").style.display = "block";
+        }
       } else {
         document.getElementById("errorMobile").style.display = "block";
       }
-    } else {
-      document.getElementById("errorMobile").style.display = "block";
-    }
-    if (name === "") {
-      document.getElementById("errorName").style.display = "block";
-      document.getElementById("errorName").innerHTML = "Name required";
-    }
-    if (number === "") {
-      document.getElementById("errorMobile").style.display = "block";
-      document.getElementById("errorMobile").innerHTML =
-        "Mobile Number required";
-    }
-    if (name === "") {
-      document.getElementById("errorEmail").style.display = "block";
-      document.getElementById("errorEmail").innerHTML = "Email required";
+      if (name === "") {
+        document.getElementById("errorName").style.display = "block";
+        document.getElementById("errorName").innerHTML = "Name required";
+      }
+      if (number === "") {
+        document.getElementById("errorMobile").style.display = "block";
+        document.getElementById("errorMobile").innerHTML =
+          "Mobile Number required";
+      }
+      if (email === "") {
+        document.getElementById("errorEmail").style.display = "block";
+        document.getElementById("errorEmail").innerHTML = "Email required";
+      }
+      if (isPass === true) {
+        setIsPass(true);
+        setFinalPass(password);
+      } else {
+        document.getElementById("errorPass").style.display = "block";
+        document.getElementById("errorPass").innerHTML =
+          "Passwords must be same";
+        setIsdetails(false);
+      }
+      if (isdetails) {
+        handleSubmit();
+      }
     }
   };
 
@@ -144,18 +214,35 @@ const BodyRegister = () => {
                 <input onChange={storeValues} id="email" type="text" />
               </div>
             </fieldset>
+            <fieldset className={registerstyles.input__container}>
+              <legend>Password</legend>
+              <div className={registerstyles.input__box}>
+                <input onChange={storeValues} id="password" type="password" />
+              </div>
+            </fieldset>
+            <fieldset className={registerstyles.input__container}>
+              <legend>Confirm Password</legend>
+              <div className={registerstyles.input__box}>
+                <input
+                  onChange={storeValues}
+                  id="password__confirm"
+                  type="password"
+                />
+              </div>
+            </fieldset>
             <div id="errorContainer" className={registerstyles.errorContainer}>
               <p id="errorName">Enter a valid Email</p>
               <p id="errorMobile">Enter a valid Mobile Number</p>
               <p id="errorEmail">Enter a valid Email</p>
+              <p id="errorPass">Passwords Required</p>
             </div>
-            <Link href={isdetails === true ? `/login` : "/register"} passHref>
-              <div
+            <Link href={isdetails === true ? `/sendotp` : "/register"} passHref>
+              <button
                 onClick={registerClick}
                 className={registerstyles.register__button__form}
               >
                 REGISTER
-              </div>
+              </button>
             </Link>
           </form>
           <div className={registerstyles.alreadyRegistered__container}>

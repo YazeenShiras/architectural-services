@@ -43,7 +43,7 @@ const MainMobile = () => {
             </div>
           </div>
           <div className={styles.tryItNow__button__container__mobile}>
-            <Link href="/detailsform" passHref>
+            <Link href="/register" passHref>
               <div className={styles.tryITNow__button__mobile}>
                 DESIGN MY HOME
               </div>

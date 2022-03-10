@@ -1,18 +1,18 @@
 import React from "react";
 import Head from "next/head";
-import BodyLogin from "../components/BodyLogin";
+import BodySendOtp from "./BodySendOtp";
 
-const login = () => {
+const sendotp = () => {
   return (
     <div>
       <Head>
-        <title>Login - Arclif Architectural Services</title>
+        <title>Send OTP - Arclif Architectural Services</title>
         <meta name="description" content="Arclif's Architectural Services" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <BodyLogin />
+      <BodySendOtp />
     </div>
   );
 };
 
-export default login;
+export default sendotp;
