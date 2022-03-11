@@ -16,12 +16,11 @@ const BodyLogin = () => {
     });
 
     const res = await fetch(url, {
-      mode: "no-cors",
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":
-          "https://architectural-services-arclifs.vercel.app/",
+        "Access-Control-Allow-Origin": "*",
       },
     });
     const data = await res.json();
