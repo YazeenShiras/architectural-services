@@ -3,20 +3,33 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { LoginNumberContext } from "../context/LoginNumberContext";
+import { LoginContext } from "../context/LoginNumberContext";
 
 const BodyVerifyOtpLogin = () => {
   const [otp, setOtp] = useState("");
   const [isotp, setIsotp] = useState(false);
-  const [loginNumber, setLoginNumber] = useContext(LoginNumberContext);
+  const [mob, setMob] = useState("");
+
+  useEffect(() => {
+    window.onbeforeunload = function (e) {
+      window.onunload = function () {
+        window.localStorage.isMySessionActive = "false";
+      };
+      return undefined;
+    };
+    window.onload = function () {
+      window.localStorage.isMySessionActive = "true";
+    };
+    var mob = localStorage.getItem("mob");
+    setMob(mob);
+  }, []);
 
   async function handleSubmit() {
     let url = new URL("https://arclifs.herokuapp.com/otp_verification");
     url.search = new URLSearchParams({
-      mobile: loginNumber,
+      mobile: mob,
       otp: otp,
     });
-
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -25,6 +38,15 @@ const BodyVerifyOtpLogin = () => {
     });
     const data = await res.json();
     console.log(data);
+    if (data.status === 202) {
+      localStorage.removeItem("mob");
+      window.location.href = "/detailsform";
+    } else if (data.status === 404) {
+      document.getElementById("errorVarifyOtp").innerHTML = data.message;
+      document.getElementById("errorVarifyOtp").style.display = "block";
+      console.log(otp);
+      console.log(detailsform);
+    }
   }
 
   const storeOtp = () => {
@@ -114,17 +136,12 @@ const BodyVerifyOtpLogin = () => {
             <p id="errorVarifyOtp" className={registerstyles.error__varifyOtp}>
               Please enter OTP
             </p>
-            <Link
-              href={isotp === true ? "/detailsform" : "/verifyotplogin"}
-              passHref
+            <div
+              onClick={verifyClick}
+              className={registerstyles.register__button__form}
             >
-              <div
-                onClick={verifyClick}
-                className={registerstyles.register__button__form}
-              >
-                VERIFY & LOGIN
-              </div>
-            </Link>
+              VERIFY & LOGIN
+            </div>
           </form>
         </div>
       </div>

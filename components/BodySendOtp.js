@@ -3,12 +3,10 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { MobileContext } from "../context/UserContext";
 
 const BodySendOtp = () => {
   const [number, setNumber] = useState("");
   const [isdetails, setIsdetails] = useState(false);
-  const [mobileForOTP, setMobileForOTP] = useContext(MobileContext);
 
   async function handleSubmit() {
     let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/singup");
@@ -24,10 +22,23 @@ const BodySendOtp = () => {
     });
     const data = await res.json();
     console.log(data);
-    if (data.status === 200) {
-      localStorage.setItem("mobile", data.mob);
-      let mobile = localStorage.getItem("mobile");
-      console.log(mobile);
+    if (data.status === 202) {
+      window.onbeforeunload = function (e) {
+        window.onunload = function () {
+          window.localStorage.isMySessionActive = "false";
+        };
+        return undefined;
+      };
+      window.onload = function () {
+        window.localStorage.isMySessionActive = "true";
+      };
+      localStorage.setItem("newmob", number);
+
+      window.location.href = "/verifyotp";
+    } else if (data.status === 400) {
+      document.getElementById("errorMobile").style.display = "block";
+      document.getElementById("errorMobile").innerHTML =
+        "Mobile Number already exists";
     }
   }
 
@@ -72,7 +83,6 @@ const BodySendOtp = () => {
       }
       if (isdetails) {
         handleSubmit();
-        setMobileForOTP(number);
       }
     }
   };
@@ -133,21 +143,24 @@ const BodySendOtp = () => {
                 <input onChange={storeValues} id="number" type="text" />
               </div>
             </fieldset>
-            <div id="errorContainer" className={registerstyles.errorContainer}>
-              <p id="errorMobile">Enter your Mobile Number</p>
-            </div>
-            <Link
-              href={isdetails === true ? `/verifyotp` : "/sendotp"}
-              passHref
+            <p className={registerstyles.errorText} id="errorMobile">
+              Enter your Mobile Number
+            </p>
+            <div
+              onClick={sendOTPClick}
+              className={registerstyles.register__button__form}
             >
-              <button
-                onClick={sendOTPClick}
-                className={registerstyles.register__button__form}
-              >
-                SENT OTP
-              </button>
-            </Link>
+              SENT OTP
+            </div>
           </form>
+          <div className={registerstyles.alreadyRegistered__container}>
+            <p className={registerstyles.alreadyRegisterd}>
+              already registered ?{" "}
+            </p>
+            <Link href="/login" passHref>
+              <p className={registerstyles.login__AlreadyRegisterd}>Login</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

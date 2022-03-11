@@ -1,14 +1,14 @@
 import React, { useState, createContext } from "react";
 
-export const LoginNumberContext = createContext();
+export const LoginContext = createContext();
 
-export const LoginNumberStateProvider = (props) => {
+export const LoginStateProvider = (props) => {
   // eslint-disable-next-line
   const [loginNumber, setLoginNumber] = useState("");
 
   return (
-    <LoginNumberContext.Provider value={[loginNumber, setLoginNumber]}>
+    <LoginContext.Provider value={[loginNumber, setLoginNumber]}>
       {props.children}
-    </LoginNumberContext.Provider>
+    </LoginContext.Provider>
   );
 };

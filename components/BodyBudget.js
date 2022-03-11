@@ -8,6 +8,8 @@ import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
+export let totalBudget;
+
 const BodyBudget = () => {
   const [budget, setBudget] = useState(500000);
 
@@ -56,7 +58,7 @@ const BodyBudget = () => {
   }
 
   const demo = () => {
-    console.log("budget = " + budget);
+    totalBudget = budget;
   };
 
   return (

@@ -6,6 +6,8 @@ import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import jwt from "jsonwebtoken";
 
+export let userData = [];
+
 const BodyDetails = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -16,11 +18,27 @@ const BodyDetails = () => {
   const [seniorCitizen, setSeniourCitizen] = useState(true);
   const [isdetails, setIsdetails] = useState(false);
 
-  async function handleSubmit() {
+  /* useEffect(() => {
+    async function getUser() {
+      const res = await fetch("https://arclifs.herokuapp.com/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          mobile_number: loginNumber,
+        }),
+      });
+      const data = await res.json();
+      console.log(data);
+    }
+    getUser();
+  }, []); */
+
+  /* async function handleSubmit() {
     const res = await fetch("https://arclifs.herokuapp.com/cleint_details", {
       method: "POST",
       headers: {
-        "x-access-token": localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -34,20 +52,7 @@ const BodyDetails = () => {
     });
     const json = await res.json();
     console.log(json);
-  }
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      const user = jwt.decode(token);
-      if (!user) {
-        localStorage.removeItem("token");
-        console.log("no user");
-      } else {
-        console.log("user available");
-      }
-    }
-  });
+  } */
 
   useEffect(() => {
     if (
@@ -214,7 +219,16 @@ const BodyDetails = () => {
           "Enter a valid No.of Family Members";
       }
       if (isdetails) {
-        handleSubmit;
+        /* handleSubmit; */
+        userData.push({
+          name: name,
+          number: number,
+          email: email,
+          location: location,
+          profession: proffession,
+          members: members,
+          seniorCitizen: `${seniorCitizen ? "Yes" : "No"}`,
+        });
       }
     }
   };
@@ -309,7 +323,10 @@ const BodyDetails = () => {
                 />
                 <label htmlFor="seniorCitizenNo">No</label>
               </div>
-              <Link href={isdetails ? "/budget" : "/detailsform"} passHref>
+              <Link
+                href={isdetails === true ? "/budget" : "/detailsform"}
+                passHref
+              >
                 <div
                   onClick={registerClick}
                   className={styles.submit__button__form}

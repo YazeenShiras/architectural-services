@@ -3,20 +3,32 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { MobileContext } from "../context/UserContext";
 
 const BodyVerifyOtp = () => {
   const [otp, setOtp] = useState("");
   const [isotp, setIsotp] = useState(false);
-  const [mobileForOTP, setMobileForOTP] = useContext(MobileContext);
+  const [newmob, setNewMob] = useState("");
+
+  useEffect(() => {
+    window.onbeforeunload = function (e) {
+      window.onunload = function () {
+        window.localStorage.isMySessionActive = "false";
+      };
+      return undefined;
+    };
+    window.onload = function () {
+      window.localStorage.isMySessionActive = "true";
+    };
+    var newmob = localStorage.getItem("newmob");
+    setNewMob(newmob);
+  }, []);
 
   async function handleSubmit() {
     let url = new URL("https://arclifs.herokuapp.com/otp_verification");
     url.search = new URLSearchParams({
-      mobile: mobileForOTP,
+      mobile: newmob,
       otp: otp,
     });
-
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -25,6 +37,14 @@ const BodyVerifyOtp = () => {
     });
     const data = await res.json();
     console.log(data);
+    if (data.status === 202) {
+      localStorage.removeItem("newmob");
+      window.location.href = "/register";
+    } else if (data.status === 404) {
+      console.log(otp);
+      document.getElementById("errorVarifyOtp").innerHTML = data.message;
+      document.getElementById("errorVarifyOtp").style.display = "block";
+    }
   }
 
   const storeOtp = () => {
@@ -114,14 +134,12 @@ const BodyVerifyOtp = () => {
             <p id="errorVarifyOtp" className={registerstyles.error__varifyOtp}>
               Please enter OTP
             </p>
-            <Link href={isotp === true ? "/register" : "/verifyotp"} passHref>
-              <div
-                onClick={verifyClick}
-                className={registerstyles.register__button__form}
-              >
-                VERIFY
-              </div>
-            </Link>
+            <div
+              onClick={verifyClick}
+              className={registerstyles.register__button__form}
+            >
+              VERIFY & REGISTER
+            </div>
           </form>
         </div>
       </div>

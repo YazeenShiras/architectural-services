@@ -20,8 +20,14 @@ const BodyRegister = () => {
         mobile_number: number,
       }),
     });
-    const json = await res.json();
-    console.log(json);
+    const data = await res.json();
+    console.log(data);
+    if (data.detail !== "mobile  number already exists!") {
+      window.location.href = "/login";
+    } else {
+      document.getElementById("errorMobile").style.display = "block";
+      document.getElementById("errorMobile").innerHTML = data.detail;
+    }
   }
 
   useEffect(() => {
@@ -145,23 +151,13 @@ const BodyRegister = () => {
               <p id="errorName">Enter a valid Email</p>
               <p id="errorMobile">Enter a valid Mobile Number</p>
             </div>
-            <Link href={isdetails === true ? `/sendotp` : "/register"} passHref>
-              <button
-                onClick={registerClick}
-                className={registerstyles.register__button__form}
-              >
-                REGISTER
-              </button>
-            </Link>
+            <div
+              onClick={registerClick}
+              className={registerstyles.register__button__form}
+            >
+              REGISTER
+            </div>
           </form>
-          <div className={registerstyles.alreadyRegistered__container}>
-            <p className={registerstyles.alreadyRegisterd}>
-              already registered ?{" "}
-            </p>
-            <Link href="/login" passHref>
-              <p className={registerstyles.login__AlreadyRegisterd}>Login</p>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

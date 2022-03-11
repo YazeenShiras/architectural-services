@@ -3,21 +3,16 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { LoginNumberContext } from "../context/LoginNumberContext";
+import { LoginContext } from "../context/LoginNumberContext";
 
 const BodyLogin = () => {
-  const [number, setNumber] = useState("");
   const [isdetails, setIsdetails] = useState(false);
-  const [loginNumber, setLoginNumber] = useContext(LoginNumberContext);
-
-  const storeMobile = () => {
-    setNumber(document.getElementById("number").value);
-  };
+  const [loginNumber, setLoginNumber] = useContext(LoginContext);
 
   async function handleSubmit() {
     let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/login");
     url.search = new URLSearchParams({
-      mobile_num: number,
+      mobile_num: loginNumber,
     });
 
     const res = await fetch(url, {
@@ -28,12 +23,34 @@ const BodyLogin = () => {
     });
     const data = await res.json();
     console.log(data);
+    if (data.status === 202) {
+      window.onbeforeunload = function (e) {
+        window.onunload = function () {
+          window.localStorage.isMySessionActive = "false";
+        };
+        return undefined;
+      };
+      window.onload = function () {
+        window.localStorage.isMySessionActive = "true";
+      };
+      localStorage.setItem("mob", loginNumber);
+
+      window.location.href = "/verifyotplogin";
+    } else if (data.status === 404) {
+      document.getElementById("errorMobile").style.display = "block";
+      document.getElementById("errorMobile").innerHTML =
+        "Enter your Registered Mobile Number";
+    }
   }
 
+  const storeMobile = () => {
+    setLoginNumber(document.getElementById("number").value);
+  };
+
   useEffect(() => {
-    if (number !== "") {
-      let isnum = /^\d+$/.test(number);
-      if (number.length == 10) {
+    if (loginNumber !== "") {
+      let isnum = /^\d+$/.test(loginNumber);
+      if (loginNumber.length == 10) {
         if (isnum) {
           setIsdetails(true);
         } else {
@@ -43,17 +60,17 @@ const BodyLogin = () => {
         setIsdetails(false);
       }
     }
-  }, [number]);
+  }, [loginNumber]);
 
   const loginClick = () => {
-    if (number === "") {
+    if (loginNumber === "") {
       setIsdetails(false);
       document.getElementById("errorMobile").style.display = "block";
       document.getElementById("errorMobile").innerHTML =
         "Mobile Number required";
     } else {
-      let isnum = /^\d+$/.test(number);
-      if (number.length == 10) {
+      let isnum = /^\d+$/.test(loginNumber);
+      if (loginNumber.length == 10) {
         if (isnum) {
           document.getElementById("errorMobile").style.display = "none";
         } else {
@@ -68,7 +85,6 @@ const BodyLogin = () => {
       }
       if (isdetails) {
         handleSubmit();
-        setLoginNumber(number);
       }
     }
   };
@@ -126,17 +142,12 @@ const BodyLogin = () => {
             <p id="errorMobile" className={registerstyles.error__varifyOtp}>
               Enter a valid Mobile Number
             </p>
-            <Link
-              href={isdetails === true ? "/verifyotplogin" : "/login"}
-              passHref
+            <div
+              onClick={loginClick}
+              className={registerstyles.register__button__form}
             >
-              <div
-                onClick={loginClick}
-                className={registerstyles.register__button__form}
-              >
-                LOGIN
-              </div>
-            </Link>
+              SENT OTP
+            </div>
           </form>
           <div className={registerstyles.alreadyRegistered__container}>
             <p className={registerstyles.alreadyRegisterd}>Not registered ? </p>
