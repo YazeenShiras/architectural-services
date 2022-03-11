@@ -3,7 +3,6 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { LoginContext } from "../context/LoginNumberContext";
 
 const BodyVerifyOtpLogin = () => {
   const [otp, setOtp] = useState("");
