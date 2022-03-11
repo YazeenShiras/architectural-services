@@ -1,21 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "../styles/BodyValidate.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
 import Link from "next/link";
-import { userData } from "./BodyDetails";
-import { totalBudget } from "./BodyBudget";
 
 const BodyValidate = () => {
-  const [dataUser, setDataUser] = useState(userData[0]);
-  const [totalBudgetDetails, setTotalBudgetDetails] = useState(totalBudget);
-
-  useEffect(() => {
-    console.log(dataUser);
-  }, []);
-
   return (
     <div className={styles.bodyValidate}>
       <Header />
@@ -42,31 +33,31 @@ const BodyValidate = () => {
             <div className={styles.rowsContainer__card__validate}>
               <div className={styles.row__card__validate}>
                 <h6>Name</h6>
-                <p>{dataUser.name}</p>
+                <p>John Doe</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Mobile Number</h6>
-                <p>{dataUser.mobile}</p>
+                <p>+91 99999 99999</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Email</h6>
-                <p>{dataUser.email}</p>
+                <p>johndoe@gmail.com</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Location</h6>
-                <p>{dataUser.location}</p>
+                <p>Calicut</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Profession</h6>
-                <p>{dataUser.profession}</p>
+                <p>Architect</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>No.of Family Members</h6>
-                <p>{dataUser.members}</p>
+                <p>5 No</p>
               </div>
               <div className={styles.row__card__validate__last}>
                 <h6>Senior Citizen?</h6>
-                <p>{dataUser.seniorCitizen}</p>
+                <p>Yes</p>
               </div>
             </div>
           </div>
@@ -86,7 +77,7 @@ const BodyValidate = () => {
             <div className={styles.rowsContainer__card__validate}>
               <div className={styles.row__card__validate}>
                 <h6>Total Budget for home</h6>
-                <p>{totalBudgetDetails}</p>
+                <p>10 Lach</p>
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Total Area</h6>
