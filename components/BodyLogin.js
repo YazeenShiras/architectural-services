@@ -19,6 +19,7 @@ const BodyLogin = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     });
     const data = await res.json();
