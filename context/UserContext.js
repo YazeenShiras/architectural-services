@@ -1,14 +1,14 @@
 import React, { useState, createContext } from "react";
 
-export const UserContext = createContext();
+export const MobileContext = createContext();
 
 export const UserStateProvider = (props) => {
   // eslint-disable-next-line
-  const [userId, setUserId] = useState(0);
+  const [mobileForOTP, setMobileForOTP] = useState("");
 
   return (
-    <UserContext.Provider value={[userId, setUserId]}>
+    <MobileContext.Provider value={[mobileForOTP, setMobileForOTP]}>
       {props.children}
-    </UserContext.Provider>
+    </MobileContext.Provider>
   );
 };

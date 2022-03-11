@@ -31,7 +31,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <Link href="register" passHref>
+          <Link href="/sendotp" passHref>
             <p className={styles.registerButton__header}>Register Now</p>
           </Link>
           <Link href="/login" passHref>

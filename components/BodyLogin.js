@@ -1,89 +1,56 @@
 import React, { useEffect, useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { LoginNumberContext } from "../context/LoginNumberContext";
 
 const BodyLogin = () => {
   const [number, setNumber] = useState("");
-  const [password, setPassword] = useState("");
   const [isdetails, setIsdetails] = useState(false);
-  const [userId, setUserId] = useContext(UserContext);
+  const [loginNumber, setLoginNumber] = useContext(LoginNumberContext);
 
   const storeMobile = () => {
     setNumber(document.getElementById("number").value);
-    setPassword(document.getElementById("password").value);
   };
 
   async function handleSubmit() {
-    const res = await fetch("https://arclifs.herokuapp.com/login", {
+    let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/login");
+    url.search = new URLSearchParams({
+      mobile_num: number,
+    });
+
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        mobile_number: number,
-        password: password,
-      }),
     });
-    const json = await res.json();
-    console.log(json);
-    if (json.status === "true") {
-      localStorage.setItem("token", json.token);
-      let token = localStorage.getItem("token");
-      console.log(token);
-      setIsdetails(true);
-    } else {
-      setIsdetails(false);
-    }
-  }
-
-  async function setCookie() {
-    let url = new URL("https://arclifs.herokuapp.com/cookie/");
-    url.search = new URLSearchParams({
-      mobile_number: number,
-      password: password,
-    });
-
-    fetch(url).then((res) => {
-      console.log(res);
-    });
+    const data = await res.json();
+    console.log(data);
   }
 
   useEffect(() => {
-    if (number !== "" && password !== "") {
-      if (number !== "") {
-        let isnum = /^\d+$/.test(number);
-        if (number.length == 10) {
-          if (isnum) {
-            setIsdetails(true);
-          } else {
-            setIsdetails(false);
-          }
-        } else {
-          setIsdetails(false);
-        }
-      }
-      if (password !== "") {
-        if (password.length == 8) {
+    if (number !== "") {
+      let isnum = /^\d+$/.test(number);
+      if (number.length == 10) {
+        if (isnum) {
           setIsdetails(true);
         } else {
           setIsdetails(false);
         }
+      } else {
+        setIsdetails(false);
       }
     }
-    /* cleanup */
-    return () => {
-      setIsdetails(false);
-    };
-  }, [number, password]);
+  }, [number]);
 
   const loginClick = () => {
-    if (number === "" || password === "") {
+    if (number === "") {
       setIsdetails(false);
-      document.getElementById("errorPass").style.display = "block";
-      document.getElementById("errorPass").innerHTML = "Must fill all fields";
+      document.getElementById("errorMobile").style.display = "block";
+      document.getElementById("errorMobile").innerHTML =
+        "Mobile Number required";
     } else {
       let isnum = /^\d+$/.test(number);
       if (number.length == 10) {
@@ -99,20 +66,9 @@ const BodyLogin = () => {
         document.getElementById("errorMobile").innerHTML =
           "Enter a valid Mobile Number";
       }
-      if (number === "") {
-        document.getElementById("errorMobile").style.display = "block";
-        document.getElementById("errorMobile").innerHTML =
-          "Mobile Number required";
-      }
-      if (password.length == 8) {
-        document.getElementById("errorPass").style.display = "none";
-      } else {
-        document.getElementById("errorPass").style.display = "block";
-        document.getElementById("errorPass").innerHTML = "Incorrect Password";
-      }
       if (isdetails) {
         handleSubmit();
-        setCookie();
+        setLoginNumber(number);
       }
     }
   };
@@ -135,7 +91,7 @@ const BodyLogin = () => {
           </Link>
         </div>
         <div className={styles.header__right}>
-          <Link href="register" passHref>
+          <Link href="/sendotp" passHref>
             <p className={styles.registerButton__header}>Register Now</p>
           </Link>
           <Link href="/login" passHref>
@@ -158,7 +114,7 @@ const BodyLogin = () => {
         </div>
         <div className={registerstyles.inputs__container__bodyRegister}>
           <h2>
-            Login Now to find <br /> best home
+            Login Now to find <br /> best Home
           </h2>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
@@ -167,20 +123,11 @@ const BodyLogin = () => {
                 <input onChange={storeMobile} id="number" type="text" />
               </div>
             </fieldset>
-            <fieldset className={registerstyles.input__container}>
-              <legend>Password</legend>
-              <div className={registerstyles.input__box}>
-                <input onChange={storeMobile} id="password" type="password" />
-              </div>
-            </fieldset>
             <p id="errorMobile" className={registerstyles.error__varifyOtp}>
               Enter a valid Mobile Number
             </p>
-            <p id="errorPass" className={registerstyles.error__password}>
-              Incorrect Password
-            </p>
             <Link
-              href={isdetails === true ? "/detailsform" : "/login"}
+              href={isdetails === true ? "/verifyotplogin" : "/login"}
               passHref
             >
               <div
@@ -193,7 +140,7 @@ const BodyLogin = () => {
           </form>
           <div className={registerstyles.alreadyRegistered__container}>
             <p className={registerstyles.alreadyRegisterd}>Not registered ? </p>
-            <Link href="/register" passHref>
+            <Link href="/sendotp" passHref>
               <p className={registerstyles.login__AlreadyRegisterd}>
                 Register Now
               </p>

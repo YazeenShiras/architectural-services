@@ -1,26 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { MobileContext } from "../context/UserContext";
 
 const BodySendOtp = () => {
   const [number, setNumber] = useState("");
   const [isdetails, setIsdetails] = useState(false);
+  const [mobileForOTP, setMobileForOTP] = useContext(MobileContext);
 
-  /* async function handleSubmit() {
-    const res = await fetch("https://arclifs.herokuapp.com/", {
+  async function handleSubmit() {
+    let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/singup");
+    url.search = new URLSearchParams({
+      mobile_num: number,
+    });
+
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        mobile_number: number,
-      }),
     });
-    const json = await res.json();
-    console.log(json);
-  } */
+    const data = await res.json();
+    console.log(data);
+    if (data.status === 200) {
+      localStorage.setItem("mobile", data.mob);
+      let mobile = localStorage.getItem("mobile");
+      console.log(mobile);
+    }
+  }
 
   useEffect(() => {
     if (number !== "") {
@@ -61,7 +70,10 @@ const BodySendOtp = () => {
         document.getElementById("errorMobile").innerHTML =
           "Enter valid Mobile Number";
       }
-      /* handleSubmit(); */
+      if (isdetails) {
+        handleSubmit();
+        setMobileForOTP(number);
+      }
     }
   };
 
@@ -83,7 +95,7 @@ const BodySendOtp = () => {
           </Link>
         </div>
         <div className={styles.header__right}>
-          <Link href="/register" passHref>
+          <Link href="/sendotp" passHref>
             <p className={styles.registerButton__header}>Register Now</p>
           </Link>
           <Link href="/login" passHref>
@@ -112,7 +124,7 @@ const BodySendOtp = () => {
         </div>
         <div className={registerstyles.inputs__container__bodyRegister}>
           <h2>
-            Enter your registered <br /> Mobile Number
+            Enter your Mobile <br /> Number to Register
           </h2>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
@@ -122,7 +134,7 @@ const BodySendOtp = () => {
               </div>
             </fieldset>
             <div id="errorContainer" className={registerstyles.errorContainer}>
-              <p id="errorMobile">Enter your registered Mobile Number</p>
+              <p id="errorMobile">Enter your Mobile Number</p>
             </div>
             <Link
               href={isdetails === true ? `/verifyotp` : "/sendotp"}

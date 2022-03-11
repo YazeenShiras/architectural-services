@@ -1,6 +1,5 @@
-import Link from "next/link";
 import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import Link from "next/link";
 import styles from "../styles/BodyDetails.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
@@ -16,7 +15,6 @@ const BodyDetails = () => {
   const [members, setMembers] = useState(0);
   const [seniorCitizen, setSeniourCitizen] = useState(true);
   const [isdetails, setIsdetails] = useState(false);
-  const [userId, setUserId] = useContext(UserContext);
 
   async function handleSubmit() {
     const res = await fetch("https://arclifs.herokuapp.com/cleint_details", {

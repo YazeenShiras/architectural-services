@@ -1,18 +1,18 @@
 import React from "react";
 import Head from "next/head";
-import BodySendOtp from "../components/BodySendOtp";
+import BodyVerifyOtpLogin from "../components/BodyVerifyOtpLogin";
 
-const sendotp = () => {
+const verifyotplogin = () => {
   return (
     <div>
       <Head>
-        <title>Send OTP - Arclif Architectural Services</title>
+        <title>Verify OTP - Login | Arclif Architectural Services</title>
         <meta name="description" content="Arclif's Architectural Services" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <BodySendOtp />
+      <BodyVerifyOtpLogin />
     </div>
   );
 };
 
-export default sendotp;
+export default verifyotplogin;

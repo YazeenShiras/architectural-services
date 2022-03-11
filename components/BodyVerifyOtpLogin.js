@@ -3,17 +3,17 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { MobileContext } from "../context/UserContext";
+import { LoginNumberContext } from "../context/LoginNumberContext";
 
-const BodyVerifyOtp = () => {
+const BodyVerifyOtpLogin = () => {
   const [otp, setOtp] = useState("");
   const [isotp, setIsotp] = useState(false);
-  const [mobileForOTP, setMobileForOTP] = useContext(MobileContext);
+  const [loginNumber, setLoginNumber] = useContext(LoginNumberContext);
 
   async function handleSubmit() {
     let url = new URL("https://arclifs.herokuapp.com/otp_verification");
     url.search = new URLSearchParams({
-      mobile: mobileForOTP,
+      mobile: loginNumber,
       otp: otp,
     });
 
@@ -114,12 +114,15 @@ const BodyVerifyOtp = () => {
             <p id="errorVarifyOtp" className={registerstyles.error__varifyOtp}>
               Please enter OTP
             </p>
-            <Link href={isotp === true ? "/register" : "/verifyotp"} passHref>
+            <Link
+              href={isotp === true ? "/detailsform" : "/verifyotplogin"}
+              passHref
+            >
               <div
                 onClick={verifyClick}
                 className={registerstyles.register__button__form}
               >
-                VERIFY
+                VERIFY & LOGIN
               </div>
             </Link>
           </form>
@@ -129,4 +132,4 @@ const BodyVerifyOtp = () => {
   );
 };
 
-export default BodyVerifyOtp;
+export default BodyVerifyOtpLogin;

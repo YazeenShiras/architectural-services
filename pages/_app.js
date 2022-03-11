@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import { UserStateProvider } from "../context/UserContext";
+import { LoginNumberStateProvider } from "../context/LoginNumberContext";
 
 function MyApp({ Component, pageProps }) {
   return (
     <UserStateProvider>
-      <Component {...pageProps} />
+      <LoginNumberStateProvider>
+        <Component {...pageProps} />
+      </LoginNumberStateProvider>
     </UserStateProvider>
   );
 }

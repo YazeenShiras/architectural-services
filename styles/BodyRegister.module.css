@@ -85,7 +85,7 @@
   background-image: linear-gradient(to right, #027888, #1c9c76);
   border-radius: 5px;
   color: white;
-  font-size: 12px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,6 +93,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
+  letter-spacing: 1px;
+  font-family: inherit;
 }
 
 .register__button__form:hover {
