@@ -16,6 +16,7 @@ const BodyLogin = () => {
     });
 
     const res = await fetch(url, {
+      mode: "no-cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
