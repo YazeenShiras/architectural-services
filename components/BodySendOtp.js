@@ -17,7 +17,9 @@ const BodySendOtp = () => {
     const res = await fetch(url, {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     });
     const data = await res.json();

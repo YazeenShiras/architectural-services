@@ -13,7 +13,9 @@ const BodyRegister = () => {
     const res = await fetch("https://arclifs.herokuapp.com/create_user", {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         name: name,
