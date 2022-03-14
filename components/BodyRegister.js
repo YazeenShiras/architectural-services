@@ -25,7 +25,7 @@ const BodyRegister = () => {
     const data = await res.json();
     console.log(data);
     if (data.detail !== "mobile  number already exists!") {
-      window.location.href = "/login";
+      window.location.href = "/detailsform";
     } else {
       document.getElementById("errorMobile").style.display = "block";
       document.getElementById("errorMobile").innerHTML = data.detail;
