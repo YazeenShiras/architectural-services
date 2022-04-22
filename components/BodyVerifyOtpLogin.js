@@ -3,6 +3,7 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { PulseLoader } from "react-spinners";
 
 const BodyVerifyOtpLogin = () => {
   const [otp, setOtp] = useState("");
@@ -24,6 +25,9 @@ const BodyVerifyOtpLogin = () => {
   }, []);
 
   async function handleSubmit() {
+    document.getElementById("loaderSentOtpRegister").style.display = "block";
+    document.getElementById("sentOTPRegister").style.display = "none";
+
     let url = new URL("https://arclifs.herokuapp.com/otp_verification");
     url.search = new URLSearchParams({
       mobile: mob,
@@ -39,12 +43,11 @@ const BodyVerifyOtpLogin = () => {
     console.log(data);
     if (data.status === 202) {
       localStorage.removeItem("mob");
-      window.location.href = "/detailsform";
+      window.location.href = "/profile";
     } else if (data.status === 404) {
       document.getElementById("errorVarifyOtp").innerHTML = data.message;
       document.getElementById("errorVarifyOtp").style.display = "block";
       console.log(otp);
-      console.log(detailsform);
     }
   }
 
@@ -135,11 +138,18 @@ const BodyVerifyOtpLogin = () => {
             <p id="errorVarifyOtp" className={registerstyles.error__varifyOtp}>
               Please enter OTP
             </p>
+
             <div
               onClick={verifyClick}
               className={registerstyles.register__button__form}
             >
-              VERIFY & LOGIN
+              <div
+                className={registerstyles.loader__container__register}
+                id="loaderSentOtpRegister"
+              >
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="sentOTPRegister">VERIFY & LOGIN</p>
             </div>
           </form>
         </div>

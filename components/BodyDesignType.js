@@ -59,6 +59,77 @@ const BodyDesignType = () => {
               Eco friendly <br /> House
             </p>
           </div>
+          <div className={styles.card__designType}>
+            <div className={styles.imageContainer__card__designType}>
+              <Image
+                className={styles.bubble2__top__content__main__right}
+                src="/traditional.svg"
+                alt=""
+                width={60}
+                height={60}
+              ></Image>
+            </div>
+            <p>
+              Vernacular Architecture <br /> House
+            </p>
+          </div>
+        </div>
+        <div className={styles.cards__container__designType}>
+          <div className={styles.card__designType}>
+            <div className={styles.imageContainer__card__designType}>
+              <Image
+                className={styles.bubble2__top__content__main__right}
+                src="/contemporary.svg"
+                alt=""
+                width={60}
+                height={60}
+              ></Image>
+            </div>
+            <p>
+              Minimal Design <br /> House
+            </p>
+          </div>
+          <div className={styles.card__designType}>
+            <div className={styles.imageContainer__card__designType}>
+              <Image
+                className={styles.bubble2__top__content__main__right}
+                src="/traditional.svg"
+                alt=""
+                width={60}
+                height={60}
+              ></Image>
+            </div>
+            <p>
+              Open Floor Plan <br /> House
+            </p>
+          </div>
+          <div className={styles.card__designType}>
+            <div className={styles.imageContainer__card__designType}>
+              <Image
+                className={styles.bubble2__top__content__main__right}
+                src="/eco.svg"
+                alt=""
+                width={60}
+                height={60}
+              ></Image>
+            </div>
+            <p>Net zero residence/energy efficient</p>
+          </div>
+          <div className={styles.card__designType}>
+            <div className={styles.imageContainer__card__designType}>
+              <Image
+                className={styles.bubble2__top__content__main__right}
+                src="/traditional.svg"
+                alt=""
+                width={60}
+                height={60}
+              ></Image>
+            </div>
+            <p>
+              Colonial style
+              <br /> House
+            </p>
+          </div>
         </div>
         <Link href="/planyourself" passHref>
           <div className={styles.next__button}>NEXT</div>

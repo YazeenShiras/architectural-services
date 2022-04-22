@@ -4,12 +4,16 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { LoginContext } from "../context/LoginNumberContext";
+import { PulseLoader } from "react-spinners";
 
 const BodyLogin = () => {
   const [isdetails, setIsdetails] = useState(false);
   const [loginNumber, setLoginNumber] = useContext(LoginContext);
 
   async function handleSubmit() {
+    document.getElementById("loaderSentOtpRegister").style.display = "block";
+    document.getElementById("sentOTPRegister").style.display = "none";
+
     let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/login");
     url.search = new URLSearchParams({
       mobile_num: loginNumber,
@@ -131,9 +135,8 @@ const BodyLogin = () => {
           <Image src="/register.svg" alt="" width={300} height={350} />
         </div>
         <div className={registerstyles.inputs__container__bodyRegister}>
-          <h2>
-            Login Now to find <br /> best Home
-          </h2>
+          <h2>Login</h2>
+          <p>Login to find best Home</p>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
               <legend>Mobile Number</legend>
@@ -148,11 +151,17 @@ const BodyLogin = () => {
               onClick={loginClick}
               className={registerstyles.register__button__form}
             >
-              SENT OTP
+              <div
+                className={registerstyles.loader__container__register}
+                id="loaderSentOtpRegister"
+              >
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="sentOTPRegister">SENT OTP</p>
             </div>
           </form>
           <div className={registerstyles.alreadyRegistered__container}>
-            <p className={registerstyles.alreadyRegisterd}>Not registered ? </p>
+            <p className={registerstyles.alreadyRegisterd}>not registered ? </p>
             <Link href="/sendotp" passHref>
               <p className={registerstyles.login__AlreadyRegisterd}>
                 Register Now

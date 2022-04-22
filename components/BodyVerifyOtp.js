@@ -3,11 +3,12 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { PulseLoader } from "react-spinners";
 
 const BodyVerifyOtp = () => {
   const [otp, setOtp] = useState("");
   const [isotp, setIsotp] = useState(false);
-  const [newmob, setNewMob] = useState("");
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     window.onbeforeunload = function (e) {
@@ -19,14 +20,16 @@ const BodyVerifyOtp = () => {
     window.onload = function () {
       window.localStorage.isMySessionActive = "true";
     };
-    var newmob = localStorage.getItem("newmob");
-    setNewMob(newmob);
+    var tokenOTP = localStorage.getItem("tokenOTP");
+    setToken(tokenOTP);
   }, []);
 
   async function handleSubmit() {
-    let url = new URL("https://arclifs.herokuapp.com/otp_verification");
+    document.getElementById("loaderSentOtpRegister").style.display = "block";
+    document.getElementById("sentOTPRegister").style.display = "none";
+
+    let url = new URL("https://aclifinc.herokuapp.com/otp_verification");
     url.search = new URLSearchParams({
-      mobile: newmob,
       otp: otp,
     });
     const res = await fetch(url, {
@@ -36,15 +39,23 @@ const BodyVerifyOtp = () => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
+      body: JSON.stringify({
+        refresh_token: token,
+      }),
     });
     const data = await res.json();
     console.log(data);
-    if (data.status === 202) {
-      localStorage.removeItem("newmob");
-      window.location.href = "/register";
-    } else if (data.status === 404) {
-      console.log(otp);
-      document.getElementById("errorVarifyOtp").innerHTML = data.message;
+    if (data.status === 200) {
+      window.location.href = "/detailsform";
+    } else if (data.message === "Invalid OTP or Expire OTP") {
+      document.getElementById("loaderSentOtpRegister").style.display = "none";
+      document.getElementById("sentOTPRegister").style.display = "block";
+      document.getElementById("errorVarifyOtp").innerHTML = "invalid OTP";
+      document.getElementById("errorVarifyOtp").style.display = "block";
+    } else if (data.message === "Invalid token or expired token") {
+      document.getElementById("loaderSentOtpRegister").style.display = "none";
+      document.getElementById("sentOTPRegister").style.display = "block";
+      document.getElementById("errorVarifyOtp").innerHTML = "OTP expired";
       document.getElementById("errorVarifyOtp").style.display = "block";
     }
   }
@@ -140,7 +151,13 @@ const BodyVerifyOtp = () => {
               onClick={verifyClick}
               className={registerstyles.register__button__form}
             >
-              VERIFY & REGISTER
+              <div
+                className={registerstyles.loader__container__register}
+                id="loaderSentOtpRegister"
+              >
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="sentOTPRegister">VERIFY & REGISTER</p>
             </div>
           </form>
         </div>

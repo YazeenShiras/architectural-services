@@ -3,13 +3,19 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const BodySendOtp = () => {
   const [number, setNumber] = useState("");
   const [isdetails, setIsdetails] = useState(false);
 
   async function handleSubmit() {
-    let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/singup");
+    document.getElementById("loaderSentOtpRegister").style.display = "block";
+    document.getElementById("sentOTPRegister").style.display = "none";
+
+    let url = new URL(
+      "https://aclifinc.herokuapp.com/OTP_Genarator/arclif/singup"
+    );
     url.search = new URLSearchParams({
       mobile_num: number,
     });
@@ -35,9 +41,11 @@ const BodySendOtp = () => {
         window.localStorage.isMySessionActive = "true";
       };
       localStorage.setItem("newmob", number);
-
+      localStorage.setItem("tokenOTP", data.otp);
       window.location.href = "/verifyotp";
     } else if (data.status === 400) {
+      document.getElementById("loaderSentOtpRegister").style.display = "none";
+      document.getElementById("sentOTPRegister").style.display = "block";
       document.getElementById("errorMobile").style.display = "block";
       document.getElementById("errorMobile").innerHTML =
         "Mobile Number already exists";
@@ -135,24 +143,29 @@ const BodySendOtp = () => {
           />
         </div>
         <div className={registerstyles.inputs__container__bodyRegister}>
-          <h2>
-            Enter your Mobile <br /> Number to Register
-          </h2>
+          <h2>Register</h2>
+          <p>Enter your Mobile Number</p>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
-              <legend>Mobile Number</legend>
+              <legend>Mobile Number*</legend>
               <div className={registerstyles.input__box}>
                 <input onChange={storeValues} id="number" type="text" />
               </div>
             </fieldset>
             <p className={registerstyles.errorText} id="errorMobile">
-              Enter your Mobile Number
+              Must fill *required
             </p>
             <div
               onClick={sendOTPClick}
               className={registerstyles.register__button__form}
             >
-              SENT OTP
+              <div
+                className={registerstyles.loader__container__register}
+                id="loaderSentOtpRegister"
+              >
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="sentOTPRegister">SENT OTP</p>
             </div>
           </form>
           <div className={registerstyles.alreadyRegistered__container}>
