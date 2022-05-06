@@ -7,7 +7,7 @@
 
 .titleContainer__recentWork {
   width: 30%;
-  z-index: 100;
+  z-index: 1;
 }
 
 .titleContainer__recentWork > h3 {
@@ -39,13 +39,17 @@
   width: 80%;
   display: flex;
   margin-left: -100px;
+  overflow-x: scroll;
+}
+
+.content__recentWorks__container::-webkit-scrollbar {
+  display: none;
 }
 
 .imgCard__recentWorks__first {
-  border-radius: 10px;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 300px;
+  min-width: 300px;
   height: 200px;
   background-position: center;
   z-index: -2;
@@ -64,6 +68,7 @@
 }
 
 .imgCard__recentWorks {
+  min-width: 300px;
   margin-left: 10px;
-  background-repeat: 10px;
+  border-radius: 10px;
 }

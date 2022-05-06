@@ -1,56 +1,32 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import PulseLoader from "react-spinners/PulseLoader";
+import axios from "axios";
 
 const BodySendOtp = () => {
   const [number, setNumber] = useState("");
   const [isdetails, setIsdetails] = useState(false);
 
-  async function handleSubmit() {
+  const handleSubmit = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    let url = new URL(
-      "https://aclifinc.herokuapp.com/OTP_Genarator/arclif/singup"
-    );
-    url.search = new URLSearchParams({
-      mobile_num: number,
-    });
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data.status === 202) {
-      window.onbeforeunload = function (e) {
-        window.onunload = function () {
-          window.localStorage.isMySessionActive = "false";
-        };
-        return undefined;
-      };
-      window.onload = function () {
-        window.localStorage.isMySessionActive = "true";
-      };
-      localStorage.setItem("newmob", number);
-      localStorage.setItem("tokenOTP", data.otp);
-      window.location.href = "/verifyotp";
-    } else if (data.status === 400) {
-      document.getElementById("loaderSentOtpRegister").style.display = "none";
-      document.getElementById("sentOTPRegister").style.display = "block";
-      document.getElementById("errorMobile").style.display = "block";
-      document.getElementById("errorMobile").innerHTML =
-        "Mobile Number already exists";
-    }
-  }
+    axios
+      .post("https://arclif-services-backend.uc.r.appspot.com/sendOTP", {
+        phonenumber: `+91${number}`,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        localStorage.setItem("phone", res.data.phone);
+        localStorage.setItem("hash", res.data.hash);
+        if (res.data.status === "200") {
+          window.location.href = "/verifyotp";
+        }
+      });
+  };
 
   useEffect(() => {
     if (number !== "") {
@@ -149,7 +125,7 @@ const BodySendOtp = () => {
             <fieldset className={registerstyles.input__container}>
               <legend>Mobile Number*</legend>
               <div className={registerstyles.input__box}>
-                <input onChange={storeValues} id="number" type="text" />
+                <input type="tel" onChange={storeValues} id="number" />
               </div>
             </fieldset>
             <p className={registerstyles.errorText} id="errorMobile">

@@ -4,6 +4,7 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { PulseLoader } from "react-spinners";
+import axios from "axios";
 
 const BodyVerifyOtp = () => {
   const [otp, setOtp] = useState("");
@@ -28,36 +29,27 @@ const BodyVerifyOtp = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    let url = new URL("https://aclifinc.herokuapp.com/otp_verification");
-    url.search = new URLSearchParams({
-      otp: otp,
-    });
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        refresh_token: token,
-      }),
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data.status === 200) {
-      window.location.href = "/detailsform";
-    } else if (data.message === "Invalid OTP or Expire OTP") {
-      document.getElementById("loaderSentOtpRegister").style.display = "none";
-      document.getElementById("sentOTPRegister").style.display = "block";
-      document.getElementById("errorVarifyOtp").innerHTML = "invalid OTP";
-      document.getElementById("errorVarifyOtp").style.display = "block";
-    } else if (data.message === "Invalid token or expired token") {
-      document.getElementById("loaderSentOtpRegister").style.display = "none";
-      document.getElementById("sentOTPRegister").style.display = "block";
-      document.getElementById("errorVarifyOtp").innerHTML = "OTP expired";
-      document.getElementById("errorVarifyOtp").style.display = "block";
-    }
+    console.log(localStorage.getItem("phone"), localStorage.getItem("hash"));
+
+    axios
+      .post("https://arclif-services-backend.uc.r.appspot.com/verifyOTP", {
+        phonenumber: localStorage.getItem("phone"),
+        roletype: "User",
+        hash: localStorage.getItem("hash"),
+        otp: otp,
+        msg: "null",
+        withCredentials: true,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        localStorage.setItem("loginId", res.data.data[0].data._id);
+        if (res.data.msg === "register verified") {
+          window.location.href = "/detailsform";
+        }
+        if (res.data.msg === "login verified") {
+          window.location.href = "/profile";
+        }
+      });
   }
 
   const storeOtp = () => {

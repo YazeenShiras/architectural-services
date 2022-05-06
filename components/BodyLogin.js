@@ -3,60 +3,36 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { LoginContext } from "../context/LoginNumberContext";
 import { PulseLoader } from "react-spinners";
+import axios from "axios";
 
 const BodyLogin = () => {
   const [isdetails, setIsdetails] = useState(false);
-  const [loginNumber, setLoginNumber] = useContext(LoginContext);
+  const [number, setNumber] = useState("");
 
   async function handleSubmit() {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    let url = new URL("https://arclifs.herokuapp.com/OTP_Genarator/login");
-    url.search = new URLSearchParams({
-      mobile_num: loginNumber,
-    });
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data.status === 202) {
-      window.onbeforeunload = function (e) {
-        window.onunload = function () {
-          window.localStorage.isMySessionActive = "false";
-        };
-        return undefined;
-      };
-      window.onload = function () {
-        window.localStorage.isMySessionActive = "true";
-      };
-      localStorage.setItem("mob", loginNumber);
-
-      window.location.href = "/verifyotplogin";
-    } else if (data.status === 404) {
-      document.getElementById("errorMobile").style.display = "block";
-      document.getElementById("errorMobile").innerHTML =
-        "Enter your Registered Mobile Number";
-    }
+    axios
+      .post("https://arclif-services-backend.uc.r.appspot.com/sendOTP", {
+        phonenumber: `+91${number}`,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        console.log(res.data.otp);
+        localStorage.setItem("phone", res.data.phone);
+        localStorage.setItem("hash", res.data.hash);
+        if (res.data.status === "200") {
+          window.location.href = "/verifyotplogin";
+        }
+      });
   }
 
-  const storeMobile = () => {
-    setLoginNumber(document.getElementById("number").value);
-  };
-
   useEffect(() => {
-    if (loginNumber !== "") {
-      let isnum = /^\d+$/.test(loginNumber);
-      if (loginNumber.length == 10) {
+    if (number !== "") {
+      let isnum = /^\d+$/.test(number);
+      if (number.length == 10) {
         if (isnum) {
           setIsdetails(true);
         } else {
@@ -66,17 +42,21 @@ const BodyLogin = () => {
         setIsdetails(false);
       }
     }
-  }, [loginNumber]);
+  }, [number]);
+
+  const storeValues = () => {
+    setNumber(document.getElementById("number").value);
+  };
 
   const loginClick = () => {
-    if (loginNumber === "") {
+    if (number === "") {
       setIsdetails(false);
       document.getElementById("errorMobile").style.display = "block";
       document.getElementById("errorMobile").innerHTML =
         "Mobile Number required";
     } else {
-      let isnum = /^\d+$/.test(loginNumber);
-      if (loginNumber.length == 10) {
+      let isnum = /^\d+$/.test(number);
+      if (number.length == 10) {
         if (isnum) {
           document.getElementById("errorMobile").style.display = "none";
         } else {
@@ -139,9 +119,9 @@ const BodyLogin = () => {
           <p>Login to find best Home</p>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
-              <legend>Mobile Number</legend>
+              <legend>Mobile Number*</legend>
               <div className={registerstyles.input__box}>
-                <input onChange={storeMobile} id="number" type="text" />
+                <input onChange={storeValues} id="number" type="text" />
               </div>
             </fieldset>
             <p id="errorMobile" className={registerstyles.error__varifyOtp}>

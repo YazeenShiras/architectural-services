@@ -7,8 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-
-export let totalBudget;
+import { PulseLoader } from "react-spinners";
 
 const BodyBudget = () => {
   const [budget, setBudget] = useState(500000);
@@ -57,8 +56,13 @@ const BodyBudget = () => {
     return value;
   }
 
-  const demo = () => {
-    totalBudget = budget;
+  const onNextClick = () => {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
+    localStorage.setItem("totalBudget", budget);
+
+    window.location.href = "/area";
   };
 
   return (
@@ -126,11 +130,12 @@ const BodyBudget = () => {
               </Box>
             </div>
           </div>
-          {/* <Link href="/area" passHref> */}
-          <div onClick={demo} className={styles.next__button}>
-            NEXT
+          <div onClick={onNextClick} className={styles.next__button}>
+            <div className={styles.loader__container__next} id="loaderNext">
+              <PulseLoader color="#ffffff" />
+            </div>
+            <p id="nextText">NEXT</p>
           </div>
-          {/*   </Link> */}
           <Link href="/area" passHref>
             <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
           </Link>

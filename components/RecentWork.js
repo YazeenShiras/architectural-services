@@ -9,8 +9,8 @@ const RecentWork = () => {
       <div className={styles.titleContainer__recentWork}>
         <h3>Our Recent Work</h3>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard
+          Arclif have already delivered numerous projects all over India.
+          Quality and timely delivery of projects are our key strength...
         </p>
         {/* <div className={styles.buttonContainer__recentWorks}>
           <div className={styles.leftArrowRecent}>
@@ -34,15 +34,39 @@ const RecentWork = () => {
       <div className={styles.content__recentWorks__container}>
         <div
           className={styles.imgCard__recentWorks__first}
-          style={{ backgroundImage: `url('/recentImg1.png')` }}
+          style={{ backgroundImage: `url('/image2.jpg')` }}
         >
           <div className={styles.effect__img__recentWorks__first}></div>
         </div>
         <div className={styles.imgCard__recentWorks}>
-          <Image src="/recentImg2.png" alt="" width={300} height={200}></Image>
+          <Image src="/image11.jpg" alt="" width={300} height={200}></Image>
         </div>
         <div className={styles.imgCard__recentWorks}>
-          <Image src="/recentImg3.png" alt="" width={300} height={200}></Image>
+          <Image src="/image4.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image3.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/Image2.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image5.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image6.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image7.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image8.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image9.jpg" alt="" width={300} height={200}></Image>
+        </div>
+        <div className={styles.imgCard__recentWorks}>
+          <Image src="/image10.jpg" alt="" width={300} height={200}></Image>
         </div>
       </div>
     </div>

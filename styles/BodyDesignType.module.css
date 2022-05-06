@@ -73,6 +73,18 @@
   cursor: pointer;
   margin-top: 20px;
 }
+.error__designType {
+  color: #ff0000;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  font-weight: normal;
+  display: none;
+}
+
+.loader__container__next {
+  display: none;
+}
 
 .footer__container__mobile {
   display: none;

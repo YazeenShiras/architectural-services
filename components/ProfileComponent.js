@@ -1,9 +1,34 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Profile.module.css";
 import Header from "../components/Header";
+import axios from "axios";
 
 const ProfileDetails = () => {
+  const [userdetails, setUserdetails] = useState([]);
+  const [mob, setMob] = useState("");
+
+  useEffect(() => {
+    const loginId = localStorage.getItem("loginId");
+
+    async function handleSubmit() {
+      axios
+        .get(
+          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+        )
+        .then(function (res) {
+          console.log(res.data);
+          setUserdetails(res.data.details.userdetails[0]);
+          console.log(res.data.details.userdetails[0]);
+          setMob(res.data.details.logindetails[0].phonenumber);
+        });
+    }
+
+    if (loginId !== "" && loginId !== undefined) {
+      handleSubmit();
+    }
+  }, []);
+
   return (
     <div className={styles.ProfileDetails}>
       <Header />
@@ -17,88 +42,109 @@ const ProfileDetails = () => {
               <fieldset className={styles.input__container__form__update}>
                 <legend>Name</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="name" type="text" name="username" />
+                  <input
+                    value={userdetails.uname}
+                    id="name"
+                    type="text"
+                    name="username"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Mobile Number</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="moble" type="text" name="mobile" />
+                  <input value={mob} id="moble" type="text" name="mobile" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Email</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="email" type="email" name="email" />
-                </div>
-              </fieldset>
-              <fieldset
-                className={styles.input__container__form__update__textare}
-              >
-                <legend>Bio</legend>
-                <div className={styles.input__box__form__update__textArea}>
-                  <textarea name="bio" id="bio" maxLength="250"></textarea>
+                  <input
+                    value={userdetails.email}
+                    id="email"
+                    type="email"
+                    name="email"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Home Name</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="homeName" type="text" name="homeName" />
+                  <input
+                    value={userdetails.housename}
+                    id="homeName"
+                    type="text"
+                    name="homeName"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Place</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="place" type="text" name="place" />
+                  <input
+                    value={userdetails.Place}
+                    id="place"
+                    type="text"
+                    name="place"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Pincode</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="pincode" type="text" name="pincode" />
+                  <input
+                    id="pincode"
+                    value={userdetails.Pincode}
+                    type="text"
+                    name="pincode"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Country</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="country" type="text" name="country" readOnly />
-                </div>
-              </fieldset>
-              <fieldset className={styles.input__container__form__update}>
-                <legend>State</legend>
-                <div className={styles.input__box__form__update}>
-                  <input id="state" type="text" name="state" readOnly />
+                  <input
+                    value={userdetails.country}
+                    id="country"
+                    type="text"
+                    name="country"
+                    readOnly
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>Profession</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="profession" type="text" name="profession" />
+                  <input
+                    value={userdetails.Profession}
+                    id="profession"
+                    type="text"
+                    name="profession"
+                  />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container__form__update}>
                 <legend>No.of Family Members</legend>
                 <div className={styles.input__box__form__update}>
-                  <input id="members" type="text" name="members" />
+                  <input
+                    value={userdetails.Nooffamilymembers}
+                    id="members"
+                    type="text"
+                    name="members"
+                  />
                 </div>
               </fieldset>
-              <div className={styles.citizenType__container}>
-                <p>Senior Citizen?</p>
-                <input
-                  className={styles.regular__checkbox}
-                  type="radio"
-                  name="seniorCitizen"
-                  id="seniorCitizenYes"
-                />
-                <label htmlFor="seniorCitizenYes">Yes</label>
-                <input
-                  className={styles.regular__checkbox}
-                  type="radio"
-                  name="seniorCitizen"
-                  id="seniorCitizenNo"
-                />
-                <label htmlFor="seniorCitizenNo">No</label>
-              </div>
+              <fieldset className={styles.input__container__form__update}>
+                <legend>Seniorcitizen ?</legend>
+                <div className={styles.input__box__form__update}>
+                  <input
+                    value={userdetails.Seniorcitizen === true ? "Yes" : "No"}
+                    id="members"
+                    type="text"
+                    name="members"
+                  />
+                </div>
+              </fieldset>
             </form>
           </div>
         </div>

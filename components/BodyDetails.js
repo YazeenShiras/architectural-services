@@ -4,36 +4,44 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import { PulseLoader } from "react-spinners";
+import axios from "axios";
 
 const BodyDetails = () => {
   const [number, setNumber] = useState("");
+
+  const [loginId, setLoginId] = useState("");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [home, setHome] = useState("");
   const [place, setPlace] = useState("");
   const [pincode, setPincode] = useState("");
+
   const [country, setCountry] = useState("");
+  const [longitute, setLongitute] = useState("");
+  const [latitude, setLatitude] = useState("");
+
   const [proffession, setProffession] = useState("");
   const [members, setMembers] = useState("");
   const [seniorCitizen, setSeniourCitizen] = useState(true);
 
-  const [userId, setUserId] = useState("");
-  const [accessToken, setAccessToken] = useState("");
-
   useEffect(() => {
-    let localNumber = localStorage.getItem("newmob");
-    setNumber(localNumber);
+    const logId = localStorage.getItem("loginId");
+    setLoginId(logId);
+    const newmob = localStorage.getItem("phone");
+    setNumber(newmob);
   }, []);
 
   const storeValues = () => {
     setName(document.getElementById("name").value);
     setEmail(document.getElementById("email").value);
     setHome(document.getElementById("homeName").value);
-    setPlace(document.getElementById("place").value);
-    setPincode(document.getElementById("pincode").value);
-    setCountry(document.getElementById("country").value);
     setProffession(document.getElementById("profession").value);
     setMembers(document.getElementById("members").value);
+  };
+
+  const storePlace = () => {
+    setPlace(document.getElementById("place").value);
   };
 
   const storeIsSenoirCitizenValue = () => {
@@ -44,51 +52,62 @@ const BodyDetails = () => {
     setSeniourCitizen(false);
   };
 
-  async function userDetails() {
-    const res = await fetch("https://aclifinc.herokuapp.com/cleint_details", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer${accessToken}`,
-      },
-      body: JSON.stringify({
-        house_name: home,
-        city: country,
-        state: place,
-        pin_number: pincode,
-        profession: proffession,
-        family_members: members,
-        sinior_citzen: seniorCitizen,
-      }),
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data) {
-      window.location.href = "/budget";
+  useEffect(() => {
+    async function getLocationDetails() {
+      console.log("access to getAllProducts");
+      const endpoint = `https://api.geoapify.com/v1/geocode/autocomplete?text=${place}%20&format=json&apiKey=41ff15ef6d914c4aa4d53d1c7c848744`;
+
+      await axios
+        .get(endpoint)
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+          if (data.results) {
+            setCountry(data.results[0].country);
+            setLatitude(data.results[0].lat);
+            setLongitute(data.results[0].lon);
+            setPincode(data.results[0].postcode);
+          }
+        })
+        .catch(console.error);
     }
-  }
+
+    if (place.length > 2) {
+      getLocationDetails();
+    }
+  }, [place]);
 
   async function createUser() {
-    const res = await fetch("https://aclifinc.herokuapp.com/create_user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        mobile_number: number,
-      }),
-    });
+    document.getElementById("loaderSubmit").style.display = "block";
+    document.getElementById("submitText").style.display = "none";
+
+    const res = await fetch(
+      "https://arclif-services-backend.uc.r.appspot.com/createuser",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          login_id: loginId,
+          uname: name,
+          email: email,
+          housename: home,
+          Place: place,
+          Pincode: pincode,
+          country: country,
+          longitute: longitute,
+          latitude: latitude,
+          Profession: proffession,
+          Nooffamilymembers: members,
+          Seniorcitizen: seniorCitizen,
+        }),
+      }
+    );
     const data = await res.json();
     console.log(data);
-    if (data.status === "true") {
-      setUserId(data.id);
-      setAccessToken(data.access_token);
-      localStorage.setItem("access_token", data.access_token);
-      localStorage.setItem("refresh_token", data.refresh_token);
-      if (userId !== "") {
-        userDetails();
-      }
+    if (data.msg === "userdetails added !!") {
+      window.location.href = "/budget";
     }
   }
 
@@ -187,15 +206,15 @@ const BodyDetails = () => {
               <fieldset className={styles.input__container}>
                 <legend>Place*</legend>
                 <div className={styles.input__box}>
-                  <input onChange={storeValues} id="place" type="text" />
+                  <input onChange={storePlace} id="place" type="text" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
                 <legend>Pincode*</legend>
                 <div className={styles.input__box}>
                   <input
+                    value={pincode}
                     maxLength={6}
-                    onChange={storeValues}
                     id="pincode"
                     type="text"
                   />
@@ -204,7 +223,7 @@ const BodyDetails = () => {
               <fieldset className={styles.input__container}>
                 <legend>Country*</legend>
                 <div className={styles.input__box}>
-                  <input onChange={storeValues} id="country" type="text" />
+                  <input value={country} id="country" type="text" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>

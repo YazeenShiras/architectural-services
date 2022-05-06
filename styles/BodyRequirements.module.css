@@ -38,10 +38,32 @@
   margin-bottom: 10px;
 }
 
-.option__requirements > p {
+.option__requirements > label {
   margin-left: 10px;
   font-size: 13px;
   font-weight: bold;
+}
+
+.requiremnetCardContainer {
+  margin: 30px 0px;
+}
+
+.requirementCard {
+  background-color: #1c9c76;
+  margin: 10px 0px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+}
+
+.requirementCard > label {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.requirementCard > label > input {
+  margin-right: 10px;
 }
 
 .next__button {
@@ -62,6 +84,13 @@
 
 .next__button:hover {
   background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.inputCheckbox {
+  height: 50px;
+  width: 50px;
+  /* margin-left: -50px; */
+  border-radius: 10px;
 }
 
 .footer__container__mobile {

@@ -4,6 +4,7 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { PulseLoader } from "react-spinners";
+import axios from "axios";
 
 const BodyVerifyOtpLogin = () => {
   const [otp, setOtp] = useState("");
@@ -28,27 +29,25 @@ const BodyVerifyOtpLogin = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    let url = new URL("https://arclifs.herokuapp.com/otp_verification");
-    url.search = new URLSearchParams({
-      mobile: mob,
-      otp: otp,
-    });
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data.status === 202) {
-      localStorage.removeItem("mob");
-      window.location.href = "/profile";
-    } else if (data.status === 404) {
-      document.getElementById("errorVarifyOtp").innerHTML = data.message;
-      document.getElementById("errorVarifyOtp").style.display = "block";
-      console.log(otp);
-    }
+    axios
+      .post("https://arclif-services-backend.uc.r.appspot.com/verifyOTP", {
+        phonenumber: localStorage.getItem("phone"),
+        roletype: "User",
+        hash: localStorage.getItem("hash"),
+        otp: otp,
+        msg: "null",
+        withCredentials: true,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        localStorage.setItem("loginId", res.data.data[0].data._id);
+        if (res.data.msg === "register verified") {
+          window.location.href = "/detailsform";
+        }
+        if (res.data.msg === "login verified") {
+          window.location.href = "/profile";
+        }
+      });
   }
 
   const storeOtp = () => {

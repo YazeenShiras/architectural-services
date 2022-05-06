@@ -49,8 +49,7 @@ const Secondary = () => {
               height={50}
             ></Image>
             <p className={styles.content__hiw}>
-              Find a best home plan by posting your requirementsFind a best home
-              plan by posting your requirements
+              COLLECTION OF REQUIREMENTS AND INITIAL PAYMENT FROM CLIENT.
             </p>
           </div>
           <div className={styles.column__tophiw__container}>
@@ -62,8 +61,8 @@ const Secondary = () => {
               height={50}
             ></Image>
             <p className={styles.content__hiw}>
-              Find a best home plan by posting your requirementsFind a best home
-              plan by posting your requirements
+              TELEPHONIC DISCUSSION BETWEEN EXPERTS FROM ARCLIF AND CLIENT TO
+              COLLECT ADDITIONAL DETAILS (IF REQUIRED).
             </p>
           </div>
         </div>
@@ -77,8 +76,8 @@ const Secondary = () => {
               height={50}
             ></Image>
             <p className={styles.bottom__content__hiw}>
-              Find a best home plan by posting your requirementsFind a best home
-              plan by posting your requirements
+              TIMELY SUBMISSION OF DELIVERABLES AS PER SUBSCRIPTION PLANS
+              SUBJECT TO REALIZATION OF PAYMENTS.
             </p>
           </div>
           <div className={styles.column__tophiw__container}>
@@ -90,8 +89,8 @@ const Secondary = () => {
               height={50}
             ></Image>
             <p className={styles.bottom__content__hiw}>
-              Find a best home plan by posting your requirementsFind a best home
-              plan by posting your requirements
+              FINAL REVIEW AND DISCUSSION WITH CLIENT FOR ANY CHANGES ON
+              EXISTING DELIVERABLES AND ADD ON SERVICES.
             </p>
           </div>
         </div>

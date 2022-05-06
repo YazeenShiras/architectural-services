@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/BodyPlanYouself.module.css";
-import scrollbarStyles from "../styles/BodyBudget.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
@@ -8,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { PulseLoader } from "react-spinners";
 
 const BodyPlanYourself = () => {
   const [bedrooms, setBedrooms] = useState(0);
@@ -161,9 +161,14 @@ const BodyPlanYourself = () => {
     return value;
   }
 
-  const demo = () => {
-    console.log("bedrooms = " + bedrooms);
-    console.log("attachedBedRooms = " + attachedBedRooms);
+  const onNextClick = () => {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
+    localStorage.setItem("totalBedrooms", bedrooms);
+    localStorage.setItem("totalAttachedBedrooms", attachedBedRooms);
+
+    window.location.href = "/requirements";
   };
 
   return (
@@ -279,11 +284,12 @@ const BodyPlanYourself = () => {
               </div>
             </div>
           </div>
-          {/*  <Link href="/requirements" passHref> */}
-          <div onClick={demo} className={styles.next__button}>
-            NEXT
+          <div onClick={onNextClick} className={styles.next__button}>
+            <div className={styles.loader__container__next} id="loaderNext">
+              <PulseLoader color="#ffffff" />
+            </div>
+            <p id="nextText">NEXT</p>
           </div>
-          {/*     </Link> */}
           <Link href="/requirements" passHref>
             <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
           </Link>

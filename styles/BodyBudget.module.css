@@ -84,6 +84,10 @@
   margin-top: 20px;
 }
 
+.loader__container__next {
+  display: none;
+}
+
 .footer__container__mobile {
   display: none;
   margin-top: 20px;

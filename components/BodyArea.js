@@ -8,8 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { PulseLoader } from "react-spinners";
 
-const BodyArea = (props) => {
+const BodyArea = () => {
   const [area, setArea] = useState(300);
   const [floor, setFloor] = useState(10);
 
@@ -89,9 +90,14 @@ const BodyArea = (props) => {
     return value;
   }
 
-  const demo = () => {
-    console.log("area = " + area);
-    console.log("floor = " + floor);
+  const onNextClick = () => {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
+    localStorage.setItem("totalArea", area);
+    localStorage.setItem("totalFloor", floor);
+
+    window.location.href = "/designtype";
   };
 
   return (
@@ -205,11 +211,12 @@ const BodyArea = (props) => {
               </div>
             </div>
           </div>
-          {/*  <Link href="/designtype" passHref> */}
-          <div onClick={demo} className={styles.next__button}>
-            NEXT
+          <div onClick={onNextClick} className={styles.next__button}>
+            <div className={styles.loader__container__next} id="loaderNext">
+              <PulseLoader color="#ffffff" />
+            </div>
+            <p id="nextText">NEXT</p>
           </div>
-          {/*  </Link> */}
           <Link href="/designtype" passHref>
             <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
           </Link>

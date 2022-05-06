@@ -1,12 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/BodyPlans.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
 
 const BodyPlans = () => {
+  const [loginId, setLoginId] = useState("");
+
+  const [silver, setSilver] = useState([]);
+  const [gold, setGold] = useState([]);
+  const [platinum, setPlatinum] = useState([]);
+
+  const [silverServices, setSilverServives] = useState([]);
+  const [goldServices, setGoldServices] = useState([]);
+  const [platinumServices, setPlatinumServices] = useState([]);
+
+  async function choosePlan(id) {
+    console.log(id);
+
+    axios
+      .post("https://arclif-services-backend.uc.r.appspot.com/chooseplan", {
+        login_id: loginId,
+        paymentplan_id: id,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        if (res.data.msg === "choose plan added !!") {
+          window.location.href = "/adOnServices";
+        }
+      });
+  }
+
+  useEffect(() => {
+    const loginIdLoc = localStorage.getItem("loginId");
+    setLoginId(loginIdLoc);
+  }, []);
+
+  useEffect(() => {
+    async function getPlans() {
+      axios
+        .get("https://arclif-services-backend.uc.r.appspot.com/viewplan")
+        .then(function (res) {
+          console.log(res.data);
+          setSilver(res.data.details[0]);
+          setGold(res.data.details[1]);
+          setPlatinum(res.data.details[2]);
+          setSilverServives(res.data.details[0].plan_services);
+          setGoldServices(res.data.details[1].plan_services);
+          setPlatinumServices(res.data.details[2].plan_services);
+        });
+    }
+    getPlans();
+  }, []);
+
   return (
     <div className={styles.bodyPlans}>
       <Header />
@@ -18,223 +67,89 @@ const BodyPlans = () => {
         <p>Lorem ipsum dolor</p>
         <div className={styles.cardsContainer__plans}>
           <div className={styles.card__plans}>
-            <h5>Plan Name</h5>
-            <h4>₹5 Lakh</h4>
-            <p>
-              Lorem Ipsum is simply dummy text of <br /> the printing
-            </p>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
+            <h5>{silver.plan_name}</h5>
+            <h4>₹{silver.plan_amount_inlakh}</h4>
+            <p></p>
+
+            {silverServices.map((plan, index) => {
+              return (
+                <div key={index} className={styles.feature__container__plans}>
+                  <Image
+                    className={styles.bubble2__top__content__main__right}
+                    src="/check.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                  ></Image>
+                  <p>{plan}</p>
+                </div>
+              );
+            })}
             <div className={styles.button__container__plans}>
-              <Link href="/confirmplan" passHref>
-                <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
-              </Link>
+              <div
+                onClick={() => choosePlan(silver._id)}
+                className={styles.choosePlan__button}
+              >
+                SELECT PLAN
+              </div>
             </div>
           </div>
 
           <div className={styles.card__plans__middle}>
-            <h5>Plan Name</h5>
-            <h4>₹10 Lakh</h4>
-            <p>
-              Lorem Ipsum is simply dummy text of <br /> the printing
-            </p>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.button__container__plans}>
-              <Link href="/confirmplan" passHref>
-                <div className={styles.choosePlan__button__middle}>
-                  CHOOSE PLAN
+            <h5>{gold.plan_name}</h5>
+            <h4>₹{gold.plan_amount_inlakh}</h4>
+            <p></p>
+
+            {goldServices.map((plan, index) => {
+              return (
+                <div key={index} className={styles.feature__container__plans}>
+                  <Image
+                    className={styles.bubble2__top__content__main__right}
+                    src="/check.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                  ></Image>
+                  <p>{plan}</p>
                 </div>
-              </Link>
+              );
+            })}
+            <div className={styles.button__container__plans}>
+              <div
+                onClick={() => choosePlan(gold._id)}
+                className={styles.choosePlan__button__middle}
+              >
+                SELECT PLAN
+              </div>
             </div>
           </div>
 
           <div className={styles.card__plans}>
-            <h5>Plan Name</h5>
-            <h4>₹15 Lakh</h4>
-            <p>
-              Lorem Ipsum is simply dummy text of <br /> the printing
-            </p>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum</p>
-            </div>
-            <div className={styles.feature__container__plans}>
-              <Image
-                className={styles.bubble2__top__content__main__right}
-                src="/check.svg"
-                alt=""
-                width={12}
-                height={12}
-              ></Image>
-              <p>Lorem Ipsum is simply dummy</p>
-            </div>
+            <h5>{platinum.plan_name}</h5>
+            <h4>₹{platinum.plan_amount_inlakh}</h4>
+            <p></p>
+            {platinumServices.map((plan, index) => {
+              return (
+                <div key={index} className={styles.feature__container__plans}>
+                  <Image
+                    className={styles.bubble2__top__content__main__right}
+                    src="/check.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                  ></Image>
+                  <p>{plan}</p>
+                </div>
+              );
+            })}
+
             <div className={styles.button__container__plans}>
-              <Link href="/confirmplan" passHref>
-                <div className={styles.choosePlan__button}>CHOOSE PLAN</div>
-              </Link>
+              <div
+                onClick={() => choosePlan(platinum._id)}
+                className={styles.choosePlan__button}
+              >
+                SELECT PLAN
+              </div>
             </div>
           </div>
         </div>

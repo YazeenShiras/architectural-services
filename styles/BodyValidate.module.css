@@ -47,6 +47,8 @@
   justify-content: center;
   margin-left: 20px;
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
 .editButton__container__card__validte > p {
@@ -99,6 +101,15 @@
   color: #5b5b5b;
 }
 
+.row__card__validate > input,
+.row__card__validate__last > input {
+  font-size: 12px;
+  color: #5b5b5b;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
 .next__button {
   height: 35px;
   width: 300px;
@@ -121,6 +132,10 @@
 .footer__container__mobile {
   display: none;
   margin-top: 20px;
+}
+
+.loader__container__next {
+  display: none;
 }
 
 @media only screen and (max-width: 500px) {
