@@ -8,13 +8,17 @@ const ProfileDetails = () => {
   const [userdetails, setUserdetails] = useState([]);
   const [mob, setMob] = useState("");
 
+  const [loginID, setLoginID] = useState("");
+
   useEffect(() => {
     const loginId = localStorage.getItem("loginId");
+    setLoginID(loginId);
+    console.log(loginId);
 
     async function handleSubmit() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginID}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -24,10 +28,10 @@ const ProfileDetails = () => {
         });
     }
 
-    if (loginId !== "" && loginId !== undefined) {
+    if (loginID !== "" && loginID !== undefined) {
       handleSubmit();
     }
-  }, []);
+  }, [loginID]);
 
   return (
     <div className={styles.ProfileDetails}>

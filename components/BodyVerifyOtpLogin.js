@@ -40,11 +40,12 @@ const BodyVerifyOtpLogin = () => {
       })
       .then(function (res) {
         console.log(res.data);
-        localStorage.setItem("loginId", res.data.data[0].data._id);
         if (res.data.msg === "register verified") {
+          localStorage.setItem("loginId", res.data.data[0].data._id);
           window.location.href = "/detailsform";
         }
         if (res.data.msg === "login verified") {
+          localStorage.setItem("loginId", res.data.data[0].data[0]._id);
           window.location.href = "/profile";
         }
       });
