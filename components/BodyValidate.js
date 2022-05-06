@@ -137,6 +137,7 @@ const BodyValidate = () => {
       )
       .then(function (res) {
         console.log(res.data);
+        window.location.href = "/plans";
       });
   }
 
