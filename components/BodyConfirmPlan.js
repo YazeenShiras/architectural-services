@@ -79,7 +79,7 @@ const BodyConfirmPlan = () => {
       key: "rzp_test_ebPS0dfN5A4uYA",
       amount: "1500",
       currency: "INR",
-      name: "Rone Payment",
+      name: "Arclif Payment",
       description: "",
       image: "",
       order_id: orderid,
@@ -97,7 +97,7 @@ const BodyConfirmPlan = () => {
         address: "Razorpay Corporate Office",
       },
       theme: {
-        color: "#d52a33",
+        color: "#1c9c76",
       },
     };
 
