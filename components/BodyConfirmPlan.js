@@ -71,7 +71,8 @@ const BodyConfirmPlan = () => {
       userPlan();
       paymnetOrder();
     }
-  }, [loginId, plan, area]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loginId]);
 
   const handlePayment = useCallback(() => {
     const options = {
