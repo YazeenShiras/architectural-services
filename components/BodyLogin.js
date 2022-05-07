@@ -16,7 +16,7 @@ const BodyLogin = () => {
 
     axios
       .post("https://arclif-services-backend.uc.r.appspot.com/sendOTP", {
-        phonenumber: `+91${number}`,
+        phonenumber: number,
       })
       .then(function (res) {
         console.log(res.data);

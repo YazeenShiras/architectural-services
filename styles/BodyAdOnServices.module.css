@@ -22,7 +22,7 @@
   justify-content: center;
 }
 
-.cardAdonServices > input {
+.cardAdonServices > label > input {
   margin-right: 20px;
 }
 
