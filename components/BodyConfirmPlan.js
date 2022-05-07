@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
-import Link from "next/link";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 
@@ -20,6 +19,8 @@ const BodyConfirmPlan = () => {
   const [planServices, setPlanServices] = useState([]);
 
   const [orderid, setOrderid] = useState("");
+
+  const [addService, setAddService] = useState("");
 
   useEffect(() => {
     const loginIdLoc = localStorage.getItem("loginId");
@@ -56,13 +57,27 @@ const BodyConfirmPlan = () => {
 
     async function paymnetOrder() {
       axios
-        .post(`https://arclif-service-payment.herokuapp.com/api/paymentOrder`, {
-          amount: plan.amount_per_sqrft * area,
-          userId: loginId,
-        })
+        .post(
+          `https://arclif-services-backend.uc.r.appspot.com/api/paymentOrder`,
+          {
+            amount: plan.amount_per_sqrft * area,
+            userId: loginId,
+          }
+        )
         .then(function (res) {
           console.log(res.data);
           setOrderid(res.data.id);
+        });
+    }
+
+    async function getUserAdon() {
+      axios
+        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserAdon`, {
+          login_id: loginId,
+        })
+        .then(function (res) {
+          console.log(res.data);
+          setAddService(res.data.details.total_amount);
         });
     }
 
@@ -70,6 +85,7 @@ const BodyConfirmPlan = () => {
       userDetails();
       userPlan();
       paymnetOrder();
+      getUserAdon();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginId]);
@@ -83,7 +99,7 @@ const BodyConfirmPlan = () => {
       description: "",
       image: "",
       order_id: orderid,
-      callback_url: `https://arclif-service-payment.herokuapp.com/api/verifyPayment/${loginId}`,
+      callback_url: `https://arclif-services-backend.uc.r.appspot.com/api/verifyPayment/${loginId}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -167,13 +183,19 @@ const BodyConfirmPlan = () => {
                 <p>Amount Per sq.ft</p>
                 <p>₹{plan.amount_per_sqrft}</p>
               </div>
+              <div
+                className={styles.card__plans__right__confirm__top__container}
+              >
+                <p>Add On Service Charge</p>
+                <p>₹{addService}</p>
+              </div>
             </div>
             <div className={styles.card__plans__right__confirm__middle}>
               <div
                 className={styles.card__plans__right__confirm__top__container}
               >
                 <p>Total Payable</p>
-                <p>₹{plan.amount_per_sqrft * area}</p>
+                <p>₹{plan.amount_per_sqrft * area + addService}</p>
               </div>
               <div
                 className={styles.card__plans__right__confirm__top__container}
