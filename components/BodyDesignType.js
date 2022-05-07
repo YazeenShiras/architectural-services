@@ -12,34 +12,171 @@ const BodyDesignType = () => {
 
   const contemporaryClick = () => {
     setDesignType("Contemporary House");
+    document.getElementById("contemporary").style.backgroundColor = "#1c9c76";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#ffffff";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const traditionalClick = () => {
     setDesignType("Traditional House");
+    document.getElementById("traditional").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#ffffff";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const ecoFriendlyClick = () => {
     setDesignType("Eco Friendly House");
+    document.getElementById("ecoFriendly").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#ffffff";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const vernecularClick = () => {
     setDesignType("Vernacular Architecture House");
+    document.getElementById("vernicular").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#ffffff";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const minimalClick = () => {
     setDesignType("Minimal Design House");
+    document.getElementById("minimal").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#ffffff";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const openFloorClick = () => {
     setDesignType("Open Floor Plan House");
+    document.getElementById("openFloor").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#ffffff";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const energyClick = () => {
     setDesignType("Net zero residence/energy efficient");
+    document.getElementById("netZero").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("colonial").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#ffffff";
+    document.getElementById("colonialText").style.color = "#606060";
   };
 
   const colonialClick = () => {
     setDesignType(" Colonial style House");
+    document.getElementById("colonial").style.backgroundColor = "#1c9c76";
+    document.getElementById("netZero").style.backgroundColor = "#1c9c76";
+    document.getElementById("contemporary").style.background = "none";
+    document.getElementById("traditional").style.background = "none";
+    document.getElementById("ecoFriendly").style.background = "none";
+    document.getElementById("vernicular").style.background = "none";
+    document.getElementById("minimal").style.background = "none";
+    document.getElementById("openFloor").style.background = "none";
+    document.getElementById("netZero").style.background = "none";
+
+    document.getElementById("contemporaryText").style.color = "#606060";
+    document.getElementById("temporaryText").style.color = "#606060";
+    document.getElementById("ecoText").style.color = "#606060";
+    document.getElementById("vernicularText").style.color = "#606060";
+    document.getElementById("minimalText").style.color = "#606060";
+    document.getElementById("openFloorText").style.color = "#606060";
+    document.getElementById("netZeroText").style.color = "#606060";
+    document.getElementById("colonialText").style.color = "#ffffff";
   };
 
   const onNextClick = () => {
@@ -65,7 +202,11 @@ const BodyDesignType = () => {
         <h3>Type of Design</h3>
         <p>Choose your requirements</p>
         <div className={styles.cards__container__designType}>
-          <div onClick={contemporaryClick} className={styles.card__designType}>
+          <div
+            onClick={contemporaryClick}
+            id="contemporary"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -75,11 +216,15 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="contemporaryText">
               Contemporary <br /> House
             </p>
           </div>
-          <div onClick={traditionalClick} className={styles.card__designType}>
+          <div
+            onClick={traditionalClick}
+            id="traditional"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -89,11 +234,15 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="temporaryText">
               Traditional <br /> House
             </p>
           </div>
-          <div onClick={ecoFriendlyClick} className={styles.card__designType}>
+          <div
+            onClick={ecoFriendlyClick}
+            id="ecoFriendly"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -103,11 +252,15 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="ecoText">
               Eco Friendly <br /> House
             </p>
           </div>
-          <div onClick={vernecularClick} className={styles.card__designType}>
+          <div
+            onClick={vernecularClick}
+            id="vernicular"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -117,13 +270,17 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="vernicularText">
               Vernacular Architecture <br /> House
             </p>
           </div>
         </div>
         <div className={styles.cards__container__designType}>
-          <div onClick={minimalClick} className={styles.card__designType}>
+          <div
+            onClick={minimalClick}
+            id="minimal"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -133,11 +290,15 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="minimalText">
               Minimal Design <br /> House
             </p>
           </div>
-          <div onClick={openFloorClick} className={styles.card__designType}>
+          <div
+            onClick={openFloorClick}
+            id="openFloor"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -147,11 +308,15 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="openFloorText">
               Open Floor Plan <br /> House
             </p>
           </div>
-          <div onClick={energyClick} className={styles.card__designType}>
+          <div
+            onClick={energyClick}
+            id="netZero"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -161,9 +326,13 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>Net zero residence/energy efficient</p>
+            <p id="netZeroText">Net zero residence/energy efficient</p>
           </div>
-          <div onClick={colonialClick} className={styles.card__designType}>
+          <div
+            onClick={colonialClick}
+            id="colonial"
+            className={styles.card__designType}
+          >
             <div className={styles.imageContainer__card__designType}>
               <Image
                 className={styles.bubble2__top__content__main__right}
@@ -173,7 +342,7 @@ const BodyDesignType = () => {
                 height={60}
               ></Image>
             </div>
-            <p>
+            <p id="colonialText">
               Colonial style
               <br /> House
             </p>
