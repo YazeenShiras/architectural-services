@@ -8,17 +8,14 @@ const ProfileDetails = () => {
   const [userdetails, setUserdetails] = useState([]);
   const [mob, setMob] = useState("");
 
-  const [loginID, setLoginID] = useState("");
-
   useEffect(() => {
     const loginId = localStorage.getItem("loginId");
-    setLoginID(loginId);
-    console.log(loginId);
 
     async function handleSubmit() {
+      console.log(loginId);
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginID}`
+          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -28,10 +25,26 @@ const ProfileDetails = () => {
         });
     }
 
-    if (loginID !== "" && loginID !== undefined) {
-      handleSubmit();
+    async function checkPayed() {
+      axios
+        .post(
+          `https://arclif-services-backend.uc.r.appspot.com/isPaymentcompleted`,
+          {
+            userId: loginId,
+          }
+        )
+        .then(function (res) {
+          console.log(res.data);
+          if (res.data.msg === "payment details already added") {
+            handleSubmit();
+          } else {
+            window.location.href = "/";
+          }
+        });
     }
-  }, [loginID]);
+
+    checkPayed();
+  }, []);
 
   return (
     <div className={styles.ProfileDetails}>

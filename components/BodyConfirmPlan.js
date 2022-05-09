@@ -13,12 +13,15 @@ const BodyConfirmPlan = () => {
 
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [area, setArea] = useState("");
 
   const [plan, setPlan] = useState([]);
   const [planServices, setPlanServices] = useState([]);
 
   const [orderid, setOrderid] = useState("");
+  const [amount, setAmount] = useState(0);
 
   const [addService, setAddService] = useState("");
 
@@ -39,9 +42,10 @@ const BodyConfirmPlan = () => {
         )
         .then(function (res) {
           console.log(res.data);
-          console.log(res.data.details.userdetails[0]);
+          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
+          setEmail(res.data.details.userdetails[0].email);
         });
     }
 
@@ -74,13 +78,15 @@ const BodyConfirmPlan = () => {
       userPlan();
       getUserAdon();
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginId]);
 
   const handlePayment = useCallback(() => {
+    console.log(plan.amount_per_sqrft * area);
     const options = {
       key: "rzp_test_ebPS0dfN5A4uYA",
-      amount: "1500",
+      amount: plan.amount_per_sqrft * area * 100,
       currency: "INR",
       name: "Arclif Payment",
       description: "",
@@ -93,7 +99,7 @@ const BodyConfirmPlan = () => {
       },
       prefill: {
         name: `${name}`,
-        email: ``,
+        email: `${email}`,
         contact: ``,
       },
       notes: {
@@ -106,10 +112,9 @@ const BodyConfirmPlan = () => {
 
     const rzpay = new Razorpay(options);
     rzpay.open();
-  }, [Razorpay, name, orderid, loginId]);
+  }, [Razorpay, name, email, orderid, loginId, area, plan]);
 
   async function paymnetOrder() {
-    console.log(plan.amount_per_sqrft * area);
     axios
       .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
@@ -117,7 +122,8 @@ const BodyConfirmPlan = () => {
       })
       .then(function (res) {
         console.log(res.data);
-        setOrderid(res.data.id);
+        setAmount(res.data.order.amount_due);
+        setOrderid(res.data.order.id);
         if (res.data.status === 200) {
           handlePayment();
         }
