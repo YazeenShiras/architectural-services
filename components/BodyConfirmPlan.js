@@ -22,6 +22,8 @@ const BodyConfirmPlan = () => {
 
   const [addService, setAddService] = useState("");
 
+  const [totalAmount, setTotalAmount] = useState("");
+
   useEffect(() => {
     const loginIdLoc = localStorage.getItem("loginId");
     setLoginId(loginIdLoc);
@@ -52,18 +54,7 @@ const BodyConfirmPlan = () => {
           console.log(res.data);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
-        });
-    }
-
-    async function paymnetOrder() {
-      axios
-        .post(`https://arclif-service-paymnet.herokuapp.com/api/paymentOrder`, {
-          amount: plan.amount_per_sqrft * area,
-          userId: loginId,
-        })
-        .then(function (res) {
-          console.log(res.data);
-          setOrderid(res.data.id);
+          setTotalAmount(plan.amount_per_sqrft * area);
         });
     }
 
@@ -81,7 +72,6 @@ const BodyConfirmPlan = () => {
     if (loginId !== "" && loginId !== undefined) {
       userDetails();
       userPlan();
-      paymnetOrder();
       getUserAdon();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -96,7 +86,7 @@ const BodyConfirmPlan = () => {
       description: "",
       image: "",
       order_id: orderid,
-      callback_url: `https://arclif-service-paymnet.herokuapp.com/api/verifyPayment/${loginId}`,
+      callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${loginId}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -118,6 +108,22 @@ const BodyConfirmPlan = () => {
     rzpay.open();
   }, [Razorpay, name, orderid, loginId]);
 
+  async function paymnetOrder() {
+    console.log(plan.amount_per_sqrft * area);
+    axios
+      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
+        amount: plan.amount_per_sqrft * area,
+        userId: loginId,
+      })
+      .then(function (res) {
+        console.log(res.data);
+        setOrderid(res.data.id);
+        if (res.data.status === 200) {
+          handlePayment();
+        }
+      });
+  }
+
   return (
     <div className={styles.bodyPlans}>
       <Header />
@@ -126,7 +132,6 @@ const BodyConfirmPlan = () => {
         style={{ backgroundImage: `url('/bgdesign.svg')` }}
       >
         <h3>Confirm your Plan</h3>
-        <p>Lorem ipsum dolor</p>
         <div className={styles.cardsContainer__plans__confirm}>
           <div className={styles.card__plans__left__confirm}>
             <p className={styles.name__card__plans__left__confirm}>
@@ -225,7 +230,7 @@ const BodyConfirmPlan = () => {
                 <p>₹{plan.initial_payment}</p>
               </div>
             </div>
-            <div onClick={handlePayment} className={styles.paymnet__button}>
+            <div onClick={paymnetOrder} className={styles.paymnet__button}>
               MAKE PAYMENT
             </div>
             <div className={styles.info__container__confirm}>
