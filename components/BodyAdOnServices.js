@@ -62,13 +62,11 @@ const BodyAdOnServices = () => {
           {allData.map((data, index) => {
             return (
               <div key={index} className={styles.cardAdonServices}>
-                <label>
-                  <input
-                    onClick={() => selectAdOn(data.adonservicename)}
-                    type="checkbox"
-                  />
-                  {data.adonservicename}({data.adonservicedescription})
-                </label>
+                <input
+                  onClick={() => selectAdOn(data.adonservicename)}
+                  type="checkbox"
+                />
+                {data.adonservicename}({data.adonservicedescription})
               </div>
             );
           })}

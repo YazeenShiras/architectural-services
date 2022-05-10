@@ -58,13 +58,13 @@
   border-radius: 20px;
 }
 
-.requirementCard > label {
+.requirementCard {
   font-size: 13px;
   display: flex;
   align-items: center;
 }
 
-.requirementCard > label > input {
+.requirementCard input {
   margin-right: 10px;
 }
 

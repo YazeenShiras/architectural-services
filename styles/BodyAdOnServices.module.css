@@ -23,11 +23,12 @@
   width: 400px;
 }
 
-.cardAdonServices > label {
+.cardAdonServices {
   color: #ffffff;
+  font-size: 15px;
 }
 
-.cardAdonServices > label > input {
+.cardAdonServices > input {
   margin-right: 10px;
 }
 

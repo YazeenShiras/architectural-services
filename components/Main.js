@@ -26,11 +26,7 @@ const Main = () => {
             most compelling designs possible.
           </p>
           <div className={styles.actionContainer__main__left}>
-            <div className={styles.subHeading__main__right}>
-              {/* <h3>
-                Find a best home plan by <br /> posting your requirements
-              </h3> */}
-            </div>
+            <div className={styles.subHeading__main__right}></div>
             <Link href="/sendotp" passHref>
               <div className={styles.tryNow__button__main__right}>
                 DESIGN MY HOME

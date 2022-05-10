@@ -49,15 +49,13 @@ const BodyRequirements = () => {
           {Requirements.map((r, index) => {
             return (
               <div key={index} className={styles.requirementCard}>
-                <label>
-                  <input
-                    onClick={() =>
-                      setRequirements((requirements) => [...requirements, r])
-                    }
-                    type="checkbox"
-                  />
-                  {r}
-                </label>
+                <input
+                  onClick={() =>
+                    setRequirements((requirements) => [...requirements, r])
+                  }
+                  type="checkbox"
+                />
+                {r}
               </div>
             );
           })}
