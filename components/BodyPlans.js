@@ -63,28 +63,28 @@ const BodyPlans = () => {
         className={styles.bodyPlans__container}
         style={{ backgroundImage: `url('/bgdesign.svg')` }}
       >
-        <h3>Choose best plans</h3>
-        <p>Lorem ipsum dolor</p>
+        <h3>Choose Best Plans</h3>
+        <p>Select best plan for your home</p>
         <div className={styles.cardsContainer__plans}>
           <div className={styles.card__plans}>
-            <h5>{silver.plan_name}</h5>
-            <h4>₹{silver.plan_amount_inlakh}</h4>
-            <p></p>
-
-            {silverServices.map((plan, index) => {
-              return (
-                <div key={index} className={styles.feature__container__plans}>
-                  <Image
-                    className={styles.bubble2__top__content__main__right}
-                    src="/check.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                  ></Image>
-                  <p>{plan}</p>
-                </div>
-              );
-            })}
+            <div className={styles.top_container}>
+              <h5>{silver.plan_name}</h5>
+              <h4>₹{silver.plan_amount_inlakh}</h4>
+              {silverServices.map((plan, index) => {
+                return (
+                  <div key={index} className={styles.feature__container__plans}>
+                    <Image
+                      className={styles.bubble2__top__content__main__right}
+                      src="/check.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                    ></Image>
+                    <p>{plan}</p>
+                  </div>
+                );
+              })}
+            </div>
             <div className={styles.button__container__plans}>
               <div
                 onClick={() => choosePlan(silver._id)}
@@ -96,24 +96,24 @@ const BodyPlans = () => {
           </div>
 
           <div className={styles.card__plans__middle}>
-            <h5>{gold.plan_name}</h5>
-            <h4>₹{gold.plan_amount_inlakh}</h4>
-            <p></p>
-
-            {goldServices.map((plan, index) => {
-              return (
-                <div key={index} className={styles.feature__container__plans}>
-                  <Image
-                    className={styles.bubble2__top__content__main__right}
-                    src="/check.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                  ></Image>
-                  <p>{plan}</p>
-                </div>
-              );
-            })}
+            <div className={styles.top_container_gold}>
+              <h5>{gold.plan_name}</h5>
+              <h4>₹{gold.plan_amount_inlakh}</h4>
+              {goldServices.map((plan, index) => {
+                return (
+                  <div key={index} className={styles.feature__container__plans}>
+                    <Image
+                      className={styles.bubble2__top__content__main__right}
+                      src="/check.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                    ></Image>
+                    <p>{plan}</p>
+                  </div>
+                );
+              })}
+            </div>
             <div className={styles.button__container__plans}>
               <div
                 onClick={() => choosePlan(gold._id)}
@@ -125,23 +125,25 @@ const BodyPlans = () => {
           </div>
 
           <div className={styles.card__plans}>
-            <h5>{platinum.plan_name}</h5>
-            <h4>₹{platinum.plan_amount_inlakh}</h4>
-            <p></p>
-            {platinumServices.map((plan, index) => {
-              return (
-                <div key={index} className={styles.feature__container__plans}>
-                  <Image
-                    className={styles.bubble2__top__content__main__right}
-                    src="/check.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                  ></Image>
-                  <p>{plan}</p>
-                </div>
-              );
-            })}
+            <div className={styles.top_container}>
+              <h5>{platinum.plan_name}</h5>
+              <h4>₹{platinum.plan_amount_inlakh}</h4>
+              <p></p>
+              {platinumServices.map((plan, index) => {
+                return (
+                  <div key={index} className={styles.feature__container__plans}>
+                    <Image
+                      className={styles.bubble2__top__content__main__right}
+                      src="/check.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                    ></Image>
+                    <p>{plan}</p>
+                  </div>
+                );
+              })}
+            </div>
 
             <div className={styles.button__container__plans}>
               <div

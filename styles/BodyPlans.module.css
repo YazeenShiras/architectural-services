@@ -45,6 +45,9 @@
   border-radius: 10px;
   margin: 0px 10px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__plans__middle {
@@ -70,33 +73,23 @@
   background-color: #fff;
 }
 
-.card__plans > h5 {
+.top_container > h5 {
   color: #5b5b5b;
+  font-size: 18px;
 }
 
-.card__plans__middle > h5 {
+.top_container_gold > h5 {
   color: #fff;
+  font-size: 18px;
 }
 
-.card__plans > h4 {
+.top_container > h4 {
   color: #1c9c76;
   margin-top: 5px;
 }
 
-.card__plans__middle > h4 {
+.top_container_gold > h4 {
   color: #fff;
-  margin-top: 5px;
-}
-
-.card__plans > p {
-  color: #5b5b5b;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.card__plans__middle > p {
-  color: #fff;
-  font-size: 12px;
   margin-top: 5px;
 }
 
@@ -113,7 +106,7 @@
   color: #5b5b5b;
 }
 
-.card__plans__middle > .feature__container__plans > p {
+.top_container_gold > .feature__container__plans > p {
   margin-left: 5px;
   font-size: 13px;
   color: #fff;
@@ -139,6 +132,11 @@
   cursor: pointer;
 }
 
+.choosePlan__button:hover {
+  background-color: #027888;
+  color: #fff;
+}
+
 .choosePlan__button__middle {
   height: 35px;
   width: 100%;
@@ -149,6 +147,11 @@
   border-radius: 5px;
   font-size: 13px;
   cursor: pointer;
+}
+
+.choosePlan__button__middle:hover {
+  background-color: #fff;
+  color: #000000;
 }
 
 .next__button {
@@ -235,6 +238,10 @@
 
 .card__plans__right__confirm__top__subContainer > input {
   accent-color: #1c9c76;
+}
+
+.chooseAmountTitle {
+  margin-bottom: 10px;
 }
 
 .card__plans__right__confirm__top__container > p {

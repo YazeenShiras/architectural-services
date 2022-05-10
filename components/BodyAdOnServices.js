@@ -46,9 +46,8 @@ const BodyAdOnServices = () => {
       });
   }
 
-  const selectAdOn = (name, amount) => {
+  const selectAdOn = (name) => {
     setSelectedData((selectedData) => [...selectedData, name]);
-    setTotalAmount(totalAmount + amount);
   };
 
   return (
@@ -63,9 +62,7 @@ const BodyAdOnServices = () => {
           {allData.map((data, index) => {
             return (
               <div
-                onClick={() =>
-                  selectAdOn(data.adonservicename, data.adonserviceamount)
-                }
+                onClick={() => selectAdOn(data.adonservicename)}
                 key={index}
                 className={styles.cardAdonServices}
               >

@@ -23,9 +23,9 @@ const BodyConfirmPlan = () => {
   const [orderid, setOrderid] = useState("");
   const [amount, setAmount] = useState(0);
 
-  const [addService, setAddService] = useState("");
-
   const [totalAmount, setTotalAmount] = useState("");
+
+  const [final, setFinal] = useState(0);
 
   useEffect(() => {
     const loginIdLoc = localStorage.getItem("loginId");
@@ -62,37 +62,25 @@ const BodyConfirmPlan = () => {
         });
     }
 
-    async function getUserAdon() {
-      axios
-        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserAdon`, {
-          login_id: loginId,
-        })
-        .then(function (res) {
-          console.log(res.data);
-          setAddService(res.data.details.total_amount);
-        });
-    }
-
     if (loginId !== "" && loginId !== undefined) {
       userDetails();
       userPlan();
-      getUserAdon();
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginId]);
 
   const handlePayment = useCallback(() => {
-    console.log(plan.amount_per_sqrft * area);
+    console.log(final);
     const options = {
       key: "rzp_test_ebPS0dfN5A4uYA",
-      amount: plan.amount_per_sqrft * area * 100,
+      amount: final * 100,
       currency: "INR",
       name: "Arclif Payment",
       description: "",
       image: "",
       order_id: orderid,
-      callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${loginId}`,
+      callback_url: `https://arclif-service-payment.herokuapp.com/api/verifyPayment/${loginId}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -112,11 +100,11 @@ const BodyConfirmPlan = () => {
 
     const rzpay = new Razorpay(options);
     rzpay.open();
-  }, [Razorpay, name, email, orderid, loginId, area, plan]);
+  }, [Razorpay, name, email, orderid, loginId, final]);
 
   async function paymnetOrder() {
     axios
-      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
+      .post(`https://arclif-service-payment.herokuapp.com/api/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
         userId: loginId,
       })
@@ -129,6 +117,18 @@ const BodyConfirmPlan = () => {
         }
       });
   }
+
+  const payOption = (value) => {
+    setFinal(value);
+  };
+
+  const makePaymnetClick = () => {
+    if (final !== 0) {
+      paymnetOrder();
+    } else {
+      alert("choose amount");
+    }
+  };
 
   return (
     <div className={styles.bodyPlans}>
@@ -176,7 +176,7 @@ const BodyConfirmPlan = () => {
           </div>
 
           <div className={styles.card__plans__right__confirm}>
-            <p>Total Amount</p>
+            <p>Plan & Amount</p>
             <h4>{plan.plan_name}</h4>
             <div className={styles.card__plans__right__confirm__top}>
               <div
@@ -191,19 +191,12 @@ const BodyConfirmPlan = () => {
                 <p>Amount Per sq.ft</p>
                 <p>₹{plan.amount_per_sqrft}</p>
               </div>
-              <div
-                className={styles.card__plans__right__confirm__top__container}
-              >
-                <p>Add On Service Charge</p>
-                <p>₹{addService}</p>
-              </div>
             </div>
             <div className={styles.card__plans__right__confirm__middle}>
               <div
                 className={styles.card__plans__right__confirm__top__container}
               >
-                <p>Total Payable</p>
-                <p>₹{plan.amount_per_sqrft * area + addService}</p>
+                <p className={styles.chooseAmountTitle}>Choose Amount</p>
               </div>
               <div
                 className={styles.card__plans__right__confirm__top__container}
@@ -213,10 +206,12 @@ const BodyConfirmPlan = () => {
                     styles.card__plans__right__confirm__top__subContainer
                   }
                 >
-                  <input type="radio" id="radio" />{" "}
-                  <p>
-                    Total <br /> Amount
-                  </p>
+                  <input
+                    type="radio"
+                    name="radio"
+                    onClick={() => payOption(plan.amount_per_sqrft * area)}
+                  />{" "}
+                  <p>Total Amount</p>
                 </div>
                 <p>₹{plan.amount_per_sqrft * area}</p>
               </div>
@@ -230,13 +225,17 @@ const BodyConfirmPlan = () => {
                     styles.card__plans__right__confirm__top__subContainer
                   }
                 >
-                  <input type="radio" id="radio" />{" "}
+                  <input
+                    type="radio"
+                    name="radio"
+                    onClick={() => payOption(plan.initial_payment)}
+                  />{" "}
                   <p>Down Payment(launch offer)</p>
                 </div>
                 <p>₹{plan.initial_payment}</p>
               </div>
             </div>
-            <div onClick={paymnetOrder} className={styles.paymnet__button}>
+            <div onClick={makePaymnetClick} className={styles.paymnet__button}>
               MAKE PAYMENT
             </div>
             <div className={styles.info__container__confirm}>
