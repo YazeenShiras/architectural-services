@@ -237,7 +237,7 @@ const BodyPlanYourself = () => {
               </div>
             </div>
             <div className={styles.scroller__contanier}>
-              <p>No.of attached Bedrooms</p>
+              <p>No.of attached Bathrooms</p>
               <div
                 style={{
                   width: "100%",
