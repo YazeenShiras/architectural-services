@@ -48,13 +48,7 @@ const BodyRequirements = () => {
         <div className={styles.requiremnetCardContainer}>
           {Requirements.map((r, index) => {
             return (
-              <div
-                onClick={() =>
-                  setRequirements((requirements) => [...requirements, r])
-                }
-                key={index}
-                className={styles.requirementCard}
-              >
+              <div key={index} className={styles.requirementCard}>
                 <label>
                   <input
                     onClick={() =>

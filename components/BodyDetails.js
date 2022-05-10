@@ -36,6 +36,8 @@ const BodyDetails = () => {
     setName(document.getElementById("name").value);
     setEmail(document.getElementById("email").value);
     setHome(document.getElementById("homeName").value);
+    setPincode(document.getElementById("pincode").value);
+    setCountry(document.getElementById("country").value);
     setProffession(document.getElementById("profession").value);
     setMembers(document.getElementById("members").value);
   };
@@ -63,10 +65,8 @@ const BodyDetails = () => {
           const data = res.data;
           console.log(data);
           if (data.results) {
-            setCountry(data.results[0].country);
             setLatitude(data.results[0].lat);
             setLongitute(data.results[0].lon);
-            setPincode(data.results[0].postcode);
           }
         })
         .catch(console.error);
@@ -212,18 +212,13 @@ const BodyDetails = () => {
               <fieldset className={styles.input__container}>
                 <legend>Pincode*</legend>
                 <div className={styles.input__box}>
-                  <input
-                    value={pincode}
-                    maxLength={6}
-                    id="pincode"
-                    type="text"
-                  />
+                  <input maxLength={6} id="pincode" type="text" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
                 <legend>Country*</legend>
                 <div className={styles.input__box}>
-                  <input value={country} id="country" type="text" />
+                  <input id="country" type="text" />
                 </div>
               </fieldset>
               <fieldset className={styles.input__container}>
