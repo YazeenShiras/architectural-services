@@ -80,7 +80,7 @@ const BodyConfirmPlan = () => {
       description: "",
       image: "",
       order_id: orderid,
-      callback_url: `https://arclif-service-payment.herokuapp.com/api/verifyPayment/${loginId}`,
+      callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${loginId}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -104,7 +104,7 @@ const BodyConfirmPlan = () => {
 
   async function paymnetOrder() {
     axios
-      .post(`https://arclif-service-payment.herokuapp.com/api/paymentOrder`, {
+      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
         userId: loginId,
       })
