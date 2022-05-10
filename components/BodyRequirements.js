@@ -56,7 +56,12 @@ const BodyRequirements = () => {
                 className={styles.requirementCard}
               >
                 <label>
-                  <input type="checkbox" />
+                  <input
+                    onClick={() =>
+                      setRequirements((requirements) => [...requirements, r])
+                    }
+                    type="checkbox"
+                  />
                   {r}
                 </label>
               </div>
