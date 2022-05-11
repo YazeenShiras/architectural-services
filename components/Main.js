@@ -21,9 +21,13 @@ const Main = () => {
             Build your dream <br /> home with a few <br /> clicks!
           </h1>
           <p>
-            We offer innovative design consultancy and architectural services
-            including urban strategies to our clients in order to experience
-            most compelling designs possible.
+            AGRIHA is an initiative by Arclif Inc. to empower the home seeker to
+            dream and design their perfect home online with just few clicks. We
+            believe that it can't just be about the house itself - it's also
+            about the surrounding environment where you live. <br />
+            <br />
+            Got a great idea for your new house? Let's start from scratch and
+            design your home in just few clicks!
           </p>
           <div className={styles.actionContainer__main__left}>
             <div className={styles.subHeading__main__right}></div>
@@ -52,11 +56,15 @@ const Main = () => {
           <div id="aboutUs" className={styles.about__section__main__left}>
             <h3>About Us</h3>
             <p>
-              We design your dream through inspiring and sustainable spaces
-              adding beauty to it with best possible decisions by our team of
-              specialised architects. We strive to understand the needs of
-              society and contribute our experience values to what we observe
-              through our integrative approach.
+              We are a team of of dedicated professionals committed to creating
+              beautiful and sustainable homes. We believe in the power of
+              architecture to shape urban environments, improve quality of life
+              and positively impact society. AGRIHA offers complete design-build
+              services to meet the needs of our clients from concept through
+              completion. Our goal is to be the go-to source for high quality
+              architecture. We have extensive experience in working with
+              different high end projects across Kerala incorporating our
+              knowledge of both domestic and global trends.
             </p>
           </div>
         </div>

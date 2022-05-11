@@ -136,9 +136,9 @@ const BodyBudget = () => {
             </div>
             <p id="nextText">NEXT</p>
           </div>
-          <Link href="/area" passHref>
+          {/* <Link href="/area" passHref>
             <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className={styles.footer__container}>

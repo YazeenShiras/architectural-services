@@ -64,11 +64,15 @@ const MainMobile = () => {
           <div className={styles.aboutText}>
             <h3>About Us</h3>
             <p>
-              We design your dream through inspiring and sustainable spaces
-              adding beauty to it with best possible decisions by our team of
-              specialised architects. We strive to understand the needs of
-              society and contribute our experience values to what we observe
-              through our integrative approach.
+              We are a team of of dedicated professionals committed to creating
+              beautiful and sustainable homes. We believe in the power of
+              architecture to shape urban environments, improve quality of life
+              and positively impact society. AGRIHA offers complete design-build
+              services to meet the needs of our clients from concept through
+              completion. Our goal is to be the go-to source for high quality
+              architecture. We have extensive experience in working with
+              different high end projects across Kerala incorporating our
+              knowledge of both domestic and global trends.
             </p>
           </div>
           <div className={styles.WhatWeDo__mobile}>
@@ -147,12 +151,11 @@ const MainMobile = () => {
                   height={30}
                 ></Image>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s
+                  Arclif has very professional and approachable architecture
+                  team. The whole procedure starting from planning home design
+                  till execution went extremely smooth. We now have a beautiful
+                  home which is exactly as I envisaged. I will recommend them to
+                  any of my friends and relatives who need to design their home.
                 </p>
                 <div className={styles.quoteEnd__container__mobile}>
                   <Image
@@ -172,8 +175,8 @@ const MainMobile = () => {
                     height={30}
                   ></Image>
                   <div className={styles.userInfo__container__mobile}>
-                    <h5>John Doe</h5>
-                    <p>CEO, Brand Name</p>
+                    <h5>- Mohammed Sadhik</h5>
+                    {/* <p>CEO, Brand Name</p> */}
                   </div>
                 </div>
               </div>
@@ -187,12 +190,10 @@ const MainMobile = () => {
                   height={30}
                 ></Image>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s
+                  We love our newly designed home, Great ideas and designs. All
+                  thanks to the team from Arclif. Through out the design phase
+                  communication has been of the very highest standard. We look
+                  forward to work with them again
                 </p>
                 <div className={styles.quoteEnd__container__mobile}>
                   <Image
@@ -212,88 +213,8 @@ const MainMobile = () => {
                     height={30}
                   ></Image>
                   <div className={styles.userInfo__container__mobile}>
-                    <h5>John Doe</h5>
-                    <p>CEO, Brand Name</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.card__quote__container__mobile}>
-                <Image
-                  className={styles.quoteStart}
-                  src="/quoteStart.svg"
-                  alt=""
-                  width={30}
-                  height={30}
-                ></Image>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s
-                </p>
-                <div className={styles.quoteEnd__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/quoteEnd.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
-                </div>
-                <div className={styles.userProfile__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/demoUser.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
-                  <div className={styles.userInfo__container__mobile}>
-                    <h5>John Doe</h5>
-                    <p>CEO, Brand Name</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.card__quote__container__mobile}>
-                <Image
-                  className={styles.quoteStart}
-                  src="/quoteStart.svg"
-                  alt=""
-                  width={30}
-                  height={30}
-                ></Image>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s
-                </p>
-                <div className={styles.quoteEnd__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/quoteEnd.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
-                </div>
-                <div className={styles.userProfile__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/demoUser.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
-                  <div className={styles.userInfo__container__mobile}>
-                    <h5>John Doe</h5>
-                    <p>CEO, Brand Name</p>
+                    <h5>- Sabu Haji</h5>
+                    {/* <p>CEO, Brand Name</p> */}
                   </div>
                 </div>
               </div>
