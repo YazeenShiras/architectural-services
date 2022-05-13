@@ -6,8 +6,12 @@ const detailsform = () => {
   return (
     <div className={styles.detailsForm}>
       <Head>
-        <title>Form | Arclif Architectural Services</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>Add your Details | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyDetails />
     </div>

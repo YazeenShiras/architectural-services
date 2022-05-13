@@ -14,7 +14,9 @@ const MainMobile = () => {
               Build your dream <br /> home with a few <br /> clicks !
             </h1>
             <p>
-              get your home design in <br /> just 7 days.
+              AGRIHA is an initiative by Arclif Inc. to empower the home seeker
+              to dream and design their perfect home online with just few
+              clicks.
             </p>
           </div>
           <div className={styles.image__title__mobile}>

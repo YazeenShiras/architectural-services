@@ -27,7 +27,7 @@ const Secondary = () => {
         </div>
         <div id="whatWeDo" className={styles.whatWeDo__section}>
           <h3>What We Do</h3>
-          {/* <p>
+          <p>
             At AGRIHA, We work closely with every client to explore their needs
             and create spaces that are truly exceptional. Working as one team
             with architects, designers, drafters, project managers and
@@ -37,7 +37,7 @@ const Secondary = () => {
             our ability to provide designs that reflect the cultures, customs
             and traditions of our region. Our projects range from residence
             villas to high end commercial projects in Kerala.
-          </p> */}
+          </p>
           <ul>
             <li>Architectural services</li>
             <li>Site plan</li>

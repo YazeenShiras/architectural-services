@@ -6,9 +6,12 @@ const login = () => {
   return (
     <div>
       <Head>
-        <title>Login - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Login | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyLogin />
     </div>

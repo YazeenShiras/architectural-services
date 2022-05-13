@@ -6,9 +6,12 @@ const sendotp = () => {
   return (
     <div>
       <Head>
-        <title>Send OTP - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Register | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodySendOtp />
     </div>

@@ -6,9 +6,12 @@ const designtype = () => {
   return (
     <div>
       <Head>
-        <title>Type of Design - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Choose your design for your home | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyDesignType />
     </div>

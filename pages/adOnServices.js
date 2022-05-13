@@ -6,9 +6,12 @@ const adOnServices = () => {
   return (
     <div>
       <Head>
-        <title>Ad On Services - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Add On Services | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyAdOnServices />
     </div>

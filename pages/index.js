@@ -6,9 +6,12 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Head>
-        <title>Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Agriha - Online Architecture Services</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <Hero />
     </div>

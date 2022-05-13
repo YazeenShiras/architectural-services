@@ -6,9 +6,12 @@ const plans = () => {
   return (
     <div>
       <Head>
-        <title>Choose plans - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Choose your plan | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyPlans />
     </div>

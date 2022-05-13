@@ -6,9 +6,12 @@ const requirements = () => {
   return (
     <div>
       <Head>
-        <title>Choose your requirements - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Select your requirements | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyRequirements />
     </div>

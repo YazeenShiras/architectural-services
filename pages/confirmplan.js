@@ -6,9 +6,12 @@ const confirmplan = () => {
   return (
     <div>
       <Head>
-        <title>Confirm your plan - Arclif Architectural Services</title>
-        <meta name="description" content="Arclif's Architectural Services" />
-        <link rel="icon" href="/favicon.png" />
+        <title>Confirm your plan | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyConfirmPlan />
     </div>

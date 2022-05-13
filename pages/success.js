@@ -6,8 +6,12 @@ const success = () => {
   return (
     <div className={styles.success}>
       <Head>
-        <title>Success | Arclif Architectural Services</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>Payment success | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodySuccess />
     </div>

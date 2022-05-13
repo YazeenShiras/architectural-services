@@ -6,8 +6,12 @@ const validate = () => {
   return (
     <div>
       <Head>
-        <title>Validate your details - Arclif Architectural Services</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>Validate your details | Agriha</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <link rel="icon" href="/agriha.png" />
       </Head>
       <BodyValidate />
     </div>
