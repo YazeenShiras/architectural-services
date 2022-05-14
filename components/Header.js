@@ -21,7 +21,7 @@ const Header = () => {
           </div>
           <Image
             className={styles.header__logo}
-            src="/agriha.png"
+            src="/agrihaLogo.png"
             alt="agriha Logo"
             width={110}
             height={90}

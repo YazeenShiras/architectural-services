@@ -11,7 +11,7 @@ const detailsform = () => {
           name="description"
           content="Online Architecture Services | Arclif"
         />
-        <link rel="icon" href="/agriha.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <BodyDetails />
     </div>

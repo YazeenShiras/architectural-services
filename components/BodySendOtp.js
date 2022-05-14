@@ -83,7 +83,7 @@ const BodySendOtp = () => {
           <Link href="/" passHref>
             <Image
               className={styles.header__logo}
-              src="/arclifLogo.svg"
+              src="/arclifLogo.png"
               alt="Arclif Logo"
               width={100}
               height={35}
