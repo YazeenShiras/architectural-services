@@ -357,9 +357,9 @@ const BodyDesignType = () => {
         <h5 id="error_designType" className={styles.error__designType}>
           Please Select a Design Type
         </h5>
-        <Link href="/planyourself" passHref>
+        {/* <Link href="/planyourself" passHref>
           <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
-        </Link>
+        </Link> */}
       </div>
       <div className={styles.footer__container}>
         <Footer />

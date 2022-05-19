@@ -217,9 +217,9 @@ const BodyArea = () => {
             </div>
             <p id="nextText">NEXT</p>
           </div>
-          <Link href="/designtype" passHref>
+          {/* <Link href="/designtype" passHref>
             <p className={styles.skipForNow}>Skip for now &gt;&gt;</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className={styles.footer__container}>

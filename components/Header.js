@@ -28,7 +28,7 @@ const Header = () => {
           />
         </div>
         <div className={styles.header__right}>
-          <nav className={styles.header__nav}>
+          {/* <nav className={styles.header__nav}>
             <ul>
               <li>
                 <a href="#aboutUs">About Us</a>
@@ -41,9 +41,9 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          {/*  <Link href="/sendotp" passHref>
+           <Link href="/sendotp" passHref>
             <p className={styles.loginButton__header}>LOG OUT</p>
-          </Link> */}
+          </Link>
           <div className={styles.header__menu__container}>
             <Image
               className={styles.header__menu}
@@ -52,7 +52,7 @@ const Header = () => {
               width={30}
               height={20}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

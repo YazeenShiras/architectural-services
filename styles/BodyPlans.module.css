@@ -309,12 +309,42 @@
   margin-top: 20px;
 }
 
+.loader__container__next {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
+  .bodyPlans__container,
+  .bodyPlans__container__confirm {
+    margin-top: 50px;
+  }
+  .cardsContainer__plans {
+    flex-direction: column;
+    margin-top: 0px;
+  }
+
+  .card__plans {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .footer__container {
     display: none;
   }
 
   .footer__container__mobile {
     display: flex;
+  }
+  .cardsContainer__plans__confirm {
+    width: 100%;
+    padding: 0px;
+    margin-top: 30px;
+    flex-direction: column;
+  }
+  .card__plans__left__confirm {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .card__plans__right__confirm {
+    width: 80%;
   }
 }

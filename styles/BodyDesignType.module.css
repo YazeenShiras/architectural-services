@@ -92,6 +92,15 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .cards__container__designType {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+  .card__designType {
+    margin: 0px 0px;
+  }
   .footer__container {
     display: none;
   }

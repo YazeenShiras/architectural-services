@@ -121,6 +121,9 @@ const BodyValidate = () => {
   };
 
   async function addbuildingDetails() {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
     axios
       .post(
         `https://arclif-services-backend.uc.r.appspot.com/addbuildingdetails`,

@@ -68,6 +68,11 @@
   margin-top: 10px;
 }
 
+.rowsContainer__card__validate__last > div > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .rowsContainer__card__validate__last > div > ul > li {
   list-style: none;
   font-size: 12px;
@@ -139,6 +144,12 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .cardsContainer__validate {
+    flex-direction: column;
+  }
+  .card__validate {
+    margin-bottom: 20px;
+  }
   .footer__container {
     display: none;
   }

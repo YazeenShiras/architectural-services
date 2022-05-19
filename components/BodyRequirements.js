@@ -7,6 +7,7 @@ import Image from "next/image";
 import axios from "axios";
 
 import { Requirements } from "./data";
+import { PulseLoader } from "react-spinners";
 
 const BodyRequirements = () => {
   const [requirements, setRequirements] = useState([]);
@@ -19,6 +20,9 @@ const BodyRequirements = () => {
   }, []);
 
   async function setRequirementsList() {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
     axios
       .post(
         "https://arclif-services-backend.uc.r.appspot.com/setrequirementslist",
@@ -61,7 +65,10 @@ const BodyRequirements = () => {
           })}
         </div>
         <div onClick={setRequirementsList} className={styles.next__button}>
-          NEXT
+          <div className={styles.loader__container__next} id="loaderNext">
+            <PulseLoader color="#ffffff" />
+          </div>
+          <p id="nextText">NEXT</p>
         </div>
       </div>
       <div className={styles.footer__container}>

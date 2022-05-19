@@ -4,6 +4,8 @@ import Header from "./Header";
 import styles from "../styles/BodyAdOnServices.module.css";
 import { PulseLoader } from "react-spinners";
 import axios from "axios";
+import Footer from "./Footer";
+import FooterMobile from "./FooterMobile";
 
 const BodyAdOnServices = () => {
   const [loginId, setLoginId] = useState("");
@@ -32,6 +34,9 @@ const BodyAdOnServices = () => {
   }, []);
 
   async function chooseAdOn() {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
     axios
       .post("https://arclif-services-backend.uc.r.appspot.com/chooseAdon", {
         login_id: loginId,
@@ -94,6 +99,12 @@ const BodyAdOnServices = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.footer__container}>
+        <Footer />
+      </div>
+      <div className={styles.footer__container__mobile}>
+        <FooterMobile />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Header from "./Header";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
+import { PulseLoader } from "react-spinners";
 
 const BodyPlans = () => {
   const [loginId, setLoginId] = useState("");
@@ -18,7 +19,19 @@ const BodyPlans = () => {
   const [goldServices, setGoldServices] = useState([]);
   const [platinumServices, setPlatinumServices] = useState([]);
 
-  async function choosePlan(id) {
+  async function choosePlan(id, planName) {
+    if (planName === silver.plan_name) {
+      document.getElementById("loaderNext").style.display = "block";
+      document.getElementById("nextText").style.display = "none";
+    }
+    if (planName === gold.plan_name) {
+      document.getElementById("loaderNext2").style.display = "block";
+      document.getElementById("nextText2").style.display = "none";
+    }
+    if (planName === platinum.plan_name) {
+      document.getElementById("loaderNext3").style.display = "block";
+      document.getElementById("nextText3").style.display = "none";
+    }
     console.log(id);
 
     axios
@@ -87,10 +100,13 @@ const BodyPlans = () => {
             </div>
             <div className={styles.button__container__plans}>
               <div
-                onClick={() => choosePlan(silver._id)}
+                onClick={() => choosePlan(silver._id, silver.plan_name)}
                 className={styles.choosePlan__button}
               >
-                SELECT PLAN
+                <div className={styles.loader__container__next} id="loaderNext">
+                  <PulseLoader color="#ffffff" />
+                </div>
+                <p id="nextText">SELECT PLAN</p>
               </div>
             </div>
           </div>
@@ -116,10 +132,16 @@ const BodyPlans = () => {
             </div>
             <div className={styles.button__container__plans}>
               <div
-                onClick={() => choosePlan(gold._id)}
+                onClick={() => choosePlan(gold._id, gold.plan_name)}
                 className={styles.choosePlan__button__middle}
               >
-                SELECT PLAN
+                <div
+                  className={styles.loader__container__next}
+                  id="loaderNext2"
+                >
+                  <PulseLoader color="#1c9c76" />
+                </div>
+                <p id="nextText2">SELECT PLAN</p>
               </div>
             </div>
           </div>
@@ -147,10 +169,16 @@ const BodyPlans = () => {
 
             <div className={styles.button__container__plans}>
               <div
-                onClick={() => choosePlan(platinum._id)}
+                onClick={() => choosePlan(platinum._id, platinum.plan_name)}
                 className={styles.choosePlan__button}
               >
-                SELECT PLAN
+                <div
+                  className={styles.loader__container__next}
+                  id="loaderNext3"
+                >
+                  <PulseLoader color="#ffffff" />
+                </div>
+                <p id="nextText3">SELECT PLAN</p>
               </div>
             </div>
           </div>

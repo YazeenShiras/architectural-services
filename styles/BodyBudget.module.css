@@ -94,6 +94,17 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .bodyBudget__container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .image__container__budget {
+    width: 250px;
+  }
+  .content__container__budget {
+    margin-top: 30px;
+  }
+
   .footer__container {
     display: none;
   }
