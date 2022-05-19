@@ -67,6 +67,10 @@
   margin-top: 20px;
 }
 
+.loader__container__next {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
   .footer__container__mobile {
     display: flex;

@@ -4,12 +4,17 @@ import React from "react";
 import styles from "../styles/BodySuccess.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
-import Header from "./Header";
+import { PulseLoader } from "react-spinners";
+import HeaderMain from "./HeaderMain";
 
 const BodySuccess = () => {
+  const successClick = () => {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+  };
   return (
     <div className={styles.bodySuccess}>
-      <Header />
+      <HeaderMain />
       <div
         className={styles.bodySuccess__container}
         style={{
@@ -31,8 +36,16 @@ const BodySuccess = () => {
                 height={350}
               ></Image>
             </div>
-            <Link href="/" passHref>
-              <div className={styles.continue__button__success}>CONTINUE</div>
+            <Link href="/login" passHref>
+              <div
+                onClick={successClick}
+                className={styles.continue__button__success}
+              >
+                <div className={styles.loader__container__next} id="loaderNext">
+                  <PulseLoader color="#ffffff" />
+                </div>
+                <p id="nextText">CONTINUE TO LOGIN</p>
+              </div>
             </Link>
           </div>
         </div>

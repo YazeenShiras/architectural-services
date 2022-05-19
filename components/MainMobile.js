@@ -85,7 +85,7 @@ const MainMobile = () => {
           <div className={styles.howItWorks__mobile}>
             <h3>How it works</h3>
             <div className={styles.hiw__content__mobile}>
-              <div className={styles.image__hiwContent__mobile}>
+              <div className={styles.hiw__content__mobile_text}>
                 <Image src="/one.svg" alt="" width={30} height={60}></Image>
               </div>
               <p>COLLECTION OF REQUIREMENTS AND INITIAL PAYMENT FROM CLIENT.</p>

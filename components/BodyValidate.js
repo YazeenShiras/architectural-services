@@ -335,7 +335,11 @@ const BodyValidate = () => {
               <div>
                 <ul>
                   {requirementsData.map((data, index) => {
-                    return <li key={index}>{data}</li>;
+                    return (
+                      <li key={index}>
+                        {index + 1}. {data}
+                      </li>
+                    );
                   })}
                 </ul>
               </div>
