@@ -327,3 +327,35 @@
   border-top: 1px solid #027888;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 500px) {
+  .bgContainer__profileDetails {
+    margin-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .formContainer__settings {
+    width: 80vw;
+  }
+  .planContainerProfile {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .content_planContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .feature_left_content_planContainer > p {
+    font-size: 13px;
+  }
+  .right_content_planContainer {
+    margin-top: 30px;
+  }
+  .left_button_container_profile_plan {
+    padding-left: 20px;
+  }
+}

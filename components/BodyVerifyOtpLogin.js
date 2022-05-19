@@ -140,7 +140,7 @@ const BodyVerifyOtpLogin = () => {
             <fieldset className={registerstyles.input__container}>
               <legend>Enter OTP</legend>
               <div className={registerstyles.input__box}>
-                <input onChange={storeOtp} id="otp" type="text" />
+                <input onChange={storeOtp} id="otp" type="tel" />
               </div>
             </fieldset>
             <p id="errorVarifyOtp" className={registerstyles.error__varifyOtp}>
