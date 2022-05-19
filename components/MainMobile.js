@@ -88,18 +88,15 @@ const MainMobile = () => {
               <div className={styles.image__hiwContent__mobile}>
                 <Image src="/one.svg" alt="" width={30} height={60}></Image>
               </div>
-              <p>
-                Find a best home plan by posting your requirementsFind a best
-                home plan by posting your requirements
-              </p>
+              <p>COLLECTION OF REQUIREMENTS AND INITIAL PAYMENT FROM CLIENT.</p>
             </div>
             <div className={styles.hiw__content__mobile}>
               <div className={styles.image__hiwContent__mobile}>
                 <Image src="/two.svg" alt="" width={40} height={70}></Image>
               </div>
               <p>
-                Find a best home plan by posting your requirementsFind a best
-                home plan by posting your requirements
+                TELEPHONIC DISCUSSION BETWEEN EXPERTS FROM ARCLIF AND CLIENT TO
+                COLLECT ADDITIONAL DETAILS (IF REQUIRED).
               </p>
             </div>
             <div className={styles.hiw__content__mobile}>
@@ -107,8 +104,8 @@ const MainMobile = () => {
                 <Image src="/three.svg" alt="" width={40} height={60}></Image>
               </div>
               <p>
-                Find a best home plan by posting your requirementsFind a best
-                home plan by posting your requirements
+                TIMELY SUBMISSION OF DELIVERABLES AS PER SUBSCRIPTION PLANS
+                SUBJECT TO REALIZATION OF PAYMENTS.
               </p>
             </div>
             <div className={styles.hiw__content__mobile__last}>
@@ -116,8 +113,8 @@ const MainMobile = () => {
                 <Image src="/four.svg" alt="" width={40} height={70}></Image>
               </div>
               <p>
-                Find a best home plan by posting your requirementsFind a best
-                home plan by posting your requirements
+                FINAL REVIEW AND DISCUSSION WITH CLIENT FOR ANY CHANGES ON
+                EXISTING DELIVERABLES AND ADD ON SERVICES.
               </p>
             </div>
           </div>

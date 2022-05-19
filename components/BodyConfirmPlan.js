@@ -6,6 +6,7 @@ import Header from "./Header";
 import Image from "next/image";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
+import { PulseLoader } from "react-spinners";
 
 const BodyConfirmPlan = () => {
   const Razorpay = useRazorpay();
@@ -100,6 +101,9 @@ const BodyConfirmPlan = () => {
   }, [Razorpay, name, email, orderid, loginId, plan]);
 
   async function paymnetOrder() {
+    document.getElementById("loaderNext").style.display = "block";
+    document.getElementById("nextText").style.display = "none";
+
     axios
       .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
@@ -229,7 +233,10 @@ const BodyConfirmPlan = () => {
               </div>
             </div>
             <div onClick={paymnetOrder} className={styles.paymnet__button}>
-              MAKE PAYMENT
+              <div className={styles.loader__container__next} id="loaderNext">
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="nextText">MAKE PAYMENT</p>
             </div>
             <div className={styles.info__container__confirm}>
               <Image src="/info.svg" alt="" width={25} height={25}></Image>
