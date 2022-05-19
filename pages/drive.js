@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import PurchaseDetails from "../components/PurchaseDetails";
 import DriveDocument from "../components/DriveDocument";
 
 const drive = () => {
