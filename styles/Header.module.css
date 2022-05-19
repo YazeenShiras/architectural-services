@@ -100,6 +100,10 @@
   cursor: pointer;
 }
 
+.header__mobile_container {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
   .header {
     height: 70px;

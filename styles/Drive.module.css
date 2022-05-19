@@ -1,0 +1,98 @@
+.bgContainer__profileDetails {
+  margin: 120px 8vw;
+  margin-bottom: 0px;
+}
+
+.foldersContainer__top {
+  display: flex;
+}
+.foldersContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.folderCard {
+  margin-right: 30px;
+  height: 150px;
+  width: 150px;
+  background-color: #ececec;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.top_container_drive {
+  display: flex;
+  flex-direction: column;
+}
+
+.center_container_drive {
+  margin-left: 100px;
+}
+
+.uploadOwn__Container {
+  margin-top: 50px;
+}
+
+.uploaded__image__container {
+  height: 300px;
+  width: 400px;
+  background-color: azure;
+  border: 1px dotted #1c9c76;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.upload__button {
+  height: 50px;
+  width: 400px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.upload__button:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+@media only screen and (max-width: 500px) {
+  .bgContainer__profileDetails {
+    margin: 90px 8vw;
+  }
+  .foldersContainer__top {
+    display: flex;
+    flex-direction: column;
+  }
+  .folderCard {
+    margin-right: 20px;
+    height: 100px;
+    width: 100px;
+  }
+  .folderCard > p {
+    font-size: 13px;
+  }
+  .center_container_drive {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .uploaded__image__container {
+    height: 60vw;
+    width: 80vw;
+    margin-left: 2px;
+  }
+  .upload__button {
+    width: 80vw;
+  }
+}
