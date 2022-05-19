@@ -41,10 +41,10 @@ const BodyConfirmPlan = () => {
         )
         .then(function (res) {
           console.log(res.data);
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
+          setPhone(res.data.details.logindetails[0].phonenumber);
         });
     }
 
@@ -86,7 +86,7 @@ const BodyConfirmPlan = () => {
       prefill: {
         name: `${name}`,
         email: `${email}`,
-        contact: ``,
+        contact: `${phone}`,
       },
       notes: {
         address: "Razorpay Corporate Office",
@@ -98,7 +98,7 @@ const BodyConfirmPlan = () => {
 
     const rzpay = new Razorpay(options);
     rzpay.open();
-  }, [Razorpay, name, email, orderid, loginId, plan]);
+  }, [Razorpay, name, email, phone, orderid, loginId, plan]);
 
   async function paymnetOrder() {
     document.getElementById("loaderNext").style.display = "block";
