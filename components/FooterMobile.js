@@ -10,7 +10,7 @@ const FooterMobile = () => {
         <div className={styles.logo__footer__mobile}>
           <a href="https://arclif.com">
             <Image
-              src="/arclifLogo.svg"
+              src="/arclifLogo.png"
               width={90}
               height={30}
               alt="arclifLogo"

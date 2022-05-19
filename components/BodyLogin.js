@@ -17,13 +17,23 @@ const BodyLogin = () => {
     axios
       .post("https://arclif-services-backend.uc.r.appspot.com/sendOTP", {
         phonenumber: number,
+        flag: "login",
       })
       .then(function (res) {
         console.log(res.data);
-        console.log(res.data.otp);
         localStorage.setItem("phone", res.data.phone);
         localStorage.setItem("hash", res.data.hash);
-        if (res.data.status === "200") {
+        if (res.data.flag === "") {
+          handleSubmit();
+        }
+        if (res.data.flag === "register") {
+          document.getElementById("errorMobile").style.display = "block";
+          document.getElementById("errorMobile").style.color = "#ff0800";
+          document.getElementById("loaderSentOtpRegister").style.display =
+            "none";
+          document.getElementById("sentOTPRegister").style.display = "block";
+        }
+        if (res.data.status === "200" && res.data.flag !== "register") {
           window.location.href = "/verifyotplogin";
         }
       });
@@ -82,24 +92,29 @@ const BodyLogin = () => {
     >
       <div className={registerstyles.header__bodyRegister}>
         <div className={styles.header__left}>
-          <Link href="/" passHref>
-            <Image
-              className={styles.header__logo}
-              src="/arclifLogo.png"
-              alt="Arclif Logo"
-              width={100}
-              height={35}
-            />
-          </Link>
+          <Image
+            className={styles.header__logo}
+            src="/arclifLogo.png"
+            alt="Arclif Logo"
+            width={100}
+            height={35}
+          />
+          <div className={styles.header__logo_one}>
+            <Image src="/one.png" alt="" width={2} height={25} />
+          </div>
+          <Image
+            className={styles.header__logo}
+            src="/agrihaLogo.png"
+            alt="agriha Logo"
+            width={110}
+            height={90}
+          />
         </div>
         <div className={styles.header__right}>
           <Link href="/sendotp" passHref>
-            <p className={styles.registerButton__header}>Register Now</p>
+            <p className={styles.loginButton__header}>REGISTER</p>
           </Link>
-          <Link href="/login" passHref>
-            <p className={styles.loginButton__header}>LOGIN</p>
-          </Link>
-          <div className={styles.header__menu__container}>
+          {/* <div className={styles.header__menu__container}>
             <Image
               className={styles.header__menu}
               src="/menuIcon.svg"
@@ -107,7 +122,7 @@ const BodyLogin = () => {
               width={30}
               height={20}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={registerstyles.content__bodyRegister}>
@@ -116,7 +131,7 @@ const BodyLogin = () => {
         </div>
         <div className={registerstyles.inputs__container__bodyRegister}>
           <h2>Login</h2>
-          <p>Login to find best Home</p>
+          <p>Login to find your home Plan</p>
           <form autoComplete="off" className={registerstyles.form} action="">
             <fieldset className={registerstyles.input__container}>
               <legend>Mobile Number*</legend>
@@ -125,7 +140,7 @@ const BodyLogin = () => {
               </div>
             </fieldset>
             <p id="errorMobile" className={registerstyles.error__varifyOtp}>
-              Enter a valid Mobile Number
+              Mobile number not registered.
             </p>
             <div
               onClick={loginClick}
@@ -143,9 +158,7 @@ const BodyLogin = () => {
           <div className={registerstyles.alreadyRegistered__container}>
             <p className={registerstyles.alreadyRegisterd}>not registered ? </p>
             <Link href="/sendotp" passHref>
-              <p className={registerstyles.login__AlreadyRegisterd}>
-                Register Now
-              </p>
+              <p className={registerstyles.login__AlreadyRegisterd}>Register</p>
             </Link>
           </div>
         </div>

@@ -7,11 +7,12 @@ import Secondary from "./Secondary";
 import Quotes from "./Quotes";
 import Footer from "./Footer";
 import RecentWork from "./RecentWork";
+import HeaderMain from "./HeaderMain";
 
 const Hero = () => {
   return (
     <div className={styles.heroContainer}>
-      <Header />
+      <HeaderMain />
       <div className={styles.webView}>
         <Main />
         <Secondary />

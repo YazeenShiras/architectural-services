@@ -141,14 +141,13 @@ const BodyValidate = () => {
       });
   }
 
-  async function updateUserDetails() {
+  /* async function updateUserDetails() {
     document.getElementById("loaderNext").style.display = "block";
     document.getElementById("nextText").style.display = "none";
     axios
       .put(
         `https://arclif-services-backend.uc.r.appspot.com/updateuser/${userId}`,
         {
-          login_id: "626a66bfab50741321bd1720",
           uname: name,
           email: email,
           Place: place,
@@ -160,9 +159,9 @@ const BodyValidate = () => {
       .then(function (res) {
         console.log(res.data);
       });
-  }
+  } */
 
-  const editButtonClick = () => {};
+  /*   const editButtonClick = () => {}; */
 
   return (
     <div className={styles.bodyValidate}>
@@ -172,12 +171,12 @@ const BodyValidate = () => {
         style={{ backgroundImage: `url('/bgdesign.svg')` }}
       >
         <h3>Validate your details</h3>
-        <p>Edit your details here</p>
+        {/* <p>Edit your details here</p> */}
         <div className={styles.cardsContainer__validate}>
           <div className={styles.card__validate}>
             <div className={styles.titleContainer__card__validate}>
               <h5>Personal Details</h5>
-              <div className={styles.editButton__container__card__validte}>
+              {/* <div className={styles.editButton__container__card__validte}>
                 <Image
                   src="/editIcon.svg"
                   alt=""
@@ -185,7 +184,7 @@ const BodyValidate = () => {
                   height={12}
                 ></Image>
                 <p>EDIT</p>
-              </div>
+              </div> */}
             </div>
             <div className={styles.rowsContainer__card__validate}>
               <div className={styles.row__card__validate}>
@@ -199,7 +198,7 @@ const BodyValidate = () => {
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Mobile Number</h6>
-                <input id="number" type="text" defaultValue={number} />
+                <input id="number" type="tel" defaultValue={number} />
               </div>
               <div className={styles.row__card__validate}>
                 <h6>Email</h6>
@@ -251,7 +250,7 @@ const BodyValidate = () => {
           <div className={styles.card__validate}>
             <div className={styles.titleContainer__card__validate}>
               <h5>Building Details</h5>
-              <div className={styles.editButton__container__card__validte}>
+              {/* <div className={styles.editButton__container__card__validte}>
                 <Image
                   src="/editIcon.svg"
                   alt=""
@@ -259,7 +258,7 @@ const BodyValidate = () => {
                   height={12}
                 ></Image>
                 <p>EDIT</p>
-              </div>
+              </div> */}
             </div>
             <div className={styles.rowsContainer__card__validate}>
               <div className={styles.row__card__validate}>
@@ -303,7 +302,7 @@ const BodyValidate = () => {
                 <input type="text" id="bedrooms" defaultValue={bedrooms} />
               </div>
               <div className={styles.row__card__validate__last}>
-                <h6>No.of attached Bedrooms</h6>
+                <h6>No.of attached Bathrooms</h6>
                 <input
                   onChange={storeBuildingDetails}
                   type="text"
@@ -316,7 +315,7 @@ const BodyValidate = () => {
           <div className={styles.card__validate}>
             <div className={styles.titleContainer__card__validate}>
               <h5>Requirement List</h5>
-              <Link
+              {/*               <Link
                 href="/requirements"
                 className={styles.editButton__container__card__validte}
               >
@@ -327,7 +326,7 @@ const BodyValidate = () => {
                   height={12}
                 ></Image>
                 <p>EDIT</p>
-              </Link>
+              </Link> */}
             </div>
             <div className={styles.rowsContainer__card__validate__last}>
               <div>

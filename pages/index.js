@@ -11,6 +11,10 @@ export default function Home() {
           name="description"
           content="Online Architecture Services | Arclif"
         />
+        <meta
+          name="keywords"
+          content="Agriha, arclif, home services, home build, dream home, online architecture services"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />

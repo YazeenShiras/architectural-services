@@ -94,18 +94,26 @@ const BodyVerifyOtpLogin = () => {
     >
       <div className={registerstyles.header__bodyRegister}>
         <div className={styles.header__left}>
-          <Link href="/" passHref>
-            <Image
-              className={styles.header__logo}
-              src="/arclifLogo.png"
-              alt="Arclif Logo"
-              width={100}
-              height={35}
-            />
-          </Link>
+          <Image
+            className={styles.header__logo}
+            src="/arclifLogo.png"
+            alt="Arclif Logo"
+            width={100}
+            height={35}
+          />
+          <div className={styles.header__logo_one}>
+            <Image src="/one.png" alt="" width={2} height={25} />
+          </div>
+          <Image
+            className={styles.header__logo}
+            src="/agrihaLogo.png"
+            alt="agriha Logo"
+            width={110}
+            height={90}
+          />
         </div>
         <div className={styles.header__right}>
-          <Link href="/sendotp" passHref>
+          {/* <Link href="/sendotp" passHref>
             <p className={styles.registerButton__header}>Register Now</p>
           </Link>
           <Link href="/login" passHref>
@@ -119,7 +127,7 @@ const BodyVerifyOtpLogin = () => {
               width={30}
               height={20}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={registerstyles.content__bodyRegister}>

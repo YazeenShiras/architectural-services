@@ -1,8 +1,9 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 
-const Header = () => {
+const HeaderMain = () => {
   return (
     <div>
       <div className={styles.header}>
@@ -41,10 +42,10 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          {/*  <Link href="/sendotp" passHref>
-            <p className={styles.loginButton__header}>LOG OUT</p>
-          </Link> */}
-          <div className={styles.header__menu__container}>
+          <Link href="/sendotp" passHref>
+            <p className={styles.loginButton__header}>GET START</p>
+          </Link>
+          {/* <div className={styles.header__menu__container}>
             <Image
               className={styles.header__menu}
               src="/menuIcon.svg"
@@ -52,11 +53,11 @@ const Header = () => {
               width={30}
               height={20}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default HeaderMain;

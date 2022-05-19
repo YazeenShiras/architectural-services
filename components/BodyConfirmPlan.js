@@ -25,8 +25,6 @@ const BodyConfirmPlan = () => {
 
   const [totalAmount, setTotalAmount] = useState("");
 
-  const [final, setFinal] = useState(0);
-
   useEffect(() => {
     const loginIdLoc = localStorage.getItem("loginId");
     setLoginId(loginIdLoc);
@@ -71,10 +69,9 @@ const BodyConfirmPlan = () => {
   }, [loginId]);
 
   const handlePayment = useCallback(() => {
-    console.log(final);
     const options = {
       key: "rzp_test_ebPS0dfN5A4uYA",
-      amount: final * 100,
+      amount: plan.initial_payment * 100,
       currency: "INR",
       name: "Arclif Payment",
       description: "",
@@ -100,7 +97,7 @@ const BodyConfirmPlan = () => {
 
     const rzpay = new Razorpay(options);
     rzpay.open();
-  }, [Razorpay, name, email, orderid, loginId, final]);
+  }, [Razorpay, name, email, orderid, loginId, plan]);
 
   async function paymnetOrder() {
     axios
@@ -118,17 +115,17 @@ const BodyConfirmPlan = () => {
       });
   }
 
-  const payOption = (value) => {
+  /* const payOption = (value) => {
     setFinal(value);
-  };
+  }; */
 
-  const makePaymnetClick = () => {
+  /* const makePaymnetClick = () => {
     if (final !== 0) {
       paymnetOrder();
     } else {
       alert("choose amount");
     }
-  };
+  }; */
 
   return (
     <div className={styles.bodyPlans}>
@@ -196,7 +193,7 @@ const BodyConfirmPlan = () => {
               <div
                 className={styles.card__plans__right__confirm__top__container}
               >
-                <p className={styles.chooseAmountTitle}>Choose Amount</p>
+                <p className={styles.chooseAmountTitle}>Amount</p>
               </div>
               <div
                 className={styles.card__plans__right__confirm__top__container}
@@ -206,11 +203,11 @@ const BodyConfirmPlan = () => {
                     styles.card__plans__right__confirm__top__subContainer
                   }
                 >
-                  <input
+                  {/* <input
                     type="radio"
                     name="radio"
                     onClick={() => payOption(plan.amount_per_sqrft * area)}
-                  />{" "}
+                  />{" "} */}
                   <p>Total Amount</p>
                 </div>
                 <p>₹{plan.amount_per_sqrft * area}</p>
@@ -225,24 +222,20 @@ const BodyConfirmPlan = () => {
                     styles.card__plans__right__confirm__top__subContainer
                   }
                 >
-                  <input
-                    type="radio"
-                    name="radio"
-                    onClick={() => payOption(plan.initial_payment)}
-                  />{" "}
-                  <p>Down Payment(launch offer)</p>
+                  <input type="radio" name="radio" checked />{" "}
+                  <p>Down Payment</p>
                 </div>
                 <p>₹{plan.initial_payment}</p>
               </div>
             </div>
-            <div onClick={makePaymnetClick} className={styles.paymnet__button}>
+            <div onClick={paymnetOrder} className={styles.paymnet__button}>
               MAKE PAYMENT
             </div>
             <div className={styles.info__container__confirm}>
               <Image src="/info.svg" alt="" width={25} height={25}></Image>
               <p>
-                You can choose either payment methodes, pay in full or down
-                payment
+                You have to pay Down payment for unlock our services, pay total
+                amount after registration complete.
               </p>
             </div>
           </div>

@@ -13,11 +13,6 @@ const MainMobile = () => {
             <h1>
               Build your dream <br /> home with a few <br /> clicks !
             </h1>
-            <p>
-              AGRIHA is an initiative by Arclif Inc. to empower the home seeker
-              to dream and design their perfect home online with just few
-              clicks.
-            </p>
           </div>
           <div className={styles.image__title__mobile}>
             <div className={styles.bubble__title__mobile}>
@@ -45,7 +40,7 @@ const MainMobile = () => {
             </div>
           </div>
           <div className={styles.tryItNow__button__container__mobile}>
-            <Link href="/register" passHref>
+            <Link href="/sendotp" passHref>
               <div className={styles.tryITNow__button__mobile}>
                 DESIGN MY HOME
               </div>
@@ -129,7 +124,7 @@ const MainMobile = () => {
 
           <div className={styles.quoteContainer__mobile}>
             <div className={styles.buttonContainer__mobile}>
-              <div
+              {/* <div
                 id="leftButtonScroll"
                 className={styles.left__arrowContainer__mobile}
               >
@@ -140,7 +135,7 @@ const MainMobile = () => {
                   width={13}
                   height={13}
                 ></Image>
-              </div>
+              </div> */}
             </div>
 
             <div className={styles.cards__container__mobile}>
@@ -169,13 +164,6 @@ const MainMobile = () => {
                   ></Image>
                 </div>
                 <div className={styles.userProfile__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/demoUser.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
                   <div className={styles.userInfo__container__mobile}>
                     <h5>- Mohammed Sadhik</h5>
                     {/* <p>CEO, Brand Name</p> */}
@@ -207,13 +195,6 @@ const MainMobile = () => {
                   ></Image>
                 </div>
                 <div className={styles.userProfile__container__mobile}>
-                  <Image
-                    className={styles.quoteStart}
-                    src="/demoUser.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  ></Image>
                   <div className={styles.userInfo__container__mobile}>
                     <h5>- Sabu Haji</h5>
                     {/* <p>CEO, Brand Name</p> */}
@@ -223,7 +204,7 @@ const MainMobile = () => {
             </div>
 
             <div className={styles.buttonContainer__mobile}>
-              <div
+              {/* <div
                 id="rightButtonScroll"
                 className={styles.right__arrowContainer__mobile}
               >
@@ -234,7 +215,7 @@ const MainMobile = () => {
                   width={13}
                   height={13}
                 ></Image>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

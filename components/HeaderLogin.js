@@ -1,8 +1,9 @@
+import React from "react";
+import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
 
-const Header = () => {
+const HeaderLogin = () => {
   return (
     <div>
       <div className={styles.header}>
@@ -31,19 +32,22 @@ const Header = () => {
           <nav className={styles.header__nav}>
             <ul>
               <li>
-                <a href="#aboutUs">About Us</a>
+                <Link href="/profile">Personal Details</Link>
               </li>
               <li>
-                <a href="#whatWeDo">Services</a>
+                <Link href="/profilePlan">Plan Details</Link>
               </li>
               <li>
-                <a href="#marketplace">Marketplace</a>
+                <Link href="/drive">Document Drive</Link>
+              </li>
+              <li>
+                <Link href="/purchaseDetails">Purchase Details</Link>
               </li>
             </ul>
           </nav>
-          {/*  <Link href="/sendotp" passHref>
+          <Link href="/sendotp" passHref>
             <p className={styles.loginButton__header}>LOG OUT</p>
-          </Link> */}
+          </Link>
           <div className={styles.header__menu__container}>
             <Image
               className={styles.header__menu}
@@ -59,4 +63,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderLogin;

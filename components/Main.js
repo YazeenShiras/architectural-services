@@ -23,14 +23,13 @@ const Main = () => {
           <p>
             AGRIHA is an initiative by Arclif Inc. to empower the home seeker to
             dream and design their perfect home online with just few clicks. We
-            are committed to offer supporting architecture services starting
-            from home plans to execution level including floor plans with
-            architectural details to create the best living spaces for our
-            customers allowing them to fully immerse themselves in designing the
-            perfect living space for their needs, desires and lifestyle.
+            offer supporting architecture services starting from home plans to
+            execution to create the best living spaces for our customers in
+            designing the perfect living space for their needs, desires and
+            lifestyle.
             <br />
             Got a great idea for your new house? Let&apos;s start from scratch
-            and design your home in just few clicks!
+            and design your home!
           </p>
           <div className={styles.actionContainer__main__left}>
             <div className={styles.subHeading__main__right}></div>
