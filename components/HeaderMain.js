@@ -6,7 +6,7 @@ import styles from "../styles/Header.module.css";
 const HeaderMain = () => {
   return (
     <div>
-      <div className={styles.header}>
+      <div className={styles.headerMain}>
         <div className={styles.header__left}>
           <Link href="/" passHref>
             <Image
@@ -29,7 +29,7 @@ const HeaderMain = () => {
           />
         </div>
         <div className={styles.header__right}>
-          <nav className={styles.header__nav}>
+          <nav className={styles.header__nav_login}>
             <ul>
               <li>
                 <a href="#aboutUs">About Us</a>

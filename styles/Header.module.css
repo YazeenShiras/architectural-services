@@ -13,6 +13,21 @@
   z-index: 100;
 }
 
+.headerMain {
+  height: 90px;
+  width: 100%;
+  box-shadow: 0 1px 20px 1px #0000001a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
 .header__logo_one {
   margin-left: 10px;
   height: 100%;
@@ -47,6 +62,10 @@
 
 .header__nav > ul {
   display: flex;
+}
+
+.header__nav_login > ul {
+  display: none;
 }
 
 .header__nav > ul > li {
@@ -108,6 +127,9 @@
   .header {
     height: 70px;
     display: none;
+  }
+  .headerMain {
+    height: 70px;
   }
   .header__menu__container__close {
     margin-left: 15px;
