@@ -26,6 +26,7 @@
   justify-content: space-between;
   padding: 30px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .features__stageContainer {
@@ -46,10 +47,36 @@
   display: flex;
   width: 70vw;
   box-shadow: 0 1px 20px 1px #0000001a;
+  border-radius: 5px;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   margin-top: 20px;
+}
+
+.paymentDetails__container {
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  width: 70vw;
+  box-shadow: 0 1px 20px 1px #0000001a;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.paymentDetails__container > h4 {
+  margin: 20px 0px;
+  color: #1c9c76;
+}
+
+.row__paymentDetails__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #bab8b870;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .paymentButton {
@@ -123,6 +150,7 @@
   .paymentButton {
     width: 250px;
     font-size: 11px;
+    text-align: center;
   }
   .Card__stageDetails__container {
     width: 100%;
@@ -137,6 +165,9 @@
     font-size: 12px;
   }
   .linear_progress {
-    width: 11vw;
+    width: 10vw;
+  }
+  .paymentDetails__container {
+    width: 100%;
   }
 }

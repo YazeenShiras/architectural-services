@@ -17,6 +17,7 @@
     "next": "12.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-image-file-resizer": "^0.4.8",
     "react-razorpay": "^1.1.5",
     "react-spinners": "^0.11.0",
     "universal-cookie": "^4.0.4"

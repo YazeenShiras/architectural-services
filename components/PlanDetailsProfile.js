@@ -65,6 +65,7 @@ const PlanDetailsProfile = () => {
     buildingDetails();
     userPlan();
   }, []);
+
   return (
     <div>
       <HeaderLogin />

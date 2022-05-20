@@ -186,13 +186,64 @@ const PurchaseDetails = () => {
         </div>
         <div className={styles.purchaseDetailsSection__container}>
           <h3>Purchase History</h3>
+          <div className={styles.paymentDetails__container}>
+            <h4>Payment Details</h4>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Total amount</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Paid amount</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Due amount</h5>
+              <p>100000.00</p>
+            </div>
+            {/* <h4>Completed Stages</h4>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 1</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 2</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 3</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 4</h5>
+              <p>100000.00</p>
+            </div>
+            <h4>Due Stages</h4>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 1</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 2</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 3</h5>
+              <p>100000.00</p>
+            </div>
+            <div className={styles.row__paymentDetails__container}>
+              <h5>Stage 4</h5>
+              <p>100000.00</p>
+            </div> */}
+          </div>
           <div className={styles.paymnetCard__container}>
             <p>
-              Currently you have a{" "}
+              You are choosed{" "}
               <span className={styles.planName}>{plan.plan_name}</span> plan,
-              but you not completed plan payment.
+              you need to complete payment for unlock Documents.
             </p>
-            <div className={styles.paymentButton}>Pay your Amount</div>
+            <Link href="/drive" passHref>
+              <div className={styles.paymentButton}>Unlock Documents</div>
+            </Link>
           </div>
         </div>
       </div>
