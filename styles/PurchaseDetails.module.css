@@ -1,0 +1,142 @@
+.bgContainer__profileDetails {
+  margin: 110px 8vw;
+  margin-bottom: 50px;
+}
+
+.progressBar__paymentStatus__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.stageDetails__container {
+  margin-top: 30px;
+}
+
+.stageContainer > h4 {
+  margin-bottom: 10px;
+}
+
+.Card__stageDetails__container {
+  display: flex;
+  width: 70vw;
+  box-shadow: 0 1px 20px 1px #0000001a;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.features__stageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.features__stageContainer > p {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.purchaseDetailsSection__container {
+  margin-top: 30px;
+}
+
+.paymnetCard__container {
+  display: flex;
+  width: 70vw;
+  box-shadow: 0 1px 20px 1px #0000001a;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.paymentButton {
+  height: 40px;
+  width: 250px;
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.paymentButton:hover {
+  background-image: linear-gradient(to left, #027888, #1c9c76);
+}
+
+.paymnetCard__container > p {
+  font-size: 13px;
+}
+
+.planName {
+  font-weight: bold;
+}
+
+.linear_progress {
+  width: 200px;
+  height: 2px;
+  background-color: #027888;
+  margin-bottom: 25px;
+}
+
+.circle_progress {
+  height: 30px;
+  width: 30px;
+  background-color: #1c9c76;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.stage_progress > h5 {
+  margin-top: 10px;
+}
+
+.stage_progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .bgContainer__profileDetails {
+    margin: 80px 8vw;
+  }
+  .paymnetCard__container {
+    width: 100%;
+  }
+  .paymnetCard__container > p {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .paymentButton {
+    width: 250px;
+    font-size: 11px;
+  }
+  .Card__stageDetails__container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .stageContainer {
+    margin-bottom: 20px;
+  }
+  .circle_progress {
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+  }
+  .linear_progress {
+    width: 11vw;
+  }
+}
