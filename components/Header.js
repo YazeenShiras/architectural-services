@@ -5,7 +5,7 @@ import styles from "../styles/Header.module.css";
 const Header = () => {
   return (
     <div>
-      <div className={styles.header}>
+      <div className={styles.headerMain}>
         <div className={styles.header__left}>
           <Link href="/" passHref>
             <Image

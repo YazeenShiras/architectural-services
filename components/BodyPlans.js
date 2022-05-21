@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
-import Link from "next/link";
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
 

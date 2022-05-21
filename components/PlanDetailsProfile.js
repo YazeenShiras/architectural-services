@@ -74,7 +74,7 @@ const PlanDetailsProfile = () => {
           <div className={styles.title_planContainer}>
             <h5>Hi {name}</h5>
             <p>
-              You have choosen {plan.plan_name} PLAN for your home construction,
+              You have choosen {plan.plan_name} Plan for your home construction,
               your plan includes below features.
             </p>
           </div>
@@ -135,8 +135,8 @@ const PlanDetailsProfile = () => {
             <div className={styles.left_button_container_profile_plan}>
               <Image src="/info.svg" alt="" width={20} height={20}></Image>
               <p>
-                You have to pay Down payment for unlock our services, pay total
-                amount after registration complete.
+                You have to pay full amount for unlock our documents, or pay
+                with payment stages.
               </p>
             </div>
             <Link href="/purchaseDetails" passHref>

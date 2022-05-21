@@ -18,6 +18,8 @@ const PurchaseDetails = () => {
 
   const [steps, setSteps] = useState(["Stage 1", "Stage 2"]);
 
+  const [buildingDetails, setBuildingDetails] = useState([]);
+
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -65,8 +67,24 @@ const PurchaseDetails = () => {
         });
     }
 
+    async function buildingDetails() {
+      console.log(loginId);
+      axios
+        .post(
+          `https://arclif-services-backend.uc.r.appspot.com/getbuildingdetails`,
+          {
+            id: loginId,
+          }
+        )
+        .then(function (res) {
+          console.log(res.data.details[0]);
+          setBuildingDetails(res.data.details[0]);
+        });
+    }
+
     userDetails();
     userPlan();
+    buildingDetails();
   }, []);
 
   useEffect(() => {
@@ -190,15 +208,19 @@ const PurchaseDetails = () => {
             <h4>Payment Details</h4>
             <div className={styles.row__paymentDetails__container}>
               <h5>Total amount</h5>
-              <p>100000.00</p>
+              <p>{buildingDetails.total_area * plan.plan_amount}.00</p>
             </div>
             <div className={styles.row__paymentDetails__container}>
               <h5>Paid amount</h5>
-              <p>100000.00</p>
+              <p>{plan.initial_payment}.00</p>
             </div>
             <div className={styles.row__paymentDetails__container}>
               <h5>Due amount</h5>
-              <p>100000.00</p>
+              <p>
+                {buildingDetails.total_area * plan.plan_amount -
+                  plan.initial_payment}
+                .00
+              </p>
             </div>
             {/* <h4>Completed Stages</h4>
             <div className={styles.row__paymentDetails__container}>

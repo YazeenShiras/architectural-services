@@ -44,6 +44,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
+}
+
+.payAmount__button {
+  height: 40px;
+  width: 100px;
+  border: 1px solid #027888;
+  border-radius: 5px;
+  color: #027888;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.payAmount__button:hover {
+  background-image: linear-gradient(to right, #027888, #1c9c76);
+  bottom: none;
+  color: #ffffff;
 }
 
 .payAtOneTimeContainer {

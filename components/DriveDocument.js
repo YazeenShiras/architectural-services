@@ -11,8 +11,6 @@ const DriveDocument = () => {
   const [plan, setPlan] = useState([]);
   const [planServices, setPlanServices] = useState([]);
 
-  const [buildingDetails, setBuildingDetails] = useState([]);
-
   const [imageFile, setImageFile] = useState("");
 
   const [userId, setUserId] = useState("");
@@ -29,7 +27,6 @@ const DriveDocument = () => {
           `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
           console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
@@ -49,8 +46,22 @@ const DriveDocument = () => {
         });
     }
 
+    async function documentsFromAdmin() {
+      axios
+        .post(
+          `https://arclif-services-backend.uc.r.appspot.com/getfilesfromadmin`,
+          {
+            id: loginId,
+          }
+        )
+        .then(function (res) {
+          console.log(res.data);
+        });
+    }
+
     userDetails();
     userPlan();
+    documentsFromAdmin();
   }, []);
 
   /* async function uploadFile() {
@@ -78,24 +89,22 @@ const DriveDocument = () => {
   async function uploadPhoto() {
     const url = `https://arclif-services-backend.uc.r.appspot.com/filedataupload/${id}`;
 
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
+    await axios
+      .post(url, {
         filename: imageFile,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-    if (data.msg === "file added") {
-      console.log("uploadPhoto");
-    }
+      })
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+      })
+      .catch(console.error);
   }
 
   async function getUploadedFile() {
     const url = `https://arclif-services-backend.uc.r.appspot.com/getfiles/${id}`;
 
     await axios
-      .get(url)
+      .post(url)
       .then((res) => {
         const data = res.data;
         console.log(data);

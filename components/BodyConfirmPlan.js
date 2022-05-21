@@ -7,9 +7,11 @@ import Image from "next/image";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 import { PulseLoader } from "react-spinners";
+import Link from "next/link";
 
 const BodyConfirmPlan = () => {
   const Razorpay = useRazorpay();
+
   const [loginId, setLoginId] = useState("");
 
   const [userId, setUserId] = useState("");
@@ -71,12 +73,12 @@ const BodyConfirmPlan = () => {
 
   const handlePayment = useCallback(() => {
     const options = {
-      key: "rzp_test_ebPS0dfN5A4uYA",
+      key: "rzp_live_8N0vnTr2CsLRbK",
       amount: plan.initial_payment * 100,
       currency: "INR",
-      name: "Arclif Payment",
+      name: "Agriha Payment",
       description: "",
-      image: "",
+      image: "/agrihaLogo.png",
       order_id: orderid,
       callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${loginId}`,
       redirect: true,
@@ -108,6 +110,7 @@ const BodyConfirmPlan = () => {
       .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
         userId: loginId,
+        paymentmode: "downpayment",
       })
       .then(function (res) {
         console.log(res.data);
@@ -238,6 +241,14 @@ const BodyConfirmPlan = () => {
               </div>
               <p id="nextText">MAKE PAYMENT</p>
             </div>
+            <Link href="/login" passHref>
+              <div className={styles.paymnet__button}>
+                <div className={styles.loader__container__next} id="loaderNext">
+                  <PulseLoader color="#ffffff" />
+                </div>
+                <p id="nextText">PAY LATER</p>
+              </div>
+            </Link>
             <div className={styles.info__container__confirm}>
               <Image src="/info.svg" alt="" width={25} height={25}></Image>
               <p>
