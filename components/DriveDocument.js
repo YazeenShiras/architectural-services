@@ -87,17 +87,30 @@ const DriveDocument = () => {
   } */
 
   async function uploadPhoto() {
-    const url = `https://arclif-services-backend.uc.r.appspot.com/filedataupload/${id}`;
+    if (imageFile !== "") {
+      const url = `https://arclif-services-backend.uc.r.appspot.com/filedataupload/${id}`;
 
-    await axios
-      .post(url, {
-        filename: imageFile,
-      })
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-      })
-      .catch(console.error);
+      await axios
+        .post(url, {
+          filename: imageFile,
+        })
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+          if (res.data.msg === "file added") {
+            document.getElementById("errorFile").style.display = "block";
+            document.getElementById("errorFile").innerHTML =
+              "Image Uploaded Successfully!";
+            document.getElementById("errorFile").style.color = "#1c9c76";
+          }
+        })
+        .catch(console.error);
+    } else {
+      document.getElementById("errorFile").innerHTML =
+        "please select image file";
+      document.getElementById("errorFile").style.display = "block";
+      document.getElementById("errorFile").style.color = "red";
+    }
   }
 
   async function getUploadedFile() {
@@ -240,6 +253,9 @@ const DriveDocument = () => {
           <div onClick={uploadPhoto} className={styles.upload__button}>
             <p>Upload Image Files</p>
           </div>
+          <p className={styles.errorFile} id="errorFile">
+            Image Uploaded Successfully!
+          </p>
         </div>
       </div>
     </div>

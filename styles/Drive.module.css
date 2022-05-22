@@ -110,6 +110,12 @@
   visibility: hidden;
 }
 
+.errorFile {
+  margin-top: -40px;
+  color: #1c9c76;
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
   .bgContainer__profileDetails {
     margin: 90px 8vw;

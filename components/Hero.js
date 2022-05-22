@@ -12,7 +12,6 @@ import HeaderMain from "./HeaderMain";
 import Header from "./Header";
 
 const Hero = () => {
-  /* REMEMBER */
   let launchDate = new Date("May 23, 2022 11:00:00").getTime();
 
   const tick = () => {
