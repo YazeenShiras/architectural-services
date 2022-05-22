@@ -477,6 +477,7 @@
 .days > h5 {
   font-size: 20px;
   margin-right: 50px;
+  margin-left: 10px;
 }
 
 .timer {
@@ -496,8 +497,8 @@
     margin-top: 70px;
   }
   .counterContainer {
-    height: 105vh;
-    width: 105%;
+    height: 106vh;
+    width: 106%;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -510,6 +511,7 @@
   .days > h5 {
     font-size: 12px;
     margin-right: 50px;
+    margin-left: 5px;
   }
   .timer {
     font-size: 45px;
