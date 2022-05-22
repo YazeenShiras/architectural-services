@@ -11,7 +11,7 @@ const Footer = () => {
           <div className={styles.left__footer__top}>
             <div className={styles.logo__footer}>
               <a href="https://arclif.com">
-                <Image src="/arclifLogo.svg" width={80} height={30} alt="" />
+                <Image src="/arclifLogo.png" width={90} height={30} alt="" />
               </a>
             </div>
             <p>
