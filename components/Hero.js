@@ -13,7 +13,7 @@ import Header from "./Header";
 
 const Hero = () => {
   /* REMEMBER */
-  let launchDate = new Date("May 22, 2022 20:30:00").getTime();
+  let launchDate = new Date("May 23, 2022 11:00:00").getTime();
 
   const tick = () => {
     let now = new Date().getTime();
