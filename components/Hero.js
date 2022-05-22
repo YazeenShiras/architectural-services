@@ -13,7 +13,7 @@ import Header from "./Header";
 
 const Hero = () => {
   /* REMEMBER */
-  let launchDate = new Date("May 22, 2022 19:30:00").getTime();
+  let launchDate = new Date("May 22, 2022 20:30:00").getTime();
 
   const tick = () => {
     let now = new Date().getTime();
@@ -36,6 +36,7 @@ const Hero = () => {
         secs = "0" + secs;
       }
       let time = `${days} : ${hours} : ${mins} : ${secs}`;
+
       document.getElementById("countdown").innerHTML = time;
       document.getElementById("main").style.display = "none";
       document.getElementById("mainMobile").style.display = "none";
