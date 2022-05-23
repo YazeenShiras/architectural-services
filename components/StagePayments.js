@@ -152,7 +152,7 @@ const StagePayments = () => {
     (a) => {
       const options = {
         key: "rzp_live_N1mEU44ddNNCyY",
-        amount: a * 100,
+        amount: a,
         currency: "INR",
         name: "Agiha Payment",
         description: "",
@@ -192,7 +192,7 @@ const StagePayments = () => {
         amount: value,
         userId: id,
         planname: planName,
-        stagename: stageName,
+        stage: stageName,
         paymentmode: "stage",
       })
       .then(function (res) {
