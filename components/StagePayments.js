@@ -120,7 +120,8 @@ const StagePayments = () => {
   const handlePaymentFinal = useCallback(() => {
     const options = {
       key: "rzp_live_N1mEU44ddNNCyY",
-      amount: totalAmount * 100,
+      /* amount: totalAmount * 100, */
+      amount: 1 * 100,
       currency: "INR",
       name: "Agiha Payment",
       description: "",
@@ -188,7 +189,7 @@ const StagePayments = () => {
     console.log(planName);
     console.log(id);
     axios
-      .post(`https://arclif-service-payment.herokuapp.com/api/paymentOrder`, {
+      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
         amount: value,
         userId: id,
         planname: planName,
