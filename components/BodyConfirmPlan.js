@@ -73,7 +73,7 @@ const BodyConfirmPlan = () => {
 
   const handlePayment = useCallback(() => {
     const options = {
-      key: "rzp_live_8N0vnTr2CsLRbK",
+      key: "rzp_live_N1mEU44ddNNCyY",
       amount: plan.initial_payment * 100,
       currency: "INR",
       name: "Agriha Payment",
