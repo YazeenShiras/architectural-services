@@ -120,8 +120,7 @@ const StagePayments = () => {
   const handlePaymentFinal = useCallback(() => {
     const options = {
       key: "rzp_live_N1mEU44ddNNCyY",
-      /* amount: totalAmount * 100, */
-      amount: 1 * 100,
+      amount: totalAmount * 100,
       currency: "INR",
       name: "Agiha Payment",
       description: "",
