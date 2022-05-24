@@ -43,7 +43,7 @@ const HeaderMain = () => {
             </ul>
           </nav>
           <Link href="/sendotp" passHref>
-            <p className={styles.loginButton__header}>GET START</p>
+            <p className={styles.loginButton__header}>GET STARTED</p>
           </Link>
           {/* <div className={styles.header__menu__container}>
             <Image

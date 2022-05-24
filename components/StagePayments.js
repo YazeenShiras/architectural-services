@@ -152,7 +152,7 @@ const StagePayments = () => {
     (a) => {
       const options = {
         key: "rzp_live_N1mEU44ddNNCyY",
-        amount: a,
+        amount: a * 100,
         currency: "INR",
         name: "Agiha Payment",
         description: "",
