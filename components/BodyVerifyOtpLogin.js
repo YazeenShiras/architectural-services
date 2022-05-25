@@ -30,7 +30,7 @@ const BodyVerifyOtpLogin = () => {
     document.getElementById("sentOTPRegister").style.display = "none";
 
     axios
-      .post("https://arclif-services-backend.uc.r.appspot.com/verifyOTP", {
+      .post("https://agriha-services.uc.r.appspot.com/verifyOTP", {
         phonenumber: localStorage.getItem("phone"),
         roletype: "User",
         hash: localStorage.getItem("hash"),

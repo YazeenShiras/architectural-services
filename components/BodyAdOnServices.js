@@ -22,9 +22,7 @@ const BodyAdOnServices = () => {
   useEffect(() => {
     async function getAdOns() {
       axios
-        .get(
-          "https://arclif-services-backend.uc.r.appspot.com/viewadonservices"
-        )
+        .get("https://agriha-services.uc.r.appspot.com/viewadonservices")
         .then(function (res) {
           console.log(res.data);
           setAllData(res.data.details);
@@ -38,7 +36,7 @@ const BodyAdOnServices = () => {
     document.getElementById("nextText").style.display = "none";
 
     axios
-      .post("https://arclif-services-backend.uc.r.appspot.com/chooseAdon", {
+      .post("https://agriha-services.uc.r.appspot.com/chooseAdon", {
         login_id: loginId,
         adonservice_name: selectedData,
         total_amount: totalAmount,

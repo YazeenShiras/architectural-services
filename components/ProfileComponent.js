@@ -32,7 +32,7 @@ const ProfileDetails = () => {
       console.log(loginId);
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -54,12 +54,9 @@ const ProfileDetails = () => {
     async function buildingDetails() {
       console.log(loginId);
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getbuildingdetails`,
-          {
-            id: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
+          id: loginId,
+        })
         .then(function (res) {
           console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);
@@ -68,12 +65,9 @@ const ProfileDetails = () => {
 
     async function requirementsDetails() {
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getrequirementslist`,
-          {
-            login_id: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getrequirementslist`, {
+          login_id: loginId,
+        })
         .then(function (res) {
           console.log(res.data);
           if (res.data.msg === "success") {
@@ -85,12 +79,9 @@ const ProfileDetails = () => {
 
     async function checkPayed() {
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/isPaymentcompleted`,
-          {
-            userId: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/isPaymentcompleted`, {
+          userId: loginId,
+        })
         .then(function (res) {
           console.log(res.data);
           if (res.data.msg === "payment details already added") {
@@ -111,20 +102,17 @@ const ProfileDetails = () => {
     document.getElementById("loaderNext").style.display = "block";
     document.getElementById("nextText").style.display = "none";
     axios
-      .put(
-        `https://arclif-services-backend.uc.r.appspot.com/updateuser/${id}`,
-        {
-          uname: name,
-          email: email,
-          housename: home,
-          Place: place,
-          Pincode: pincode,
-          country: country,
-          Profession: profession,
-          Nooffamilymembers: members,
-          Seniorcitizen: citizenType,
-        }
-      )
+      .put(`https://agriha-services.uc.r.appspot.com/updateuser/${id}`, {
+        uname: name,
+        email: email,
+        housename: home,
+        Place: place,
+        Pincode: pincode,
+        country: country,
+        Profession: profession,
+        Nooffamilymembers: members,
+        Seniorcitizen: citizenType,
+      })
       .then(function (res) {
         console.log(res.data);
         if (res.data.msg === "userData  updated !!") {

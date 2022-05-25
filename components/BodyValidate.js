@@ -52,7 +52,7 @@ const BodyValidate = () => {
     async function userDetails() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginIdLoc}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginIdLoc}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -70,12 +70,9 @@ const BodyValidate = () => {
 
     async function requirementsDetails() {
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getrequirementslist`,
-          {
-            login_id: loginIdLoc,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getrequirementslist`, {
+          login_id: loginIdLoc,
+        })
         .then(function (res) {
           console.log(res.data);
           if (res.data.msg === "success") {
@@ -125,21 +122,17 @@ const BodyValidate = () => {
     document.getElementById("nextText").style.display = "none";
 
     axios
-      .post(
-        `https://arclif-services-backend.uc.r.appspot.com/addbuildingdetails`,
-        {
-          no_of_floors: floor,
-          total_area: area,
-          no_of_bedrooms: bedrooms,
-          attached_bathrooms: attachedBedRooms,
-          design_type: design,
-          total_budget: budget,
-          home_requirements: requirements,
-          login_id: loginId,
-        }
-      )
+      .post(`https://agriha-services.uc.r.appspot.com/addbuildingdetails`, {
+        no_of_floors: floor,
+        total_area: area,
+        no_of_bedrooms: bedrooms,
+        attached_bathrooms: attachedBedRooms,
+        design_type: design,
+        total_budget: budget,
+        home_requirements: requirements,
+        login_id: loginId,
+      })
       .then(function (res) {
-        console.log(res.data);
         window.location.href = "/plans";
       });
   }
@@ -149,7 +142,7 @@ const BodyValidate = () => {
     document.getElementById("nextText").style.display = "none";
     axios
       .put(
-        `https://arclif-services-backend.uc.r.appspot.com/updateuser/${userId}`,
+        `https://agriha-services.uc.r.appspot.com/updateuser/${userId}`,
         {
           uname: name,
           email: email,

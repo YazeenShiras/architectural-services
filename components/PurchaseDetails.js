@@ -31,7 +31,7 @@ const PurchaseDetails = () => {
     async function userDetails() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -44,7 +44,7 @@ const PurchaseDetails = () => {
 
     async function userPlan() {
       axios
-        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserplan`, {
+        .post(`https://agriha-services.uc.r.appspot.com/getuserplan`, {
           login_id: loginId,
         })
         .then(function (res) {
@@ -70,12 +70,9 @@ const PurchaseDetails = () => {
     async function buildingDetails() {
       console.log(loginId);
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getbuildingdetails`,
-          {
-            id: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
+          id: loginId,
+        })
         .then(function (res) {
           console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);

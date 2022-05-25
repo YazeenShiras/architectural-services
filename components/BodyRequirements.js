@@ -24,13 +24,10 @@ const BodyRequirements = () => {
     document.getElementById("nextText").style.display = "none";
 
     axios
-      .post(
-        "https://arclif-services-backend.uc.r.appspot.com/setrequirementslist",
-        {
-          login_id: loginId,
-          requirements_list: requirements,
-        }
-      )
+      .post("https://agriha-services.uc.r.appspot.com/setrequirementslist", {
+        login_id: loginId,
+        requirements_list: requirements,
+      })
       .then(function (res) {
         console.log(res.data);
         if (res.data.msg === "Requirementslist added !!") {

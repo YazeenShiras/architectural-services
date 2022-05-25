@@ -24,7 +24,7 @@ const DriveDocument = () => {
     async function userDetails() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -36,7 +36,7 @@ const DriveDocument = () => {
 
     async function userPlan() {
       axios
-        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserplan`, {
+        .post(`https://agriha-services.uc.r.appspot.com/getuserplan`, {
           login_id: loginId,
         })
         .then(function (res) {
@@ -48,12 +48,9 @@ const DriveDocument = () => {
 
     async function documentsFromAdmin() {
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getfilesfromadmin`,
-          {
-            id: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getfilesfromadmin`, {
+          id: loginId,
+        })
         .then(function (res) {
           console.log(res.data);
         });
@@ -66,7 +63,7 @@ const DriveDocument = () => {
 
   /* async function uploadFile() {
     const inpFile = document.getElementById("file");
-    const url = "https://arclif-services-backend.uc.r.appspot.com/uploadfile";
+    const url = "https://agriha-services.uc.r.appspot.com/uploadfile";
 
     const formData = new FormData();
     formData.append("file", inpFile.files[0]);
@@ -88,7 +85,7 @@ const DriveDocument = () => {
 
   async function uploadPhoto() {
     if (imageFile !== "") {
-      const url = `https://arclif-services-backend.uc.r.appspot.com/filedataupload/${id}`;
+      const url = `https://agriha-services.uc.r.appspot.com/filedataupload/${id}`;
 
       await axios
         .post(url, {
@@ -114,7 +111,7 @@ const DriveDocument = () => {
   }
 
   async function getUploadedFile() {
-    const url = `https://arclif-services-backend.uc.r.appspot.com/getfiles/${id}`;
+    const url = `https://agriha-services.uc.r.appspot.com/getfiles/${id}`;
 
     await axios
       .post(url)

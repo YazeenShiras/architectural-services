@@ -34,7 +34,7 @@ const BodyPlans = () => {
     console.log(id);
 
     axios
-      .post("https://arclif-services-backend.uc.r.appspot.com/chooseplan", {
+      .post("https://agriha-services.uc.r.appspot.com/chooseplan", {
         login_id: loginId,
         paymentplan_id: id,
       })
@@ -54,7 +54,7 @@ const BodyPlans = () => {
   useEffect(() => {
     async function getPlans() {
       axios
-        .get("https://arclif-services-backend.uc.r.appspot.com/viewplan")
+        .get("https://agriha-services.uc.r.appspot.com/viewplan")
         .then(function (res) {
           console.log(res.data);
           setSilver(res.data.details[0]);

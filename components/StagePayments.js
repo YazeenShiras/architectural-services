@@ -39,7 +39,7 @@ const StagePayments = () => {
     async function userDetails() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -53,7 +53,7 @@ const StagePayments = () => {
 
     async function userPlan() {
       axios
-        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserplan`, {
+        .post(`https://agriha-services.uc.r.appspot.com/getuserplan`, {
           login_id: loginId,
         })
         .then(function (res) {
@@ -79,12 +79,9 @@ const StagePayments = () => {
     async function buildingDetails() {
       console.log(loginId);
       axios
-        .post(
-          `https://arclif-services-backend.uc.r.appspot.com/getbuildingdetails`,
-          {
-            id: loginId,
-          }
-        )
+        .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
+          id: loginId,
+        })
         .then(function (res) {
           console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);
@@ -122,7 +119,7 @@ const StagePayments = () => {
       key: "rzp_live_N1mEU44ddNNCyY",
       amount: totalAmount * 100,
       currency: "INR",
-      name: "Agiha Payment",
+      name: "Agriha Payment",
       description: "",
       image: "/agrihaLogo.png",
       order_id: orderid,
@@ -154,11 +151,11 @@ const StagePayments = () => {
         key: "rzp_live_N1mEU44ddNNCyY",
         amount: a * 100,
         currency: "INR",
-        name: "Agiha Payment",
+        name: "Agriha Payment",
         description: "",
         image: "/agrihaLogo.png",
         order_id: orderid,
-        callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${id}`,
+        callback_url: `https://agriha-services.uc.r.appspot.com/verifyPayment/${id}`,
         redirect: true,
         handler: (res) => {
           console.log(res);
@@ -188,7 +185,7 @@ const StagePayments = () => {
     console.log(planName);
     console.log(id);
     axios
-      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
+      .post(`https://agriha-services.uc.r.appspot.com/paymentOrder`, {
         amount: value,
         userId: id,
         planname: planName,
@@ -207,7 +204,7 @@ const StagePayments = () => {
 
   async function paymnetOrderFinal() {
     axios
-      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
+      .post(`https://agriha-services.uc.r.appspot.com/paymentOrder`, {
         amount: totalAmount,
         userId: id,
         paymentmode: "finalpayment",

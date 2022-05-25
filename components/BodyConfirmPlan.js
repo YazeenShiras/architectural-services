@@ -39,7 +39,7 @@ const BodyConfirmPlan = () => {
     async function userDetails() {
       axios
         .get(
-          `https://arclif-services-backend.uc.r.appspot.com/viewsingleuser/${loginId}`
+          `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
           console.log(res.data);
@@ -52,7 +52,7 @@ const BodyConfirmPlan = () => {
 
     async function userPlan() {
       axios
-        .post(`https://arclif-services-backend.uc.r.appspot.com/getuserplan`, {
+        .post(`https://agriha-services.uc.r.appspot.com/getuserplan`, {
           login_id: loginId,
         })
         .then(function (res) {
@@ -80,7 +80,7 @@ const BodyConfirmPlan = () => {
       description: "",
       image: "/agrihaLogo.png",
       order_id: orderid,
-      callback_url: `https://arclif-services-backend.uc.r.appspot.com/verifyPayment/${loginId}`,
+      callback_url: `https://agriha-services.uc.r.appspot.com/verifyPayment/${loginId}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -107,7 +107,7 @@ const BodyConfirmPlan = () => {
     document.getElementById("nextText").style.display = "none";
 
     axios
-      .post(`https://arclif-services-backend.uc.r.appspot.com/paymentOrder`, {
+      .post(`https://agriha-services.uc.r.appspot.com/paymentOrder`, {
         amount: plan.amount_per_sqrft * area,
         userId: loginId,
         paymentmode: "downpayment",

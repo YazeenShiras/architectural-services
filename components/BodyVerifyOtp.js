@@ -29,10 +29,8 @@ const BodyVerifyOtp = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    console.log(localStorage.getItem("phone"), localStorage.getItem("hash"));
-
     axios
-      .post("https://arclif-services-backend.uc.r.appspot.com/verifyOTP", {
+      .post("https://agriha-services.uc.r.appspot.com/verifyOTP", {
         phonenumber: localStorage.getItem("phone"),
         roletype: "User",
         hash: localStorage.getItem("hash"),
@@ -41,7 +39,6 @@ const BodyVerifyOtp = () => {
         withCredentials: true,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "register verified") {
           localStorage.setItem("loginId", res.data.data[0].data._id);
           window.location.href = "/detailsform";

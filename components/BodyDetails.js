@@ -82,7 +82,7 @@ const BodyDetails = () => {
     document.getElementById("submitText").style.display = "none";
 
     const res = await fetch(
-      "https://arclif-services-backend.uc.r.appspot.com/createuser",
+      "https://agriha-services.uc.r.appspot.com/createuser",
       {
         method: "POST",
         headers: {

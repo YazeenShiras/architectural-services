@@ -15,12 +15,11 @@ const BodySendOtp = () => {
     document.getElementById("sentOTPRegister").style.display = "none";
 
     axios
-      .post("https://arclif-services-backend.uc.r.appspot.com/sendOTP", {
+      .post("https://agriha-services.uc.r.appspot.com/sendOTP", {
         phonenumber: number,
         flag: "register",
       })
       .then(function (res) {
-        console.log(res.data);
         localStorage.setItem("phone", res.data.phone);
         localStorage.setItem("hash", res.data.hash);
         if (res.data.flag === "") {
