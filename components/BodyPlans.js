@@ -171,6 +171,13 @@ const BodyPlans = () => {
               {interior.map((data, index) => {
                 return (
                   <div className={styles.feature__container__plans} key={index}>
+                    <Image
+                      className={styles.bubble2__top__content__main__right}
+                      src="/check.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                    ></Image>
                     <p>{data}</p>
                   </div>
                 );
