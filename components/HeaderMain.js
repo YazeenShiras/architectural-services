@@ -45,6 +45,12 @@ const HeaderMain = () => {
           <Link href="/sendotp" passHref>
             <p className={styles.loginButton__header}>GET STARTED</p>
           </Link>
+          <a
+            className={styles.contactButton__header}
+            href="https://api.whatsapp.com/send?phone=919995111325&text=Hey%20AGRIHA%2C%20can%20you%20help%20me%3F"
+          >
+            CHAT NOW
+          </a>
           {/* <div className={styles.header__menu__container}>
             <Image
               className={styles.header__menu}

@@ -92,7 +92,7 @@
 .loginButton__header {
   height: 30px;
   width: 90px;
-  border-radius: 50px;
+  border-radius: 10px;
   color: #ffffff;
   background-image: linear-gradient(to right, #000000, #414141);
   -webkit-box-shadow: 0 10px 6px -5px #0000001a;
@@ -110,6 +110,28 @@
 
 .loginButton__header:hover {
   background-image: linear-gradient(to left, #000000, #414141);
+}
+
+.contactButton__header {
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.contactButton__header:hover {
+  background-color: #414141;
+  color: #ffffff;
 }
 
 .header__menu__container {
@@ -181,5 +203,11 @@
   }
   .header__nav_link:hover {
     background-color: #027888;
+  }
+  .contactButton__header {
+    margin-left: 10px;
+  }
+  .loginButton__header {
+    margin-left: 20px;
   }
 }
