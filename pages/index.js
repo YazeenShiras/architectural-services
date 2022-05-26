@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Hero from "../components/Hero";
+import ContactButton from "../components/ContactButton";
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <div></div>
+      <div className={styles.contactUs__button__container}>
+        <ContactButton />
+      </div>
     </div>
   );
 }
