@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/inline-script-id */
 import "../styles/globals.css";
 import Script from "next/script";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,19 @@ function MyApp({ Component, pageProps }) {
         });
     `}
       </Script>
+
+      <Head>
+        <title>Agriha | Arclif</title>
+        <meta
+          name="description"
+          content="Online Architecture Services | Arclif"
+        />
+        <meta
+          name="keywords"
+          content="Agriha, agriha, arclif, home services, home build, dream home, online architecture services"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
       <Component {...pageProps} />
     </>
