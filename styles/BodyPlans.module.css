@@ -51,11 +51,6 @@
   width: 20vw;
 }
 
-.card__plans__middle {
-  background-image: linear-gradient(to right, #027888, #1c9c76);
-  color: #fff;
-}
-
 .card__plans__left__confirm {
   width: 70%;
   padding: 20px;

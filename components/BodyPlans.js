@@ -18,6 +18,8 @@ const BodyPlans = () => {
   const [goldServices, setGoldServices] = useState([]);
   const [platinumServices, setPlatinumServices] = useState([]);
 
+  const [interior, setInterior] = useState([]);
+
   async function choosePlan(id, planName) {
     if (planName === silver.plan_name) {
       document.getElementById("loaderNext").style.display = "block";
@@ -63,6 +65,7 @@ const BodyPlans = () => {
           setSilverServives(res.data.details[0].plan_services);
           setGoldServices(res.data.details[1].plan_services);
           setPlatinumServices(res.data.details[2].plan_services);
+          setInterior(res.data.details[2].interior);
         });
     }
     getPlans();
@@ -110,8 +113,8 @@ const BodyPlans = () => {
             </div>
           </div>
 
-          <div className={styles.card__plans__middle}>
-            <div className={styles.top_container_gold}>
+          <div className={styles.card__plans}>
+            <div className={styles.top_container}>
               <h5>{gold.plan_name}</h5>
               <h4>₹{gold.plan_amount_inlakh}</h4>
               {goldServices.map((plan, index) => {
@@ -132,13 +135,13 @@ const BodyPlans = () => {
             <div className={styles.button__container__plans}>
               <div
                 onClick={() => choosePlan(gold._id, gold.plan_name)}
-                className={styles.choosePlan__button__middle}
+                className={styles.choosePlan__button}
               >
                 <div
                   className={styles.loader__container__next}
                   id="loaderNext2"
                 >
-                  <PulseLoader color="#1c9c76" />
+                  <PulseLoader color="#ffffff" />
                 </div>
                 <p id="nextText2">SELECT PLAN</p>
               </div>
@@ -161,6 +164,14 @@ const BodyPlans = () => {
                       height={12}
                     ></Image>
                     <p>{plan}</p>
+                  </div>
+                );
+              })}
+              <h5 style={{ marginTop: "10px", fontSize: "14px" }}>Interior</h5>
+              {interior.map((data, index) => {
+                return (
+                  <div className={styles.feature__container__plans} key={index}>
+                    <p>{data}</p>
                   </div>
                 );
               })}
