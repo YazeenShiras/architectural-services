@@ -115,6 +115,10 @@
   background-image: linear-gradient(to left, #027888, #1c9c76);
 }
 
+.loader__container__payNow {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
   .bgContainer__profileDetails {
     margin: 90px 8vw;

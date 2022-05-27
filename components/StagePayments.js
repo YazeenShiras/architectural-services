@@ -115,15 +115,18 @@ const StagePayments = () => {
   }, [buildingDetails, plan]);
 
   const handlePaymentFinal = useCallback(() => {
+    document.getElementById("loaderMakePayment").style.display = "none";
+    document.getElementById("makePaymentText").style.display = "block";
+
     const options = {
       key: "rzp_live_N1mEU44ddNNCyY",
-      amount: totalAmount * 100,
+      /* amount: totalAmount * 100, */
       currency: "INR",
       name: "Agriha Payment",
       description: "",
       image: "/agrihaLogo.png",
       order_id: orderid,
-      callback_url: `https://arclif-service-payment.herokuapp.com/verifyPayment/${id}`,
+      callback_url: `https://agriha-services.uc.r.appspot.com/verifyPayment/${id}`,
       redirect: true,
       handler: (res) => {
         console.log(res);
@@ -143,18 +146,23 @@ const StagePayments = () => {
 
     const rzpay = new Razorpay(options);
     rzpay.open();
-  }, [Razorpay, name, email, mobile, orderid, id, totalAmount]);
+  }, [Razorpay, name, email, mobile, orderid, id]);
 
   const handlePaymentStages = useCallback(
-    (a) => {
+    (a, order) => {
+      document.getElementById("loaderPayNow").style.display = "none";
+      document.getElementById("payNowText").style.display = "block";
+
+      console.log("amount : " + a);
+      console.log(order);
+
       const options = {
         key: "rzp_live_N1mEU44ddNNCyY",
-        amount: a * 100,
         currency: "INR",
         name: "Agriha Payment",
         description: "",
         image: "/agrihaLogo.png",
-        order_id: orderid,
+        order_id: order,
         callback_url: `https://agriha-services.uc.r.appspot.com/verifyPayment/${id}`,
         redirect: true,
         handler: (res) => {
@@ -176,10 +184,13 @@ const StagePayments = () => {
       const rzpay = new Razorpay(options);
       rzpay.open();
     },
-    [Razorpay, name, email, mobile, orderid, id]
+    [Razorpay, name, email, mobile, id]
   );
 
   async function paymnetOrderStages(planName, stageName, value) {
+    document.getElementById("loaderPayNow").style.display = "block";
+    document.getElementById("payNowText").style.display = "none";
+
     console.log(stageName);
     console.log(value);
     console.log(planName);
@@ -195,14 +206,17 @@ const StagePayments = () => {
       .then(function (res) {
         console.log(res.data);
         setAmount(res.data.order.amount_due);
-        setOrderid(res.data.order.id);
+        setOrderIdStage(res.data.order.id);
         if (res.data.status === 200) {
-          handlePaymentStages(value);
+          handlePaymentStages(value, res.data.order.id);
         }
       });
   }
 
   async function paymnetOrderFinal() {
+    document.getElementById("loaderMakePayment").style.display = "block";
+    document.getElementById("makePaymentText").style.display = "none";
+
     axios
       .post(`https://agriha-services.uc.r.appspot.com/paymentOrder`, {
         amount: totalAmount,
@@ -244,7 +258,15 @@ const StagePayments = () => {
                   .00
                 </h5>
                 <div className={styles.completed__button}>Completed</div>
-                <div className={styles.payAmount__button}>PAY NOW</div>
+                <div className={styles.payAmount__button}>
+                  <div
+                    className={styles.loader__container__payNow}
+                    id="loaderPayNow"
+                  >
+                    <PulseLoader color="#ffffff" />
+                  </div>
+                  <p id="payNowText">PAY NOW</p>
+                </div>
               </div>
             </div>
             <div
@@ -262,7 +284,15 @@ const StagePayments = () => {
                 <p>Amount</p>
                 <h5>{(totalAmount * plan.stage_two_price) / 100}.00</h5>
                 <div className={styles.completed__button}>Completed</div>
-                <div className={styles.payAmount__button}>PAY NOW</div>
+                <div className={styles.payAmount__button}>
+                  <div
+                    className={styles.loader__container__payNow}
+                    id="loaderPayNow"
+                  >
+                    <PulseLoader color="#ffffff" />
+                  </div>
+                  <p id="payNowText">PAY NOW</p>
+                </div>
               </div>
             </div>
             <div
@@ -281,7 +311,15 @@ const StagePayments = () => {
                 <p>Amount</p>
                 <h5>{(totalAmount * plan.stage_three_price) / 100}.00</h5>
                 <div className={styles.completed__button}>Completed</div>
-                <div className={styles.payAmount__button}>PAY NOW</div>
+                <div className={styles.payAmount__button}>
+                  <div
+                    className={styles.loader__container__payNow}
+                    id="loaderPayNow"
+                  >
+                    <PulseLoader color="#ffffff" />
+                  </div>
+                  <p id="payNowText">PAY NOW</p>
+                </div>
               </div>
             </div>
             <div
@@ -300,7 +338,15 @@ const StagePayments = () => {
                 <p>Amount</p>
                 <h5>{(totalAmount * plan.stage_four_price) / 100}.00</h5>
                 <div className={styles.completed__button}>Completed</div>
-                <div className={styles.payAmount__button}>PAY NOW</div>
+                <div className={styles.payAmount__button}>
+                  <div
+                    className={styles.loader__container__payNow}
+                    id="loaderPayNow"
+                  >
+                    <PulseLoader color="#ffffff" />
+                  </div>
+                  <p id="payNowText">PAY NOW</p>
+                </div>
               </div>
             </div>
           </div>
@@ -332,7 +378,13 @@ const StagePayments = () => {
               </div>
             </div>
             <div onClick={paymnetOrderFinal} className={styles.payAllButton}>
-              MAKE PAYMENT
+              <div
+                className={styles.loader__container__payNow}
+                id="loaderMakePayment"
+              >
+                <PulseLoader color="#ffffff" />
+              </div>
+              <p id="makePaymentText">MAKE PAYMENT</p>
             </div>
           </div>
         </div>

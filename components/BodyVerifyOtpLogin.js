@@ -48,6 +48,14 @@ const BodyVerifyOtpLogin = () => {
           localStorage.setItem("loginId", res.data.data[0].data[0]._id);
           window.location.href = "/profile";
         }
+        if (res.data.msg === "Incorrect OTP") {
+          document.getElementById("loaderSentOtpRegister").style.display =
+            "none";
+          document.getElementById("sentOTPRegister").style.display = "block";
+          document.getElementById("errorVarifyOtp").style.display = "block";
+          document.getElementById("errorVarifyOtp").style.color = "red";
+          document.getElementById("errorVarifyOtp").innerHTML = "invalid OTP";
+        }
       });
   }
 
