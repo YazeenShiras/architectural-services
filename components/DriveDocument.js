@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import Resizer from "react-image-file-resizer";
+import { PulseLoader } from "react-spinners";
 
 const DriveDocument = () => {
   const [id, setId] = useState("");
@@ -85,6 +86,9 @@ const DriveDocument = () => {
 
   async function uploadPhoto() {
     if (imageFile !== "") {
+      document.getElementById("loaderUpload").style.display = "block";
+      document.getElementById("uploadText").style.display = "none";
+
       const url = `https://agriha-services.uc.r.appspot.com/filedataupload/${id}`;
 
       await axios
@@ -95,6 +99,8 @@ const DriveDocument = () => {
           const data = res.data;
           console.log(data);
           if (res.data.msg === "file added") {
+            document.getElementById("loaderUpload").style.display = "none";
+            document.getElementById("uploadText").style.display = "block";
             document.getElementById("errorFile").style.display = "block";
             document.getElementById("errorFile").innerHTML =
               "Image Uploaded Successfully!";
@@ -108,18 +114,6 @@ const DriveDocument = () => {
       document.getElementById("errorFile").style.display = "block";
       document.getElementById("errorFile").style.color = "red";
     }
-  }
-
-  async function getUploadedFile() {
-    const url = `https://agriha-services.uc.r.appspot.com/getfiles/${id}`;
-
-    await axios
-      .post(url)
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-      })
-      .catch(console.error);
   }
 
   const fileChangedHandler = (event) => {
@@ -216,16 +210,18 @@ const DriveDocument = () => {
           <div className={styles.center_container_drive}>
             <h3>Your Documents</h3>
             <div className={styles.foldersContainer}>
-              <div onClick={getUploadedFile} className={styles.folderCard}>
-                <Image
-                  className={styles.header__logo}
-                  src="/folderIcon.svg"
-                  alt="Arclif Logo"
-                  width={70}
-                  height={70}
-                />
-                <p>Uploaded</p>
-              </div>
+              <Link href="/uploaded" passHref>
+                <div className={styles.folderCard}>
+                  <Image
+                    className={styles.header__logo}
+                    src="/folderIcon.svg"
+                    alt="Arclif Logo"
+                    width={70}
+                    height={70}
+                  />
+                  <p>Uploaded</p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -248,7 +244,10 @@ const DriveDocument = () => {
             </div>
           </div>
           <div onClick={uploadPhoto} className={styles.upload__button}>
-            <p>Upload Image Files</p>
+            <div className={styles.loader__container__upload} id="loaderUpload">
+              <PulseLoader color="#ffffff" />
+            </div>
+            <p id="uploadText">Upload Image Files</p>
           </div>
           <p className={styles.errorFile} id="errorFile">
             Image Uploaded Successfully!
