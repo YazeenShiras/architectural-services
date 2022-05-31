@@ -24,7 +24,6 @@ const BodyAdOnServices = () => {
       axios
         .get("https://agriha-services.uc.r.appspot.com/viewadonservices")
         .then(function (res) {
-          console.log(res.data);
           setAllData(res.data.details);
         });
     }
@@ -42,7 +41,6 @@ const BodyAdOnServices = () => {
         total_amount: totalAmount,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "user adon services added !!") {
           window.location.href = "/confirmplan";
         }

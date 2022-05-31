@@ -42,8 +42,6 @@ const StagePayments = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -57,7 +55,6 @@ const StagePayments = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
           setNoOfStages(res.data.details.no_of_stages);
@@ -77,7 +74,6 @@ const StagePayments = () => {
     }
 
     async function buildingDetails() {
-      console.log(loginId);
       axios
         .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
           id: loginId,
@@ -153,9 +149,6 @@ const StagePayments = () => {
       document.getElementById("loaderPayNow").style.display = "none";
       document.getElementById("payNowText").style.display = "block";
 
-      console.log("amount : " + a);
-      console.log(order);
-
       const options = {
         key: "rzp_live_N1mEU44ddNNCyY",
         currency: "INR",
@@ -191,10 +184,6 @@ const StagePayments = () => {
     document.getElementById("loaderPayNow").style.display = "block";
     document.getElementById("payNowText").style.display = "none";
 
-    console.log(stageName);
-    console.log(value);
-    console.log(planName);
-    console.log(id);
     axios
       .post(`https://agriha-services.uc.r.appspot.com/paymentOrder`, {
         amount: value,
@@ -204,7 +193,6 @@ const StagePayments = () => {
         paymentmode: "stage",
       })
       .then(function (res) {
-        console.log(res.data);
         setAmount(res.data.order.amount_due);
         setOrderIdStage(res.data.order.id);
         if (res.data.status === 200) {
@@ -224,7 +212,6 @@ const StagePayments = () => {
         paymentmode: "finalpayment",
       })
       .then(function (res) {
-        console.log(res.data);
         setAmount(res.data.order.amount_due);
         setOrderid(res.data.order.id);
         if (res.data.status === 200) {

@@ -3,7 +3,6 @@ import styles from "../styles/BodyRequirements.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
-import Image from "next/image";
 import axios from "axios";
 
 import { Requirements } from "./data";
@@ -16,7 +15,6 @@ const BodyRequirements = () => {
   useEffect(() => {
     const logId = localStorage.getItem("loginId");
     setLoginId(logId);
-    console.log(Requirements);
   }, []);
 
   async function setRequirementsList() {
@@ -29,7 +27,6 @@ const BodyRequirements = () => {
         requirements_list: requirements,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "Requirementslist added !!") {
           window.location.href = "/validate";
         }

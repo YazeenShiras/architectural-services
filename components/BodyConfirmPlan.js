@@ -42,7 +42,6 @@ const BodyConfirmPlan = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -56,7 +55,6 @@ const BodyConfirmPlan = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
           setTotalAmount(plan.amount_per_sqrft * area);
@@ -113,7 +111,6 @@ const BodyConfirmPlan = () => {
         paymentmode: "downpayment",
       })
       .then(function (res) {
-        console.log(res.data);
         setAmount(res.data.order.amount_due);
         setOrderid(res.data.order.id);
         if (res.data.status === 200) {
@@ -121,18 +118,6 @@ const BodyConfirmPlan = () => {
         }
       });
   }
-
-  /* const payOption = (value) => {
-    setFinal(value);
-  }; */
-
-  /* const makePaymnetClick = () => {
-    if (final !== 0) {
-      paymnetOrder();
-    } else {
-      alert("choose amount");
-    }
-  }; */
 
   return (
     <div className={styles.bodyPlans}>

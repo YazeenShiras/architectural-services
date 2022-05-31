@@ -34,8 +34,6 @@ const PurchaseDetails = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -48,7 +46,6 @@ const PurchaseDetails = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           setPlan(res.data.details);
           setNoOfStages(res.data.details.no_of_stages);
           setPlanServices(res.data.details.plan_services);
@@ -68,7 +65,6 @@ const PurchaseDetails = () => {
     }
 
     async function buildingDetails() {
-      console.log(loginId);
       axios
         .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
           id: loginId,

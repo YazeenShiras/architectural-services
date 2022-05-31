@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/BodyValidate.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
-import Image from "next/image";
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
-import { Link } from "@mui/material";
 
 const BodyValidate = () => {
   const [loginId, setLoginId] = useState("");
@@ -55,8 +53,6 @@ const BodyValidate = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginIdLoc}`
         )
         .then(function (res) {
-          console.log(res.data);
-          console.log(res.data.details.userdetails[0]);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setNumber(res.data.details.logindetails[0].phonenumber);
@@ -74,9 +70,7 @@ const BodyValidate = () => {
           login_id: loginIdLoc,
         })
         .then(function (res) {
-          console.log(res.data);
           if (res.data.msg === "success") {
-            console.log(res.data.details.requirements_list);
             setRequirementsData(res.data.details.requirements_list);
           }
         });

@@ -39,7 +39,6 @@ const BodyVerifyOtpLogin = () => {
         withCredentials: true,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "register verified") {
           localStorage.setItem("loginId", res.data.data[0].data._id);
           window.location.href = "/detailsform";

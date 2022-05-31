@@ -28,7 +28,6 @@ const DriveDocument = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -41,25 +40,13 @@ const DriveDocument = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
         });
     }
 
-    async function documentsFromAdmin() {
-      axios
-        .post(`https://agriha-services.uc.r.appspot.com/getfilesfromadmin`, {
-          id: loginId,
-        })
-        .then(function (res) {
-          console.log(res.data);
-        });
-    }
-
     userDetails();
     userPlan();
-    documentsFromAdmin();
   }, []);
 
   /* async function uploadFile() {
@@ -96,8 +83,6 @@ const DriveDocument = () => {
           filename: imageFile,
         })
         .then((res) => {
-          const data = res.data;
-          console.log(data);
           if (res.data.msg === "file added") {
             document.getElementById("loaderUpload").style.display = "none";
             document.getElementById("uploadText").style.display = "block";
@@ -141,9 +126,7 @@ const DriveDocument = () => {
           200,
           200
         );
-        console.log(imageFile);
       } catch (err) {
-        console.log(err);
         setIsProfilePhotoUploaded(false);
       }
     }

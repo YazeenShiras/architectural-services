@@ -56,20 +56,15 @@ const BodyDetails = () => {
 
   useEffect(() => {
     async function getLocationDetails() {
-      console.log("access to getAllProducts");
       const endpoint = `https://api.geoapify.com/v1/geocode/autocomplete?text=${place}%20&format=json&apiKey=41ff15ef6d914c4aa4d53d1c7c848744`;
 
-      await axios
-        .get(endpoint)
-        .then((res) => {
-          const data = res.data;
-          console.log(data);
-          if (data.results) {
-            setLatitude(data.results[0].lat);
-            setLongitute(data.results[0].lon);
-          }
-        })
-        .catch(console.error);
+      await axios.get(endpoint).then((res) => {
+        const data = res.data;
+        if (data.results) {
+          setLatitude(data.results[0].lat);
+          setLongitute(data.results[0].lon);
+        }
+      });
     }
 
     if (place.length > 2) {
@@ -105,7 +100,7 @@ const BodyDetails = () => {
       }
     );
     const data = await res.json();
-    console.log(data);
+
     if (data.msg === "userdetails added !!") {
       window.location.href = "/budget";
     }

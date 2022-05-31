@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
-import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { PulseLoader } from "react-spinners";

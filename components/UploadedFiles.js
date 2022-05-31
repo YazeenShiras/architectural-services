@@ -42,11 +42,11 @@ const UploadedFiles = () => {
             return (
               <div className={styles.image__response} key={index}>
                 <Image
-                  className={styles.header__logo}
                   src={items.filename}
                   alt="Arclif Logo"
                   width={200}
                   height={200}
+                  layout="intrinsic"
                 />
               </div>
             );

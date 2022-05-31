@@ -26,8 +26,6 @@ const PlanDetailsProfile = () => {
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
-          console.log(res.data);
           setUserId(res.data.details.userdetails[0]._id);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -40,20 +38,17 @@ const PlanDetailsProfile = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
         });
     }
 
     async function buildingDetails() {
-      console.log(loginId);
       axios
         .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
           id: loginId,
         })
         .then(function (res) {
-          console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);
         });
     }

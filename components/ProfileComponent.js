@@ -29,15 +29,12 @@ const ProfileDetails = () => {
     setId(loginId);
 
     async function handleSubmit() {
-      console.log(loginId);
       axios
         .get(
           `https://agriha-services.uc.r.appspot.com/viewsingleuser/${loginId}`
         )
         .then(function (res) {
-          console.log(res.data);
           setUserdetails(res.data.details.userdetails[0]);
-          console.log(res.data.details.userdetails[0]);
           setMob(res.data.details.logindetails[0].phonenumber);
           setName(res.data.details.userdetails[0].uname);
           setEmail(res.data.details.userdetails[0].email);
@@ -52,13 +49,11 @@ const ProfileDetails = () => {
     }
 
     async function buildingDetails() {
-      console.log(loginId);
       axios
         .post(`https://agriha-services.uc.r.appspot.com/getbuildingdetails`, {
           id: loginId,
         })
         .then(function (res) {
-          console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);
         });
     }
@@ -69,9 +64,7 @@ const ProfileDetails = () => {
           login_id: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           if (res.data.msg === "success") {
-            console.log(res.data.details.requirements_list);
             setRequirementsData(res.data.details.requirements_list);
           }
         });
@@ -83,7 +76,6 @@ const ProfileDetails = () => {
           userId: loginId,
         })
         .then(function (res) {
-          console.log(res.data);
           if (res.data.msg === "payment details already added") {
             handleSubmit();
             buildingDetails();
@@ -98,7 +90,6 @@ const ProfileDetails = () => {
   }, []);
 
   async function updateUserDetails() {
-    console.log(name);
     document.getElementById("loaderNext").style.display = "block";
     document.getElementById("nextText").style.display = "none";
     axios
@@ -114,7 +105,6 @@ const ProfileDetails = () => {
         Seniorcitizen: citizenType,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "userData  updated !!") {
           window.location.reload();
         }

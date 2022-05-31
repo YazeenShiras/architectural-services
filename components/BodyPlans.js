@@ -33,7 +33,6 @@ const BodyPlans = () => {
       document.getElementById("loaderNext3").style.display = "block";
       document.getElementById("nextText3").style.display = "none";
     }
-    console.log(id);
 
     axios
       .post("https://agriha-services.uc.r.appspot.com/chooseplan", {
@@ -41,7 +40,6 @@ const BodyPlans = () => {
         paymentplan_id: id,
       })
       .then(function (res) {
-        console.log(res.data);
         if (res.data.msg === "choose plan added !!") {
           window.location.href = "/adOnServices";
         }
@@ -58,7 +56,6 @@ const BodyPlans = () => {
       axios
         .get("https://agriha-services.uc.r.appspot.com/viewplan")
         .then(function (res) {
-          console.log(res.data);
           setSilver(res.data.details[0]);
           setGold(res.data.details[1]);
           setPlatinum(res.data.details[2]);
