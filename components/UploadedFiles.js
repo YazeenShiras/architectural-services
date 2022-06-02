@@ -15,17 +15,12 @@ const UploadedFiles = () => {
     async function getUploadedFile() {
       const url = `https://agriha-services.uc.r.appspot.com/getfiles/${loginId}`;
 
-      await axios
-        .post(url)
-        .then((res) => {
-          const data = res.data;
-          console.log(data);
-
-          if (data.msg === "added file data") {
-            setResponse(data.response);
-          }
-        })
-        .catch(console.error);
+      await axios.post(url).then((res) => {
+        const data = res.data;
+        if (data.msg === "added file data") {
+          setResponse(data.response);
+        }
+      });
     }
 
     getUploadedFile();

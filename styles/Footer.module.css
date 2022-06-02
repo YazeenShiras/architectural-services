@@ -220,3 +220,8 @@
   font-size: 13px;
   color: #606060;
 }
+
+.title__footer__mobile > p {
+  text-align: justify;
+  margin-top: 5px;
+}

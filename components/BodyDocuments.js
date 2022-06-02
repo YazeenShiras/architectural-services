@@ -23,7 +23,16 @@ const BodyDocuments = () => {
         });
     }
 
+    async function paymentDetails() {
+      axios
+        .get(`https://agriha-services.uc.r.appspot.com/api/cartview/${loginId}`)
+        .then(function (res) {
+          console.log(res.data);
+        });
+    }
+
     documentsFromAdmin();
+    paymentDetails();
   }, []);
 
   return (

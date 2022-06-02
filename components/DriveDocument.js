@@ -45,31 +45,18 @@ const DriveDocument = () => {
         });
     }
 
+    async function paymentDetails() {
+      axios
+        .get(`https://agriha-services.uc.r.appspot.com/api/cartview/${loginId}`)
+        .then(function (res) {
+          console.log(res.data);
+        });
+    }
+
     userDetails();
     userPlan();
+    paymentDetails();
   }, []);
-
-  /* async function uploadFile() {
-    const inpFile = document.getElementById("file");
-    const url = "https://agriha-services.uc.r.appspot.com/uploadfile";
-
-    const formData = new FormData();
-    formData.append("file", inpFile.files[0]);
-
-    const config = {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    };
-
-    await axios
-      .post(url, formData, config)
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-      })
-      .catch(console.error);
-  } */
 
   async function uploadPhoto() {
     if (imageFile !== "") {

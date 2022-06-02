@@ -14,7 +14,7 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="Agriha, arclif, home services, home build, dream home, online architecture services, architecture firms near me, residential architects near me, commercial architects near me, architecture companies near me, local residential architects near me,home architects near me, local architects near me, home design kerala, house architects, floor plan, home plan, house plan, architecture plan, veedu, veedu plans "
+          content="online architecture services, architecture firms near me, residential architects near me, commercial architects near me, architecture companies near me, local residential architects near me,home architects near me, local architects near me, home design kerala, house architects, floor plan, home plan, house plan, architecture plan, veedu, veedu plans "
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

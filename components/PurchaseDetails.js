@@ -70,7 +70,6 @@ const PurchaseDetails = () => {
           id: loginId,
         })
         .then(function (res) {
-          console.log(res.data.details[0]);
           setBuildingDetails(res.data.details[0]);
         });
     }

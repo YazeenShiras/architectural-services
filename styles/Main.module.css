@@ -545,3 +545,17 @@
     width: 230px;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .text__title__mobile > h1 {
+    font-size: 25px;
+    line-height: 38px;
+    margin-right: 10px;
+  }
+  .aboutText > p {
+    text-align: justify;
+  }
+  .card__quote__container__mobile > p {
+    text-align: justify;
+  }
+}
