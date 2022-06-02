@@ -33,6 +33,7 @@
 .left__footer__top > p {
   font-size: 13px;
   color: gray;
+  text-align: justify;
 }
 
 .logo__footer > img {

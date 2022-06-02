@@ -52,6 +52,8 @@
 .card__quote__container > p {
   font-size: 12px;
   color: #5b5b5b;
+  text-align: justify;
+  padding: 10px 0px;
 }
 
 .quoteEnd__container {
