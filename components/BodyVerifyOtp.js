@@ -1,14 +1,20 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { PulseLoader } from "react-spinners";
 import axios from "axios";
+import addToken from "../src/action";
 
 const BodyVerifyOtp = () => {
   const [otp, setOtp] = useState("");
   const [isotp, setIsotp] = useState(false);
   const [token, setToken] = useState("");
+
+  const states = useSelector((state) => state);
+  const dispatch = useDispatch();
+  console.log(states);
 
   useEffect(() => {
     window.onbeforeunload = function (e) {
@@ -28,25 +34,33 @@ const BodyVerifyOtp = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    axios
-      .post("https://agriha-services.uc.r.appspot.com/verifyOTP", {
+    await fetch("https://agriha-services.uc.r.appspot.com/verifyOTP", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         phonenumber: localStorage.getItem("phone"),
         roletype: "User",
         hash: localStorage.getItem("hash"),
         otp: otp,
         msg: "null",
         withCredentials: true,
-      })
-      .then(function (res) {
-        if (res.data.msg === "register verified") {
-          localStorage.setItem("loginId", res.data.data[0].data._id);
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        dispatch(addToken(data.accessToken, data.refreshToken));
+        if (data.msg === "register verified") {
+          localStorage.setItem("loginId", data.data[0].data._id);
           window.location.href = "/detailsform";
         }
-        if (res.data.msg === "login verified") {
-          localStorage.setItem("loginId", res.data.data[0].data[0]._id);
+        if (data.msg === "login verified") {
+          localStorage.setItem("loginId", data.data[0].data[0]._id);
           window.location.href = "/profile";
         }
-        if (res.data.msg === "Incorrect OTP") {
+        if (data.msg === "Incorrect OTP") {
           document.getElementById("loaderSentOtpRegister").style.display =
             "none";
           document.getElementById("sentOTPRegister").style.display = "block";

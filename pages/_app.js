@@ -2,6 +2,8 @@
 import "../styles/globals.css";
 import Script from "next/script";
 import Head from "next/head";
+import { Provider } from "react-redux";
+import store from "../src/store";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -35,7 +37,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

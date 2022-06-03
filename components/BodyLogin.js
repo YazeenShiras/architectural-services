@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
@@ -20,6 +20,7 @@ const BodyLogin = () => {
         flag: "login",
       })
       .then(function (res) {
+        console.log(res.data);
         localStorage.setItem("phone", res.data.phone);
         localStorage.setItem("hash", res.data.hash);
         if (res.data.flag === "") {

@@ -28,6 +28,8 @@ const ProfileDetails = () => {
     const loginId = localStorage.getItem("loginId");
     setId(loginId);
 
+    console.log(loginId);
+
     async function handleSubmit() {
       axios
         .get(
@@ -71,17 +73,24 @@ const ProfileDetails = () => {
     }
 
     async function checkPayed() {
+      console.log(loginId);
       axios
         .post(`https://agriha-services.uc.r.appspot.com/isPaymentcompleted`, {
           userId: loginId,
         })
         .then(function (res) {
-          if (res.data.msg === "payment details already added") {
-            handleSubmit();
-            buildingDetails();
-            requirementsDetails();
-          } else {
-            window.location.href = "/";
+          console.log(res.data);
+
+          for (let i = 0; i < res.data.details.length; i++) {
+            if (res.data.details[i].paymentmode === "downpayment") {
+              console.log("paid");
+              handleSubmit();
+              buildingDetails();
+              requirementsDetails();
+              break;
+            } else {
+              window.location.href = "/";
+            }
           }
         });
     }

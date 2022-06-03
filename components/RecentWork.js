@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/RecentWork.module.css";
 import Image from "next/image";
-import Link from "next/link";
 
 const RecentWork = () => {
+  const scrollLeft = () => {
+    const imageContainer = document.getElementById("imageContainer");
+    imageContainer.scrollLeft -= 320;
+  };
+
+  const scrollRight = () => {
+    const imageContainer = document.getElementById("imageContainer");
+    imageContainer.scrollLeft += 320;
+  };
+
   return (
     <div className={styles.recentWork}>
       <div className={styles.titleContainer__recentWork}>
-        <h3>Our Recent Work</h3>
+        <h3>Our Recent Works</h3>
         <p>
           Arclif have already delivered numerous projects all over India.
           Quality and timely delivery of projects are our key strength...
         </p>
-        {/* <div className={styles.buttonContainer__recentWorks}>
-          <div className={styles.leftArrowRecent}>
+        <div className={styles.buttonContainer__recentWorks}>
+          <div onClick={scrollLeft} className={styles.leftArrowRecent}>
             <Image
               src="/leftArrowRecent.svg"
               alt=""
@@ -21,7 +30,7 @@ const RecentWork = () => {
               height={15}
             ></Image>
           </div>
-          <div className={styles.rightArrowRecent}>
+          <div onClick={scrollRight} className={styles.rightArrowRecent}>
             <Image
               src="/rightArrowRecent.svg"
               alt=""
@@ -29,9 +38,13 @@ const RecentWork = () => {
               height={15}
             ></Image>
           </div>
-        </div> */}
+        </div>
       </div>
-      <div className={styles.content__recentWorks__container}>
+      <div
+        id="imageContainer"
+        className={styles.content__recentWorks__container}
+        style={{ scrollBehavior: "smooth" }}
+      >
         <div
           className={styles.imgCard__recentWorks__first}
           style={{ backgroundImage: `url('/image2.jpg')` }}

@@ -18,7 +18,7 @@ const Main = () => {
             ></Image>
           </div>
           <h1>
-            Build your dream <br /> home with a few <br /> clicks!
+            Design your dream <br /> home with a few <br /> clicks !
           </h1>
           <p>
             AGRIHA is an initiative by Arclif Inc. to empower the home seeker to
