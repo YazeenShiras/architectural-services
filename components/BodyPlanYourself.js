@@ -21,7 +21,6 @@ const BodyPlanYourself = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [bedrooms, setBedrooms] = useState(0);
