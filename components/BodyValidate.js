@@ -19,7 +19,6 @@ const BodyValidate = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [loginId, setLoginId] = useState("");

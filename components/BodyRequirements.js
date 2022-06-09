@@ -20,7 +20,6 @@ const BodyRequirements = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [requirements, setRequirements] = useState([]);

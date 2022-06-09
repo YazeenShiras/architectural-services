@@ -19,7 +19,6 @@ const ProfileDetails = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [userdetails, setUserdetails] = useState([]);

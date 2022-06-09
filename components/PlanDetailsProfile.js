@@ -18,7 +18,6 @@ const PlanDetailsProfile = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [id, setId] = useState("");

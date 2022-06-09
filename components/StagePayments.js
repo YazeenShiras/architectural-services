@@ -18,7 +18,6 @@ const StagePayments = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const Razorpay = useRazorpay();

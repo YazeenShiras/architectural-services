@@ -22,7 +22,6 @@ const BodyArea = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/login";
   }
 
   const [area, setArea] = useState(300);
