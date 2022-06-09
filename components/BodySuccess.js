@@ -20,7 +20,7 @@ const BodySuccess = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/sendotp";
+    window.location.href = "/login";
   }
 
   const successClick = () => {

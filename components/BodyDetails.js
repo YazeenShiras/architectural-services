@@ -19,7 +19,7 @@ const BodyDetails = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/sendotp";
+    window.location.href = "/login";
   }
 
   const [number, setNumber] = useState("");

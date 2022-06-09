@@ -22,7 +22,7 @@ const BodyConfirmPlan = () => {
   }
   if (!accessToken) {
     authenticated = false;
-    window.location.href = "/sendotp";
+    window.location.href = "/login";
   }
 
   const Razorpay = useRazorpay();

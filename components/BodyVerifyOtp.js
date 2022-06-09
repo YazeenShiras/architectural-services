@@ -5,6 +5,7 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { PulseLoader } from "react-spinners";
 import addToken from "../src/action";
+import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
