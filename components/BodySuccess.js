@@ -6,8 +6,23 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import { PulseLoader } from "react-spinners";
 import HeaderMain from "./HeaderMain";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodySuccess = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const successClick = () => {
     document.getElementById("loaderNext").style.display = "block";
     document.getElementById("nextText").style.display = "none";

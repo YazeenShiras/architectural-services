@@ -5,8 +5,23 @@ import axios from "axios";
 import Image from "next/image";
 import HeaderLogin from "./HeaderLogin";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const ProfileDetails = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [userdetails, setUserdetails] = useState([]);
   const [mob, setMob] = useState("");
   const [id, setId] = useState("");

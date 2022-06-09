@@ -8,8 +8,23 @@ import axios from "axios";
 import useRazorpay from "react-razorpay";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyConfirmPlan = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const Razorpay = useRazorpay();
 
   const [loginId, setLoginId] = useState("");
@@ -111,6 +126,8 @@ const BodyConfirmPlan = () => {
         paymentmode: "downpayment",
       })
       .then(function (res) {
+        console.log(res);
+        console.log(plan.amount_per_sqrft * area);
         setAmount(res.data.order.amount_due);
         setOrderid(res.data.order.id);
         if (res.data.status === 200) {

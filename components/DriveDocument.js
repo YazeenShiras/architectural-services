@@ -6,8 +6,23 @@ import Link from "next/link";
 import axios from "axios";
 import Resizer from "react-image-file-resizer";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const DriveDocument = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [id, setId] = useState("");
   const [plan, setPlan] = useState([]);
   const [planServices, setPlanServices] = useState([]);

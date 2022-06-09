@@ -5,8 +5,23 @@ import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import Image from "next/image";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyDesignType = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [designType, setDesignType] = useState("");
 
   const contemporaryClick = () => {

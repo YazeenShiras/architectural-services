@@ -4,8 +4,9 @@ import registerstyles from "../styles/BodyRegister.module.css";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { PulseLoader } from "react-spinners";
-import axios from "axios";
 import addToken from "../src/action";
+
+axios.defaults.withCredentials = true;
 
 const BodyVerifyOtp = () => {
   const [otp, setOtp] = useState("");
@@ -52,6 +53,10 @@ const BodyVerifyOtp = () => {
       .then((data) => {
         console.log(data);
         dispatch(addToken(data.accessToken, data.refreshToken));
+        document.cookie = `accessToken=${
+          data.accessToken
+        } ; expires = ${new Date(new Date().getTime() + 30 * 60 * 1000)}`;
+
         if (data.msg === "register verified") {
           localStorage.setItem("loginId", data.data[0].data._id);
           window.location.href = "/detailsform";

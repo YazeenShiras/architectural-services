@@ -7,8 +7,23 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyPlanYourself = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [bedrooms, setBedrooms] = useState(0);
   const [attachedBedRooms, setAttachedBedRooms] = useState(0);
 

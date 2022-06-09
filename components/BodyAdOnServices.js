@@ -6,8 +6,23 @@ import { PulseLoader } from "react-spinners";
 import axios from "axios";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyAdOnServices = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [loginId, setLoginId] = useState("");
   const [allData, setAllData] = useState([]);
 

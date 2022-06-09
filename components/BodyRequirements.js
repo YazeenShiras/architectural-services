@@ -4,11 +4,25 @@ import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import axios from "axios";
-
 import { Requirements } from "./data";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyRequirements = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [requirements, setRequirements] = useState([]);
   const [loginId, setLoginId] = useState("");
 

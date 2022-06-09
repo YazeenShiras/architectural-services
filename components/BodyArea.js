@@ -8,8 +8,23 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyArea = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [area, setArea] = useState(300);
   const [floor, setFloor] = useState(10);
 

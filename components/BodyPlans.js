@@ -6,8 +6,23 @@ import Header from "./Header";
 import Image from "next/image";
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyPlans = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [loginId, setLoginId] = useState("");
 
   const [silver, setSilver] = useState([]);

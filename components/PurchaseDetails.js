@@ -4,8 +4,23 @@ import styles from "../styles/PurchaseDetails.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const PurchaseDetails = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [id, setId] = useState("");
 
   const [plan, setPlan] = useState([]);

@@ -5,8 +5,23 @@ import FooterMobile from "./FooterMobile";
 import Header from "./Header";
 import { PulseLoader } from "react-spinners";
 import axios from "axios";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyDetails = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [number, setNumber] = useState("");
 
   const [loginId, setLoginId] = useState("");

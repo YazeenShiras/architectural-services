@@ -54,6 +54,10 @@ const BodyVerifyOtpLogin = () => {
       .then((data) => {
         console.log(data);
         dispatch(addToken(data.accessToken, data.refreshToken));
+        document.cookie = `accessToken=${
+          data.accessToken
+        } ; expires = ${new Date(new Date().getTime() + 30 * 60 * 1000)}`;
+
         if (data.msg === "register verified") {
           localStorage.setItem("loginId", data.data[0].data._id);
           window.location.href = "/detailsform";

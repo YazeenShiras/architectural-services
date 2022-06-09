@@ -7,8 +7,23 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const BodyBudget = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/sendotp";
+  }
+
   const [budget, setBudget] = useState(500000);
 
   const marks = [

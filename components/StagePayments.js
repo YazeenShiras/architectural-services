@@ -4,8 +4,23 @@ import styles from "../styles/StagePayment.module.css";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 import { PulseLoader } from "react-spinners";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const StagePayments = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const Razorpay = useRazorpay();
 
   const [id, setId] = useState("");

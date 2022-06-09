@@ -3,8 +3,23 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Drive.module.css";
 import HeaderLogin from "./HeaderLogin";
 import Image from "next/image";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const UploadedFiles = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [id, setId] = useState("");
   const [response, setResponse] = useState([]);
 

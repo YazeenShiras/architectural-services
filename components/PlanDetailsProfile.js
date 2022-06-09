@@ -4,8 +4,23 @@ import Image from "next/image";
 import styles from "../styles/Profile.module.css";
 import axios from "axios";
 import Link from "next/link";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const PlanDetailsProfile = () => {
+  var authenticated = true;
+
+  const accessToken = cookies.get("accessToken");
+
+  if (accessToken) {
+    authenticated = true;
+  }
+  if (!accessToken) {
+    authenticated = false;
+    window.location.href = "/login";
+  }
+
   const [id, setId] = useState("");
   const [plan, setPlan] = useState([]);
   const [planServices, setPlanServices] = useState([]);
