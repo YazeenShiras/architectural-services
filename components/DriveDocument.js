@@ -224,16 +224,6 @@ const DriveDocument = () => {
                   <p>Stage 1</p>
                 </div>
               </Link>
-              <div id="stageOneUnlock" className={styles.folderCard}>
-                <Image
-                  className={styles.header__logo}
-                  src="/folderIcon.svg"
-                  alt="Arclif Logo"
-                  width={70}
-                  height={70}
-                />
-                <p>Stage 1</p>
-              </div>
               <Link href="/stagePayment" passHref>
                 <div className={styles.folderCard}>
                   <Image
@@ -246,16 +236,6 @@ const DriveDocument = () => {
                   <p>Stage 2</p>
                 </div>
               </Link>
-              <div id="stageTwoUnlock" className={styles.folderCard}>
-                <Image
-                  className={styles.header__logo}
-                  src="/folderIcon.svg"
-                  alt="Arclif Logo"
-                  width={70}
-                  height={70}
-                />
-                <p>Stage 2</p>
-              </div>
               <div id="stage_three">
                 <Link href="/stagePayment" passHref>
                   <div className={styles.folderCard}>
@@ -270,16 +250,6 @@ const DriveDocument = () => {
                   </div>
                 </Link>
               </div>
-              <div id="stageThreeUnlock" className={styles.folderCard}>
-                <Image
-                  className={styles.header__logo}
-                  src="/folderIcon.svg"
-                  alt="Arclif Logo"
-                  width={70}
-                  height={70}
-                />
-                <p>Stage 3</p>
-              </div>
               <div id="stage_four">
                 <Link href="/stagePayment" passHref>
                   <div className={styles.folderCard}>
@@ -293,16 +263,6 @@ const DriveDocument = () => {
                     <p>Stage 4</p>
                   </div>
                 </Link>
-              </div>
-              <div id="stageFourUnlock" className={styles.folderCard}>
-                <Image
-                  className={styles.header__logo}
-                  src="/folderIcon.svg"
-                  alt="Arclif Logo"
-                  width={70}
-                  height={70}
-                />
-                <p>Stage 4</p>
               </div>
             </div>
           </div>
