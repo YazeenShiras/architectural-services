@@ -3,20 +3,23 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Drive.module.css";
 import HeaderLogin from "./HeaderLogin";
 import Cookies from "universal-cookie";
+import Image from "next/image";
 
 const cookies = new Cookies();
 
 const BodyDocuments = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const [id, setId] = useState("");
   const [adminData, setAdminData] = useState([]);
@@ -33,6 +36,7 @@ const BodyDocuments = () => {
         })
         .then(function (res) {
           console.log(res.data);
+          setAdminData(res.data.response);
         });
     }
 
@@ -53,7 +57,18 @@ const BodyDocuments = () => {
       <HeaderLogin />
       <div className={styles.bgContainer__profileDetails}>
         <h3>Plan Documents</h3>
-        <div className={styles.imageContainer__response}></div>
+        <div className={styles.imageContainer__response}>
+          <div className={styles.folderCard}>
+            <Image
+              className={styles.header__logo}
+              src="/locked.svg"
+              alt="Arclif Logo"
+              width={70}
+              height={70}
+            />
+            <p>{adminData.stage_Description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

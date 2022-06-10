@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/BodyArea.module.css";
 import scrollbarStyles from "../styles/BodyBudget.module.css";
 import Footer from "./Footer";
@@ -13,16 +13,18 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const BodyArea = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const [area, setArea] = useState(300);
   const [floor, setFloor] = useState(10);

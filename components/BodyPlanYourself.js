@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/BodyPlanYouself.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
@@ -12,16 +12,18 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const BodyPlanYourself = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const [bedrooms, setBedrooms] = useState(0);
   const [attachedBedRooms, setAttachedBedRooms] = useState(0);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/BodySuccess.module.css";
 import Footer from "./Footer";
 import FooterMobile from "./FooterMobile";
@@ -11,16 +11,18 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const BodySuccess = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const successClick = () => {
     document.getElementById("loaderNext").style.display = "block";

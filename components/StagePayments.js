@@ -9,16 +9,18 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const StagePayments = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const Razorpay = useRazorpay();
 

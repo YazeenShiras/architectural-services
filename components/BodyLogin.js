@@ -14,26 +14,32 @@ const BodyLogin = () => {
     document.getElementById("loaderSentOtpRegister").style.display = "block";
     document.getElementById("sentOTPRegister").style.display = "none";
 
-    axios
-      .post("https://agriha-services.uc.r.appspot.com/sendOTP", {
+    await fetch("https://agriha-services.uc.r.appspot.com/sendOTP", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         phonenumber: number,
         flag: "login",
-      })
-      .then(function (res) {
-        console.log(res.data);
-        localStorage.setItem("phone", res.data.phone);
-        localStorage.setItem("hash", res.data.hash);
-        if (res.data.flag === "") {
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("phone", data.phone);
+        localStorage.setItem("hash", data.hash);
+        if (data.flag === "") {
           handleSubmit();
         }
-        if (res.data.flag === "register") {
+        if (data.flag === "register") {
           document.getElementById("errorMobile").style.display = "block";
           document.getElementById("errorMobile").style.color = "#ff0800";
           document.getElementById("loaderSentOtpRegister").style.display =
             "none";
           document.getElementById("sentOTPRegister").style.display = "block";
         }
-        if (res.data.status === "200" && res.data.flag !== "register") {
+        if (data.status === "200" && data.flag !== "register") {
           window.location.href = "/verifyotplogin";
         }
       });

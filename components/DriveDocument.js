@@ -11,26 +11,39 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const DriveDocument = () => {
-  var authenticated = true;
+  useEffect(() => {
+    var authenticated = true;
+    const accessToken = cookies.get("accessToken");
 
-  const accessToken = cookies.get("accessToken");
-
-  if (accessToken) {
-    authenticated = true;
-  }
-  if (!accessToken) {
-    authenticated = false;
-  }
+    if (accessToken) {
+      authenticated = true;
+    }
+    if (!accessToken) {
+      authenticated = false;
+      window.location.href = "/login";
+    }
+  }, []);
 
   const [id, setId] = useState("");
   const [plan, setPlan] = useState([]);
   const [planServices, setPlanServices] = useState([]);
+  const [noOfStages, setNoOfStages] = useState("");
+  const [stageOne, setStageOne] = useState([]);
+  const [stageTwo, setStageTwo] = useState([]);
+  const [stageThree, setStageThree] = useState([]);
+  const [stageFour, setStageFour] = useState([]);
 
   const [imageFile, setImageFile] = useState("");
 
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [paymentDetails, setPaymentDetails] = useState([]);
+
+  const [isStageOne, setIsStageOne] = useState(false);
+  const [isStageTwo, setIsStageTwo] = useState(false);
+  const [isStageThree, setIsStageThree] = useState(false);
+  const [isStageFour, setIsStageFour] = useState(false);
 
   useEffect(() => {
     const loginId = localStorage.getItem("loginId");
@@ -56,20 +69,78 @@ const DriveDocument = () => {
         .then(function (res) {
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
+          setNoOfStages(res.data.details.no_of_stages);
+          if (res.data.details.stage_one) {
+            setStageOne(res.data.details.stage_one);
+          }
+          if (res.data.details.stage_two) {
+            setStageTwo(res.data.details.stage_two);
+          }
+          if (res.data.details.stage_three) {
+            setStageThree(res.data.details.stage_three);
+          }
+          if (res.data.details.stage_four) {
+            setStageFour(res.data.details.stage_four);
+          }
         });
     }
 
     async function paymentDetails() {
       axios
-        .get(`https://agriha-services.uc.r.appspot.com/api/cartview/${loginId}`)
+        .get(
+          `https://arclif-service-payment.herokuapp.com/api/cart/cartview/${loginId}`
+        )
         .then(function (res) {
           console.log(res.data);
+          setPaymentDetails(res.data.payments);
         });
     }
 
     userDetails();
     userPlan();
     paymentDetails();
+  }, []);
+
+  useEffect(() => {
+    if (stageThree.length === 0) {
+      document.getElementById("stage_three").style.display = "none";
+    } else {
+      document.getElementById("stage_three").style.display = "flex";
+    }
+    if (stageFour.length === 0) {
+      document.getElementById("stage_four").style.display = "none";
+    } else {
+      document.getElementById("stage_four").style.display = "flex";
+    }
+  }, [stageThree, stageFour]);
+
+  useEffect(() => {
+    paymentDetails.map((items, index) => {
+      if (
+        (items.stage === "stage_one" && items.paymentStatus === "captured") ||
+        items.paymentStatus === "authorized"
+      ) {
+        setIsStageOne(true);
+      }
+      if (
+        (items.stage === "stage_two" && items.paymentStatus === "captured") ||
+        items.paymentStatus === "authorized"
+      ) {
+        setIsStageTwo(true);
+      }
+      if (
+        (items.stage === "stage_three" && items.paymentStatus === "captured") ||
+        items.paymentStatus === "authorized"
+      ) {
+        setIsStageThree(true);
+      }
+      if (
+        (items.stage === "stage_three" && items.paymentStatus === "captured") ||
+        items.paymentStatus === "authorized"
+      ) {
+        setIsStageFour(true);
+      }
+    });
   }, []);
 
   async function uploadPhoto() {
@@ -153,6 +224,16 @@ const DriveDocument = () => {
                   <p>Stage 1</p>
                 </div>
               </Link>
+              <div id="stageOneUnlock" className={styles.folderCard}>
+                <Image
+                  className={styles.header__logo}
+                  src="/folderIcon.svg"
+                  alt="Arclif Logo"
+                  width={70}
+                  height={70}
+                />
+                <p>Stage 1</p>
+              </div>
               <Link href="/stagePayment" passHref>
                 <div className={styles.folderCard}>
                   <Image
@@ -165,30 +246,64 @@ const DriveDocument = () => {
                   <p>Stage 2</p>
                 </div>
               </Link>
-              <Link href="/stagePayment" passHref>
-                <div className={styles.folderCard}>
-                  <Image
-                    className={styles.header__logo}
-                    src="/locked.svg"
-                    alt="Arclif Logo"
-                    width={70}
-                    height={70}
-                  />
-                  <p>Stage 3</p>
-                </div>
-              </Link>
-              <Link href="/stagePayment" passHref>
-                <div className={styles.folderCard}>
-                  <Image
-                    className={styles.header__logo}
-                    src="/locked.svg"
-                    alt="Arclif Logo"
-                    width={70}
-                    height={70}
-                  />
-                  <p>Stage 4</p>
-                </div>
-              </Link>
+              <div id="stageTwoUnlock" className={styles.folderCard}>
+                <Image
+                  className={styles.header__logo}
+                  src="/folderIcon.svg"
+                  alt="Arclif Logo"
+                  width={70}
+                  height={70}
+                />
+                <p>Stage 2</p>
+              </div>
+              <div id="stage_three">
+                <Link href="/stagePayment" passHref>
+                  <div className={styles.folderCard}>
+                    <Image
+                      className={styles.header__logo}
+                      src="/locked.svg"
+                      alt="Arclif Logo"
+                      width={70}
+                      height={70}
+                    />
+                    <p>Stage 3</p>
+                  </div>
+                </Link>
+              </div>
+              <div id="stageThreeUnlock" className={styles.folderCard}>
+                <Image
+                  className={styles.header__logo}
+                  src="/folderIcon.svg"
+                  alt="Arclif Logo"
+                  width={70}
+                  height={70}
+                />
+                <p>Stage 3</p>
+              </div>
+              <div id="stage_four">
+                <Link href="/stagePayment" passHref>
+                  <div className={styles.folderCard}>
+                    <Image
+                      className={styles.header__logo}
+                      src="/locked.svg"
+                      alt="Arclif Logo"
+                      width={70}
+                      height={70}
+                    />
+                    <p>Stage 4</p>
+                  </div>
+                </Link>
+              </div>
+              <div id="stageFourUnlock" className={styles.folderCard}>
+                <Image
+                  className={styles.header__logo}
+                  src="/folderIcon.svg"
+                  alt="Arclif Logo"
+                  width={70}
+                  height={70}
+                />
+                <p>Stage 4</p>
+              </div>
             </div>
           </div>
           <div className={styles.center_container_drive}>
