@@ -40,6 +40,16 @@ const ProfileDetails = () => {
   const [buildingDetails, setBuildingDetails] = useState([]);
   const [requirementsData, setRequirementsData] = useState([]);
 
+  function deleteCookies() {
+    var allCookies = document.cookie.split(";");
+
+    for (var i = 0; i < allCookies.length; i++)
+      document.cookie =
+        allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+
+    displayCookies.innerHTML = document.cookie;
+  }
+
   useEffect(() => {
     const loginId = localStorage.getItem("loginId");
     setId(loginId);
@@ -97,7 +107,9 @@ const ProfileDetails = () => {
         .then(function (res) {
           console.log(res.data);
           if (res.data.details.length === 0) {
+            alert("Payment not Completed");
             window.location.href = "/";
+            deleteCookies();
           } else {
             for (let i = 0; i < res.data.details.length; i++) {
               if (res.data.details[i].paymentmode === "downpayment") {
@@ -107,7 +119,9 @@ const ProfileDetails = () => {
                 requirementsDetails();
                 break;
               } else {
+                alert("Payment not Completed");
                 window.location.href = "/";
+                deleteCookies();
               }
             }
           }
