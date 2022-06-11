@@ -96,16 +96,19 @@ const ProfileDetails = () => {
         })
         .then(function (res) {
           console.log(res.data);
-
-          for (let i = 0; i < res.data.details.length; i++) {
-            if (res.data.details[i].paymentmode === "downpayment") {
-              console.log("paid");
-              handleSubmit();
-              buildingDetails();
-              requirementsDetails();
-              break;
-            } else {
-              window.location.href = "/";
+          if (res.data.details.length === 0) {
+            window.location.href = "/";
+          } else {
+            for (let i = 0; i < res.data.details.length; i++) {
+              if (res.data.details[i].paymentmode === "downpayment") {
+                console.log("paid");
+                handleSubmit();
+                buildingDetails();
+                requirementsDetails();
+                break;
+              } else {
+                window.location.href = "/";
+              }
             }
           }
         });
