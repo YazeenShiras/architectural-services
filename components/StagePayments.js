@@ -71,6 +71,7 @@ const StagePayments = () => {
           login_id: loginId,
         })
         .then(function (res) {
+          console.log(res.data.details);
           setPlan(res.data.details);
           setPlanServices(res.data.details.plan_services);
           setNoOfStages(res.data.details.no_of_stages);
@@ -123,7 +124,9 @@ const StagePayments = () => {
   }, [stageThree, stageFour]);
 
   useEffect(() => {
-    setTotalAmount(buildingDetails.total_area * plan.plan_amount);
+    setTotalAmount(
+      buildingDetails.total_area * plan.plan_amount - plan.initial_payment
+    );
   }, [buildingDetails, plan]);
 
   const handlePaymentFinal = useCallback(() => {
@@ -132,7 +135,6 @@ const StagePayments = () => {
 
     const options = {
       key: "rzp_live_N1mEU44ddNNCyY",
-      /* amount: totalAmount * 100, */
       currency: "INR",
       name: "Agriha Payment",
       description: "",

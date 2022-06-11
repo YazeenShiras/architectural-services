@@ -213,7 +213,12 @@ const DriveDocument = () => {
             <h3>Plan Documents</h3>
             <div className={styles.foldersContainer}>
               <Link href="/stagePayment" passHref>
-                <div className={styles.folderCard}>
+                <div
+                  style={
+                    !isStageOne ? { display: "flex" } : { display: "none" }
+                  }
+                  className={styles.folderCard}
+                >
                   <Image
                     className={styles.header__logo}
                     src="/locked.svg"
@@ -224,8 +229,30 @@ const DriveDocument = () => {
                   <p>Stage 1</p>
                 </div>
               </Link>
+
+              <Link href="/documents" passHref>
+                <div
+                  style={isStageOne ? { display: "flex" } : { display: "none" }}
+                  className={styles.folderCardHidden}
+                >
+                  <Image
+                    className={styles.header__logo}
+                    src="/folderIcon.svg"
+                    alt="Arclif Logo"
+                    width={70}
+                    height={70}
+                  />
+                  <p>Stage 1</p>
+                </div>
+              </Link>
+
               <Link href="/stagePayment" passHref>
-                <div className={styles.folderCard}>
+                <div
+                  style={
+                    !isStageOne ? { display: "flex" } : { display: "none" }
+                  }
+                  className={styles.folderCard}
+                >
                   <Image
                     className={styles.header__logo}
                     src="/locked.svg"
@@ -236,7 +263,27 @@ const DriveDocument = () => {
                   <p>Stage 2</p>
                 </div>
               </Link>
-              <div id="stage_three">
+
+              <Link href="/documents" passHref>
+                <div
+                  style={isStageOne ? { display: "flex" } : { display: "none" }}
+                  className={styles.folderCardHidden}
+                >
+                  <Image
+                    className={styles.header__logo}
+                    src="/folderIcon.svg"
+                    alt="Arclif Logo"
+                    width={70}
+                    height={70}
+                  />
+                  <p>Stage 2</p>
+                </div>
+              </Link>
+
+              <div
+                style={!isStageOne ? { display: "flex" } : { display: "none" }}
+                id="stage_three"
+              >
                 <Link href="/stagePayment" passHref>
                   <div className={styles.folderCard}>
                     <Image
@@ -250,7 +297,27 @@ const DriveDocument = () => {
                   </div>
                 </Link>
               </div>
-              <div id="stage_four">
+
+              <Link href="/documents" passHref>
+                <div
+                  style={isStageOne ? { display: "flex" } : { display: "none" }}
+                  className={styles.folderCardHidden}
+                >
+                  <Image
+                    className={styles.header__logo}
+                    src="/folderIcon.svg"
+                    alt="Arclif Logo"
+                    width={70}
+                    height={70}
+                  />
+                  <p>Stage 3</p>
+                </div>
+              </Link>
+
+              <div
+                style={!isStageOne ? { display: "flex" } : { display: "none" }}
+                id="stage_four"
+              >
                 <Link href="/stagePayment" passHref>
                   <div className={styles.folderCard}>
                     <Image
@@ -264,6 +331,22 @@ const DriveDocument = () => {
                   </div>
                 </Link>
               </div>
+
+              <Link href="/documents" passHref>
+                <div
+                  style={isStageOne ? { display: "flex" } : { display: "none" }}
+                  className={styles.folderCardHidden}
+                >
+                  <Image
+                    className={styles.header__logo}
+                    src="/folderIcon.svg"
+                    alt="Arclif Logo"
+                    width={70}
+                    height={70}
+                  />
+                  <p>Stage 4</p>
+                </div>
+              </Link>
             </div>
           </div>
           <div className={styles.center_container_drive}>

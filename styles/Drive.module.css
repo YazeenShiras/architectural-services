@@ -24,6 +24,20 @@
   cursor: pointer;
 }
 
+.folderCardHidden {
+  margin-right: 30px;
+  height: 150px;
+  width: 150px;
+  background-color: #ececec;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
 .top_container_drive {
   display: flex;
   flex-direction: column;
