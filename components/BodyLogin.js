@@ -4,7 +4,6 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { PulseLoader } from "react-spinners";
-import axios from "axios";
 
 const BodyLogin = () => {
   const [isdetails, setIsdetails] = useState(false);
@@ -91,6 +90,16 @@ const BodyLogin = () => {
     }
   };
 
+  useEffect(() => {
+    var input = document.getElementById("number");
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("loginButton").click();
+      }
+    });
+  }, []);
+
   return (
     <div
       className={registerstyles.bodyRegister}
@@ -149,6 +158,7 @@ const BodyLogin = () => {
               Mobile number not registered.
             </p>
             <div
+              id="loginButton"
               onClick={loginClick}
               className={registerstyles.register__button__form}
             >

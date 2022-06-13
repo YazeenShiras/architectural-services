@@ -90,6 +90,16 @@ const BodySendOtp = () => {
     }
   };
 
+  useEffect(() => {
+    var input = document.getElementById("number");
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submitButton").click();
+      }
+    });
+  }, []);
+
   return (
     <div
       className={registerstyles.bodyRegister}
@@ -119,15 +129,6 @@ const BodySendOtp = () => {
           <Link href="/login" passHref>
             <p className={styles.loginButton__header}>LOGIN</p>
           </Link>
-          {/* <div className={styles.header__menu__container}>
-            <Image
-              className={styles.header__menu}
-              src="/menuIcon.svg"
-              alt=""
-              width={30}
-              height={20}
-            />
-          </div> */}
         </div>
       </div>
       <div className={registerstyles.content__bodyRegister}>
@@ -143,7 +144,7 @@ const BodySendOtp = () => {
         <div className={registerstyles.inputs__container__bodyRegister}>
           <h2>Register</h2>
           <p>Enter your Mobile Number</p>
-          <form autoComplete="off" className={registerstyles.form} action="">
+          <form autoComplete="off" className={registerstyles.form}>
             <fieldset className={registerstyles.input__container}>
               <legend>Mobile Number*</legend>
               <div className={registerstyles.input__box}>
@@ -154,6 +155,7 @@ const BodySendOtp = () => {
               Mobile number already registered.
             </p>
             <div
+              id="submitButton"
               onClick={sendOTPClick}
               className={registerstyles.register__button__form}
             >

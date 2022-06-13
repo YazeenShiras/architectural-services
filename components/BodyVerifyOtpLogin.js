@@ -113,6 +113,16 @@ const BodyVerifyOtpLogin = () => {
     }
   };
 
+  useEffect(() => {
+    var input = document.getElementById("otp");
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("verifyOTPButton").click();
+      }
+    });
+  }, []);
+
   return (
     <div
       className={registerstyles.bodyRegister}
@@ -174,6 +184,7 @@ const BodyVerifyOtpLogin = () => {
             </p>
 
             <div
+              id="verifyOTPButton"
               onClick={verifyClick}
               className={registerstyles.register__button__form}
             >
