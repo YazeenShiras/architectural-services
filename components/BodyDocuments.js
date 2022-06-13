@@ -57,16 +57,108 @@ const BodyDocuments = () => {
       <HeaderLogin />
       <div className={styles.bgContainer__profileDetails}>
         <h3>Plan Documents</h3>
-        <div className={styles.imageContainer__response}>
-          <div className={styles.folderCard}>
-            <Image
-              className={styles.header__logo}
-              src="/locked.svg"
-              alt="Arclif Logo"
-              width={70}
-              height={70}
-            />
-            <p>{adminData.stage_Description}</p>
+
+        <div className={styles.stageOne__container}>
+          <h4>Stage 1</h4>
+          <div className={styles.folderCardContainer__stages}>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/imageFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/pdfFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.stageOne__container}>
+          <h4>Stage 2</h4>
+          <div className={styles.folderCardContainer__stages}>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/imageFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/pdfFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="stage_two_docs" className={styles.stageOne__container}>
+          <h4>Stage 3</h4>
+          <div className={styles.folderCardContainer__stages}>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/imageFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/pdfFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="stage_two_docs" className={styles.stageOne__container}>
+          <h4>Stage 4</h4>
+          <div className={styles.folderCardContainer__stages}>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/imageFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
+            <div className={styles.folderCard}>
+              <Image
+                className={styles.header__logo}
+                src="/pdfFile.svg"
+                alt="Arclif Logo"
+                width={60}
+                height={60}
+              />
+              <p>{adminData.stage_Description}</p>
+            </div>
           </div>
         </div>
       </div>

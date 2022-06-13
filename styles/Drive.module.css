@@ -1,6 +1,6 @@
 .bgContainer__profileDetails {
   margin: 120px 8vw;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
 }
 
 .foldersContainer__top {
@@ -15,13 +15,17 @@
   margin-right: 30px;
   height: 150px;
   width: 150px;
-  background-color: #ececec;
+  background-color: #f1f1f1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.folderCard > p {
+  margin-top: 10px;
 }
 
 .folderCardHidden {
@@ -135,19 +139,29 @@
   display: none;
 }
 
-.imageContainer__response {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  margin-top: 30px;
+.stageOne__container {
+  display: flex;
+  flex-direction: column;
 }
 
-.image__response {
-  border: 1px solid #1c9c76;
-  border-radius: 5px;
+.stageOne__container > h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1c9c76;
+  font-size: 16px;
+}
+
+.folderCardContainer__stages {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.imageContainer__response {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -184,5 +198,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     margin-top: 30px;
+  }
+  .folderCardContainer__stages {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
