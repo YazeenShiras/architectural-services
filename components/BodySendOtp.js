@@ -165,7 +165,7 @@ const BodySendOtp = () => {
               >
                 <PulseLoader color="#ffffff" />
               </div>
-              <p id="sentOTPRegister">SENT OTP</p>
+              <p id="sentOTPRegister">SEND OTP</p>
             </div>
           </form>
           <div className={registerstyles.alreadyRegistered__container}>
