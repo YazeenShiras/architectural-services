@@ -209,6 +209,7 @@ const StagePayments = () => {
         planname: planName,
         stage: stageName,
         paymentmode: "stage",
+        userName: name,
       })
       .then(function (res) {
         setAmount(res.data.order.amount_due);
@@ -228,6 +229,7 @@ const StagePayments = () => {
         amount: totalAmount,
         userId: id,
         paymentmode: "finalpayment",
+        userName: name,
       })
       .then(function (res) {
         setAmount(res.data.order.amount_due);

@@ -125,6 +125,7 @@ const BodyConfirmPlan = () => {
         amount: plan.amount_per_sqrft * area,
         userId: loginId,
         paymentmode: "downpayment",
+        userName: name,
       })
       .then(function (res) {
         console.log(res);
