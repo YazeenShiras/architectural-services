@@ -144,11 +144,12 @@
   flex-direction: column;
 }
 
-.stageOne__container > h4 {
+.stageTitle__container > h4 {
   margin-top: 20px;
   margin-bottom: 20px;
   color: #1c9c76;
   font-size: 16px;
+  margin-right: 10px;
 }
 
 .folderCardContainer__stages {
@@ -162,6 +163,11 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 40px;
+}
+
+.stageTitle__container {
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 500px) {

@@ -59,7 +59,18 @@ const BodyDocuments = () => {
         <h3>Plan Documents</h3>
 
         <div className={styles.stageOne__container}>
-          <h4>Stage 1</h4>
+          <div className={styles.stageTitle__container}>
+            <h4>Stage 1</h4>
+            <div id="satgeOne__lock">
+              <Image
+                className={styles.header__logo}
+                src="/lock.png"
+                alt="Arclif Logo"
+                width={15}
+                height={15}
+              />
+            </div>
+          </div>
           <div className={styles.folderCardContainer__stages}>
             <div className={styles.folderCard}>
               <Image
@@ -85,7 +96,18 @@ const BodyDocuments = () => {
         </div>
 
         <div className={styles.stageOne__container}>
-          <h4>Stage 2</h4>
+          <div className={styles.stageTitle__container}>
+            <h4>Stage 2</h4>
+            <div id="satgeOne__lock">
+              <Image
+                className={styles.header__logo}
+                src="/lock.png"
+                alt="Arclif Logo"
+                width={15}
+                height={15}
+              />
+            </div>
+          </div>
           <div className={styles.folderCardContainer__stages}>
             <div className={styles.folderCard}>
               <Image
@@ -111,7 +133,18 @@ const BodyDocuments = () => {
         </div>
 
         <div id="stage_two_docs" className={styles.stageOne__container}>
-          <h4>Stage 3</h4>
+          <div className={styles.stageTitle__container}>
+            <h4>Stage 3</h4>
+            <div id="satgeOne__lock">
+              <Image
+                className={styles.header__logo}
+                src="/lock.png"
+                alt="Arclif Logo"
+                width={15}
+                height={15}
+              />
+            </div>
+          </div>
           <div className={styles.folderCardContainer__stages}>
             <div className={styles.folderCard}>
               <Image
@@ -137,7 +170,18 @@ const BodyDocuments = () => {
         </div>
 
         <div id="stage_two_docs" className={styles.stageOne__container}>
-          <h4>Stage 4</h4>
+          <div className={styles.stageTitle__container}>
+            <h4>Stage 4</h4>
+            <div id="satgeOne__lock">
+              <Image
+                className={styles.header__logo}
+                src="/lock.png"
+                alt="Arclif Logo"
+                width={15}
+                height={15}
+              />
+            </div>
+          </div>
           <div className={styles.folderCardContainer__stages}>
             <div className={styles.folderCard}>
               <Image
