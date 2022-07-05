@@ -76,8 +76,14 @@ const HeaderMain = () => {
             </Link>{" "}
           </div>
           <div className={styles.header__right}>
-            <a href="#contact" className={styles.contactButton__header}>
-              Contact Us
+            <a href="tel:9995111325" className={styles.contactButton__header}>
+              <Image
+                className={styles.header__menu}
+                src="/callIcon.svg"
+                alt=""
+                width={30}
+                height={20}
+              />
             </a>
             <div
               id="menuIcon"
@@ -99,7 +105,7 @@ const HeaderMain = () => {
             >
               <Image
                 className={styles.header__menu}
-                src="/closeIcon2.svg"
+                src="/closeIcon.svg"
                 alt=""
                 width={40}
                 height={20}

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/Main.module.css";
-import Image from "next/image";
 
 const Main = () => {
   return (
@@ -33,23 +32,20 @@ const Main = () => {
           </div>
         </div>
         <div className={styles.main__right}>
-          <div className={styles.heroImage}>
-            <div>
-              <Image src="/heroImg.png" alt="" width={575} height={455}></Image>
-            </div>
-          </div>
+          <div
+            style={{ backgroundImage: `url("/heroBg.png")` }}
+            className={styles.heroImage}
+          ></div>
         </div>
       </div>
 
       <div className={styles.mainMobile}>
         <h1>
-          <span>Design</span> your dream <br />
-          home with a few clicks
+          <span>Design</span> your dream home with a few <br /> clicks
         </h1>
         <p>
-          AGRIHA is an initiative by Arclif Inc. to empower the home <br />{" "}
-          seeker to dream and design their perfect home online <br /> with just
-          few clicks.
+          AGRIHA is an initiative by Arclif Inc. to empower the home seeker to
+          dream and design their perfect home online with just few clicks.
         </p>
         <div className={styles.buttoneContainer__main__left}>
           <a href="sendotp" className={styles.designMyHomeButton}>
@@ -59,14 +55,10 @@ const Main = () => {
             SIGN IN
           </a>
         </div>
-        <div className={styles.hero__mobile__image}>
-          <Image
-            src="/heroImageMobile.png"
-            alt=""
-            width={300}
-            height={270}
-          ></Image>
-        </div>
+        <div
+          style={{ backgroundImage: `url("/heroBg.png")` }}
+          className={styles.hero__mobile__image}
+        ></div>
       </div>
     </div>
   );
