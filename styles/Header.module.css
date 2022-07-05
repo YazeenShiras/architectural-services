@@ -1,7 +1,7 @@
 .header {
   height: 90px;
   width: 100%;
-  box-shadow: 0 1px 20px 1px #0000001a;
+  border-bottom: 1px solid #d7f1ed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,6 @@
 .headerMain {
   height: 90px;
   width: 100%;
-  box-shadow: 0 1px 20px 1px #0000001a;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,6 +25,7 @@
   left: 0;
   right: 0;
   z-index: 100;
+  border-bottom: 1px solid #d7f1ed;
 }
 
 .header__logo_one {
@@ -52,12 +52,21 @@
   cursor: pointer;
 }
 
-.header__right {
+.header__right,
+.header__right__main {
   margin-top: 3px;
   margin-right: 8vw;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header__right__main__mobile {
+  margin-right: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
 }
 
 .header__nav > ul {
@@ -113,24 +122,17 @@
 }
 
 .contactButton__header {
-  height: 30px;
-  width: 90px;
-  border-radius: 10px;
-  color: #000000;
-  border: 1px solid #000000;
+  height: 35px;
+  width: 120px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: none;
   cursor: pointer;
-  margin-left: 20px;
-  font-weight: bold;
-}
-
-.contactButton__header:hover {
-  background-color: #414141;
+  margin-left: 30px;
+  background-color: #11907c;
   color: #ffffff;
 }
 
@@ -145,13 +147,41 @@
   display: none;
 }
 
+.nav__header__main > ul {
+  display: flex;
+}
+
+.nav__header__main > ul > li {
+  list-style: none;
+  margin-right: 50px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.home__nav__header__main {
+  color: #11907c;
+}
+
+.header__right__main__mobile {
+  display: none;
+}
+
+.header__mobile_container__main {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
-  .header {
-    height: 70px;
+  .header__right__main {
     display: none;
   }
+  .header__right__main__mobile {
+    display: flex;
+  }
   .headerMain {
-    height: 70px;
+    display: none;
+  }
+  .menuIcon {
+    cursor: pointer;
   }
   .header__menu__container__close {
     margin-left: 15px;
@@ -159,7 +189,8 @@
     display: none;
     margin-right: -5px;
   }
-  .header__mobile_container {
+  .header__mobile_container,
+  .header__mobile_container__main {
     height: 70px;
     width: 100%;
     box-shadow: 0 1px 20px 1px #0000001a;
@@ -174,17 +205,29 @@
     right: 0;
     z-index: 100;
   }
+
+  .header__mobile_container__main {
+    background-color: #0e263d;
+    color: #ffffff;
+  }
+
   .header__mobile {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 70px;
-    border-bottom: 1px solid #0000001a;
+    border-bottom: 1px solid #565858;
   }
   .header__menu__container {
     display: block;
   }
-  .header__nav_mobile {
+
+  .header__menu__container__close {
+    cursor: pointer;
+  }
+  .header__nav_mobile,
+  .header__nav_mobile__main {
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -192,7 +235,8 @@
     justify-content: center;
     display: none;
   }
-  .header__nav_link {
+  .header__nav_link,
+  .header__nav_link__main {
     width: 100%;
     display: flex;
     align-items: center;
@@ -204,6 +248,16 @@
   .header__nav_link:hover {
     background-color: #027888;
   }
+
+  .header__nav_link__main {
+    border-bottom: 1px solid #565858;
+  }
+
+  .header__nav_link__main:hover {
+    background-color: #d7f1ed;
+    color: #0e263d;
+  }
+
   .contactButton__header {
     margin-left: 10px;
   }

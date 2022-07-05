@@ -1,0 +1,146 @@
+.whatOurClientsSay {
+  padding: 50px 8vw;
+}
+
+.title__whatOurClientsSay {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title__whatOurClientsSay > h2 {
+  font-size: 28px;
+  color: #11907c;
+}
+
+.title__whatOurClientsSay > p {
+  font-size: 13px;
+  color: #505050;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cardContainer__whatOurClientsSay {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.card__whatOurClientsSay,
+.card__whatOurClientsSayActive {
+  height: 230px;
+  width: 330px;
+  box-shadow: 0px 0px 10px 1px rgb(241, 241, 241);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+}
+
+.title__card__whatOurClientsSay {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image__title__card__whatOurClientsSay {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.text__title__card__whatOurClientsSay {
+  margin-left: 20px;
+}
+
+.text__title__card__whatOurClientsSay > h5 {
+  font-size: 17px;
+  color: #11907c;
+}
+
+.text__title__card__whatOurClientsSay > p {
+  font-size: 12px;
+  color: #505050;
+}
+
+.card__whatOurClientsSay > p,
+.card__whatOurClientsSayActive > p {
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.card__whatOurClientsSay:hover {
+  height: 300px;
+  width: 400px;
+  opacity: 1;
+  cursor: default;
+}
+
+.card__whatOurClientsSayActive {
+  height: 300px;
+  width: 400px;
+  opacity: 1;
+  cursor: default;
+}
+
+.carosel__whatOurClientsSay {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.carosel__whatOurClientsSay > span {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  border: 1px solid #11907c;
+  margin: 0px 10px;
+}
+
+.caroselActive__whatOurClientsSay {
+  background-color: #11907c;
+}
+
+@media only screen and (max-width: 500px) {
+  .cardContainer__whatOurClientsSay {
+    overflow: scroll;
+  }
+
+  .cardContainer__whatOurClientsSay::-webkit-scrollbar {
+    display: none;
+  }
+  .card__whatOurClientsSay,
+  .card__whatOurClientsSayActive {
+    height: 230px;
+    width: 330px;
+    box-shadow: 0px 0px 10px 1px rgb(241, 241, 241);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    margin: 0px 10px;
+  }
+  .card__whatOurClientsSayActive {
+    height: 230px;
+    width: 330px;
+    opacity: 1;
+    cursor: default;
+  }
+
+  .card__whatOurClientsSay:hover {
+    height: 230px;
+    width: 330px;
+    opacity: 1;
+    cursor: default;
+  }
+}

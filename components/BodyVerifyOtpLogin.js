@@ -132,20 +132,10 @@ const BodyVerifyOtpLogin = () => {
         <div className={styles.header__left}>
           <Image
             className={styles.header__logo}
-            src="/arclifLogo.png"
-            alt="Arclif Logo"
-            width={100}
-            height={35}
-          />
-          <div className={styles.header__logo_one}>
-            <Image src="/one.png" alt="" width={2} height={25} />
-          </div>
-          <Image
-            className={styles.header__logo}
-            src="/agrihaLogo.png"
+            src="/agrihaLogo.svg"
             alt="agriha Logo"
-            width={110}
-            height={90}
+            width={120}
+            height={100}
           />
         </div>
         <div className={styles.header__right}>

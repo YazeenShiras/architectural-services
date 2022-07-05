@@ -1,65 +1,128 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../styles/Header.module.css";
+import Link from "next/link";
 
 const HeaderMain = () => {
+  const menuClick = () => {
+    document.getElementById("header__mobile_container").style.height = "250px";
+    document.getElementById("header__nav_mobile").style.display = "flex";
+    document.getElementById("menuIcon").style.display = "none";
+    document.getElementById("closeIcon").style.display = "block";
+  };
+  const closeClick = () => {
+    document.getElementById("header__mobile_container").style.height = "70px";
+    document.getElementById("header__nav_mobile").style.display = "none";
+    document.getElementById("menuIcon").style.display = "block";
+    document.getElementById("closeIcon").style.display = "none";
+  };
   return (
     <div>
       <div className={styles.headerMain}>
         <div className={styles.header__left}>
-          <Link href="/" passHref>
-            <Image
-              className={styles.header__logo}
-              src="/arclifLogo.png"
-              alt="Arclif Logo"
-              width={120}
-              height={40}
-            />
-          </Link>{" "}
-          <div className={styles.header__logo_one}>
-            <Image src="/one.png" alt="" width={2} height={25} />
-          </div>
           <Image
             className={styles.header__logo}
-            src="/agrihaLogo.png"
+            src="/agrihaLogo.svg"
             alt="agriha Logo"
-            width={110}
-            height={90}
+            width={120}
+            height={100}
           />
         </div>
-        <div className={styles.header__right}>
-          <nav className={styles.header__nav_login}>
+        <div className={styles.header__right__main}>
+          <nav className={styles.nav__header__main}>
             <ul>
+              <li className={styles.home__nav__header__main}>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#ourServices">Our Services</a>
+              </li>
+              <li>
+                <a href="#pricingPlan">Plans</a>
+              </li>
               <li>
                 <a href="#aboutUs">About Us</a>
               </li>
               <li>
-                <a href="#whatWeDo">Services</a>
-              </li>
-              <li>
-                <a href="#marketplace">Marketplace</a>
+                <a href="#howItWorks">How It Works</a>
               </li>
             </ul>
           </nav>
-          <Link href="/sendotp" passHref>
-            <p className={styles.loginButton__header}>GET STARTED</p>
-          </Link>
-          <a
-            className={styles.contactButton__header}
-            href="https://api.whatsapp.com/send?phone=919995111325&text=Hey%20AGRIHA%2C%20can%20you%20help%20me%3F"
-          >
-            CHAT NOW
+          <a href="#contact" className={styles.contactButton__header}>
+            Contact Us
           </a>
-          {/* <div className={styles.header__menu__container}>
-            <Image
-              className={styles.header__menu}
-              src="/menuIcon.svg"
-              alt=""
-              width={30}
-              height={20}
-            />
-          </div> */}
+        </div>
+        <div className={styles.header__right__main__mobile}>
+          <div className={styles.menuIcon}>
+            <Image src="/menuIcon2.svg" alt="" width={25} height={25} />
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="header__mobile_container"
+        className={styles.header__mobile_container__main}
+      >
+        <div className={styles.header__mobile}>
+          <div className={styles.header__left}>
+            <Link href="/" passHref>
+              <Image
+                className={styles.header__logo}
+                src="/agrihaLogo.svg"
+                alt="agriha Logo"
+                width={120}
+                height={100}
+              />
+            </Link>{" "}
+          </div>
+          <div className={styles.header__right}>
+            <a href="#contact" className={styles.contactButton__header}>
+              Contact Us
+            </a>
+            <div
+              id="menuIcon"
+              onClick={menuClick}
+              className={styles.header__menu__container}
+            >
+              <Image
+                className={styles.header__menu}
+                src="/menuIcon.svg"
+                alt=""
+                width={30}
+                height={20}
+              />
+            </div>
+            <div
+              id="closeIcon"
+              onClick={closeClick}
+              className={styles.header__menu__container__close}
+            >
+              <Image
+                className={styles.header__menu}
+                src="/closeIcon2.svg"
+                alt=""
+                width={40}
+                height={20}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          id="header__nav_mobile"
+          className={styles.header__nav_mobile__main}
+        >
+          <div className={styles.header__nav_link__main}>
+            <a href="#home">Home</a>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <a href="#ourServices">Our Services</a>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <a href="#plans">Plans</a>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <a href="#howItWorks">How It Works</a>
+          </div>
         </div>
       </div>
     </div>

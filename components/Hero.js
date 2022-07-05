@@ -1,33 +1,39 @@
-import React, { useEffect } from "react";
-import styles from "../styles/Main.module.css";
+import React from "react";
 import Main from "../components/Main";
-import MainMobile from "./MainMobile";
-import Secondary from "./Secondary";
-import Quotes from "./Quotes";
-import Footer from "./Footer";
-import RecentWork from "./RecentWork";
 import HeaderMain from "./HeaderMain";
 import axios from "axios";
 import Cookies from "universal-cookie";
-
-const cookies = new Cookies();
+import EstimatePrice from "./EstimatePrice";
+import OurServices from "./OurServices";
+import PricingPlan from "./PricingPlan";
+import AboutUs from "./AboutUs";
+import HowItWorks from "./HowItWorks";
+import HowItWorksDemo from "./HowItWorksDemo";
+import OurRecentWorks from "./OurRecentWorks";
+import WhatOurClientsSay from "./WhatOurClientsSay";
+import GetInTouch from "./GetInTouch";
+import ValuesContainer from "./ValuesContainer";
+import Footer from "./Footer";
 
 axios.defaults.withCredentials = true;
 
 const Hero = () => {
   return (
-    <div className={styles.heroContainer}>
-      <div id="main" className={styles.webView}>
+    <div>
+      <div id="main">
         <HeaderMain />
         <Main />
-        <Secondary />
-        <RecentWork />
-        <Quotes />
+        <EstimatePrice />
+        <OurServices />
+        <PricingPlan />
+        <AboutUs />
+        <HowItWorks />
+        <HowItWorksDemo />
+        <OurRecentWorks />
+        <WhatOurClientsSay />
+        <GetInTouch />
+        <ValuesContainer />
         <Footer />
-      </div>
-      <div id="mainMobile" className={styles.mobileView}>
-        <HeaderMain />
-        <MainMobile />
       </div>
     </div>
   );

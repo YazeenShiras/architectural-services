@@ -11,7 +11,7 @@ const Footer = () => {
           <div className={styles.left__footer__top}>
             <div className={styles.logo__footer}>
               <a href="https://arclif.com">
-                <Image src="/arclifLogo.png" width={90} height={30} alt="" />
+                <Image src="/arclifLpgo2.svg" width={100} height={40} alt="" />
               </a>
             </div>
             <p>
@@ -21,93 +21,54 @@ const Footer = () => {
               services across the world considering the scenario in construction
               industry.
             </p>
-          </div>
-          <div className={styles.center__footer__top}>
-            <div className={styles.left__center__footer}>
-              <h4>What arclif provides</h4>
-              <div className={styles.content__cf}>
-                <div className={styles.left__content__cf}>
-                  <ul>
-                    <li>Jobs</li>
-                    <li>Estimator</li>
-                    <li>Requirements</li>
-                    <li>Charity</li>
-                    <li>Q&A</li>
-                  </ul>
-                </div>
-                <div className={styles.right__content__cf}>
-                  <ul>
-                    <li>Marketplace</li>
-                    <li>Projects</li>
-                    <li>Companies</li>
-                    <li>Proffessional</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className={styles.right__center__footer}>
-              <h4>Quick links</h4>
-              <div className={styles.content__cf}>
-                <div className={styles.left__content__cf}>
-                  <ul>
-                    <li>Jobs</li>
-                    <li>Estimator</li>
-                    <li>Requirements</li>
-                    <li>Charity</li>
-                    <li>Q & A</li>
-                  </ul>
-                </div>
-                <div className={styles.right__content__cf}>
-                  <ul>
-                    <li>Marketplace</li>
-                    <li>Projects</li>
-                    <li>Companies</li>
-                    <li>Proffesional</li>
-                  </ul>
-                </div>
-              </div>
+            <div className={styles.socialContainer__footer__left}>
+              <a href="https://www.facebook.com/arclifonline/">
+                <Image src="/facebookIcon2.svg" alt="" width={16} height={16} />
+              </a>
+              <a href="https://arclif.com/">
+                <Image src="/webIcon2.svg" alt="" width={16} height={16} />
+              </a>
+              <a href="https://in.linkedin.com/company/arclif">
+                <Image src="/linkedInIcon2.svg" alt="" width={16} height={16} />
+              </a>
+              <a href="https://www.instagram.com/arclifonline">
+                <Image
+                  src="/instagramIcon2.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                />
+              </a>
             </div>
           </div>
           <div className={styles.right__footer__top}>
-            <h4>Quick Links</h4>
-            <div className={styles.content__rf}>
-              <ul>
-                <li>About</li>
-                <li>Help</li>
-                <li>Terms</li>
-                <li>Privacy Policy</li>
-                <li>
-                  <div className={styles.social__footer}>
-                    <p>Follow</p>
-                    <div className={styles.socialIcon__contanier}>
-                      <Link
-                        href="https://www.instagram.com/arclifonline/"
-                        passHref
-                      >
-                        <Image
-                          src="/instagram__icon.svg"
-                          width={12}
-                          height={12}
-                          alt=""
-                          className={styles.socialIcon}
-                        />
-                      </Link>
-                      <Link
-                        href="https://www.facebook.com/arclifonline/"
-                        passHref
-                      >
-                        <Image
-                          src="/facebook__icon.svg"
-                          alt=""
-                          width={12}
-                          height={12}
-                          className={styles.socialIcon}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+            <div className={styles.QuickLinks__right__footer__top}>
+              <h3>Quick Links</h3>
+              <div>
+                <a href="#aboutUs">About</a>
+                <a href="#contact">Help</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacyPolicy">Privacy Policy</a>
+                <a href="#QnA">Q & A</a>
+              </div>
+            </div>
+            <div className={styles.QuickLinks__right__footer__top}>
+              <h3>What we provides</h3>
+              <div>
+                <a href="">Jobs</a>
+                <a href="">Estimator</a>
+                <a href="">Requirements</a>
+                <a href="">Marketplace</a>
+              </div>
+            </div>
+            <div className={styles.QuickLinks__right__footer__top}>
+              <h3>What we provides</h3>
+              <div>
+                <a href="">Jobs</a>
+                <a href="">Estimator</a>
+                <a href="">Requirements</a>
+                <a href="">Marketplace</a>
+              </div>
             </div>
           </div>
         </div>
