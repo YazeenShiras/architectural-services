@@ -68,7 +68,7 @@ const HeaderMain = () => {
             <Link href="/" passHref>
               <Image
                 className={styles.header__logo}
-                src="/agrihaLogo.svg"
+                src="/AgrihaLogo3.svg"
                 alt="agriha Logo"
                 width={120}
                 height={100}

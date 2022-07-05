@@ -149,7 +149,13 @@
 
 @media only screen and (max-width: 414px) {
   .mainMobile {
-    height: calc(85vh - 20px);
+    height: calc(80vh - 20px);
+  }
+  .mainMobile > h1 {
+    font-size: 35px;
+  }
+  .mainMobile > p {
+    font-size: 12px;
   }
   .hero__mobile__image {
     height: 40%;
@@ -162,6 +168,9 @@
   }
   .mainMobile > h1 {
     font-size: 26px;
+  }
+  .mainMobile > p {
+    font-size: 11px;
   }
   .hero__mobile__image {
     height: 40%;
