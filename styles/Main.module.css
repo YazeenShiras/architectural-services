@@ -158,7 +158,10 @@
 
 @media only screen and (max-width: 375px) {
   .mainMobile {
-    height: calc(100vh - 20px);
+    height: calc(90vh - 20px);
+  }
+  .mainMobile > h1 {
+    font-size: 26px;
   }
   .hero__mobile__image {
     height: 40%;

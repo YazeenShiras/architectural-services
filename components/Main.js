@@ -41,7 +41,7 @@ const Main = () => {
 
       <div className={styles.mainMobile}>
         <h1>
-          <span>Design</span> your dream home with a few <br /> clicks
+          <span>Design</span> your dream home with a few clicks
         </h1>
         <p>
           AGRIHA is an initiative by Arclif Inc. to empower the home seeker to
