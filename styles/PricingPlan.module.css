@@ -97,7 +97,7 @@
     display: none;
   }
   .pricing__card {
-    min-width: 47%;
+    min-width: 60%;
     margin-right: 20px;
     height: 280px;
   }

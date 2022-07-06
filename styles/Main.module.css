@@ -152,13 +152,13 @@
     height: calc(80vh - 20px);
   }
   .mainMobile > h1 {
-    font-size: 35px;
+    font-size: 28px;
   }
   .mainMobile > p {
     font-size: 12px;
   }
   .hero__mobile__image {
-    height: 40%;
+    height: 50%;
   }
 }
 
@@ -167,12 +167,12 @@
     height: calc(90vh - 20px);
   }
   .mainMobile > h1 {
-    font-size: 26px;
+    font-size: 25px;
   }
   .mainMobile > p {
     font-size: 11px;
   }
   .hero__mobile__image {
-    height: 40%;
+    height: 45%;
   }
 }

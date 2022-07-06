@@ -25,7 +25,7 @@ const CountsContainer = () => {
       </div>
       <div className={styles.card__countsContainer}>
         <div className={styles.imageContainer__card__countsContainer}>
-          <Image src="/reviewIcon.svg" alt="" width={60} height={60} />
+          <Image src="/reviewIcon.svg" alt="" width={50} height={50} />
         </div>
         <div className={styles.text__card__countsContainer}>
           <h3>200+</h3>
