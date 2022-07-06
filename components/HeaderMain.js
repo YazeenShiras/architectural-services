@@ -71,9 +71,9 @@ const HeaderMain = () => {
                 src="/AgrihaLogo3.svg"
                 alt="agriha Logo"
                 width={120}
-                height={100}
+                height={40}
               />
-            </Link>{" "}
+            </Link>
           </div>
           <div className={styles.header__right}>
             <a href="tel:9995111325" className={styles.callButton__header}>

@@ -33,6 +33,7 @@
   font-size: 12px;
   margin-top: 30px;
   text-align: justify;
+  line-height: 24px;
 }
 
 .buttonContainer__aboutUs {
@@ -103,13 +104,13 @@
   }
   .titleMobile__aboutUs > h2 {
     color: #11907c;
-    font-size: 25px;
+    font-size: 26px;
   }
   .titleMobile__aboutUs > h4 {
     color: #000000;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .right__aboutUs > h2,
   .right__aboutUs > h4 {

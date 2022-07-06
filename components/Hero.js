@@ -14,6 +14,7 @@ import WhatOurClientsSay from "./WhatOurClientsSay";
 import GetInTouch from "./GetInTouch";
 import ValuesContainer from "./ValuesContainer";
 import Footer from "./Footer";
+import CountsContainer from "./CountsContainer";
 
 axios.defaults.withCredentials = true;
 
@@ -28,9 +29,9 @@ const Hero = () => {
         <PricingPlan />
         <AboutUs />
         <HowItWorks />
-        <HowItWorksDemo />
         <OurRecentWorks />
         <WhatOurClientsSay />
+        <CountsContainer />
         <GetInTouch />
         <ValuesContainer />
         <Footer />

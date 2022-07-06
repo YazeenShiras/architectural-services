@@ -60,8 +60,8 @@ const EstimatePrice = () => {
       <div className={styles.estimateContainer}>
         <h3>Estimate the Plan Price</h3>
         <p>
-          Easly pridect your Estimate Price your Home Design. Please fill <br />{" "}
-          your correct data on below
+          Easly pridect your Estimate Price your Home Design. Please fill your
+          correct data on below
         </p>
         <div className={styles.inputFieldContainer}>
           <div className={styles.textField}>
@@ -73,6 +73,15 @@ const EstimatePrice = () => {
               placeholder="Area in Sqft *"
               readOnly
             />
+            <div className={styles.dropdownSelectContainerTest}>
+              <Image
+                className={styles.header__menu}
+                src="/dropdown.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </div>
             <div className={styles.dropdownSelectContainer}>
               <select
                 onChange={selectAreaClick}
@@ -98,6 +107,15 @@ const EstimatePrice = () => {
               type="text"
               placeholder="Choose your Plan *"
             />
+            <div className={styles.dropdownSelectContainerTest}>
+              <Image
+                className={styles.header__menu}
+                src="/dropdown.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </div>
             <div className={styles.dropdownSelectContainer}>
               <select
                 onChange={selectClick}
@@ -119,6 +137,15 @@ const EstimatePrice = () => {
               type="text"
               placeholder="Location *"
             />
+            <div className={styles.dropdownSelectContainerTest}>
+              <Image
+                className={styles.header__menu}
+                src="/dropdown.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </div>
             <div className={styles.dropdownSelectContainer}>
               <select
                 onChange={selectLocationClick}

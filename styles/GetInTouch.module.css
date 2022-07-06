@@ -1,6 +1,6 @@
 .getInTouch {
   padding: 50px 8vw;
-  background-color: #dbece4;
+  background-color: #ebecdb;
 }
 
 .title__getInTouch {
@@ -206,7 +206,6 @@
 @media only screen and (max-width: 500px) {
   .getInTouch {
     padding: 50px 5vw;
-    background-color: #dbece4;
   }
   .text__left__card__getInTouch > h3 {
     font-size: 23px;
@@ -218,7 +217,7 @@
   }
   .card__getInTouch {
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
   }
@@ -227,8 +226,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 550px;
-    border-radius: 10px;
+    height: 100%;
   }
   .social__left__card__getInTouch {
     display: flex;
@@ -249,14 +247,25 @@
     width: 100%;
     margin-top: 30px;
     padding-left: 0px;
-    padding-right: 20px;
+    padding-right: 0px;
+    margin-left: 10px;
     color: #0e263d;
   }
+
+  .right__card__getInTouch > h3 {
+    font-size: 23px;
+  }
+
+  .right__card__getInTouch > p {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
   .sendMessageButton {
     background-color: #0e263d;
     height: 50px;
     width: 90%;
-    border-radius: 5px;
     margin-top: 13px;
     color: #ffffff;
     display: flex;
@@ -264,6 +273,55 @@
     justify-content: center;
     font-size: 15px;
     font-weight: normal;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .title__getInTouch > h2 {
+    font-size: 26px;
+  }
+  .title__getInTouch > p {
+    font-size: 11px;
+    padding: 0px 30px;
+  }
+  .text__left__card__getInTouch > h3 {
+    font-size: 23px;
+  }
+  .text__left__card__getInTouch > p {
+    font-size: 12px;
+  }
+  .numbers__left__card__getInTouch {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .numbers__left__card__getInTouch > h5 {
+    font-weight: normal;
+    font-size: 13px;
+    margin-right: 0px;
+  }
+  .buttonContainer__left__card__getInTouch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .text__left__card__getInTouch > h4 {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .getLocation__Button {
+    height: 40px;
+    width: 120px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .call__Button {
+    height: 40px;
+    width: 100px;
+    font-size: 12px;
     cursor: pointer;
   }
 }

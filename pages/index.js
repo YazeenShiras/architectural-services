@@ -20,9 +20,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <div className={styles.contactUs__button__container}>
+      {/* <div className={styles.contactUs__button__container}>
         <ContactButton />
-      </div>
+      </div> */}
     </div>
   );
 }

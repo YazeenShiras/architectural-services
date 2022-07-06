@@ -1,6 +1,6 @@
 .valuesConatiner {
-  margin-top: 30px;
-  background-color: #0e263d;
+  margin-top: 0px;
+  background-color: #000000;
   padding: 30px 8vw;
   color: #ffffff;
   padding-bottom: 70px;
@@ -115,7 +115,7 @@
     margin-left: 10px;
   }
   .title__card__valuesConatiner > h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
   }
   .title__card__valuesConatiner > p {
@@ -126,9 +126,14 @@
   .logo__title__card__valuesConatiner {
     margin-right: 0px;
   }
-
+  .bottom__valuesConatiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
   .bgRadient__right__top__valuesConatiner {
-    height: 230px;
+    height: 100%;
     border-radius: 5px;
     width: 100%;
     background-image: linear-gradient(to bottom right, #117c94, #2e955d);
@@ -138,7 +143,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-left: 10px;
+  }
+  .right__top__valuesConatiner {
+    width: 100%;
+    margin-top: 20px;
   }
   .getStart__button {
     color: #252525;
@@ -150,7 +158,7 @@
     justify-content: center;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .text__right__top__valuesConatiner > h4 {
     font-size: 22px;
@@ -168,4 +176,10 @@
     align-items: flex-start;
     justify-content: space-between;
   }
+}
+
+@media only screen and (max-width: 414px) {
+}
+
+@media only screen and (max-width: 375px) {
 }

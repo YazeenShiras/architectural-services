@@ -42,14 +42,6 @@ const AboutUs = () => {
             Contact us
           </a>
         </div>
-        <div className={styles.scrollIndicator__aboutUs}>
-          <span></span>
-          <span></span>
-          <span className={styles.scrollIndicator__aboutUs__active}></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </div>
   );

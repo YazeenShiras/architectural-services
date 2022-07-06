@@ -11,8 +11,8 @@ const PricingPlan = () => {
       <div className={styles.title__pricingPlan}>
         <h2>Pricing Plan</h2>
         <p>
-          Easly your Estimate Price your Home Design. Please fill your <br />{" "}
-          correct data on below
+          Easly your Estimate Price your Home Design. Please fill your correct
+          data on below
         </p>
       </div>
       <div className={styles.pricing__card__container}>

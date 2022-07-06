@@ -14,7 +14,6 @@ const OurServices = () => {
         </div>
         <p>
           Easly pre your Estimate Price your Home Design. Please fill your
-          <br />
           correct data on below
         </p>
       </div>
@@ -136,9 +135,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Architectural services</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -152,9 +151,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Site plans</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -168,9 +167,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Floor plans</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -184,9 +183,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Elevation</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -200,9 +199,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Interior drawings</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -216,9 +215,9 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>3D views</h4>
               <p>
-                spaces that are truly exceptional. Working as one <br /> team
-                with architects, designers, drafters, project <br /> managers
-                and construction
+                spaces that are truly exceptional. Working as one team with
+                architects, designers, drafters, project managers and
+                construction
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>

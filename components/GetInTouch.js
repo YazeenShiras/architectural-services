@@ -56,8 +56,8 @@ const GetInTouch = () => {
             </div>
             <h4>Address</h4>
             <p>
-              Our clinets send us bunch of Smiles with our Services <br /> and
-              we love them
+              Our clinets send us bunch of Smiles with our Services and we love
+              them
             </p>
             <div className={styles.numbers__left__card__getInTouch}>
               <h5>+91 5556894782</h5>
