@@ -5,7 +5,7 @@ import Image from "next/image";
 const GetInTouch = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState();
   const [message, setMessage] = useState("");
 
   const storeValues = () => {
@@ -17,18 +17,24 @@ const GetInTouch = () => {
 
   async function handleSubmit() {
     console.log(email);
-    await fetch("services-api-dev4.ap-south-1.elasticbeanstalk.com/enquiry", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        name: name,
-        contact: number,
-        message: message,
-      }),
-    })
+    console.log(name);
+    console.log(number);
+    console.log(message);
+    await fetch(
+      "http://services-api-dev3.ap-south-1.elasticbeanstalk.com/enquiry",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          contact: number,
+          message: message,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
