@@ -47,7 +47,15 @@ const OurRecentWorks = () => {
               <Image src="/image7.jpg" alt="" width={550} height={300}></Image>
             </div>
             <div className={styles.card__ourRecentworks}>
+              <Image src="/image8.jpg" alt="" width={550} height={300}></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
               <Image src="/image9.jpg" alt="" width={550} height={300}></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image src="/image10.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
         </Carousel>

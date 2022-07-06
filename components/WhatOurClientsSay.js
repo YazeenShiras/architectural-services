@@ -27,12 +27,11 @@ const WhatOurClientsSay = () => {
               </div>
               <div className={styles.description__card__whatOurClientsSay}>
                 <p>
-                  Our clinets send us bunch of Smiles with our Services and we
-                  love them Our clinets send us bunch of Smiles with our
-                  Services and we love them Our clinets send us bunch of Smiles
-                  with our Services and we love them Our clinets send us bunch
-                  of Smiles with our Services and we love them Our clinets send
-                  us bunch of.
+                  Arclif has very professional and approachable architecture
+                  team. The whole procedure starting from planning home design
+                  till execution went extremely smooth. We now have a beautiful
+                  home which is exactly as I envisaged. I will recommend them to
+                  any of my friends and relatives who need to design their home
                 </p>
               </div>
             </div>

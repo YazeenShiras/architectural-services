@@ -18,15 +18,15 @@ const AboutUs = () => {
         <h2>About Us</h2>
         <h4>Design your dream home</h4>
         <p>
-          Easly your Estimate Price your Home Design. Please fill your correct
-          data on belowEasly your Estimate Price your Home Design. Please fill
-          your correct data on belowEasly your Estimate Price your Home Design.
-          Please fill your correct data on belowEasly your Estimate Price your
-          Home Design. Please fill your correct data on belowEasly your Estimate
-          Price your Home Design. Please fill your correct data on belowEasly
-          your Estimate Price your Home Design. Please fill your correct data on
-          belowEasly your Estimate Price your Home Design. Please fill your
-          correct data on belowEasly your Estimate Price your Home Design.
+          We are a team of of dedicated professionals committed to creating
+          beautiful and sustainable homes. We believe in the power of
+          architecture to shape urban environments, improve quality of life and
+          positively impact society. AGRIHA offers complete design-build
+          services to meet the needs of our clients from concept through
+          completion. Our goal is to be the go-to source for high quality
+          architecture. We have extensive experience in working with different
+          high end projects across Kerala incorporating our knowledge of both
+          domestic and global trends.
         </p>
         <div className={styles.buttonContainer__aboutUs}>
           <a
