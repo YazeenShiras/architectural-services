@@ -1,5 +1,5 @@
 .pricingPlan {
-  height: calc(90vh);
+  height: 90vh;
   padding: 0px 8vw;
   display: flex;
   flex-direction: column;
@@ -89,21 +89,43 @@
   .pricingPlan {
     height: 90vh;
   }
-
   .pricing__card__container {
     overflow: scroll;
   }
-
   .pricing__card__container::-webkit-scrollbar {
     display: none;
   }
-
   .pricing__card {
     min-width: 47%;
     margin-right: 20px;
+    height: 280px;
   }
-
   .pricing__card > h1 {
     font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .pricing__card {
+    min-width: 60%;
+    margin-right: 20px;
+  }
+  .buyNow__button {
+    margin-top: 30px;
+  }
+  .pricing__card > h1 {
+    font-size: 25px;
+    padding: 0px 10px;
+  }
+  .pricingPlan {
+    padding-top: 50px;
+    height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .pricingPlan {
+    padding-top: 50px;
+    height: 80vh;
   }
 }

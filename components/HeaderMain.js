@@ -76,7 +76,7 @@ const HeaderMain = () => {
             </Link>{" "}
           </div>
           <div className={styles.header__right}>
-            <a href="tel:9995111325" className={styles.contactButton__header}>
+            <a href="tel:9995111325" className={styles.callButton__header}>
               <Image
                 className={styles.header__menu}
                 src="/callIcon.svg"
