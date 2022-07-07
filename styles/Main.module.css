@@ -4,8 +4,9 @@
   background-color: #ffffff;
   display: flex;
   padding-top: 160px;
-  background-color: #d7f1ed;
 }
+
+/*  */
 
 .main__left {
   width: 50%;
@@ -84,9 +85,11 @@
   margin-right: 8vw;
 }
 
+/*  */
+
 .heroImage {
   margin-top: -60px;
-  height: 400px;
+  height: 63vh;
   width: 580px;
   background-position: center;
   background-size: contain;

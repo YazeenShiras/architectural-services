@@ -1,35 +1,29 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/EstimatePrice.module.css";
 import Image from "next/image";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const EstimatePrice = () => {
-  const [area, setArea] = useState(0);
+  const [area, setArea] = useState("");
   const [plan, setPlan] = useState("");
   const [planPrice, setPlanPrice] = useState(0);
   const [location, setLocation] = useState("");
 
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const getArea = () => {
-    setArea(document.getElementById("area").value);
+  const handleChange = (event) => {
+    setArea(event.target.value);
   };
 
-  const selectClick = () => {
-    var select = document.getElementById("plans");
-    var value = select.options[select.selectedIndex].value;
-    setPlan(value);
+  const handleChangePlan = (event) => {
+    setPlan(event.target.value);
   };
 
-  const selectAreaClick = () => {
-    var select = document.getElementById("areas");
-    var value = select.options[select.selectedIndex].value;
-    setArea(value);
-  };
-
-  const selectLocationClick = () => {
-    var select = document.getElementById("locations");
-    var value = select.options[select.selectedIndex].value;
-    setLocation(value);
+  const handleChangeLocation = (event) => {
+    setLocation(event.target.value);
   };
 
   useEffect(() => {
@@ -47,7 +41,7 @@ const EstimatePrice = () => {
   }, [plan]);
 
   const getEstimatePrice = () => {
-    const total = area * planPrice;
+    const total = parseInt(area) * planPrice;
     setTotalPrice(total);
     document.getElementById("getEstimateButton").innerHTML = "Rs. " + total;
     document.getElementById("getEstimateButton").style.color = "#ffffff";
@@ -64,100 +58,100 @@ const EstimatePrice = () => {
           correct data on below
         </p>
         <div className={styles.inputFieldContainer}>
-          <div className={styles.textField}>
-            <input
-              onChange={getArea}
-              id="area"
-              value={area + " sq.ft"}
-              type="text"
-              placeholder="Area in Sqft *"
-              readOnly
-            />
-            <div className={styles.dropdownSelectContainerTest}>
-              <Image
-                className={styles.header__menu}
-                src="/dropdown.svg"
-                alt=""
-                width={20}
-                height={20}
-              />
-            </div>
-            <div className={styles.dropdownSelectContainer}>
-              <select
-                onChange={selectAreaClick}
-                className={styles.dropdownSelect}
-                name="areas"
-                id="areas"
-              >
-                <option value="none" selected disabled hidden></option>
-                <option value="300">300 sq.ft</option>
-                <option value="500">500 sq.ft</option>
-                <option value="1000">1000 sq.ft</option>
-                <option value="2000">2000 sq.ft</option>
-                <option value="2500">2500 sq.ft</option>
-                <option value="3000">3000 sq.ft</option>
-                <option value="5000">5000 sq.ft</option>
-              </select>
-            </div>
-          </div>
-          <div className={styles.textField}>
-            <input
+          <FormControl
+            variant="standard"
+            sx={{
+              m: 0,
+              minWidth: 200,
+              borderBottom: "1px solid #535353",
+              outline: "none",
+              marginBottom: 3,
+            }}
+          >
+            <InputLabel
+              sx={{
+                color: "white",
+                fontFamily: "inherit",
+                fontSize: "13px",
+              }}
+              id="demo-simple-select-standard-label"
+            >
+              Area in Sqft *
+            </InputLabel>
+            <Select
+              sx={{ color: "white" }}
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
+              value={area}
+              onChange={handleChange}
+              label="Age"
+            >
+              <MenuItem value={300}>300 sq.ft</MenuItem>
+              <MenuItem value={500}>500 sq.ft</MenuItem>
+              <MenuItem value={1000}>1000 sq.ft</MenuItem>
+              <MenuItem value={2000}>2000 sq.ft</MenuItem>
+              <MenuItem value={2500}>2500 sq.ft</MenuItem>
+              <MenuItem value={3000}>3000 sq.ft</MenuItem>
+              <MenuItem value={5000}>5000 sq.ft</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl
+            variant="standard"
+            sx={{
+              m: 0,
+              minWidth: 200,
+              borderBottom: "1px solid #535353",
+              outline: "none",
+              marginBottom: 3,
+            }}
+          >
+            <InputLabel
+              sx={{ color: "white", fontFamily: "inherit", fontSize: "13px" }}
+              id="demo-simple-select-standard-label"
+            >
+              Choose your Plan *
+            </InputLabel>
+            <Select
+              sx={{ color: "white" }}
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
               value={plan}
-              readOnly
-              type="text"
-              placeholder="Choose your Plan *"
-            />
-            <div className={styles.dropdownSelectContainerTest}>
-              <Image
-                className={styles.header__menu}
-                src="/dropdown.svg"
-                alt=""
-                width={20}
-                height={20}
-              />
-            </div>
-            <div className={styles.dropdownSelectContainer}>
-              <select
-                onChange={selectClick}
-                className={styles.dropdownSelect}
-                name="plans"
-                id="plans"
-              >
-                <option value="none" selected disabled hidden></option>
-                <option value="Basic">Basic</option>
-                <option value="Plus">Plus</option>
-                <option value="Elite">Elite</option>
-              </select>
-            </div>
-          </div>
-          <div className={styles.textField}>
-            <input
+              onChange={handleChangePlan}
+              label="Plan"
+            >
+              <MenuItem value="Basic">Basic</MenuItem>
+              <MenuItem value="Plus">Plus</MenuItem>
+              <MenuItem value="Elite">Elite</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl
+            variant="standard"
+            sx={{
+              m: 0,
+              minWidth: 200,
+              borderBottom: "1px solid #535353",
+              outline: "none",
+              marginBottom: 3,
+            }}
+          >
+            <InputLabel
+              sx={{ color: "white", fontFamily: "inherit", fontSize: "13px" }}
+              id="demo-simple-select-standard-label"
+            >
+              Location *
+            </InputLabel>
+            <Select
+              sx={{ color: "white" }}
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
               value={location}
-              readOnly
-              type="text"
-              placeholder="Location *"
-            />
-            <div className={styles.dropdownSelectContainerTest}>
-              <Image
-                className={styles.header__menu}
-                src="/dropdown.svg"
-                alt=""
-                width={20}
-                height={20}
-              />
-            </div>
-            <div className={styles.dropdownSelectContainer}>
-              <select
-                onChange={selectLocationClick}
-                className={styles.dropdownSelect}
-                name="loactions"
-                id="locations"
-              >
-                <option value="none" selected disabled hidden></option>
-                <option value="India">India</option>
-              </select>
-            </div>
-          </div>
+              onChange={handleChangeLocation}
+              label="Location"
+            >
+              <MenuItem value="Basic">India</MenuItem>
+              <MenuItem value="Plus">Other</MenuItem>
+            </Select>
+          </FormControl>
           <div
             id="getEstimateButton"
             onClick={getEstimatePrice}
