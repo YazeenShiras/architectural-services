@@ -22,7 +22,7 @@ const PricingPlan = () => {
           <h5>Per Sq.ft</h5>
           <p>Easly your Estimate Price</p>
           <a href="login" className={styles.buyNow__button}>
-            Buy now
+            Try now
           </a>
         </div>
         <div className={styles.pricing__card}>
@@ -31,7 +31,7 @@ const PricingPlan = () => {
           <h5>Per Sq.ft</h5>
           <p>Easly your Estimate Price</p>
           <a href="login" className={styles.buyNow__button}>
-            Buy now
+            Try now
           </a>
         </div>
         <div className={styles.pricing__card}>
@@ -40,7 +40,7 @@ const PricingPlan = () => {
           <h5>Per Sq.ft</h5>
           <p>Easly your Estimate Price</p>
           <a href="login" className={styles.buyNow__button}>
-            Buy now
+            Try now
           </a>
         </div>
       </div>

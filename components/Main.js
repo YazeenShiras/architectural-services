@@ -11,13 +11,8 @@ const Main = () => {
             home with a few clicks
           </h1>
           <p>
-            AGRIHA is an initiative by Arclif Inc. to empower the home seeker to{" "}
-            <br />
-            dream and design their perfect home online with just few clicks.
-            <br />
-            AGRIHA is an initiative by Arclif Inc. to empower the home seeker to{" "}
-            <br />
-            dream and design their perfect home online with just few clicks.
+            We offer wide range of architecture services creating perfect living
+            space you love to live in.
           </p>
           <div className={styles.buttoneContainer__main__left}>
             <a href="sendotp" className={styles.designMyHomeButton}>
