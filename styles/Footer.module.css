@@ -81,13 +81,14 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  background-color: #000000;
+  background-color: #0e263d;
   color: #d5d4d4;
 }
 
 .footer__bottom > p {
   margin: 0px 10vw;
   font-weight: normal;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 500px) {

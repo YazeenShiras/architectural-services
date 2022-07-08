@@ -35,71 +35,37 @@
   width: 350px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin: 0px 10px;
+  padding: 20px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 10px 0 #ebebeb;
+  margin-top: 30px;
 }
 
-.title__card__whatOurClientsSay {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dbece4;
-  padding: 30px;
-}
-
-.description__card__whatOurClientsSay {
-  background-color: #0e263d;
-  width: 100%;
-}
-
-.image__title__card__whatOurClientsSay {
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
+.card__whatOurClientsSay > p {
+  font-size: 13px;
+  max-width: 100%;
 }
 
 .text__title__card__whatOurClientsSay {
-  margin-left: 20px;
+  margin-top: 50px;
+  padding-bottom: 20px;
 }
 
-.text__title__card__whatOurClientsSay > h5 {
-  font-size: 17px;
+.text__title__card__whatOurClientsSay > h4 {
+  font-size: 0px;
   color: #11907c;
 }
 
+.text__title__card__whatOurClientsSay > h5 {
+  font-size: 16px;
+  color: #0e263d;
+}
+
 .text__title__card__whatOurClientsSay > p {
-  font-size: 11px;
-  color: #050505;
-}
-
-.description__card__whatOurClientsSay > p {
-  font-size: 12px;
-  color: #d9d9d9;
-  padding: 30px;
-  text-align: justify;
-}
-
-.carosel__whatOurClientsSay {
-  display: flex;
-  margin-top: 50px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.carosel__whatOurClientsSay > span {
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  border: 1px solid #11907c;
-  margin: 0px 10px;
-}
-
-.caroselActive__whatOurClientsSay {
-  background-color: #11907c;
+  font-size: 13px;
 }
 
 .whatOurClientsSay_mobile {
@@ -110,28 +76,22 @@
   .whatOurClientsSay_main {
     display: none;
   }
-  .title__whatOurClientsSay > p {
-    font-size: 12px;
-    padding: 0px 20px;
-    max-width: 100%;
-  }
   .whatOurClientsSay_mobile {
     display: block;
   }
   .card__whatOurClientsSay {
-    width: 100%;
-    margin: 0px;
+    width: 95%;
+    padding: 20px;
+    margin-top: 3px;
+  }
+  .text__title__card__whatOurClientsSay {
+    margin-top: 30px;
+    padding-bottom: 10px;
   }
 }
 
 @media only screen and (max-width: 414px) {
-  .title__whatOurClientsSay > h2 {
-    font-size: 26px;
-  }
 }
 
 @media only screen and (max-width: 375px) {
-  .title__whatOurClientsSay > h2 {
-    font-size: 24px;
-  }
 }

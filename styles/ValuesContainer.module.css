@@ -1,9 +1,9 @@
 .valuesConatiner {
   margin-top: 0px;
-  background-color: #000000;
+  background-color: #0e263d;
   padding: 30px 8vw;
   color: #ffffff;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 
 .top__valuesConatiner {
@@ -62,7 +62,7 @@
 }
 
 .bottom__valuesConatiner {
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;

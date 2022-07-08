@@ -20,13 +20,13 @@ const HowItWorks = () => {
             <p>Collection of requirement and Initial payment from client.</p>
           </div>
           <div className={styles.flow__contentCard__right}>
-            <Image src="/collection.svg" alt="" width={100} height={100} />
+            <Image src="/collection.svg" alt="" width={70} height={70} />
           </div>
         </div>
         <div className={styles.flow__count}>2</div>
         <div className={styles.flow__contentCard}>
           <div className={styles.flow__contentCard__left}>
-            <Image src="/delivery.svg" alt="" width={100} height={100} />
+            <Image src="/delivery.svg" alt="" width={80} height={80} />
           </div>
           <div className={styles.flow__contentCard__right__text}>
             <h3>Delivery</h3>
@@ -40,13 +40,13 @@ const HowItWorks = () => {
             <p>Collection of requirement and Initial payment from client.</p>
           </div>
           <div className={styles.flow__contentCard__right}>
-            <Image src="/discussion.svg" alt="" width={100} height={100} />
+            <Image src="/discussion.svg" alt="" width={70} height={70} />
           </div>
         </div>
         <div className={styles.flow__count}>4</div>
         <div className={styles.flow__contentCard}>
           <div className={styles.flow__contentCard__left}>
-            <Image src="/final.svg" alt="" width={100} height={100} />
+            <Image src="/final.svg" alt="" width={70} height={70} />
           </div>
           <div className={styles.flow__contentCard__right__text}>
             <h3>Final Review</h3>

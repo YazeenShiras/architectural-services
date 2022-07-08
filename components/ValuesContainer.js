@@ -29,9 +29,9 @@ const ValuesContainer = () => {
           <div className={styles.card__bottom__valuesConatiner}>
             <div className={styles.title__card__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/simplicity.svg" alt="" width={50} height={50} />
+                <Image src="/trust.svg" alt="" width={50} height={50} />
               </div>
-              <h2>Simplicity</h2>
+              <h2>Trust</h2>
             </div>
             <p>
               Our clinets send us bunch of Smiles with our <br /> Services and
@@ -53,9 +53,9 @@ const ValuesContainer = () => {
           <div className={styles.card__bottom__valuesConatiner}>
             <div className={styles.title__card__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/trust.svg" alt="" width={50} height={50} />
+                <Image src="/refund.svg" alt="" width={50} height={50} />
               </div>
-              <h2>Trust</h2>
+              <h2>Refund</h2>
             </div>
             <p>
               Our clinets send us bunch of Smiles with our <br /> Services and
@@ -73,10 +73,10 @@ const ValuesContainer = () => {
           <div className={styles.bottom__left__valuesConatiner}>
             <div className={styles.card__bottom__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/simplicity.svg" alt="" width={70} height={70} />
+                <Image src="/trust.svg" alt="" width={70} height={70} />
               </div>
               <div className={styles.title__card__valuesConatiner}>
-                <h2>Simplicity</h2>
+                <h2>Trust</h2>
                 <p>
                   Our clinets send us bunch of Smiles with our <br /> Services
                   and we love them
@@ -97,10 +97,10 @@ const ValuesContainer = () => {
             </div>
             <div className={styles.card__bottom__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/trust.svg" alt="" width={70} height={70} />
+                <Image src="/refund.svg" alt="" width={70} height={70} />
               </div>
               <div className={styles.title__card__valuesConatiner}>
-                <h2>Trust</h2>
+                <h2>Refund</h2>
                 <p>
                   Our clinets send us bunch of Smiles with our <br /> Services
                   and we love them
