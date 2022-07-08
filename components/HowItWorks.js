@@ -17,7 +17,7 @@ const HowItWorks = () => {
         <div className={styles.flow__contentCard}>
           <div className={styles.flow__contentCard__left__text}>
             <h3>Collection</h3>
-            <p>Collection of requirement and Initial payment from client.</p>
+            <p>COLLECTION OF REQUIREMENTS AND INITIAL PAYMENT FROM CLIENT.</p>
           </div>
           <div className={styles.flow__contentCard__right}>
             <Image src="/collection.svg" alt="" width={70} height={70} />
@@ -30,14 +30,20 @@ const HowItWorks = () => {
           </div>
           <div className={styles.flow__contentCard__right__text}>
             <h3>Delivery</h3>
-            <p>Collection of requirement and Initial payment from client.</p>
+            <p>
+              TELEPHONIC DISCUSSION BETWEEN EXPERTS FROM ARCLIF AND CLIENT TO
+              COLLECT ADDITIONAL DETAILS (IF REQUIRED).
+            </p>
           </div>
         </div>
         <div className={styles.flow__count}>3</div>
         <div className={styles.flow__contentCard}>
           <div className={styles.flow__contentCard__left__text}>
             <h3>Discussion</h3>
-            <p>Collection of requirement and Initial payment from client.</p>
+            <p>
+              TIMELY SUBMISSION OF DELIVERABLES AS PER SUBSCRIPTION PLANS
+              SUBJECT TO REALIZATION OF PAYMENTS.
+            </p>
           </div>
           <div className={styles.flow__contentCard__right}>
             <Image src="/discussion.svg" alt="" width={70} height={70} />
@@ -50,7 +56,10 @@ const HowItWorks = () => {
           </div>
           <div className={styles.flow__contentCard__right__text}>
             <h3>Final Review</h3>
-            <p>Collection of requirement and Initial payment from client.</p>
+            <p>
+              FINAL REVIEW AND DISCUSSION WITH CLIENT FOR ANY CHANGES ON
+              EXISTING DELIVERABLES AND ADD ON SERVICES.
+            </p>
           </div>
         </div>
         <div>
