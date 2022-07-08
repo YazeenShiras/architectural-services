@@ -5,7 +5,7 @@ import Image from "next/image";
 const GetInTouch = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
 
   const storeValues = () => {
@@ -16,29 +16,86 @@ const GetInTouch = () => {
   };
 
   async function handleSubmit() {
-    console.log(email);
-    console.log(name);
-    console.log(number);
-    console.log(message);
-    await fetch(
-      "http://services-api-dev3.ap-south-1.elasticbeanstalk.com/enquiry",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          name: name,
-          contact: number,
-          message: message,
-        }),
+    if (
+      document.getElementById("sendMessageButton").innerHTML !== "Thankyou !"
+    ) {
+      if (name !== "") {
+        document.getElementById("nameInput").style.borderBottom =
+          "1px solid #dddddd";
+        if (email !== "") {
+          document.getElementById("emailInput").style.borderBottom =
+            "1px solid #dddddd";
+          if (email.includes("@") && email.includes(".com")) {
+            document.getElementById("emailInput").style.borderBottom =
+              "1px solid #dddddd";
+            let isnum = /^\d+$/.test(number);
+            if (number.length == 10) {
+              document.getElementById("phoneNumberInput").style.borderBottom =
+                "1px solid #dddddd";
+              if (isnum) {
+                document.getElementById("phoneNumberInput").style.borderBottom =
+                  "1px solid #dddddd";
+                if (message !== "") {
+                  document.getElementById("message").style.border =
+                    "1px solid #dddddd";
+                  await fetch(
+                    "http://services-api-dev3.ap-south-1.elasticbeanstalk.com/enquiry",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                        email: email,
+                        name: name,
+                        contact: parseInt(number),
+                        message: message,
+                      }),
+                    }
+                  )
+                    .then((res) => res.json())
+                    .then((data) => {
+                      if (data.status === 200) {
+                        document.getElementById("sendMessageButton").innerHTML =
+                          "Thank You !";
+                        document.getElementById(
+                          "sendMessageButton"
+                        ).style.backgroundColor = "#11907c";
+                        document.getElementById(
+                          "sendMessageButton"
+                        ).style.cursor = "default";
+                      }
+                    });
+                } else {
+                  document.getElementById("message").style.border =
+                    "1px solid red";
+                }
+              } else {
+                console.log("number none");
+                document.getElementById("phoneNumberInput").style.borderBottom =
+                  "1px solid red";
+              }
+            } else {
+              console.log("number less than zero");
+              document.getElementById("phoneNumberInput").style.borderBottom =
+                "1px solid red";
+            }
+          } else {
+            console.log("email null");
+            document.getElementById("emailInput").style.borderBottom =
+              "1px solid red";
+          }
+        } else {
+          console.log("email null");
+          document.getElementById("emailInput").style.borderBottom =
+            "1px solid red";
+        }
+      } else {
+        console.log("name null");
+        document.getElementById("nameInput").style.borderBottom =
+          "1px solid red";
       }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    }
   }
 
   return (
@@ -113,7 +170,7 @@ const GetInTouch = () => {
             Our clinets send us bunch of Smiles with our Services and we love
             them
           </p>
-          <div className={styles.inputConatiner__getInTouch}>
+          <div id="nameInput" className={styles.inputConatiner__getInTouch}>
             <input
               onChange={storeValues}
               id="name"
@@ -121,7 +178,7 @@ const GetInTouch = () => {
               placeholder="Enter your name"
             />
           </div>
-          <div className={styles.inputConatiner__getInTouch}>
+          <div id="emailInput" className={styles.inputConatiner__getInTouch}>
             <input
               onChange={storeValues}
               id="email"
@@ -129,7 +186,10 @@ const GetInTouch = () => {
               placeholder="Email id"
             />
           </div>
-          <div className={styles.inputConatiner__getInTouch}>
+          <div
+            id="phoneNumberInput"
+            className={styles.inputConatiner__getInTouch}
+          >
             <input
               onChange={storeValues}
               id="number"
@@ -144,7 +204,11 @@ const GetInTouch = () => {
               placeholder="Type your message here ..."
             />
           </div>
-          <div onClick={handleSubmit} className={styles.sendMessageButton}>
+          <div
+            id="sendMessageButton"
+            onClick={handleSubmit}
+            className={styles.sendMessageButton}
+          >
             Send Message
           </div>
         </div>

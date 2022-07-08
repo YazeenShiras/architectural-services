@@ -1,12 +1,11 @@
 .main {
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #11907c, #151d3c);
   display: flex;
   padding-top: 160px;
+  color: #ffffff;
 }
-
-/*  */
 
 .main__left {
   width: 50%;
@@ -20,14 +19,10 @@
   font-weight: 600;
 }
 
-.main__left > h1 > span {
-  color: #11907c;
-}
-
 .main__left > p {
   font-size: 13px;
   margin-top: 10px;
-  color: #3f3f3f;
+  color: #e1e1e1;
   max-width: 400px;
 }
 
@@ -51,13 +46,13 @@
 .signInButton {
   height: 45px;
   width: 150px;
-  border: 1px solid #11907c;
+  border: 1px solid #ffffff;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: #11907c;
+  color: #ffffff;
   margin-left: 20px;
   cursor: pointer;
 }
@@ -110,27 +105,25 @@
     display: none;
   }
   .mainMobile {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-    background-color: #ebf8f2;
-    height: calc(100vh - 20px);
+    background-image: linear-gradient(to top, #11907c, #0e263d);
+    height: 100vh;
     padding-left: 5vw;
     padding-right: 5vw;
-    padding-top: 50px;
     justify-content: center;
+    color: #fff;
+    padding-bottom: 10px;
   }
   .mainMobile > h1 {
     margin-top: 20px;
     text-align: center;
   }
-  .mainMobile > h1 > span {
-    color: #11907c;
-  }
   .mainMobile > p {
     font-size: 13px;
     margin-top: 10px;
-    color: #3f3f3f;
+    color: #e1e1e1;
     text-align: center;
   }
   .buttoneContainer__main__left {
@@ -153,7 +146,7 @@
 
 @media only screen and (max-width: 414px) {
   .mainMobile {
-    height: calc(80vh - 20px);
+    height: calc(83vh - 20px);
   }
   .mainMobile > h1 {
     font-size: 28px;

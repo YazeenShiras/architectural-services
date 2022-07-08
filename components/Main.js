@@ -7,7 +7,7 @@ const Main = () => {
       <div className={styles.main} id="home">
         <div className={styles.main__left}>
           <h1>
-            <span>Design</span> your dream <br />
+            Design your dream <br />
             home with a few clicks
           </h1>
           <p>
@@ -32,9 +32,7 @@ const Main = () => {
       </div>
 
       <div className={styles.mainMobile}>
-        <h1>
-          <span>Design</span> your dream home with a few clicks
-        </h1>
+        <h1>Design your dream home with a few clicks</h1>
         <p>
           We offer wide range of architecture services creating perfect living
           space you love to live in.
