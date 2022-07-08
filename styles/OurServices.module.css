@@ -63,6 +63,7 @@
 .right__card__ourServices > p {
   font-size: 12px;
   margin-top: 10px;
+  max-width: 300px;
 }
 
 .viewServiceButton {

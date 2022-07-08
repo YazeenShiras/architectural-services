@@ -29,9 +29,8 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>Architectural services</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  Design, the creation of construction papers, and project
+                  management are all included in architectural services...
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -45,9 +44,9 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>Site plans</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  A site plan, also known as a plot plan, is a form of drawing
+                  used by architects, landscape architects, urban planners, and
+                  engineers to...
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -63,9 +62,9 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>Floor plans</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  A floor plan is a technical drawing to scale that depicts the
+                  relationships between rooms, spaces, traffic patterns, and
+                  other...
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -79,9 +78,9 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>Elevation</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  Elevations are a popular design drawing and a technical
+                  architectural or engineering standard used to describe
+                  building graphically.
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -97,9 +96,8 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>Interior drawings</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  Space planning describes the process of determining the
+                  purpose, functional requirements, and basic layout of...
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -113,9 +111,8 @@ const OurServices = () => {
               <div className={styles.right__card__ourServices}>
                 <h4>3D views</h4>
                 <p>
-                  spaces that are truly exceptional. Working as one <br /> team
-                  with architects, designers, drafters, project <br /> managers
-                  and construction
+                  Using computer animation, 3D rendering is a technique for
+                  graphically representing a structure or creating...
                 </p>
                 <div className={styles.viewServiceButton}>View Service</div>
               </div>
@@ -135,9 +132,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Architectural services</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                Design, the creation of construction papers, and project
+                management are all included in architectural services...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -151,9 +147,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Site plans</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                A site plan, also known as a plot plan, is a form of drawing
+                used by architects, landscape architects, urban planners...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -167,9 +162,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Floor plans</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                A floor plan is a technical drawing to scale that depicts the
+                relationships between rooms, spaces, traffic...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -183,9 +177,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Elevation</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                Elevations are a popular design drawing and a technical
+                architectural or engineering standard used to...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -199,9 +192,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>Interior drawings</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                Space planning describes the process of determining the purpose,
+                functional requirements, and basic layout of...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
@@ -215,9 +207,8 @@ const OurServices = () => {
             <div className={styles.right__card__ourServices}>
               <h4>3D views</h4>
               <p>
-                spaces that are truly exceptional. Working as one team with
-                architects, designers, drafters, project managers and
-                construction
+                Using computer animation, 3D rendering is a technique for
+                graphically representing a structure or creating...
               </p>
               <div className={styles.viewServiceButton}>View Service</div>
             </div>
