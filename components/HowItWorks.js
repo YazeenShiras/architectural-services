@@ -31,8 +31,8 @@ const HowItWorks = () => {
           <div className={styles.flow__contentCard__right__text}>
             <h3>Delivery</h3>
             <p>
-              TELEPHONIC DISCUSSION BETWEEN EXPERTS FROM ARCLIF AND CLIENT TO
-              COLLECT ADDITIONAL DETAILS (IF REQUIRED).
+              TIMELY SUBMISSION OF DELIVERABLES AS PER SUBSCRIPTION PLANS
+              SUBJECT TO REALIZATION OF PAYMENTS.
             </p>
           </div>
         </div>
@@ -41,8 +41,8 @@ const HowItWorks = () => {
           <div className={styles.flow__contentCard__left__text}>
             <h3>Discussion</h3>
             <p>
-              TIMELY SUBMISSION OF DELIVERABLES AS PER SUBSCRIPTION PLANS
-              SUBJECT TO REALIZATION OF PAYMENTS.
+              TELEPHONIC DISCUSSION BETWEEN EXPERTS FROM ARCLIF AND CLIENT TO
+              COLLECT ADDITIONAL DETAILS (IF REQUIRED).
             </p>
           </div>
           <div className={styles.flow__contentCard__right}>
