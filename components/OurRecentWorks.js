@@ -17,45 +17,157 @@ const OurRecentWorks = () => {
         <Carousel animation="slide" duration="500" swipe="true" interval="2000">
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image1.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent1.jpg" alt="" width={550} height={300}></Image>
             </div>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image2.jpg" alt="" width={550} height={300}></Image>
-            </div>
-          </div>
-
-          <div className={styles.cardContainer__ourRecentworks}>
-            <div className={styles.card__ourRecentworks}>
-              <Image src="/image3.jpg" alt="" width={550} height={300}></Image>
-            </div>
-            <div className={styles.card__ourRecentworks}>
-              <Image src="/Image4.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent2.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
 
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image5.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent3.jpg" alt="" width={550} height={300}></Image>
             </div>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image6.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent4.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
 
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image7.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent5.jpg" alt="" width={550} height={300}></Image>
             </div>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image8.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent6.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image9.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent7.jpg" alt="" width={550} height={300}></Image>
             </div>
             <div className={styles.card__ourRecentworks}>
-              <Image src="/image10.jpg" alt="" width={550} height={300}></Image>
+              <Image src="/recent8.jpg" alt="" width={550} height={300}></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image src="/recent9.jpg" alt="" width={550} height={300}></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent10.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent11.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent12.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent13.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent14.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent15.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent16.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent17.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent18.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent19.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent20.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+          </div>
+          <div className={styles.cardContainer__ourRecentworks}>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent21.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
+            </div>
+            <div className={styles.card__ourRecentworks}>
+              <Image
+                src="/recent22.jpg"
+                alt=""
+                width={550}
+                height={300}
+              ></Image>
             </div>
           </div>
         </Carousel>
@@ -64,28 +176,67 @@ const OurRecentWorks = () => {
       <div className={styles.ourRecentworks_mobile}>
         <Carousel animation="slide" duration="500" swipe="true" interval="2000">
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image2.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent1.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image3.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent2.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/Image4.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent3.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image5.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent4.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image6.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent5.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image7.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent6.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image9.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent7.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
-            <Image src="/image10.jpg" alt="" width={550} height={350}></Image>
+            <Image src="/recent8.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent9.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent10.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent11.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent12.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent13.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent14.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent15.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent16.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent18.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent19.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent20.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent21.jpg" alt="" width={550} height={350}></Image>
+          </div>
+          <div className={styles.card__ourRecentworks}>
+            <Image src="/recent22.jpg" alt="" width={550} height={350}></Image>
           </div>
         </Carousel>
       </div>

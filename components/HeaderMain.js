@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 const HeaderMain = () => {
+  const [show, handleShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        document.getElementById("headerMain").style.backgroundColor = "#ffffff";
+        document.getElementById("contactButton").style.borderColor = "#000000";
+        document.getElementById("contactButton").style.color = "#000000";
+        document.getElementById("callBlack").style.display = "block";
+        document.getElementById("callWhite").style.display = "none";
+        document.getElementById("headerMain").style.borderBottom =
+          "1px solid #f2f2f2";
+      } else {
+        document.getElementById("headerMain").style.background = "transparent";
+        document.getElementById("contactButton").style.borderColor = "#ffffff";
+        document.getElementById("contactButton").style.color = "#ffffff";
+        document.getElementById("callBlack").style.display = "none";
+        document.getElementById("callWhite").style.display = "block";
+        document.getElementById("headerMain").style.borderBottom =
+          "1px solid #1F1F1F";
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+
   const menuClick = () => {
     document.getElementById("header__mobile_container").style.height = "250px";
     document.getElementById("header__nav_mobile").style.display = "flex";
@@ -18,7 +45,7 @@ const HeaderMain = () => {
   };
   return (
     <div>
-      <div className={styles.headerMain}>
+      <div id="headerMain" className={styles.headerMain}>
         <div className={styles.header__left}>
           <Image
             className={styles.header__logo}
@@ -31,24 +58,47 @@ const HeaderMain = () => {
         <div className={styles.header__right__main}>
           <nav className={styles.nav__header__main}>
             <ul>
-              <li className={styles.home__nav__header__main}>
-                <a href="#home">Home</a>
+              <li>
+                <Link href="/" passHref>
+                  <p className={styles.home__nav__header__main}>Home</p>
+                </Link>
               </li>
               <li>
-                <a href="#ourServices">Our Services</a>
-              </li>
-              <li>
-                <a href="#pricingPlan">Plans</a>
-              </li>
-              <li>
-                <a href="#aboutUs">About Us</a>
+                <Link href="/view-services" passHref>
+                  <p>Our Services</p>
+                </Link>
               </li>
               <li>
                 <a href="#howItWorks">How It Works</a>
               </li>
+              <li>
+                <a href="#aboutUs">About Us</a>
+              </li>
             </ul>
           </nav>
-          <a href="#contact" className={styles.contactButton__header}>
+          <a
+            href="#contact"
+            id="contactButton"
+            className={styles.contactButton__header}
+          >
+            <div id="callWhite">
+              <Image
+                className={styles.header__menu}
+                src="/callIconMain.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
+            </div>
+            <div className={styles.callBlack} id="callBlack">
+              <Image
+                className={styles.header__menu}
+                src="/callIconMainBlack.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </div>
             Contact Us
           </a>
         </div>
@@ -124,10 +174,10 @@ const HeaderMain = () => {
             <a href="#ourServices">Our Services</a>
           </div>
           <div className={styles.header__nav_link__main}>
-            <a href="#plans">Plans</a>
+            <a href="#howItWorks">How It Works</a>
           </div>
           <div className={styles.header__nav_link__main}>
-            <a href="#howItWorks">How It Works</a>
+            <a href="#home">About Us</a>
           </div>
         </div>
       </div>

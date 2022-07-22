@@ -53,24 +53,21 @@ const EstimatePrice = () => {
     <div className={styles.estimate}>
       <div className={styles.estimateContainer}>
         <h3>Estimate the Plan Price</h3>
-        <p>
-          Easly pridect your Estimate Price your Home Design. Please fill your
-          correct data on below
-        </p>
+
         <div className={styles.inputFieldContainer}>
           <FormControl
             variant="standard"
             sx={{
               m: 0,
               minWidth: 200,
-              borderBottom: "1px solid #535353",
+              borderBottom: "1px solid #D3D3D3",
               outline: "none",
               marginBottom: 3,
             }}
           >
             <InputLabel
               sx={{
-                color: "white",
+                color: "#0E263D",
                 fontFamily: "inherit",
                 fontSize: "13px",
               }}
@@ -79,7 +76,7 @@ const EstimatePrice = () => {
               Area in Sqft *
             </InputLabel>
             <Select
-              sx={{ color: "white" }}
+              sx={{ color: "#0E263D" }}
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
               value={area}
@@ -100,19 +97,19 @@ const EstimatePrice = () => {
             sx={{
               m: 0,
               minWidth: 200,
-              borderBottom: "1px solid #535353",
+              borderBottom: "1px solid #D3D3D3",
               outline: "none",
               marginBottom: 3,
             }}
           >
             <InputLabel
-              sx={{ color: "white", fontFamily: "inherit", fontSize: "13px" }}
+              sx={{ color: "#0E263D", fontFamily: "inherit", fontSize: "13px" }}
               id="demo-simple-select-standard-label"
             >
               Choose your Plan *
             </InputLabel>
             <Select
-              sx={{ color: "white" }}
+              sx={{ color: "#0E263D" }}
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
               value={plan}
@@ -129,19 +126,19 @@ const EstimatePrice = () => {
             sx={{
               m: 0,
               minWidth: 200,
-              borderBottom: "1px solid #535353",
+              borderBottom: "1px solid #D3D3D3",
               outline: "none",
               marginBottom: 3,
             }}
           >
             <InputLabel
-              sx={{ color: "white", fontFamily: "inherit", fontSize: "13px" }}
+              sx={{ color: "#0E263D", fontFamily: "inherit", fontSize: "13px" }}
               id="demo-simple-select-standard-label"
             >
               Location *
             </InputLabel>
             <Select
-              sx={{ color: "white" }}
+              sx={{ color: "#0E263D" }}
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
               value={location}

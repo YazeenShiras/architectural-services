@@ -24,9 +24,8 @@ const Hero = () => {
         <Main />
         <EstimatePrice />
         <OurServices />
-        <PricingPlan />
-        <AboutUs />
         <HowItWorks />
+        <AboutUs />
         <OurRecentWorks />
         <WhatOurClientsSay />
         <CountsContainer />

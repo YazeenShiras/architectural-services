@@ -4,30 +4,23 @@ import styles from "../styles/Main.module.css";
 const Main = () => {
   return (
     <div>
-      <div className={styles.main} id="home">
-        <div className={styles.main__left}>
-          <h1>
-            Design your dream <br />
-            home with a few clicks
-          </h1>
-          <p>
-            We offer wide range of architecture services creating perfect living
-            space you love to live in.
-          </p>
-          <div className={styles.buttoneContainer__main__left}>
-            <a href="sendotp" className={styles.designMyHomeButton}>
-              DESIGN MY HOME
-            </a>
-            <a href="login" className={styles.signInButton}>
-              SIGN IN
-            </a>
-          </div>
-        </div>
-        <div className={styles.main__right}>
-          <div
-            style={{ backgroundImage: `url("/heroBg.png")` }}
-            className={styles.heroImage}
-          ></div>
+      <div
+        className={styles.main}
+        id="home"
+        style={{ backgroundImage: `url("/heroMain.png")` }}
+      >
+        <h1>Design your Space with few clicks</h1>
+        <p>
+          We offer wide range of architecture services creating perfect living
+          space you love to live in.
+        </p>
+        <div className={styles.buttoneContainer__main__left}>
+          <a href="sendotp" className={styles.designMyHomeButton}>
+            DESIGN MY SPACE
+          </a>
+          <a href="login" className={styles.signInButton}>
+            SIGN IN
+          </a>
         </div>
       </div>
 

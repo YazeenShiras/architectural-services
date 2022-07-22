@@ -19,13 +19,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  border-bottom: 1px solid #d7f1ed;
+  border-bottom: 1px solid #1f1f1f;
 }
 
 .header__logo_one {
@@ -83,6 +83,7 @@
   font-size: 13px;
   font-weight: 400;
   color: #000000;
+  cursor: pointer;
 }
 
 .header__nav > ul > li > a {
@@ -122,7 +123,7 @@
 }
 
 .contactButton__header {
-  height: 35px;
+  height: 38px;
   width: 120px;
   cursor: pointer;
   display: flex;
@@ -132,8 +133,20 @@
   text-decoration: none;
   cursor: pointer;
   margin-left: 30px;
-  background-color: #11907c;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  bottom: 5px;
   color: #ffffff;
+}
+
+.contactButton__header > div {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.callBlack {
+  display: none;
 }
 
 .callButton__header {
@@ -163,10 +176,18 @@
   margin-right: 50px;
   font-size: 13px;
   font-weight: 400;
+  cursor: pointer;
+  color: #b5b5b5;
+  font-weight: bold;
+}
+
+.nav__header__main > ul > li:hover {
+  color: #11907c;
 }
 
 .home__nav__header__main {
   color: #11907c;
+  cursor: pointer;
 }
 
 .header__right__main__mobile {

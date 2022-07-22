@@ -1,52 +1,65 @@
 .main {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(to bottom, #11907c, #151d3c);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
-  padding-top: 160px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
+  margin-top: -20px;
 }
 
-.main__left {
-  width: 50%;
+.main::before {
+  background-color: #1b1b1b;
+  content: "";
+  display: block;
   height: 100%;
-  margin-left: 8vw;
-  font-family: inherit;
-  margin-top: 20px;
+  position: absolute;
+  width: 100%;
+  opacity: 0.5;
 }
 
-.main__left > h1 {
-  font-weight: 600;
+.main > h1 {
+  text-align: center;
+  font-size: 45px;
+  position: relative;
 }
 
-.main__left > p {
-  font-size: 13px;
-  margin-top: 10px;
-  color: #e1e1e1;
+.main > p {
+  font-size: 14px;
   max-width: 400px;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .buttoneContainer__main__left {
   display: flex;
-  margin-top: 30px;
+  margin-top: 40px;
+  position: relative;
 }
 
 .designMyHomeButton {
-  height: 45px;
-  width: 150px;
-  background-color: #11907c;
-  font-size: 13px;
+  height: 50px;
+  width: 160px;
+  background-image: linear-gradient(to right, #05996d, #0b75a3);
+  border-radius: 8px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #f5f5f5;
   cursor: pointer;
 }
 
 .signInButton {
   height: 45px;
   width: 150px;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   background: transparent;
   display: flex;
   align-items: center;
@@ -55,6 +68,7 @@
   color: #ffffff;
   margin-left: 20px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .scrollStatusContainer {

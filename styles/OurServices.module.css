@@ -108,6 +108,88 @@
   overflow: hidden;
 }
 
+/*  */
+
+.servicesPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.servicesPage__container {
+  margin-top: 120px;
+}
+
+.cardServicePage,
+.cardServicePageBg {
+  padding: 30px 8vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 510px;
+}
+
+.cardServicePageBg {
+  background-color: #ebf8f2;
+}
+
+.bottomImg__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image__cardServicePage {
+  width: 46%;
+  height: 100%;
+}
+
+.content__cardServicePage,
+.content__cardServicePageBg {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__cardServicePage {
+  padding-left: 30px;
+}
+
+.content__cardServicePageBg {
+  padding-right: 30px;
+}
+
+.content__cardServicePage > p,
+.content__cardServicePageBg > p {
+  font-size: 13px;
+  line-height: 25px;
+  color: #818181;
+  margin-bottom: 20px;
+}
+
+.content__cardServicePage > h2,
+.content__cardServicePageBg > h2 {
+  font-size: 23px;
+  color: #11907c;
+}
+
+.content__cardServicePage > h4,
+.content__cardServicePageBg > h4 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footerContainer__servicesPage {
+  margin-top: 30px;
+  border-top: 1px solid rgb(242, 242, 242);
+}
+
 .caroselContainer__mobile {
   display: none;
 }

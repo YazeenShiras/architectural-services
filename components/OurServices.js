@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/OurServices.module.css";
 import Image from "next/image";
 import Carousel from "react-material-ui-carousel";
+import Link from "next/link";
 
 const OurServices = () => {
   return (
@@ -32,7 +33,13 @@ const OurServices = () => {
                   Design, the creation of construction papers, and project
                   management are all included in architectural services...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
             <div className={styles.card__ourServices}>
@@ -48,7 +55,13 @@ const OurServices = () => {
                   used by architects, landscape architects, urban planners, and
                   engineers to...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
           </div>
@@ -66,7 +79,13 @@ const OurServices = () => {
                   relationships between rooms, spaces, traffic patterns, and
                   other...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
             <div className={styles.card__ourServices}>
@@ -79,10 +98,15 @@ const OurServices = () => {
                 <h4>Elevation</h4>
                 <p>
                   Elevations are a popular design drawing and a technical
-                  architectural or engineering standard used to describe
-                  building graphically.
+                  architectural or engineering standard ...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
           </div>
@@ -97,9 +121,15 @@ const OurServices = () => {
                 <h4>Interior drawings</h4>
                 <p>
                   Space planning describes the process of determining the
-                  purpose, functional requirements, and basic layout of...
+                  purpose, functional requirements, and basic ...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
             <div className={styles.card__ourServices__end}>
@@ -114,7 +144,13 @@ const OurServices = () => {
                   Using computer animation, 3D rendering is a technique for
                   graphically representing a structure or creating...
                 </p>
-                <div className={styles.viewServiceButton}>View Service</div>
+                <Link
+                  href="/view-services"
+                  className={styles.viewServiceButton}
+                  passHref
+                >
+                  <div className={styles.viewServiceButton}>View Service</div>
+                </Link>
               </div>
             </div>
           </div>
@@ -135,7 +171,13 @@ const OurServices = () => {
                 Design, the creation of construction papers, and project
                 management are all included in architectural services...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
           <div className={styles.card__ourServicesMobile}>
@@ -150,7 +192,13 @@ const OurServices = () => {
                 A site plan, also known as a plot plan, is a form of drawing
                 used by architects, landscape architects, urban planners...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
           <div className={styles.card__ourServicesMobile}>
@@ -165,7 +213,13 @@ const OurServices = () => {
                 A floor plan is a technical drawing to scale that depicts the
                 relationships between rooms, spaces, traffic...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
           <div className={styles.card__ourServicesMobile}>
@@ -180,7 +234,13 @@ const OurServices = () => {
                 Elevations are a popular design drawing and a technical
                 architectural or engineering standard used to...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
           <div className={styles.card__ourServicesMobile}>
@@ -195,7 +255,13 @@ const OurServices = () => {
                 Space planning describes the process of determining the purpose,
                 functional requirements, and basic layout of...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
           <div className={styles.card__ourServicesMobile}>
@@ -210,7 +276,13 @@ const OurServices = () => {
                 Using computer animation, 3D rendering is a technique for
                 graphically representing a structure or creating...
               </p>
-              <div className={styles.viewServiceButton}>View Service</div>
+              <Link
+                href="/view-services"
+                className={styles.viewServiceButton}
+                passHref
+              >
+                <div className={styles.viewServiceButton}>View Service</div>
+              </Link>
             </div>
           </div>
         </Carousel>
