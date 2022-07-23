@@ -9,13 +9,12 @@ const OurServices = () => {
     <div className={styles.ourServices} id="ourServices">
       <div className={styles.title__ourServices}>
         <div className={styles.top__title__ourServices}>
-          <span></span>
           <h2>Our Services</h2>
-          <span></span>
         </div>
         <p>
-          Easly pre your Estimate Price your Home Design. Please fill your
-          correct data on below
+          We provide complete service from conception to completion including
+          the delivery of detailed plans, specifications and drawings that
+          reflect the cultures, customs and traditions of our region.
         </p>
       </div>
       <div className={styles.caroserContainerMain}>

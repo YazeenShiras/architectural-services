@@ -9,8 +9,9 @@ const OurRecentWorks = () => {
       <div className={styles.title__ourRecentworks}>
         <h2>Our Recent Works</h2>
         <p>
-          Arclif have already delivered numerous projects all over India.
-          Quality and timely delivery of projects are our key strength...
+          We have successfully completed a wide variety of residential and
+          commercial projects across Kerala with small and large additions.
+          check out some of our recently completed projects.
         </p>
       </div>
       <div className={styles.ourRecentworks_Main}>
@@ -41,6 +42,7 @@ const OurRecentWorks = () => {
               <Image src="/recent6.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image src="/recent7.jpg" alt="" width={550} height={300}></Image>
@@ -49,6 +51,7 @@ const OurRecentWorks = () => {
               <Image src="/recent8.jpg" alt="" width={550} height={300}></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image src="/recent9.jpg" alt="" width={550} height={300}></Image>
@@ -62,6 +65,7 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
@@ -80,7 +84,8 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
-          <div className={styles.cardContainer__ourRecentworks}>
+
+          {/* <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
                 src="/recent13.jpg"
@@ -98,6 +103,7 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
@@ -116,6 +122,7 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
@@ -134,6 +141,7 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
@@ -152,6 +160,7 @@ const OurRecentWorks = () => {
               ></Image>
             </div>
           </div>
+
           <div className={styles.cardContainer__ourRecentworks}>
             <div className={styles.card__ourRecentworks}>
               <Image
@@ -169,7 +178,7 @@ const OurRecentWorks = () => {
                 height={300}
               ></Image>
             </div>
-          </div>
+          </div> */}
         </Carousel>
       </div>
 
@@ -211,7 +220,7 @@ const OurRecentWorks = () => {
           <div className={styles.card__ourRecentworks}>
             <Image src="/recent12.jpg" alt="" width={550} height={350}></Image>
           </div>
-          <div className={styles.card__ourRecentworks}>
+          {/* <div className={styles.card__ourRecentworks}>
             <Image src="/recent13.jpg" alt="" width={550} height={350}></Image>
           </div>
           <div className={styles.card__ourRecentworks}>
@@ -237,7 +246,7 @@ const OurRecentWorks = () => {
           </div>
           <div className={styles.card__ourRecentworks}>
             <Image src="/recent22.jpg" alt="" width={550} height={350}></Image>
-          </div>
+          </div> */}
         </Carousel>
       </div>
     </div>

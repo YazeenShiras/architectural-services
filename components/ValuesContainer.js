@@ -14,10 +14,7 @@ const ValuesContainer = () => {
             <div className={styles.bgRadient__right__top__valuesConatiner}>
               <div className={styles.text__right__top__valuesConatiner}>
                 <h4>Get in touch</h4>
-                <p>
-                  Our clinets send us bunch of Smiles with <br /> our Services
-                  and we love them
-                </p>
+                <p>We&#39;d love to hear from you.</p>
               </div>
               <a href="#contact" className={styles.getStart__button}>
                 Get Start
@@ -112,10 +109,7 @@ const ValuesContainer = () => {
             <div className={styles.bgRadient__right__top__valuesConatiner}>
               <div className={styles.text__right__top__valuesConatiner}>
                 <h4>Get in touch</h4>
-                <p>
-                  Our clinets send us bunch of Smiles with our Services and we
-                  love them
-                </p>
+                <p>We&#39;d love to hear from you.</p>
               </div>
               <a href="#contact" className={styles.getStart__button}>
                 Get Start

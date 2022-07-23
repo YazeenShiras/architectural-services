@@ -21,6 +21,7 @@
   color: #505050;
   text-align: center;
   margin-top: 10px;
+  max-width: 400px;
 }
 
 .card__getInTouch {

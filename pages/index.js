@@ -6,7 +6,6 @@ import Hero from "../components/Hero";
 export default function Home() {
   return (
     <div className={styles.home}>
-      /
       <Head>
         <title>Agriha - Online Architecture Services</title>
         <meta

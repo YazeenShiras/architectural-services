@@ -103,28 +103,24 @@ const GetInTouch = () => {
       <div className={styles.title__getInTouch} id="contact">
         <h2>Get in touch</h2>
         <p>
-          Our clinets send us bunch of Smiles with our Services and we love them
+          We&#39;d love to hear from you. Tell us a bit about yourself, and we
+          will get in touch as soon as we can.
         </p>
       </div>
       <div className={styles.card__getInTouch}>
         <div className={styles.left__card__getInTouch}>
           <div className={styles.text__left__card__getInTouch}>
             <h3>Contact Information</h3>
-            <p>
-              Our clinets send us bunch of Smiles with our Services and we love
-              them
-            </p>
+            <p></p>
+            <br />
             <div className={styles.logo__left__card__getInTouch}>
               <Image src="/arclifLogo.svg" alt="" width={120} height={40} />
             </div>
             <h4>Address</h4>
-            <p>
-              Our clinets send us bunch of Smiles with our Services and we love
-              them
-            </p>
+            <p>Unit 3B, 3rd Floor ,Sahya Government Cyberpark, Kerala 673014</p>
             <div className={styles.numbers__left__card__getInTouch}>
-              <h5>+91 5556894782</h5>
-              <h5>+91 5556894782</h5>
+              <h5>+91 9995111325</h5>
+              <h5></h5>
             </div>
             <div className={styles.buttonContainer__left__card__getInTouch}>
               <a
@@ -166,10 +162,8 @@ const GetInTouch = () => {
         </div>
         <div className={styles.right__card__getInTouch}>
           <h3>Send Message</h3>
-          <p>
-            Our clinets send us bunch of Smiles with our Services and we love
-            them
-          </p>
+          <p></p>
+          <br />
           <div id="nameInput" className={styles.inputConatiner__getInTouch}>
             <input
               onChange={storeValues}

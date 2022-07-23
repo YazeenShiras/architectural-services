@@ -19,20 +19,18 @@ axios.defaults.withCredentials = true;
 const Hero = () => {
   return (
     <div>
-      <div id="main">
-        <HeaderMain />
-        <Main />
-        <EstimatePrice />
-        <OurServices />
-        <HowItWorks />
-        <AboutUs />
-        <OurRecentWorks />
-        <WhatOurClientsSay />
-        <CountsContainer />
-        <GetInTouch />
-        <ValuesContainer />
-        <Footer />
-      </div>
+      <HeaderMain />
+      <Main />
+      <EstimatePrice />
+      <OurServices />
+      <HowItWorks />
+      <AboutUs />
+      <OurRecentWorks />
+      <WhatOurClientsSay />
+      <CountsContainer />
+      <GetInTouch />
+      <ValuesContainer />
+      <Footer />
     </div>
   );
 };

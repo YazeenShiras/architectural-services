@@ -235,7 +235,7 @@
   }
 
   .header__mobile_container__main {
-    background-color: #0e263d;
+    background: transparent;
     color: #ffffff;
   }
 
@@ -244,7 +244,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    min-height: 70px;
     border-bottom: 1px solid #565858;
   }
   .header__menu__container {

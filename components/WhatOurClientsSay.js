@@ -9,7 +9,9 @@ const WhatOurClientsSay = () => {
       <div className={styles.title__whatOurClientsSay}>
         <h2>What our clients says</h2>
         <p>
-          Our clinets send us bunch of Smiles with our Services and we love them
+          We pride ourselves on providing an exceptional service to our clients,
+          but you don’t just have to take our word for it. Listen to what our
+          clients have to say about working with us.
         </p>
       </div>
       <div className={styles.whatOurClientsSay_main}>

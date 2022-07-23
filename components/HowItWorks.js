@@ -8,8 +8,11 @@ const HowItWorks = () => {
       <div className={styles.title__howItWorks}>
         <h2>How it works</h2>
         <p>
-          Easly your Estimate Price your Home Design. Please fill your correct
-          data on below
+          We believe that an architect can and should be the &quot;architect of
+          choice.&quot; Before we design your space, our team of experts get to
+          know you, what&#39;s most important to you, how you want to live and
+          more ensuring you have an incredible experience and memories to take
+          forward...
         </p>
       </div>
       <div className={styles.flow__howItWorks}>

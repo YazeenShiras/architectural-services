@@ -8,7 +8,7 @@ const HeaderMain = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 150) {
         document.getElementById("headerMain").style.backgroundColor = "#ffffff";
         document.getElementById("contactButton").style.borderColor = "#000000";
         document.getElementById("contactButton").style.color = "#000000";
@@ -25,6 +25,33 @@ const HeaderMain = () => {
         document.getElementById("headerMain").style.borderBottom =
           "1px solid #1F1F1F";
       }
+      if (window.scrollY > 100) {
+        document.getElementById("headerMain").style.backgroundColor = "#ffffff";
+        document.getElementById("contactButton").style.borderColor = "#000000";
+        document.getElementById("contactButton").style.color = "#000000";
+        document.getElementById("callBlack").style.display = "block";
+        document.getElementById("callWhite").style.display = "none";
+        document.getElementById("headerMain").style.borderBottom =
+          "1px solid #f2f2f2";
+        document.getElementById(
+          "header__mobile_container"
+        ).style.backgroundColor = "#0E263D";
+        document.getElementById("header__mobile_container").style.height =
+          "70px";
+        document.getElementById("menuIcon").style.display = "block";
+        document.getElementById("closeIcon").style.display = "none";
+      } else {
+        document.getElementById("headerMain").style.background = "transparent";
+        document.getElementById("contactButton").style.borderColor = "#ffffff";
+        document.getElementById("contactButton").style.color = "#ffffff";
+        document.getElementById("callBlack").style.display = "none";
+        document.getElementById("callWhite").style.display = "block";
+        document.getElementById("headerMain").style.borderBottom =
+          "1px solid #1F1F1F";
+        document.getElementById("header__mobile_container").style.background =
+          "transparent";
+      }
+      document.getElementById("header__nav_mobile").style.display = "none";
     });
     return () => {
       window.removeEventListener("scroll");
@@ -36,12 +63,18 @@ const HeaderMain = () => {
     document.getElementById("header__nav_mobile").style.display = "flex";
     document.getElementById("menuIcon").style.display = "none";
     document.getElementById("closeIcon").style.display = "block";
+    document.getElementById("header__mobile_container").style.backgroundColor =
+      "#0E263D";
   };
   const closeClick = () => {
     document.getElementById("header__mobile_container").style.height = "70px";
     document.getElementById("header__nav_mobile").style.display = "none";
     document.getElementById("menuIcon").style.display = "block";
     document.getElementById("closeIcon").style.display = "none";
+    if (!window.scrollY > 500) {
+      document.getElementById("header__mobile_container").style.background =
+        "transparent";
+    }
   };
   return (
     <div>
@@ -168,10 +201,14 @@ const HeaderMain = () => {
           className={styles.header__nav_mobile__main}
         >
           <div className={styles.header__nav_link__main}>
-            <a href="#home">Home</a>
+            <Link href="/" passHref>
+              <p>Home</p>
+            </Link>
           </div>
           <div className={styles.header__nav_link__main}>
-            <a href="#ourServices">Our Services</a>
+            <Link href="/view-services" passHref>
+              <p>Our Services</p>
+            </Link>
           </div>
           <div className={styles.header__nav_link__main}>
             <a href="#howItWorks">How It Works</a>
