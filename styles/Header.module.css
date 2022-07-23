@@ -28,6 +28,21 @@
   border-bottom: 1px solid #1f1f1f;
 }
 
+.headerMainServices {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid #f2f2f2;
+}
+
 .header__logo_one {
   margin-left: 10px;
   height: 100%;
@@ -140,12 +155,39 @@
   color: #ffffff;
 }
 
+.contactButton__header__services {
+  height: 38px;
+  width: 120px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 30px;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  bottom: 5px;
+  color: #000000;
+}
+
 .contactButton__header > div {
   margin-right: 10px;
   margin-top: 5px;
 }
 
+.callBlackServices {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
 .callBlack {
+  display: none;
+}
+
+.callWhiteServices {
   display: none;
 }
 
@@ -194,7 +236,7 @@
   display: none;
 }
 
-.header__mobile_container__main {
+.header__mobile_container__services {
   display: none;
 }
 
@@ -206,6 +248,9 @@
     display: flex;
   }
   .headerMain {
+    display: none;
+  }
+  .headerMainServices {
     display: none;
   }
   .menuIcon {
@@ -237,6 +282,22 @@
   .header__mobile_container__main {
     background: transparent;
     color: #ffffff;
+  }
+
+  .header__mobile_container__services {
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 1px 20px 1px #0000001a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0e263d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
   }
 
   .header__mobile {
@@ -281,9 +342,12 @@
     border-bottom: 1px solid #565858;
   }
 
-  .header__nav_link__main:hover {
-    background-color: #d7f1ed;
-    color: #0e263d;
+  .header__nav_link__main > p {
+    color: #ffffff;
+  }
+
+  .header__nav_link__main > a {
+    color: #ffffff;
   }
 
   .contactButton__header {

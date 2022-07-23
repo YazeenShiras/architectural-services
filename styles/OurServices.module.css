@@ -251,6 +251,82 @@
     margin-top: 10px;
     cursor: pointer;
   }
+
+  /* servicesPage */
+
+  .servicesPage__container {
+    margin-top: 220px;
+  }
+
+  .cardServicePage {
+    padding: 30px 8vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 510px;
+  }
+  .cardServicePageBg {
+    flex-direction: column;
+  }
+
+  .bottomImg__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .image__cardServicePage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content__cardServicePage,
+  .content__cardServicePageBg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .content__cardServicePage {
+    padding-left: 0px;
+  }
+
+  .content__cardServicePageBg {
+    padding-right: 0px;
+  }
+
+  .content__cardServicePage > p,
+  .content__cardServicePageBg > p {
+    font-size: 13px;
+    line-height: 25px;
+    color: #818181;
+    margin: 10px 0px;
+  }
+
+  .content__cardServicePage > h2,
+  .content__cardServicePageBg > h2 {
+    font-size: 23px;
+    color: #11907c;
+  }
+
+  .content__cardServicePage > h4,
+  .content__cardServicePageBg > h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .footerContainer__servicesPage {
+    margin-top: 80px;
+    border-top: 1px solid rgb(242, 242, 242);
+  }
 }
 
 @media only screen and (max-width: 414px) {

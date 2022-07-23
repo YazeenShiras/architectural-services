@@ -106,6 +106,7 @@
   }
   .card__bottom__valuesConatiner {
     display: flex;
+    align-items: center;
     margin-bottom: 20px;
   }
   .title__card__valuesConatiner {

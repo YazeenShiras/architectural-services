@@ -76,6 +76,7 @@ const HeaderMain = () => {
         "transparent";
     }
   };
+
   return (
     <div>
       <div id="headerMain" className={styles.headerMain}>

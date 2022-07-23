@@ -4,9 +4,22 @@ import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 const HeaderServices = () => {
+  const menuClick = () => {
+    document.getElementById("header__mobile_container").style.height = "250px";
+    document.getElementById("header__nav_mobile").style.display = "flex";
+    document.getElementById("menuIcon").style.display = "none";
+    document.getElementById("closeIcon").style.display = "block";
+  };
+  const closeClick = () => {
+    document.getElementById("header__mobile_container").style.height = "70px";
+    document.getElementById("header__nav_mobile").style.display = "none";
+    document.getElementById("menuIcon").style.display = "block";
+    document.getElementById("closeIcon").style.display = "none";
+  };
+
   return (
     <div>
-      <div className={styles.headerMain}>
+      <div className={styles.headerMainServices}>
         <div className={styles.header__left}>
           <Link href="/" passHref>
             <Image
@@ -43,7 +56,29 @@ const HeaderServices = () => {
               </li>
             </ul>
           </nav>
-          <a href="#contact" className={styles.contactButton__header}>
+          <a
+            href="#contact"
+            id="contactButton"
+            className={styles.contactButton__header__services}
+          >
+            <div id="callWhite" className={styles.callWhiteServices}>
+              <Image
+                className={styles.header__menu}
+                src="/callIconMain.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
+            </div>
+            <div id="callBlack" className={styles.callBlackServices}>
+              <Image
+                className={styles.header__menu}
+                src="/callIconMainBlack.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </div>
             Contact Us
           </a>
         </div>
@@ -56,14 +91,14 @@ const HeaderServices = () => {
 
       <div
         id="header__mobile_container"
-        className={styles.header__mobile_container__main}
+        className={styles.header__mobile_container__services}
       >
         <div className={styles.header__mobile}>
           <div className={styles.header__left}>
             <Link href="/" passHref>
               <Image
                 className={styles.header__logo}
-                src="/AgrihaLogo3.svg"
+                src="/AgrihaLogo.svg"
                 alt="agriha Logo"
                 width={120}
                 height={40}
@@ -80,6 +115,53 @@ const HeaderServices = () => {
                 height={20}
               />
             </a>
+            <div
+              id="menuIcon"
+              onClick={menuClick}
+              className={styles.header__menu__container}
+            >
+              <Image
+                className={styles.header__menu}
+                src="/menuIcon.svg"
+                alt=""
+                width={30}
+                height={20}
+              />
+            </div>
+            <div
+              id="closeIcon"
+              onClick={closeClick}
+              className={styles.header__menu__container__close}
+            >
+              <Image
+                className={styles.header__menu}
+                src="/closeIcon.svg"
+                alt=""
+                width={40}
+                height={20}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          id="header__nav_mobile"
+          className={styles.header__nav_mobile__main}
+        >
+          <div className={styles.header__nav_link__main}>
+            <Link href="/" passHref>
+              <p>Home</p>
+            </Link>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <Link href="/view-services" passHref>
+              <p>Our Services</p>
+            </Link>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <a href="#">How It Works</a>
+          </div>
+          <div className={styles.header__nav_link__main}>
+            <a href="#">About Us</a>
           </div>
         </div>
       </div>

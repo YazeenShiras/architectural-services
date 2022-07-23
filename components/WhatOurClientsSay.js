@@ -27,8 +27,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Vincent</h5>
+                <p>Nilampur</p>
               </div>
             </div>
             <div className={styles.card__whatOurClientsSay}>
@@ -42,8 +42,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Anil</h5>
+                <p>Manassery</p>
               </div>
             </div>
             <div className={styles.card__whatOurClientsSay}>
@@ -57,8 +57,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Anwar</h5>
+                <p>Edakkara</p>
               </div>
             </div>
           </div>
@@ -73,8 +73,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Rinose</h5>
+                <p>Kodiyathoor</p>
               </div>
             </div>
             <div className={styles.card__whatOurClientsSay}>
@@ -88,8 +88,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Niyas</h5>
+                <p>Mundayil</p>
               </div>
             </div>
             <div className={styles.card__whatOurClientsSay}>
@@ -102,8 +102,8 @@ const WhatOurClientsSay = () => {
                 <div className={styles.image__title__card__whatOurClientsSay}>
                   <Image src="/quote.svg" alt="" width={30} height={30}></Image>
                 </div>
-                <h5>Mohammed Sadhik</h5>
-                <p>CEO, Brand Name</p>
+                <h5>Jafer</h5>
+                <p>Areekode</p>
               </div>
             </div>
           </div>
@@ -114,47 +114,89 @@ const WhatOurClientsSay = () => {
         <Carousel animation="slide" duration="500" swipe="true" interval="5000">
           <div className={styles.card__whatOurClientsSay}>
             <p>
-              Our clinets send us bunch of Smiles with our Services and we love
-              them Our clinets send us bunch of Smiles with our Services and we
-              love them Our clinets send us bunch of Smiles with our Services
-              and we love them Our clinets send us bunch of Smiles with our
+              Arclif team did an incredible job designing our home. They
+              developed a set of documents that supported the architecture my
+              wife and I were looking for.
             </p>
             <div className={styles.text__title__card__whatOurClientsSay}>
               <div className={styles.image__title__card__whatOurClientsSay}>
-                <Image src="/quote.svg" alt="" width={30} height={30}></Image>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
               </div>
-              <h5>Mohammed Sadhik</h5>
-              <p>CEO, Brand Name</p>
+              <h5>Vincent</h5>
+              <p>Nilampur</p>
             </div>
           </div>
           <div className={styles.card__whatOurClientsSay}>
             <p>
-              Our clinets send us bunch of Smiles with our Services and we love
-              them Our clinets send us bunch of Smiles with our Services and we
-              love them Our clinets send us bunch of Smiles with our Services
-              and we love them Our clinets send us bunch of Smiles with our
+              Arclif made our dream kitchen and bathrooms a reality by offering
+              innovative insights for the designs. They were very professional
+              and dependable. We would definitely recommend and use Agriha
+              services for future projects.
             </p>
             <div className={styles.text__title__card__whatOurClientsSay}>
               <div className={styles.image__title__card__whatOurClientsSay}>
-                <Image src="/quote.svg" alt="" width={30} height={30}></Image>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
               </div>
-              <h5>Mohammed Sadhik</h5>
-              <p>CEO, Brand Name</p>
+              <h5>Anil</h5>
+              <p>Manassery</p>
             </div>
           </div>
           <div className={styles.card__whatOurClientsSay}>
             <p>
-              Our clinets send us bunch of Smiles with our Services and we love
-              them Our clinets send us bunch of Smiles with our Services and we
-              love them Our clinets send us bunch of Smiles with our Services
-              and we love them Our clinets send us bunch of Smiles with our
+              It was an absolute pleasure working with Agriha Architecture.
+              Shamseer was very professional and great to work with! They
+              exceeded my expectations and will definitely be working with them
+              again in the future. Highly recommend !!
             </p>
             <div className={styles.text__title__card__whatOurClientsSay}>
               <div className={styles.image__title__card__whatOurClientsSay}>
-                <Image src="/quote.svg" alt="" width={30} height={30}></Image>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
               </div>
-              <h5>Mohammed Sadhik</h5>
-              <p>CEO, Brand Name</p>
+              <h5>Anwar</h5>
+              <p>Edakkara</p>
+            </div>
+          </div>
+          <div className={styles.card__whatOurClientsSay}>
+            <p>
+              I just want to say the biggest thank you to you to Sidheeque and
+              your team. We have had a great experience with you. I cant thank
+              you enough.
+            </p>
+            <div className={styles.text__title__card__whatOurClientsSay}>
+              <div className={styles.image__title__card__whatOurClientsSay}>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
+              </div>
+              <h5>Rinose</h5>
+              <p>Kodiyathoor</p>
+            </div>
+          </div>
+          <div className={styles.card__whatOurClientsSay}>
+            <p>
+              Arclif is a professional team. They have knowledge experience and
+              connections. They are pro active. We do not have to chase them for
+              updated or information. They create value through design and save
+              cost through efficiency.
+            </p>
+            <div className={styles.text__title__card__whatOurClientsSay}>
+              <div className={styles.image__title__card__whatOurClientsSay}>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
+              </div>
+              <h5>Niyas</h5>
+              <p>Mundayil</p>
+            </div>
+          </div>
+          <div className={styles.card__whatOurClientsSay}>
+            <p>
+              Working with Arclif is a privilege, they’re so talented. We love
+              the house design. It’s unique and beautiful. It could stand
+              anywhere in the world, yet it’s online.
+            </p>
+            <div className={styles.text__title__card__whatOurClientsSay}>
+              <div className={styles.image__title__card__whatOurClientsSay}>
+                <Image src="/quote.svg" alt="" width={20} height={20}></Image>
+              </div>
+              <h5>Jafer</h5>
+              <p>Areekode</p>
             </div>
           </div>
         </Carousel>

@@ -136,13 +136,13 @@
     font-size: 15px;
     background-color: #0e263d;
     color: #d5d4d4;
-    margin-top: 200px;
+    margin-top: 120px;
   }
 }
 
 @media only screen and (max-width: 414px) {
   .footer__bottom {
-    margin-top: 250px;
+    margin-top: 200px;
   }
   .footer__bottom > p {
     margin: 0px 8vw;
@@ -162,7 +162,7 @@
 
 @media only screen and (max-width: 375px) {
   .footer__bottom {
-    margin-top: 270px;
+    margin-top: 200px;
   }
   .footer__bottom > p {
     font-size: 13px;
