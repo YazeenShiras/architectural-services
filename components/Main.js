@@ -11,8 +11,9 @@ const Main = () => {
       >
         <h1>Design your Space with few clicks</h1>
         <p>
-          We offer wide range of architecture services creating perfect living
-          space you love to live in.
+          We offer wide range of architecture services, starting from home
+          plans, floor plans, site plans etc. to create perfect living space you
+          love to live in.
         </p>
         <div className={styles.buttoneContainer__main__left}>
           <a href="sendotp" className={styles.designMyHomeButton}>
@@ -30,8 +31,9 @@ const Main = () => {
       >
         <h1>Design your Space with few clicks</h1>
         <p>
-          We offer wide range of architecture services creating perfect living
-          space you love to live in.
+          We offer wide range of architecture services, starting from home
+          plans, floor plans, site plans etc. to create perfect living space you
+          love to live in.
         </p>
         <div className={styles.buttoneContainer__main__left}>
           <a href="sendotp" className={styles.designMyHomeButton}>
