@@ -73,7 +73,7 @@ const HowItWorks = () => {
             <div>
               <Image src="/playButton.svg" alt="" width={22} height={12} />
             </div>
-            Watch ideo
+            Watch video
           </a>
         </div>
       </div>

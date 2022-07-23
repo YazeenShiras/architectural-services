@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footer__bottom}>
-          <p> &copy; Copyright 2021 arclif.com. All rights reserved.</p>
+          <p> &copy; Copyright 2022 arclif.com. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -4,59 +4,79 @@ import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 const HeaderMain = () => {
-  const [show, handleShow] = useState(false);
+  const [page, setPage] = useState("");
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 150) {
-        document.getElementById("headerMain").style.backgroundColor = "#ffffff";
-        document.getElementById("contactButton").style.borderColor = "#000000";
-        document.getElementById("contactButton").style.color = "#000000";
-        document.getElementById("callBlack").style.display = "block";
-        document.getElementById("callWhite").style.display = "none";
-        document.getElementById("headerMain").style.borderBottom =
-          "1px solid #f2f2f2";
-      } else {
-        document.getElementById("headerMain").style.background = "transparent";
-        document.getElementById("contactButton").style.borderColor = "#ffffff";
-        document.getElementById("contactButton").style.color = "#ffffff";
-        document.getElementById("callBlack").style.display = "none";
-        document.getElementById("callWhite").style.display = "block";
-        document.getElementById("headerMain").style.borderBottom =
-          "1px solid #1F1F1F";
-      }
-      if (window.scrollY > 100) {
-        document.getElementById("headerMain").style.backgroundColor = "#ffffff";
-        document.getElementById("contactButton").style.borderColor = "#000000";
-        document.getElementById("contactButton").style.color = "#000000";
-        document.getElementById("callBlack").style.display = "block";
-        document.getElementById("callWhite").style.display = "none";
-        document.getElementById("headerMain").style.borderBottom =
-          "1px solid #f2f2f2";
-        document.getElementById(
-          "header__mobile_container"
-        ).style.backgroundColor = "#0E263D";
-        document.getElementById("header__mobile_container").style.height =
-          "70px";
-        document.getElementById("menuIcon").style.display = "block";
-        document.getElementById("closeIcon").style.display = "none";
-      } else {
-        document.getElementById("headerMain").style.background = "transparent";
-        document.getElementById("contactButton").style.borderColor = "#ffffff";
-        document.getElementById("contactButton").style.color = "#ffffff";
-        document.getElementById("callBlack").style.display = "none";
-        document.getElementById("callWhite").style.display = "block";
-        document.getElementById("headerMain").style.borderBottom =
-          "1px solid #1F1F1F";
-        document.getElementById("header__mobile_container").style.background =
-          "transparent";
-      }
-      document.getElementById("header__nav_mobile").style.display = "none";
-    });
-    return () => {
-      window.removeEventListener("scroll");
-    };
+    localStorage.setItem("page", "home");
+    var pageName = localStorage.getItem("page");
+    setPage(pageName);
+    console.log(pageName);
   }, []);
+
+  const scrollSettings = () => {
+    if (page === "home") {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 150) {
+          document.getElementById("headerMain").style.backgroundColor =
+            "#ffffff";
+          document.getElementById("contactButton").style.borderColor =
+            "#000000";
+          document.getElementById("contactButton").style.color = "#000000";
+          document.getElementById("callBlack").style.display = "block";
+          document.getElementById("callWhite").style.display = "none";
+          document.getElementById("headerMain").style.borderBottom =
+            "1px solid #f2f2f2";
+        } else {
+          document.getElementById("headerMain").style.background =
+            "transparent";
+          document.getElementById("contactButton").style.borderColor =
+            "#ffffff";
+          document.getElementById("contactButton").style.color = "#ffffff";
+          document.getElementById("callBlack").style.display = "none";
+          document.getElementById("callWhite").style.display = "block";
+          document.getElementById("headerMain").style.borderBottom =
+            "1px solid #1F1F1F";
+        }
+        if (window.scrollY > 100) {
+          document.getElementById("headerMain").style.backgroundColor =
+            "#ffffff";
+          document.getElementById("contactButton").style.borderColor =
+            "#000000";
+          document.getElementById("contactButton").style.color = "#000000";
+          document.getElementById("callBlack").style.display = "block";
+          document.getElementById("callWhite").style.display = "none";
+          document.getElementById("headerMain").style.borderBottom =
+            "1px solid #f2f2f2";
+          document.getElementById(
+            "header__mobile_container"
+          ).style.backgroundColor = "#0E263D";
+          document.getElementById("header__mobile_container").style.height =
+            "70px";
+          document.getElementById("menuIcon").style.display = "block";
+          document.getElementById("closeIcon").style.display = "none";
+        } else {
+          document.getElementById("headerMain").style.background =
+            "transparent";
+          document.getElementById("contactButton").style.borderColor =
+            "#ffffff";
+          document.getElementById("contactButton").style.color = "#ffffff";
+          document.getElementById("callBlack").style.display = "none";
+          document.getElementById("callWhite").style.display = "block";
+          document.getElementById("headerMain").style.borderBottom =
+            "1px solid #1F1F1F";
+          document.getElementById("header__mobile_container").style.background =
+            "transparent";
+        }
+        document.getElementById("header__nav_mobile").style.display = "none";
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (page !== "") {
+      scrollSettings();
+    }
+  }, [page]);
 
   const menuClick = () => {
     document.getElementById("header__mobile_container").style.height = "250px";

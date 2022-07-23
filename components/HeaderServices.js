@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 const HeaderServices = () => {
+  const [page, setPage] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("page", "services");
+    var pageName = localStorage.getItem("page");
+    console.log(pageName);
+  }, []);
+
   const menuClick = () => {
     document.getElementById("header__mobile_container").style.height = "250px";
     document.getElementById("header__nav_mobile").style.display = "flex";

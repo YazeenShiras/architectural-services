@@ -118,9 +118,14 @@ const GetInTouch = () => {
             </div>
             <h4>Address</h4>
             <p>Unit 3B, 3rd Floor ,Sahya Government Cyberpark, Kerala 673014</p>
+            <p>Coastal Hwy, Lewes, Delaware 19958, United States</p>
             <div className={styles.numbers__left__card__getInTouch}>
-              <h5>+91 9995111325</h5>
-              <h5></h5>
+              <h5>
+                <a href="tel:+919995111325">+91 99951 11325</a>
+              </h5>
+              <h5>
+                <a href="tel:+914953500183">+91 495 350 0183</a>
+              </h5>
             </div>
             <div className={styles.buttonContainer__left__card__getInTouch}>
               <a
