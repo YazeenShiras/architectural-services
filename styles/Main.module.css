@@ -19,7 +19,7 @@
   height: 100%;
   position: absolute;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .main > h1 {
@@ -139,7 +139,7 @@
     height: 100%;
     position: absolute;
     width: 100%;
-    opacity: 0.7;
+    opacity: 0.8;
   }
   .mainMobile > h1 {
     margin-top: 20px;
