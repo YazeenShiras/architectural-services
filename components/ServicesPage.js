@@ -9,7 +9,7 @@ const ServicesPage = () => {
     <div className={styles.servicesPage}>
       <HeaderServices />
       <div className={styles.servicesPage__container}>
-        <div className={styles.cardServicePage}>
+        <div id="archServices" className={styles.cardServicePage}>
           <div className={styles.image__cardServicePage}>
             <Image src="/arch2.jpg" alt="" width={500} height={450} />
           </div>
@@ -36,7 +36,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className={styles.cardServicePageBg}>
+        <div id="sitePlans" className={styles.cardServicePageBg}>
           <div className={styles.content__cardServicePageBg}>
             <h2>Site plans</h2>
             <p>
@@ -62,7 +62,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className={styles.cardServicePage}>
+        <div id="floorPlans" className={styles.cardServicePage}>
           <div className={styles.image__cardServicePage}>
             <Image src="/floorPlan4.jpg" alt="" width={500} height={450} />
           </div>
@@ -88,7 +88,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className={styles.cardServicePageBg}>
+        <div id="elevation" className={styles.cardServicePageBg}>
           <div className={styles.content__cardServicePageBg}>
             <h2>Elevation</h2>
             <p>
@@ -113,7 +113,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className={styles.cardServicePage}>
+        <div id="interiorDrawings" className={styles.cardServicePage}>
           <div className={styles.image__cardServicePage}>
             <Image src="/interior1.jpg" alt="" width={500} height={450} />
           </div>
@@ -139,7 +139,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className={styles.cardServicePageBg}>
+        <div id="3dViews" className={styles.cardServicePageBg}>
           <div className={styles.content__cardServicePageBg}>
             <h2>3D views</h2>
             <p>

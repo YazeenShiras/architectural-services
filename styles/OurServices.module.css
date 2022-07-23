@@ -116,7 +116,7 @@
 }
 
 .servicesPage__container {
-  margin-top: 120px;
+  margin-top: 50px;
 }
 
 .cardServicePage,
@@ -126,7 +126,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 510px;
+  height: 650px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .cardServicePageBg {
@@ -255,7 +257,7 @@
   /* servicesPage */
 
   .servicesPage__container {
-    margin-top: 220px;
+    margin-top: 20px;
   }
 
   .cardServicePage {
@@ -265,10 +267,15 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
-    height: 510px;
+    height: 700px;
+    padding-top: 75px;
+    padding-bottom: 0px;
   }
   .cardServicePageBg {
     flex-direction: column;
+    padding-top: 75px;
+    padding-bottom: 0px;
+    height: 700px;
   }
 
   .bottomImg__container {

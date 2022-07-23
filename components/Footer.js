@@ -54,19 +54,17 @@ const Footer = () => {
             <div className={styles.QuickLinks__right__footer__top}>
               <h3>What we provides</h3>
               <div>
-                <a href="">Jobs</a>
-                <a href="">Estimator</a>
-                <a href="">Requirements</a>
-                <a href="">Marketplace</a>
+                <a href="view-services#archServices">Architectural Services</a>
+                <a href="view-services#sitePlans">Site Plans</a>
+                <a href="view-services#floorPlans">FloorPlans</a>
               </div>
             </div>
             <div className={styles.QuickLinks__right__footer__top}>
               <h3>What we provides</h3>
               <div>
-                <a href="">Jobs</a>
-                <a href="">Estimator</a>
-                <a href="">Requirements</a>
-                <a href="">Marketplace</a>
+                <a href="view-services#elevation">elevation</a>
+                <a href="view-services#interiorDrawings">Interior Drawings</a>
+                <a href="view-services#3dViews">3D Views</a>
               </div>
             </div>
           </div>

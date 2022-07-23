@@ -76,6 +76,7 @@ const HeaderMain = () => {
     if (page !== "") {
       scrollSettings();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const menuClick = () => {

@@ -176,16 +176,18 @@
 
 @media only screen and (max-width: 414px) {
   .mainMobile {
-    height: calc(83vh - 20px);
+    height: 100vh;
   }
   .mainMobile::before {
-    height: calc(83vh - 20px);
+    height: 100vh;
   }
   .mainMobile > h1 {
-    font-size: 28px;
+    max-width: 300px;
+    font-size: 35px;
   }
   .mainMobile > p {
-    font-size: 12px;
+    font-size: 15px;
+    max-width: 310px;
   }
   .hero__mobile__image {
     height: 50%;
@@ -194,16 +196,17 @@
 
 @media only screen and (max-width: 375px) {
   .mainMobile {
-    height: calc(90vh - 20px);
+    height: 100vh;
   }
   .mainMobile::before {
-    height: calc(90vh - 20px);
+    height: 100vh;
   }
   .mainMobile > h1 {
-    font-size: 25px;
+    font-size: 35px;
   }
   .mainMobile > p {
-    font-size: 11px;
+    font-size: 15px;
+    max-width: 320px;
   }
   .hero__mobile__image {
     height: 45%;
