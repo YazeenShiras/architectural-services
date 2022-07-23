@@ -26,38 +26,29 @@ const ValuesContainer = () => {
           <div className={styles.card__bottom__valuesConatiner}>
             <div className={styles.title__card__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
+                <Image src="/refund.svg" alt="" width={50} height={50} />
+              </div>
+              <h2>Razorpay</h2>
+            </div>
+            <p>Trusted partner for online payments</p>
+          </div>
+          <div className={styles.card__bottom__valuesConatiner}>
+            <div className={styles.title__card__valuesConatiner}>
+              <div className={styles.logo__title__card__valuesConatiner}>
                 <Image src="/trust.svg" alt="" width={50} height={50} />
               </div>
-              <h2>Trust</h2>
+              <h2>Safe and Secure</h2>
             </div>
-            <p>
-              Our clinets send us bunch of Smiles with our <br /> Services and
-              we love them
-            </p>
+            <p>We truly securing your sensitive data</p>
           </div>
           <div className={styles.card__bottom__valuesConatiner}>
             <div className={styles.title__card__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
                 <Image src="/socialGood.svg" alt="" width={50} height={50} />
               </div>
-              <h2>Social Good</h2>
+              <h2>Collaboration</h2>
             </div>
-            <p>
-              Our clinets send us bunch of Smiles with our <br /> Services and
-              we love them
-            </p>
-          </div>
-          <div className={styles.card__bottom__valuesConatiner}>
-            <div className={styles.title__card__valuesConatiner}>
-              <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/refund.svg" alt="" width={50} height={50} />
-              </div>
-              <h2>Refund</h2>
-            </div>
-            <p>
-              Our clinets send us bunch of Smiles with our <br /> Services and
-              we love them
-            </p>
+            <p>Collaborate with architects all around India</p>
           </div>
         </div>
       </div>
@@ -70,14 +61,20 @@ const ValuesContainer = () => {
           <div className={styles.bottom__left__valuesConatiner}>
             <div className={styles.card__bottom__valuesConatiner}>
               <div className={styles.logo__title__card__valuesConatiner}>
+                <Image src="/refund.svg" alt="" width={70} height={70} />
+              </div>
+              <div className={styles.title__card__valuesConatiner}>
+                <h2>Razorpay</h2>
+                <p>Trusted partner for online payments</p>
+              </div>
+            </div>
+            <div className={styles.card__bottom__valuesConatiner}>
+              <div className={styles.logo__title__card__valuesConatiner}>
                 <Image src="/trust.svg" alt="" width={70} height={70} />
               </div>
               <div className={styles.title__card__valuesConatiner}>
-                <h2>Trust</h2>
-                <p>
-                  Our clinets send us bunch of Smiles with our <br /> Services
-                  and we love them
-                </p>
+                <h2>Safe and Secure</h2>
+                <p>We truly securing your sensitive data</p>
               </div>
             </div>
             <div className={styles.card__bottom__valuesConatiner}>
@@ -85,23 +82,8 @@ const ValuesContainer = () => {
                 <Image src="/socialGood.svg" alt="" width={70} height={70} />
               </div>
               <div className={styles.title__card__valuesConatiner}>
-                <h2>Social Good</h2>
-                <p>
-                  Our clinets send us bunch of Smiles with our <br /> Services
-                  and we love them
-                </p>
-              </div>
-            </div>
-            <div className={styles.card__bottom__valuesConatiner}>
-              <div className={styles.logo__title__card__valuesConatiner}>
-                <Image src="/refund.svg" alt="" width={70} height={70} />
-              </div>
-              <div className={styles.title__card__valuesConatiner}>
-                <h2>Refund</h2>
-                <p>
-                  Our clinets send us bunch of Smiles with our <br /> Services
-                  and we love them
-                </p>
+                <h2>Collaboration</h2>
+                <p>Collaborate with architects all around India</p>
               </div>
             </div>
           </div>
